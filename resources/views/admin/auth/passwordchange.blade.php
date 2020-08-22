@@ -1,7 +1,7 @@
 @extends('admin.admin_layouts')
 
 @section('admin_content')
-<div class="container">
+<div class="container"><br><br><br>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -10,7 +10,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ Route('admin.password.update') }}" aria-label="{{ __('Reset Password') }}">
                         @csrf
-
                         <!--  -->
 
                         <div class="form-group row">
@@ -20,9 +19,9 @@
                                 <input id="oldpass" type="password" class="form-control{{ $errors->has('oldpass') ? ' is-invalid' : '' }}" name="oldpass" value="{{ $oldpass ?? old('oldpass') }}" required autofocus>
 
                                 @if ($errors->has('oldpass'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('oldpass') }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('oldpass') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -34,9 +33,9 @@
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
