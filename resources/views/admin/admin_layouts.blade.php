@@ -604,7 +604,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
     <script>
-        @if(Session::has('messege'))
+        //@if(Session::has('messege'))
         var type = "{{Session::get('alert-type','info')}}"
         switch (type) {
             case 'info':
@@ -620,7 +620,7 @@
                 toastr.error("{{ Session::get('messege') }}");
                 break;
         }
-        @endif
+        //@endif
     </script>
 
     <script>
