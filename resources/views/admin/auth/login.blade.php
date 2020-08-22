@@ -7,7 +7,7 @@
         <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">BackEnd Shop<span class="tx-info tx-normal">admin</span></div>
         <div class="tx-center mg-b-60">Ecommerce</div>
 
-        <form action="{{ route('admin.login'}}" method="POST">
+        <form action="{{ route('admin.login') }}" method="POST">
             @csrf
             <div class="form-group">
                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email Address">
