@@ -3,7 +3,7 @@
 
 
 Route::get('/', function () {
-        return view('layouts.app');
+        return view('pages.index');
 });
 //auth & user
 Auth::routes();
