@@ -31,7 +31,7 @@
        <td>{{ $row->subcategory_name }}</td>
        <td>{{ $row->category_name }}</td>
        <td>
-        <a href="{{ URL::to('edit/category/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
+        <a href="{{ URL::to('edit/subcategory/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
         <a href="{{ URL::to('delete/subcategory/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
        </td>
       </tr>
