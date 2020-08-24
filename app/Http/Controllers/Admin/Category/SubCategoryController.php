@@ -23,6 +23,19 @@ class SubCategoryController extends Controller
 
     public function storesubcat(Request $request)
     {
-        
-     }
+        $validateData = $request->validate([
+            'category_id' => 'required',
+            'subcategory_name' => 'required',
+        ]);
+
+        $data = array();
+        $data['category_id'] = $request->category_id;
+        $data['subcategory_name'] = $request->subcategory_name;
+        DB::table('subcategories')->insert($data);
+        $notification = array(
+            'messege' => 'Sub Category Inserted Successfully',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
 }
