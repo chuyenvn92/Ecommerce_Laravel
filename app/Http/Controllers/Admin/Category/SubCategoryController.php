@@ -38,4 +38,14 @@ class SubCategoryController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+
+    public function Deletesubcat($id)
+    {
+        DB::table('subcategories')->where('id', $id)->delete();
+        $notification = array(
+            'messege' => 'Sub Category Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
 }

@@ -44,3 +44,4 @@ Route::post('update/brand/{id}', 'Admin\Category\BrandController@Updatebrand');
 // Subcategories
 Route::get('admin/sub/category', 'Admin\Category\SubCategoryController@subcategories')->name('sub.categories');
 Route::post('admin/store/subcat', 'Admin\Category\SubCategoryController@storesubcat')->name('store.subcategory');
+Route::get('delete/subcategory/{id}', 'Admin\Category\SubCategoryController@Deletesubcat');
