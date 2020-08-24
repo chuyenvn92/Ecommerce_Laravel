@@ -32,7 +32,7 @@
               <td><img src="{{ URL::to($row->brand_logo) }}" height="70px;" width="80px;"></td>
               <td>
                 <a href="{{ URL::to('edit/category/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
-                <a href="{{ URL::to('delete/category/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                <a href="{{ URL::to('delete/brand/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
               </td>
             </tr>
             @endforeach

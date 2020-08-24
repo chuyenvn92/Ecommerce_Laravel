@@ -58,4 +58,17 @@ class BrandController extends Controller
             return Redirect()->back()->with($notification);
         }
     }
+
+    public function Deletebrand($id)
+    {
+        $data = DB::table('brands')->where('id', $id)->first();
+        $image = $data->brand_logo;
+        unlink($image);
+        $brand = DB::table('brands')->where('id', $id)->delete();
+        $notification = array(
+            'messege' => 'Brand Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
 }
