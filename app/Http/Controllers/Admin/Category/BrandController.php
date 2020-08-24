@@ -71,4 +71,42 @@ class BrandController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+
+    public function Editbrand($id)
+    {
+        $brand = DB::table('brands')->where('id', $id)->first();
+        return view('admin.category.edit_brand', compact('brand'));
+    }
+
+    public function Updatebrand(Request $request, $id)
+    {
+        $oldlogo = $request->old_logo;
+        $data = array();
+        $data['brand_name'] = $request->brand_name;
+        $image = $request->file('brand_logo');
+        if ($image) {
+            unlink($oldlogo);
+            $image_name = date('dmy_H_s_i');
+            $ext = strtolower($image->getClientOriginalExtension());
+            $image_full_name = $image_name . '.' . $ext;
+            $upload_path = 'public/media/brand/';
+            $image_url = $upload_path . $image_full_name;
+            $success = $image->move($upload_path, $image_full_name);
+
+            $data['brand_logo'] = $image_url;
+            $brand = DB::table('brands')->where('id', $id)->update($data);
+            $notification = array(
+                'messege' => 'Brand Updated Successfully',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('brands')->with($notification);
+        } else {
+            $brand = DB::table('brands')->where('id', $id)->update($data);
+            $notification = array(
+                'messege' => 'Update Without Logo',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('brands')->with($notification);
+        }
+    }
 }

@@ -38,3 +38,5 @@ Route::post('update/category/{id}', 'Admin\Category\CategoryController@Updatecat
 Route::get('admin/brands', 'Admin\Category\BrandController@brand')->name('brands');
 Route::post('admin/store/brand', 'Admin\Category\BrandController@storebrand')->name('store.brand');
 Route::get('delete/brand/{id}', 'Admin\Category\BrandController@Deletebrand');
+Route::get('edit/brand/{id}', 'Admin\Category\BrandController@Editbrand');
+Route::post('update/brand/{id}', 'Admin\Category\BrandController@Updatebrand');
