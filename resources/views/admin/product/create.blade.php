@@ -10,10 +10,12 @@
 
  <div class="sl-pagebody">
   <div class="card pd-20 pd-sm-40">
-   <h6 class="card-body-title">New Product Add</h6>
+   <h6 class="card-body-title">New Product Add
+    <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right">All Product</a>
+   </h6>
    <p class="mg-b-20 mg-sm-b-30">New Product Add Form</p>
 
-   <form method="POST" action="" enctype="multipart/form-data">
+   <form method="POST" action="{{ route('store.product') }}" enctype="multipart/form-data">
     @csrf
     <div class="form-layout">
      <div class="row mg-b-25">
@@ -32,7 +34,7 @@
       <div class="col-lg-4">
        <div class="form-group">
         <label class="form-control-label">Quantity<span class="tx-danger">*</span></label>
-        <input class="form-control" type="text" name="product_quantity" value="" placeholder="Quantity">
+        <input class="form-control" type="text" name="product_quantity" placeholder="Quantity">
        </div>
       </div><!-- col-4 -->
       <div class="col-lg-4">
@@ -86,7 +88,7 @@
       <div class="col-lg-12">
        <div class="form-group">
         <label class="form-control-label">Product Details<span class="tx-danger">*</span></label>
-        <input class="form-control" id="summernote" name="product_details">
+        <textarea class="form-control" id="summernote" name="product_details"></textarea>
        </div>
       </div>
       <div class="col-lg-12">
