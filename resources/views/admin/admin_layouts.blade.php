@@ -45,6 +45,7 @@
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset('public/backend/css/starlight.css') }}">
+    <link href="{{ asset('public/backend/lib/summernote/summernote-bs4.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -352,6 +353,23 @@
     <script src="{{ asset('public/backend/lib/Flot/jquery.flot.pie.js')}}"></script>
     <script src="{{ asset('public/backend/lib/Flot/jquery.flot.resize.js')}}"></script>
     <script src="{{ asset('public/backend/lib/flot-spline/jquery.flot.spline.js')}}"></script>
+
+    <script src="{{ asset('public/backend/lib/medium-editor/medium-editor.js')}}"></script>
+    <script src="{{ asset('public/backend/lib/summernote/summernote-bs4.min.js')}}"></script>
+    <script>
+        $(function() {
+            'use strict';
+
+            // Inline editor
+            var editor = new MediumEditor('.editable');
+
+            // Summernote editor
+            $('#summernote').summernote({
+                height: 150,
+                tooltip: false
+            })
+        });
+    </script>
 
     <script src="{{ asset('public/backend/js/starlight.js')}}"></script>
     <script src="{{ asset('public/backend/js/ResizeSensor.js')}}"></script>

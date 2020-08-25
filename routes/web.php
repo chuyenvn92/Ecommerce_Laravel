@@ -59,11 +59,11 @@ Route::post('update/coupon/{id}', 'Admin\Category\CouponController@Updatecoupon'
 Route::get('admin/newslater', 'Admin\Category\CouponController@Newslater')->name('admin.newslater');
 Route::get('delete/sub/{id}', 'Admin\Category\CouponController@Deletenewslater');
 
+
+
 // Product All Route
 Route::get('admin/product/all', 'Admin\ProductController@index')->name('all.product');
 Route::get('admin/product/add', 'Admin\ProductController@create')->name('add.product');
-
-
 
 
 
