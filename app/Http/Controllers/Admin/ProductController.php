@@ -12,5 +12,13 @@ class ProductController extends Controller
         $this->middleware('auth:admin');
     }
 
-    
+    public function index()
+    { 
+        
+    }
+
+    public function create()
+    {
+        return view('admin.product.create');
+    }
 }
