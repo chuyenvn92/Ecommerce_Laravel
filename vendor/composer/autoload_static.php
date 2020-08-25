@@ -439,6 +439,7 @@ class ComposerStaticInite3bae772c4b322f01cd1c02f89ef47e9
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Admin\\Category\\BrandController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Category/BrandController.php',
         'App\\Http\\Controllers\\Admin\\Category\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Category/CategoryController.php',
+        'App\\Http\\Controllers\\Admin\\Category\\CouponController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Category/CouponController.php',
         'App\\Http\\Controllers\\Admin\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Admin\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LoginController.php',
         'App\\Http\\Controllers\\Admin\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ResetPasswordController.php',
