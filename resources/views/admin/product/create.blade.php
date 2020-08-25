@@ -39,11 +39,10 @@
        <div class="form-group mg-b-10-force">
         <label class="form-control-label">Category<span class="tx-danger">*</span></label>
         <select class="form-control select2" data-placeholder="Choose country" name="category_id">
-         <option label="Choose country"></option>
-         <option value="USA">United States of America</option>
-         <option value="UK">United Kingdom</option>
-         <option value="China">China</option>
-         <option value="Japan">Japan</option>
+         <option label="Choose Category"></option>
+         @foreach($category as $row)
+         <option value="{{ $row->id }}">{{ $row->category_name }}</option>
+         @endforeach
         </select>
        </div>
       </div><!-- col-4 -->
@@ -59,11 +58,10 @@
        <div class="form-group mg-b-10-force">
         <label class="form-control-label">Brand<span class="tx-danger">*</span></label>
         <select class="form-control select2" data-placeholder="Choose country" name="brand_id">
-         <option label="Choose country"></option>
-         <option value="USA">United States of America</option>
-         <option value="UK">United Kingdom</option>
-         <option value="China">China</option>
-         <option value="Japan">Japan</option>
+         <option label="Choose Brand"></option>
+         @foreach($brand as $br)
+         <option value="{{ $br->id}}">{{ $br->brand_name}}</option>
+         @endforeach
         </select>
        </div>
       </div><!-- col-4 -->
@@ -101,8 +99,9 @@
        <div class="form-group">
         <label class="form-control-label">Image 1(Main)<span class="tx-danger">*</span></label>
         <label class="custom-file">
-         <input type="file" id="file" class="custom-file-input" name="image_one">
+         <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL1(this);">
          <span class="custom-file-control"></span>
+         <img src="#" id="one">
         </label>
        </div>
       </div>
@@ -110,8 +109,9 @@
        <div class="form-group">
         <label class="form-control-label">Image 2<span class="tx-danger">*</span></label>
         <label class="custom-file">
-         <input type="file" id="file" class="custom-file-input" name="image_two">
+         <input type="file" id="file" class="custom-file-input" name="image_two" onchange="readURL2(this);">
          <span class="custom-file-control"></span>
+         <img src="#" id="two">
         </label>
        </div>
       </div>
@@ -119,8 +119,9 @@
        <div class="form-group">
         <label class="form-control-label">Image 3<span class="tx-danger">*</span></label>
         <label class="custom-file">
-         <input type="file" id="file" class="custom-file-input" name="image_three">
+         <input type="file" id="file" class="custom-file-input" name="image_three" onchange="readURL3(this);">
          <span class="custom-file-control"></span>
+         <img src="#" id="three">
         </label>
        </div>
       </div>
@@ -183,4 +184,78 @@
  <!-- ########## END: MAIN PANEL ########## -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
  <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+ <script type="text/javascript">
+  // đoạn code ajax này để load dữ liệu ra option sau khi chọn từ categories
+  $(document).ready(function() {
+   $('select[name="category_id"]').on('change', function() {
+    var category_id = $(this).val();
+    if (category_id) {
+
+     $.ajax({
+      url: "{{ url('/get/subcategory/') }}/" + category_id,
+      type: "GET",
+      dataType: "json",
+      success: function(data) {
+       var d = $('select[name="subcategory_id"]').empty();
+       $.each(data, function(key, value) {
+
+        $('select[name="subcategory_id"]').append('<option value="' + value.id + '">' + value.subcategory_name + '</option>');
+
+       });
+      },
+     });
+
+    } else {
+     alert('danger');
+    }
+
+   });
+  });
+ </script>
+
+ <script type="text/javascript">
+  // đoạn code này hiển thị ảnh tải lên
+  function readURL1(input) {
+   if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+     $('#one')
+      .attr('src', e.target.result)
+      .width(80)
+      .height(80);
+    };
+    reader.readAsDataURL(input.files[0]);
+   }
+  }
+ </script>
+ <script type="text/javascript">
+  // đoạn code này hiển thị ảnh tải lên
+  function readURL2(input) {
+   if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+     $('#two')
+      .attr('src', e.target.result)
+      .width(80)
+      .height(80);
+    };
+    reader.readAsDataURL(input.files[0]);
+   }
+  }
+ </script>
+ <script type="text/javascript">
+  // đoạn code này hiển thị ảnh tải lên
+  function readURL3(input) {
+   if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+     $('#three')
+      .attr('src', e.target.result)
+      .width(80)
+      .height(80);
+    };
+    reader.readAsDataURL(input.files[0]);
+   }
+  }
+ </script>
  @endsection
