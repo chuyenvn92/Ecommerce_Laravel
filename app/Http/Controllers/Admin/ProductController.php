@@ -54,6 +54,6 @@ class ProductController extends Controller
         $image_two = $request->image_two;
         $image_three = $request->image_three;
 
-        return response()->json($data);
+        // return response()->json($data);
     }
 }
