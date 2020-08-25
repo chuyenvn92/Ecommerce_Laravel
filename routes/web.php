@@ -57,6 +57,7 @@ Route::post('update/coupon/{id}', 'Admin\Category\CouponController@Updatecoupon'
 
 // Newslaters
 Route::get('admin/newslater', 'Admin\Category\CouponController@Newslater')->name('admin.newslater');
+Route::get('delete/sub/{id}', 'Admin\Category\CouponController@Deletenewslater');
 
 // Frontend All Routes
 Route::post('store/newslater', 'FrontEndController@storenewslater')->name('store.newslater');
