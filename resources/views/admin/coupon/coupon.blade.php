@@ -29,10 +29,10 @@
       <tr>
        <td>{{ $key + 1 }}</td>
        <td>{{ $row->coupon }}</td>
-       <td>{{ $row->discount }} %</td>
+       <td>{{ $row->discount }}%</td>
        <td>
-        <a href="{{ URL::to('edit/category/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
-        <a href="{{ URL::to('delete/category/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+        <a href="{{ URL::to('edit/coupon/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
+        <a href="{{ URL::to('delete/coupon/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
        </td>
       </tr>
       @endforeach
