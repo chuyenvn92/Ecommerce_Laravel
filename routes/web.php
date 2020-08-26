@@ -75,6 +75,10 @@ Route::get('edit/product/{id}', 'Admin\ProductController@editProduct');
 Route::post('update/product/withoutphoto/{id}', 'Admin\ProductController@updateProductWithoutPhoto');
 Route::post('update/product/photo/{id}', 'Admin\ProductController@updateProductPhoto');
 
+// Blog Admin All
+Route::get('blog/category/list', 'Admin\PostController@blogCatlist')->name('add.blog.categorylist');
+Route::post('admin/store/blog/product', 'Admin\PostController@blogCatstore')->name('store.blog.category');
+
 
 // for Show Sub Category with ajax
 Route::get('get/subcategory/{category_id}', 'Admin\ProductController@Getsubcat');
