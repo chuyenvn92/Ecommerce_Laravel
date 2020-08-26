@@ -71,6 +71,9 @@ Route::get('active/product/{id}', 'Admin\ProductController@active');
 Route::get('delete/product/{id}', 'Admin\ProductController@deleteProduct');
 Route::get('view/product/{id}', 'Admin\ProductController@viewProduct');
 
+Route::get('edit/product/{id}', 'Admin\ProductController@editProduct');
+Route::post('update/product/withoutphoto/{id}', 'Admin\ProductController@updateProductWithoutPhoto');
+
 
 // for Show Sub Category with ajax
 Route::get('get/subcategory/{category_id}', 'Admin\ProductController@Getsubcat');

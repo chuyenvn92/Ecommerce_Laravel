@@ -88,7 +88,7 @@
       <div class="form-group">
        <label class="form-control-label">Image 1(Main)<span class="tx-danger">*</span></label><br>
        <label class="custom-file">
-        <img src="{{ URL::to($product->image_one) }}" style="80px;" width="80px;">
+        <img src="{{ URL::to($product->image_one) }}" style="height:80px; width:80px;">
        </label>
       </div>
      </div>
@@ -96,7 +96,7 @@
       <div class="form-group">
        <label class="form-control-label">Image 2<span class="tx-danger">*</span></label><br>
        <label class="custom-file">
-        <img src="{{ URL::to($product->image_two) }}" style="80px;" width="80px;">
+        <img src="{{ URL::to($product->image_two) }}" style="height:80px; width:80px;">
        </label>
       </div>
      </div>
@@ -104,7 +104,7 @@
       <div class="form-group">
        <label class="form-control-label">Image 3<span class="tx-danger">*</span></label><br>
        <label class="custom-file">
-        <img src="{{ URL::to($product->image_three) }}" style="80px;" width="80px;">
+        <img src="{{ URL::to($product->image_three) }}" style="height:80px; width:80px;">
        </label>
       </div>
      </div>
