@@ -188,16 +188,17 @@ $subcategory = DB::table('subcategories')->get();
  </div><!-- sl-mainpanel -->
  <div class="sl-pagebody">
   <div class="card pd-20 pd-sm-40">
-   <h6 class="card-body-title">Update Image</h6>
-   <form method="POST" action="" enctype="multipart/form-data">
+   <h6 class="card-body-title">Update Images</h6>
+   <form method="POST" action="{{ url('update/product/photo/'.$product->id) }}" enctype="multipart/form-data">
     @csrf
     <div class="row">
      <div class="col-lg-6 col-sm-6">
       <label class="form-control-label">Image 1(Main)<span class="tx-danger">*</span></label>
       <br>
       <label class="custom-file">
-       <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL1(this);" required="">
+       <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL1(this);">
        <span class="custom-file-control"></span>
+       <input type="hidden" name="old_one" value="{{ $product->image_one }}">
        <img src="#" id="one">
       </label>
      </div>
@@ -210,8 +211,9 @@ $subcategory = DB::table('subcategories')->get();
       <label class="form-control-label">Image 2<span class="tx-danger">*</span></label>
       <br>
       <label class="custom-file">
-       <input type="file" id="file" class="custom-file-input" name="image_two" onchange="readURL2(this);" required="">
+       <input type="file" id="file" class="custom-file-input" name="image_two" onchange="readURL2(this);">
        <span class="custom-file-control"></span>
+       <input type="hidden" name="old_two" value="{{ $product->image_two }}">
        <img src="#" id="two">
       </label>
      </div>
@@ -224,8 +226,9 @@ $subcategory = DB::table('subcategories')->get();
       <label class="form-control-label">Image 3<span class="tx-danger">*</span></label>
       <br>
       <label class="custom-file">
-       <input type="file" id="file" class="custom-file-input" name="image_three" onchange="readURL3(this);" required="">
+       <input type="file" id="file" class="custom-file-input" name="image_three" onchange="readURL3(this);">
        <span class="custom-file-control"></span>
+       <input type="hidden" name="old_three" value="{{ $product->image_three }}">
        <img src="#" id="three">
       </label>
      </div>

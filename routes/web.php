@@ -73,6 +73,7 @@ Route::get('view/product/{id}', 'Admin\ProductController@viewProduct');
 
 Route::get('edit/product/{id}', 'Admin\ProductController@editProduct');
 Route::post('update/product/withoutphoto/{id}', 'Admin\ProductController@updateProductWithoutPhoto');
+Route::post('update/product/photo/{id}', 'Admin\ProductController@updateProductPhoto');
 
 
 // for Show Sub Category with ajax

@@ -179,4 +179,67 @@ class ProductController extends Controller
             return Redirect()->route('all.product')->with($notification);
         }
     }
+
+    public function updateProductPhoto(Request $request, $id)
+    {
+        $oldone = $request->old_one;
+        $oldtwo = $request->old_two;
+        $oldthree = $request->old_three;
+        $data = array();
+        $image_one = $request->file('image_one');
+        $image_two = $request->file('image_two');
+        $image_three = $request->file('image_three');
+
+        if ($image_one) {
+            unlink($oldone);
+            $image_name = date('dmy_H_s_i');
+            $ext = strtolower($image_one->getClientOriginalExtension());
+            $image_full_name = $image_name . '.' . $ext;
+            $upload_path = 'public/media/product/';
+            $image_url = $upload_path . $image_full_name;
+            $success = $image_one->move($upload_path, $image_full_name);
+
+            $data['image_one'] = $image_url;
+            $product = DB::table('products')->where('id', $id)->update($data);
+            $notification = array(
+                'messege' => 'Image 1 Upload Successfully',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('all.product')->with($notification);
+        }
+        if ($image_two) {
+            unlink($oldtwo);
+            $image_name = date('dmy_H_s_i');
+            $ext = strtolower($image_two->getClientOriginalExtension());
+            $image_full_name = $image_name . '.' . $ext;
+            $upload_path = 'public/media/product/';
+            $image_url = $upload_path . $image_full_name;
+            $success = $image_two->move($upload_path, $image_full_name);
+
+            $data['image_two'] = $image_url;
+            $product = DB::table('products')->where('id', $id)->update($data);
+            $notification = array(
+                'messege' => 'Image 2 Upload Successfully',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('all.product')->with($notification);
+        }
+        if ($image_three) {
+            unlink($oldthree);
+            $image_name = date('dmy_H_s_i');
+            $ext = strtolower($image_three->getClientOriginalExtension());
+            $image_full_name = $image_name . '.' . $ext;
+            $upload_path = 'public/media/product/';
+            $image_url = $upload_path . $image_full_name;
+            $success = $image_three->move($upload_path, $image_full_name);
+
+            $data['image_three'] = $image_url;
+            $product = DB::table('products')->where('id', $id)->update($data);
+            $notification = array(
+                'messege' => 'Image 3 Upload Successfully',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('all.product')->with($notification);
+        }
+    }
 }
