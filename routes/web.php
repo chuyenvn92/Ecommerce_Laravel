@@ -68,6 +68,7 @@ Route::post('admin/store/product', 'Admin\ProductController@store')->name('store
 
 Route::get('inactive/product/{id}', 'Admin\ProductController@inactive');
 Route::get('active/product/{id}', 'Admin\ProductController@active');
+Route::get('delete/product/{id}', 'Admin\ProductController@deleteProduct');
 
 
 // for Show Sub Category with ajax

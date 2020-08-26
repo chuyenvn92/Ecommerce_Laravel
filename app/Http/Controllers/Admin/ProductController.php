@@ -104,4 +104,21 @@ class ProductController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+
+    public function deleteProduct($id)
+    {
+        $product = DB::table('products')->where('id', $id)->first();
+        $image1 = $product->image_one;
+        $image2 = $product->image_two;
+        $image3 = $product->image_three;
+        unlink($image1);
+        unlink($image2);
+        unlink($image3);
+        DB::table('products')->where('id', $id)->delete();
+        $notification = array(
+            'messege' => 'Xóa thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
 }
