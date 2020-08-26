@@ -66,6 +66,10 @@ Route::get('admin/product/all', 'Admin\ProductController@index')->name('all.prod
 Route::get('admin/product/add', 'Admin\ProductController@create')->name('add.product');
 Route::post('admin/store/product', 'Admin\ProductController@store')->name('store.product');
 
+Route::get('inactive/product/{id}', 'Admin\ProductController@inactive');
+Route::get('active/product/{id}', 'Admin\ProductController@active');
+
+
 // for Show Sub Category with ajax
 Route::get('get/subcategory/{category_id}', 'Admin\ProductController@Getsubcat');
 

@@ -45,8 +45,14 @@
         @endif
        </td>
        <td>
-        <a href="{{ URL::to('edit/brand/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
-        <a href="{{ URL::to('delete/brand/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+        <a href="{{ URL::to('edit/brand/'.$row->id) }}" class="btn btn-sm btn-info" title="Edit"><i class="fa fa-edit"></i></a>
+        <a href="{{ URL::to('delete/brand/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete" title="Delete"><i class="fa fa-trash"></i></a>
+        <a href="{{ URL::to('delete/brand/'.$row->id) }}" class="btn btn-sm btn-warning" title="Show"><i class="fa fa-eye"></i></a>
+        @if($row->status == 1)
+        <a href="{{ URL::to('inactive/product/'.$row->id) }}" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
+        @else
+        <a href="{{ URL::to('active/product/'.$row->id) }}" class="btn btn-sm btn-primary" title="Active"><i class="fa fa-thumbs-up"></i></a>
+        @endif
        </td>
       </tr>
       @endforeach
