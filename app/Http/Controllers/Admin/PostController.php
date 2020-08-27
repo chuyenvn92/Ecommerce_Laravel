@@ -104,4 +104,28 @@ class PostController extends Controller
             return Redirect()->route('add.blog.categorylist')->with($notification);
         }
     }
+
+    public function index()
+    {
+        $post = DB::table('posts')
+            ->join('post_category', 'posts.category_id', 'post_category.id')
+            ->select('posts.*', 'post_category.category_name_en',)
+            ->get();
+
+        return view('admin.blog.index', compact('post'));
+    }
+
+    public function DeletePost($id)
+    {
+        $post = DB::table('posts')->where('id', $id)->first();
+        $image = $post->post_image;
+        unlink($image);
+
+        DB::table('posts')->where('id', $id)->delete();
+        $notification = array(
+            'messege' => 'Xóa bài đăng thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
 }

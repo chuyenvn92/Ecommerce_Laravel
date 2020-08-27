@@ -85,6 +85,7 @@ Route::post('update/blogcategory/{id}', 'Admin\PostController@UpdateBlogcategory
 Route::get('admin/add/post', 'Admin\PostController@create')->name('add.blogpost');
 Route::get('admin/all/post', 'Admin\PostController@index')->name('all.blogpost');
 Route::post('admin/store/post', 'Admin\PostController@store')->name('store.post');
+Route::get('delete/post/{id}', 'Admin\PostController@DeletePost');
 
 // for Show Sub Category with ajax
 Route::get('get/subcategory/{category_id}', 'Admin\ProductController@Getsubcat');
