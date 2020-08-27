@@ -65,4 +65,13 @@ class PostController extends Controller
         );
         return Redirect()->route('add.blog.categorylist')->with($notification);
     }
+
+    public function create()
+    {
+        $blogcategory = DB::table('post_category')->get();
+        return view('admin.blog.create', compact('blogcategory'));
+    }
+
+    public function store()
+    { }
 }
