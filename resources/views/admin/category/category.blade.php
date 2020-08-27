@@ -6,7 +6,7 @@
 <div class="sl-mainpanel">
  <div class="sl-pagebody">
   <div class="sl-page-title">
-   <h5>Category Table</h5>
+   <h5>Bảng</h5>
   </div><!-- sl-page-title -->
 
   <div class="card pd-20 pd-sm-40">
