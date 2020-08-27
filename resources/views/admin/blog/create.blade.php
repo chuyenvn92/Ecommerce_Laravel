@@ -28,7 +28,7 @@
       <div class="col-lg-4">
        <div class="form-group">
         <label class="form-control-label">Post Title (VietNam)<span class="tx-danger">*</span></label>
-        <input class="form-control" type="text" name="post_tile_vn" placeholder="Title">
+        <input class="form-control" type="text" name="post_title_vn" placeholder="Title">
        </div>
       </div><!-- col-4 -->
       <div class="col-lg-4">

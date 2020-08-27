@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
+use Image;
 
 class PostController extends Controller
 {
@@ -72,6 +73,35 @@ class PostController extends Controller
         return view('admin.blog.create', compact('blogcategory'));
     }
 
-    public function store()
-    { }
+    public function store(Request $request)
+    {
+        $data = array();
+        $data['post_title_en'] = $request->post_title_en;
+        $data['post_title_vn'] = $request->post_title_vn;
+        $data['category_id'] = $request->category_id;
+        $data['details_en'] = $request->details_en;
+        $data['details_vn'] = $request->details_vn;
+
+        $post_image = $request->file('post_image');
+        if ($post_image) {
+            $post_image_name = hexdec(uniqid()) . '.' . $post_image->getClientOriginalExtension();
+            Image::make($post_image)->resize(400, 200)->save('public/media/post/' . $post_image_name);
+            $data['post_image'] = 'public/media/post/' . $post_image_name;
+
+            DB::table('posts')->insert($data);
+            $notification = array(
+                'messege' => 'Tạo bài đăng thành công',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('add.blog.categorylist')->with($notification);
+        } else {
+            $data['post_image'] = '';
+            DB::table('posts')->insert($data);
+            $notification = array(
+                'messege' => 'Tạo bài đăng không ảnh',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('add.blog.categorylist')->with($notification);
+        }
+    }
 }
