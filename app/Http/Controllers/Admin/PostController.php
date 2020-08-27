@@ -36,4 +36,33 @@ class PostController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+
+    public function DeleteBlogcategory($id)
+    {
+        DB::table('post_category')->where('id', $id)->delete();
+        $notification = array(
+            'messege' => 'Xóa danh mục bài đăng thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
+
+    public function EditBlogcategory($id)
+    {
+        $blogCatEdit = DB::table('post_category')->where('id', $id)->first();
+        return view('admin.blog.category.edit', compact('blogCatEdit'));
+    }
+
+    public function UpdateBlogcategory(Request $request, $id)
+    {
+        $data = array();
+        $data['category_name_en'] = $request->category_name_en;
+        $data['category_name_vn'] = $request->category_name_vn;
+        DB::table('post_category')->where('id', $id)->update($data);
+        $notification = array(
+            'messege' => 'Cập nhật danh mục bài đăng thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('add.blog.categorylist')->with($notification);
+    }
 }
