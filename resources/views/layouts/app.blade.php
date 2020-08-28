@@ -63,8 +63,8 @@
                                  </div>
                                  <div class="top_bar_user">
                                      <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>
-                                     <div><a href="{{ route('register') }}">Register</a></div>
-                                     <div><a href="{{ route('login') }}">Sign in</a></div>
+                                     <div><a href="{{ route('register') }}">Đăng Kí</a></div>
+                                     <div><a href="{{ route('login') }}">Đăng Nhập</a></div>
                                  </div>
                              </div>
                          </div>
@@ -85,6 +85,10 @@
                              </div>
                          </div>
 
+                         @php
+                         $category = DB::table('categories')->get();
+                         @endphp
+
                          <!-- Search -->
                          <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
                              <div class="header_search">
@@ -94,15 +98,12 @@
                                              <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
                                              <div class="custom_dropdown">
                                                  <div class="custom_dropdown_list">
-                                                     <span class="custom_dropdown_placeholder clc">All Categories</span>
+                                                     <span class="custom_dropdown_placeholder clc">Sản Phẩm</span>
                                                      <i class="fas fa-chevron-down"></i>
                                                      <ul class="custom_list clc">
-                                                         <li><a class="clc" href="#">All Categories</a></li>
-                                                         <li><a class="clc" href="#">Computers</a></li>
-                                                         <li><a class="clc" href="#">Laptops</a></li>
-                                                         <li><a class="clc" href="#">Cameras</a></li>
-                                                         <li><a class="clc" href="#">Hardware</a></li>
-                                                         <li><a class="clc" href="#">Smartphones</a></li>
+                                                         @foreach($category as $row)
+                                                         <li><a class="clc" href="#">{{ $row->category_name }}</a></li>
+                                                         @endforeach
                                                      </ul>
                                                  </div>
                                              </div>
