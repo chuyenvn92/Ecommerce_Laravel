@@ -128,4 +128,46 @@ class PostController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+
+    public function EditPost($id)
+    {
+        $post  = DB::table('posts')->where('id', $id)->first();
+        return view('admin.blog.edit', compact('post'));
+    }
+
+    public function UpdatePost(Request $request, $id)
+    {
+
+        $old_image = $request->old_image;
+
+        $data = array();
+        $data['post_title_en'] = $request->post_title_en;
+        $data['post_title_vn'] = $request->post_title_vn;
+        $data['category_id'] = $request->category_id;
+        $data['details_en'] = $request->details_en;
+        $data['details_vn'] = $request->details_vn;
+
+        $post_image = $request->file('post_image');
+        if ($post_image) {
+            unlink($old_image);
+            $post_image_name = hexdec(uniqid()) . '.' . $post_image->getClientOriginalExtension();
+            Image::make($post_image)->resize(400, 200)->save('public/media/post/' . $post_image_name);
+            $data['post_image'] = 'public/media/post/' . $post_image_name;
+
+            DB::table('posts')->where('id', $id)->update($data);
+            $notification = array(
+                'messege' => 'Cập nhật bài đăng thành công',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('all.blogpost')->with($notification);
+        } else {
+            $data['post_image'] = $old_image;
+            DB::table('posts')->where('id', $id)->update($data);
+            $notification = array(
+                'messege' => 'Không thay đổi ảnh',
+                'alert-type' => 'success'
+            );
+            return Redirect()->route('all.blogpost')->with($notification);
+        }
+    }
 }

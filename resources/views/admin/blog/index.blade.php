@@ -33,7 +33,7 @@
         <img src=" {{ URL::to($row->post_image) }}" style="height: 50px; width: 50px;">
        </td>
        <td>
-        <a href="{{ URL::to('edit/blogcategory/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
+        <a href="{{ URL::to('edit/post/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
         <a href="{{ URL::to('delete/post/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
        </td>
       </tr>
