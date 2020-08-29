@@ -29,7 +29,7 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    <title>Ecommerce Site Admin Panel</title>
+    <title>Admin Shop</title>
 
     <!-- vendor css -->
     <link href=" {{ asset('public/backend/lib/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
@@ -68,12 +68,12 @@
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
-                    <span class="menu-item-label">Category</span>
+                    <span class="menu-item-label">Danh mục</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('categories') }}" class="nav-link">Category</a></li>
+                <li class="nav-item"><a href="{{ route('categories') }}" class="nav-link">Danh mục</a></li>
                 <li class="nav-item"><a href="{{ route('sub.categories') }}" class="nav-link">Sub Category</a></li>
                 <li class="nav-item"><a href="{{ route('brands') }}" class="nav-link">Brand</a></li>
             </ul>
