@@ -9,6 +9,10 @@
 $featured = DB::table('products')->where('status',1)->orderBy('id','desc')->limit(8)->get();
 $trend = DB::table('products')->where('status',1)->where('trend',1)->orderBy('id','desc')->limit(8)->get();
 $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy('id','desc')->limit(8)->get();
+
+$hot = DB::table('products')->join('brands','products.brand_id','brands.id')
+->select('products.*','brands.brand_name')
+->where('products.status',1)->where('hot_deal',1)->orderBy('id','desc')->limit(3)->get();
 @endphp
 
 <div class="characteristics">
@@ -76,35 +80,45 @@ $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy
     <!-- Deals -->
 
     <div class="deals">
-     <div class="deals_title">Deals of the Week</div>
+     <div class="deals_title">Giá Sốc trong tuần</div>
      <div class="deals_slider_container">
 
       <!-- Deals Slider -->
       <div class="owl-carousel owl-theme deals_slider">
-
+       @foreach($hot as $hot)
        <!-- Deals Item -->
        <div class="owl-item deals_item">
-        <div class="deals_image"><img src="{{ asset('public/frontend/images/deals.png')}}" alt=""></div>
+        <div class="deals_image"><img src="{{ asset($hot->image_one)}}" alt=""></div>
         <div class="deals_content">
          <div class="deals_info_line d-flex flex-row justify-content-start">
-          <div class="deals_item_category"><a href="#">Headphones</a></div>
-          <div class="deals_item_price_a ml-auto">$300</div>
+          <div class="deals_item_category"><a href="#">{{ $hot->brand_name }}</a></div>
+          @if($hot->discount_price == null)
+          @else
+          <div class="deals_item_price_a ml-auto">{{ $hot->selling_price }}đ</div>
+          @endif
          </div>
          <div class="deals_info_line d-flex flex-row justify-content-start">
-          <div class="deals_item_name">Beoplay H7</div>
-          <div class="deals_item_price ml-auto">$225</div>
+          <div class="deals_item_name">{{ $hot->product_name }}</div>
+          @if($hot->discount_price == null)
+          <div class="deals_item_price ml-auto">{{ $hot->selling_price }}đ</div>
+          @else
+          @endif
+          @if($hot->discount_price != null)
+          <div class="deals_item_price ml-auto">{{ $hot->discount_price }}đ</div>
+          @else
+          @endif
          </div>
          <div class="available">
           <div class="available_line d-flex flex-row justify-content-start">
-           <div class="available_title">Available: <span>6</span></div>
+           <div class="available_title">Số lượng còn: <span>{{ $hot->product_quantity}}</span></div>
            <div class="sold_title ml-auto">Already sold: <span>28</span></div>
           </div>
           <div class="available_bar"><span style="width:17%"></span></div>
          </div>
          <div class="deals_timer d-flex flex-row align-items-center justify-content-start">
           <div class="deals_timer_title_container">
-           <div class="deals_timer_title">Hurry Up</div>
-           <div class="deals_timer_subtitle">Offer ends in:</div>
+           <div class="deals_timer_title">Nhanh tay nào</div>
+           <div class="deals_timer_subtitle">Kết thúc sau</div>
           </div>
           <div class="deals_timer_content ml-auto">
            <div class="deals_timer_box clearfix" data-target-time="">
@@ -125,94 +139,7 @@ $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy
          </div>
         </div>
        </div>
-
-       <!-- Deals Item -->
-       <div class="owl-item deals_item">
-        <div class="deals_image"><img src="{{ asset('public/frontend/images/deals.png')}}" alt=""></div>
-        <div class="deals_content">
-         <div class="deals_info_line d-flex flex-row justify-content-start">
-          <div class="deals_item_category"><a href="#">Headphones</a></div>
-          <div class="deals_item_price_a ml-auto">$300</div>
-         </div>
-         <div class="deals_info_line d-flex flex-row justify-content-start">
-          <div class="deals_item_name">Beoplay H7</div>
-          <div class="deals_item_price ml-auto">$225</div>
-         </div>
-         <div class="available">
-          <div class="available_line d-flex flex-row justify-content-start">
-           <div class="available_title">Available: <span>6</span></div>
-           <div class="sold_title ml-auto">Already sold: <span>28</span></div>
-          </div>
-          <div class="available_bar"><span style="width:17%"></span></div>
-         </div>
-         <div class="deals_timer d-flex flex-row align-items-center justify-content-start">
-          <div class="deals_timer_title_container">
-           <div class="deals_timer_title">Hurry Up</div>
-           <div class="deals_timer_subtitle">Offer ends in:</div>
-          </div>
-          <div class="deals_timer_content ml-auto">
-           <div class="deals_timer_box clearfix" data-target-time="">
-            <div class="deals_timer_unit">
-             <div id="deals_timer2_hr" class="deals_timer_hr"></div>
-             <span>hours</span>
-            </div>
-            <div class="deals_timer_unit">
-             <div id="deals_timer2_min" class="deals_timer_min"></div>
-             <span>mins</span>
-            </div>
-            <div class="deals_timer_unit">
-             <div id="deals_timer2_sec" class="deals_timer_sec"></div>
-             <span>secs</span>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-
-       <!-- Deals Item -->
-       <div class="owl-item deals_item">
-        <div class="deals_image"><img src="{{ asset('public/frontend/images/deals.png')}}" alt=""></div>
-        <div class="deals_content">
-         <div class="deals_info_line d-flex flex-row justify-content-start">
-          <div class="deals_item_category"><a href="#">Headphones</a></div>
-          <div class="deals_item_price_a ml-auto">$300</div>
-         </div>
-         <div class="deals_info_line d-flex flex-row justify-content-start">
-          <div class="deals_item_name">Beoplay H7</div>
-          <div class="deals_item_price ml-auto">$225</div>
-         </div>
-         <div class="available">
-          <div class="available_line d-flex flex-row justify-content-start">
-           <div class="available_title">Available: <span>6</span></div>
-           <div class="sold_title ml-auto">Already sold: <span>28</span></div>
-          </div>
-          <div class="available_bar"><span style="width:17%"></span></div>
-         </div>
-         <div class="deals_timer d-flex flex-row align-items-center justify-content-start">
-          <div class="deals_timer_title_container">
-           <div class="deals_timer_title">Hurry Up</div>
-           <div class="deals_timer_subtitle">Offer ends in:</div>
-          </div>
-          <div class="deals_timer_content ml-auto">
-           <div class="deals_timer_box clearfix" data-target-time="">
-            <div class="deals_timer_unit">
-             <div id="deals_timer3_hr" class="deals_timer_hr"></div>
-             <span>hours</span>
-            </div>
-            <div class="deals_timer_unit">
-             <div id="deals_timer3_min" class="deals_timer_min"></div>
-             <span>mins</span>
-            </div>
-            <div class="deals_timer_unit">
-             <div id="deals_timer3_sec" class="deals_timer_sec"></div>
-             <span>secs</span>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
+       @endforeach
 
       </div>
 
@@ -403,61 +330,33 @@ $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy
   <div class="row">
    <div class="col-lg-3">
     <div class="popular_categories_content">
-     <div class="popular_categories_title">Popular Categories</div>
+     <div class="popular_categories_title">PHỔ BIẾN</div>
      <div class="popular_categories_slider_nav">
       <div class="popular_categories_prev popular_categories_nav"><i class="fas fa-angle-left ml-auto"></i></div>
       <div class="popular_categories_next popular_categories_nav"><i class="fas fa-angle-right ml-auto"></i></div>
      </div>
-     <div class="popular_categories_link"><a href="#">full catalog</a></div>
+     <div class="popular_categories_link"><a href="#">Tất cả</a></div>
     </div>
    </div>
 
+   @php
+   $category = DB::table('categories')->get();
+   @endphp
    <!-- Popular Categories Slider -->
 
    <div class="col-lg-9">
     <div class="popular_categories_slider_container">
      <div class="owl-carousel owl-theme popular_categories_slider">
 
+      @foreach($category as $cat)
       <!-- Popular Categories Item -->
       <div class="owl-item">
        <div class="popular_category d-flex flex-column align-items-center justify-content-center">
         <div class="popular_category_image"><img src="{{ asset('public/frontend/images/popular_1.png')}}" alt=""></div>
-        <div class="popular_category_text">Smartphones & Tablets</div>
+        <div class="popular_category_text">{{ $cat->category_name}}</div>
        </div>
       </div>
-
-      <!-- Popular Categories Item -->
-      <div class="owl-item">
-       <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-        <div class="popular_category_image"><img src="{{ asset('public/frontend/images/popular_2.png')}}" alt=""></div>
-        <div class="popular_category_text">Computers & Laptops</div>
-       </div>
-      </div>
-
-      <!-- Popular Categories Item -->
-      <div class="owl-item">
-       <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-        <div class="popular_category_image"><img src="{{ asset('public/frontend/images/popular_3.png')}}" alt=""></div>
-        <div class="popular_category_text">Gadgets</div>
-       </div>
-      </div>
-
-      <!-- Popular Categories Item -->
-      <div class="owl-item">
-       <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-        <div class="popular_category_image"><img src="{{ asset('public/frontend/images/popular_4.png')}}" alt=""></div>
-        <div class="popular_category_text">Video Games & Consoles</div>
-       </div>
-      </div>
-
-      <!-- Popular Categories Item -->
-      <div class="owl-item">
-       <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-        <div class="popular_category_image"><img src="{{ asset('public/frontend/images/popular_5.png')}}" alt=""></div>
-        <div class="popular_category_text">Accessories</div>
-       </div>
-      </div>
-
+      @endforeach
      </div>
     </div>
    </div>
@@ -466,7 +365,14 @@ $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy
 </div>
 
 <!-- Banner -->
-
+@php
+$mid = DB::table('products')
+->join('categories','products.category_id','categories.id')
+->join('brands','products.brand_id','brands.id')
+->select('products.*','brands.brand_name','categories.category_name')
+->where('products.mid_slider',1)->orderBy('id','desc')->limit(3)
+->get();
+@endphp
 <div class="banner_2">
  <div class="banner_2_background" style="background-image:url({{ asset('public/frontend/images/banner_2_background.jpg')}})"></div>
  <div class="banner_2_container">
@@ -474,7 +380,7 @@ $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy
   <!-- Banner 2 Slider -->
 
   <div class="owl-carousel owl-theme banner_2_slider">
-
+   @foreach($mid as $row)
    <!-- Banner 2 Slider Item -->
    <div class="owl-item">
     <div class="banner_2_item">
@@ -482,73 +388,29 @@ $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy
       <div class="row fill_height">
        <div class="col-lg-4 col-md-6 fill_height">
         <div class="banner_2_content">
-         <div class="banner_2_category">Laptops</div>
-         <div class="banner_2_title">MacBook Air 13</div>
-         <div class="banner_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</div>
+         <div class="banner_2_category">
+          <h4>{{ $row->category_name }}</h4>
+         </div>
+         <div class="banner_2_title">{{ $row->product_name }}</div>
+         <div class="banner_2_text">
+          <h4>{{ $row->brand_name }}</h4><br>
+          <h2>{{ $row->selling_price }}đ</h2>
+         </div>
          <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
-         <div class="button banner_2_button"><a href="#">Explore</a></div>
+         <div class="button banner_2_button"><a href="#">Mua ngay</a></div>
         </div>
 
        </div>
        <div class="col-lg-8 col-md-6 fill_height">
         <div class="banner_2_image_container">
-         <div class="banner_2_image"><img src="{{ asset('public/frontend/images/featured_1.png')}}images/banner_2_product.png" alt=""></div>
+         <div class="banner_2_image"><img src="{{ asset( $row->image_one )}}" alt="" style="height: 300px; width:250px;"></div>
         </div>
        </div>
       </div>
      </div>
     </div>
    </div>
-
-   <!-- Banner 2 Slider Item -->
-   <div class="owl-item">
-    <div class="banner_2_item">
-     <div class="container fill_height">
-      <div class="row fill_height">
-       <div class="col-lg-4 col-md-6 fill_height">
-        <div class="banner_2_content">
-         <div class="banner_2_category">Laptops</div>
-         <div class="banner_2_title">MacBook Air 13</div>
-         <div class="banner_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</div>
-         <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
-         <div class="button banner_2_button"><a href="#">Explore</a></div>
-        </div>
-
-       </div>
-       <div class="col-lg-8 col-md-6 fill_height">
-        <div class="banner_2_image_container">
-         <div class="banner_2_image"><img src="{{ asset('public/frontend/images/featured_1.png')}}images/banner_2_product.png" alt=""></div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-
-   <!-- Banner 2 Slider Item -->
-   <div class="owl-item">
-    <div class="banner_2_item">
-     <div class="container fill_height">
-      <div class="row fill_height">
-       <div class="col-lg-4 col-md-6 fill_height">
-        <div class="banner_2_content">
-         <div class="banner_2_category">Laptops</div>
-         <div class="banner_2_title">MacBook Air 13</div>
-         <div class="banner_2_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</div>
-         <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
-         <div class="button banner_2_button"><a href="#">Explore</a></div>
-        </div>
-
-       </div>
-       <div class="col-lg-8 col-md-6 fill_height">
-        <div class="banner_2_image_container">
-         <div class="banner_2_image"><img src="{{ asset('public/frontend/images/featured_1.png')}}images/banner_2_product.png" alt=""></div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
+   @endforeach
 
   </div>
  </div>
