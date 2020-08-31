@@ -188,7 +188,9 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
             <button class="product_cart_button">Thêm vào giỏ</button>
            </div>
           </div>
-          <div class="product_fav"><i class="fas fa-heart"></i></div>
+          <a href="{{ URL::to('add/wishlist/'.$feature->id) }}">
+           <div class="product_fav"><i class="fas fa-heart"></i></div>
+          </a>
           <ul class="product_marks">
            @if($feature->discount_price == null)
            <li class="product_mark product_discount" style="background: blue;">New</li>

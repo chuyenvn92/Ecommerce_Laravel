@@ -95,3 +95,6 @@ Route::get('get/subcategory/{category_id}', 'Admin\ProductController@Getsubcat')
 
 // Frontend All Routes
 Route::post('store/newslater', 'FrontEndController@storenewslater')->name('store.newslater');
+
+// Add Wishlist
+Route::get('add/wishlist/{id}', 'WishListController@addWishList');
