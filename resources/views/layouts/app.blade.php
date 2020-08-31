@@ -51,20 +51,27 @@
                                                  <li><a href="#">Japanese</a></li>
                                              </ul>
                                          </li>
-                                         <li>
-                                             <a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
-                                             <ul>
-                                                 <li><a href="#">EUR Euro</a></li>
-                                                 <li><a href="#">GBP British Pound</a></li>
-                                                 <li><a href="#">JPY Japanese Yen</a></li>
-                                             </ul>
-                                         </li>
                                      </ul>
                                  </div>
                                  <div class="top_bar_user">
-                                     <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>
-                                     <div><a href="{{ route('register') }}">Đăng Kí</a></div>
-                                     <div><a href="{{ route('login') }}">Đăng Nhập</a></div>
+                                     @guest
+                                     <div><a href="{{ route('login') }}">
+                                             <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Đăng kí/Đăng Nhập
+                                         </a></div>
+                                     @else
+                                     <ul class="standard_dropdown top_bar_dropdown">
+                                         <li>
+                                             <a href="{{route('home')}}">
+                                                 <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Hồ sơ<i class="fas fa-chevron-down"></i>
+                                             </a>
+                                             <ul>
+                                                 <li><a href="#">Sản phẩm yêu thích</a></li>
+                                                 <li><a href="#">Thanh toán đơn hàng</a></li>
+                                                 <li><a href="#">Khác</a></li>
+                                             </ul>
+                                         </li>
+                                     </ul>
+                                     @endguest
                                  </div>
                              </div>
                          </div>
@@ -129,7 +136,7 @@
                                  <div class="cart">
                                      <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                          <div class="cart_icon">
-                                             <img src="images/cart.png" alt="">
+                                             <img src="{{ asset('public/frontend/images/cart.png')}}" alt="">
                                              <div class="cart_count"><span>10</span></div>
                                          </div>
                                          <div class="cart_content">
