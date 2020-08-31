@@ -175,6 +175,12 @@
                 <span>Hot New</span>
               </label>
             </div>
+            <div class="col-lg-4">
+              <label class="ckbox">
+                <input type="checkbox" name="buyone_getone" value="1">
+                <span>Mua 1 Tặng 1</span>
+              </label>
+            </div>
           </div>
           <!-- End Checkbox Product -->
           <br><br>
