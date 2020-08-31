@@ -10,20 +10,32 @@
                 <div class="contact_form_container">
                     <div class="contact_form_title text-center">Đăng nhập</div>
 
-                    <form action="#" id="contact_form">
+                    <form action="{{ route('login') }}" id="contact_form" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email hoặc Số điện thoại</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" name="email" required="">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" aria-describedby="emailHelp" required="">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mật khẩu</label>
-                            <input type="password" class="form-control" aria-describedby="emailHelp" name="password" required="">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" aria-describedby="emailHelp" name="password" required="">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="contact_form_button">
                             <button type="submit" class="btn btn-info">Đăng nhập</button>
                         </div>
                     </form>
                     <br>
+                    <a href="{{ route('password.request') }}">Quên mật khẩu</a><br><br>
                     <button type=submit class="btn btn-primary btn-block"><i class="fab fa-facebook mr-2"></i>Đăng nhập với Facebook</button>
                     <button type=submit class="btn btn-danger btn-block"><i class="fab fa-google mr-2"></i>Đăng nhập với Google</button>
                 </div>
@@ -32,18 +44,19 @@
                 <div class="contact_form_container">
                     <div class="contact_form_title text-center">Đăng kí</div>
 
-                    <form action="#" id="contact_form">
+                    <form action="{{ route('register') }}" id="contact_form" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên của bạn</label>
                             <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="tên của bạn" name="name" required="">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số điện thoại</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Nhập phone" name="phone" required="">
+                            <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" aria-describedby="emailHelp" placeholder="Nhập phone">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" name="email" required="">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" aria-describedby="emailHelp" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mật khẩu</label>
