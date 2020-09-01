@@ -16,6 +16,8 @@
      <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/main_styles.css') }}">
      <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/responsive.css') }}">
      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+     <!-- Sử dụng sweetalert2 -->
+     <link rel="stylesheet" href="sweetalert2.min.css">
 
  </head>
 
@@ -275,6 +277,7 @@
      <script src="{{ asset('public/frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
      <script src="{{ asset('public/frontend/plugins/greensock/ScrollToPlugin.min.jsplugins/greensock/ScrollToPlugin.min.js')}}"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
      <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
      <script>
          @if(Session::has('messege'))

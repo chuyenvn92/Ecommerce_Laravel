@@ -18,25 +18,13 @@ class WishListController extends Controller
         );
         if (Auth::check()) {
             if ($check) {
-                $notification = array(
-                    'messege' => 'Đã có trong Wishlist rồi ha',
-                    'alert-type' => 'error'
-                );
-                return Redirect()->back()->with($notification);
+                return \Response::json(['error' => 'Đã có trong Wishlist rồi!!!']);
             } else {
                 DB::table('wishlists')->insert($data);
-                $notification = array(
-                    'messege' => 'Thêm vào Wishlist thành công',
-                    'alert-type' => 'success'
-                );
-                return Redirect()->back()->with($notification);
+                return \Response::json(['success' => 'Thêm vào Wishlist thành công']);
             }
         } else {
-            $notification = array(
-                'messege' => 'Vui lòng đăng nhập trước',
-                'alert-type' => 'warning'
-            );
-            return Redirect()->back()->with($notification);
+            return \Response::json(['error' => 'Vui lòng Đăng nhập trước']);
         }
     }
 }
