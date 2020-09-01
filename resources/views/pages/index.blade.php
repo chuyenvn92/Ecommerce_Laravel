@@ -185,7 +185,7 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
              <input type="radio" name="product_color" style="background:#000000">
              <input type="radio" name="product_color" style="background:#999999">
             </div>
-            <button class="product_cart_button">Thêm vào giỏ</button>
+            <button class="product_cart_button addcart" data-id="{{ $feature->id }}">Thêm vào giỏ</button>
            </div>
           </div>
           <button class="addwishlist" data-id="{{ $feature->id }}">
@@ -1627,6 +1627,47 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+ $(document).ready(function() {
+  $('.addcart').on('click', function() {
+   var id = $(this).data('id');
+   if (id) {
+    $.ajax({
+     url: " {{ url('add/to/cart/') }}/" + id,
+     type: "GET",
+     datType: "json",
+     success: function(data) {
+      const Toast = Swal.mixin({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       timerProgressBar: true,
+       onOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+       }
+      })
+      if ($.isEmptyObject(data.error)) {
+       Toast.fire({
+        icon: 'success',
+        title: data.success
+       })
+      } else {
+       Toast.fire({
+        icon: 'error',
+        title: data.error
+       })
+      }
+     },
+    });
+   } else {
+    alert('danger');
+   }
+  });
+ });
+</script>
+
 <script type="text/javascript">
  $(document).ready(function() {
   $('.addwishlist').on('click', function() {
