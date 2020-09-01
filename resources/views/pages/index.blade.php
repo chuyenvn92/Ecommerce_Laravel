@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
 
 @include('layouts.menubar')
@@ -177,7 +176,7 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
            <div class="product_price discount">{{ $feature->discount_price }}đ<span>{{ $feature->selling_price }}đ</span></div>
            @endif
            <div class="product_name">
-            <div><a href="product.html">{{ $feature->product_name }}</a></div>
+            <div><a href="{{ url('product/details/'.$feature->id.'/'.$feature->product_name) }}">{{ $feature->product_name }}</a></div>
            </div>
            <div class="product_extras">
             <div class="product_color">

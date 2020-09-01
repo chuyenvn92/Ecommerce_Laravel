@@ -37,10 +37,10 @@
                      <div class="row">
                          <div class="col d-flex flex-row">
                              <div class="top_bar_contact_item">
-                                 <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/phone.png')}}" alt=""></div>+38 068 005 3570
+                                 <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/phone.png')}}" alt=""></div>0349982248
                              </div>
                              <div class="top_bar_contact_item">
-                                 <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/mail.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
+                                 <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/mail.png')}}" alt=""></div><a href="mailto:chuyendaik99@gmail.com">chuyendaik99@gmail.com</a>
                              </div>
                              <div class="top_bar_content ml-auto">
                                  <div class="top_bar_menu">
@@ -64,7 +64,7 @@
                                      <ul class="standard_dropdown top_bar_dropdown">
                                          <li>
                                              <a href="{{route('home')}}">
-                                                 <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Hồ sơ<i class="fas fa-chevron-down"></i>
+                                                 <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Thông tin cá nhân<i class="fas fa-chevron-down"></i>
                                              </a>
                                              <ul>
                                                  <li><a href="#">Sản phẩm yêu thích</a></li>
@@ -127,13 +127,19 @@
                          <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
                              <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
                                  <div class="wishlist d-flex flex-row align-items-center justify-content-end">
+                                     @guest
+
+                                     @else
+                                     @php
+                                     $wishlist = DB::table('wishlists')->where('user_id',Auth::id())->get();
+                                     @endphp
                                      <div class="wishlist_icon"><img src="{{ asset('public/frontend/images/heart.png')}}" alt=""></div>
                                      <div class="wishlist_content">
-                                         <div class="wishlist_text"><a href="#">Wishlist</a></div>
-                                         <div class="wishlist_count">115</div>
+                                         <div class="wishlist_text"><a href="#">Yêu thích</a></div>
+                                         <div class="wishlist_count">{{ count($wishlist) }}</div>
                                      </div>
                                  </div>
-
+                                 @endguest
                                  <!-- Cart -->
                                  <div class="cart">
                                      <div class="cart_container d-flex flex-row align-items-center justify-content-end">
@@ -277,6 +283,7 @@
      <script src="{{ asset('public/frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
      <script src="{{ asset('public/frontend/plugins/greensock/ScrollToPlugin.min.jsplugins/greensock/ScrollToPlugin.min.js')}}"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+     <script src="{{ asset('public/frontend/js/product_custom.js')}}"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
      <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
      <script>

@@ -19,6 +19,8 @@ class CartController extends Controller
             $data['price'] = $product->selling_price;
             $data['weight'] = 1;
             $data['options']['image'] = $product->image_one;
+            $data['options']['color'] = '';
+            $data['options']['size'] = '';
             Cart::add($data);
             return \Response::json(['success' => 'Thêm vào giỏ hàng thành công']);
         } else {
@@ -28,6 +30,8 @@ class CartController extends Controller
             $data['price'] = $product->discount_price;
             $data['weight'] = 1;
             $data['options']['image'] = $product->image_one;
+            $data['options']['color'] = '';
+            $data['options']['size'] = '';
             Cart::add($data);
             return \Response::json(['success' => 'Thêm vào giỏ hàng thành công']);
         }
