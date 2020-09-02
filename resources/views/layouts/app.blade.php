@@ -281,7 +281,7 @@
      <script src="{{ asset('public/frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
      <script src="{{ asset('public/frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
      <script src="{{ asset('public/frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
-     <script src="{{ asset('public/frontend/plugins/greensock/ScrollToPlugin.min.jsplugins/greensock/ScrollToPlugin.min.js')}}"></script>
+     <!-- <script src="{{ asset('public/frontend/plugins/greensock/ScrollToPlugin.min.jsplugins/greensock/ScrollToPlugin.min.js')}}"></script> -->
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
      <script src="{{ asset('public/frontend/js/product_custom.js')}}"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

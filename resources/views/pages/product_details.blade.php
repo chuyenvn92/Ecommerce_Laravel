@@ -36,41 +36,37 @@
      </div>
      <div class="order_info d-flex flex-row">
       <form action="#">
-       <div class="clearfix" style="z-index: 1000;">
-
-        <!-- Product Quantity -->
-        <div class="product_quantity clearfix">
-         <span>Số lượng: </span>
-         <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-         <div class="quantity_buttons">
-          <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
-          <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
+       <div class="row">
+        <div class="col-lg-4">
+         <div class="form-group">
+          <label for="exampleFormControlSelect1">Màu sắc</label>
+          <select class="form-control input-lg" id="exampleFormControlSelect1" name="color">
+           @foreach($product_color as $color)
+           <option value="{{ $color }}">{{ $color }}</option>
+           @endforeach
+          </select>
          </div>
         </div>
+        @if($product->product_size == NULL)
 
-        <!-- Product Color -->
-        <ul class="product_color">
-         <li>
-          <span>Color: </span>
-          <div class="color_mark_container">
-           <div id="selected_color" class="color_mark"></div>
-          </div>
-          <div class="color_dropdown_button"><i class="fas fa-chevron-down"></i></div>
-
-          <ul class="color_list">
-           <li>
-            <div class="color_mark" style="background: #999999;"></div>
-           </li>
-           <li>
-            <div class="color_mark" style="background: #b19c83;"></div>
-           </li>
-           <li>
-            <div class="color_mark" style="background: #000000;"></div>
-           </li>
-          </ul>
-         </li>
-        </ul>
-
+        @else
+        <div class="col-lg-4">
+         <div class="form-group">
+          <label for="exampleFormControlSelect1">Kích cỡ</label>
+          <select class="form-control input-lg" id="exampleFormControlSelect1" name="size">
+           @foreach($product_size as $size)
+           <option value="{{ $size }}">{{ $size }}</option>
+           @endforeach
+          </select>
+         </div>
+        </div>
+        @endif
+        <div class="col-lg-4">
+         <div class="form-group">
+          <label for="exampleFormControlSelect1">Số lượng</label>
+          <input class="form-control" type="number" value="1" pattern="[0-9]" name="qty">
+         </div>
+        </div>
        </div>
        @if($product->discount_price == null)
        <div class="product_price">{{ $product->selling_price }}đ</div>
