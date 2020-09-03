@@ -48,4 +48,14 @@ class CartController extends Controller
         $cart = Cart::content();
         return view('pages.cart', compact('cart'));
     }
+
+    public function removeCart($rowId)
+    {
+        Cart::remove($rowId);
+        $notification = array(
+            'messege' => 'Xóa sản phẩm khỏi giỏ thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
 }

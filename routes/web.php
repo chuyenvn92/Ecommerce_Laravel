@@ -103,6 +103,7 @@ Route::get('add/wishlist/{id}', 'WishListController@addWishList');
 Route::get('add/to/cart/{id}', 'CartController@addCart');
 Route::get('check', 'CartController@check');
 Route::get('product/cart', 'CartController@showCart')->name('show.cart');
+Route::get('remove/cart/{rowId}', 'CartController@removeCart');
 
 Route::get('/product/details/{id}/{product_name}', 'ProductController@ProductView');
 Route::post('/cart/product/add/{id}', 'ProductController@AddCart');
