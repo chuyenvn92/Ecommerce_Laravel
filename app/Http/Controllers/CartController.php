@@ -58,4 +58,16 @@ class CartController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+
+    public function updateCart(Request $request)
+    {
+        $rowId = $request->productid;
+        $qty = $request->qty;
+        Cart::update($rowId, $qty);
+        $notification = array(
+            'messege' => 'Cập nhật giỏ hàng thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
 }

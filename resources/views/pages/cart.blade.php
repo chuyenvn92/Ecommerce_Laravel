@@ -36,9 +36,15 @@
           <div class="cart_item_text">{{ $row->options->size}}</div>
          </div>
          @endif
+
          <div class="cart_item_quantity cart_info_col">
-          <div class="cart_item_title">Số lượng</div>
-          <div class="cart_item_text">{{ $row->qty}}</div>
+          <div class="cart_item_title">Số lượng</div><br>
+          <form method="POST" action="{{ route('update.cartqty') }}">
+           @csrf
+           <input type="hidden" name="productid" value="{{ $row->rowId }}">
+           <input type="number" style="width: 60px;" name="qty" value="{{ $row->qty }}">
+           <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-check-square"></i></button>
+          </form>
          </div>
          <div class="cart_item_price cart_info_col">
           <div class="cart_item_title">Giá</div>
