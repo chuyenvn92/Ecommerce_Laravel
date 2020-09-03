@@ -75,7 +75,7 @@
        <div class="product_price">{{ $product->discount_price }}đ<span>{{ $product->selling_price }}đ</span></div>
        @endif
        <div class="button_container">
-        <button type="submit" class="button cart_button">Mua ngay</button>
+        <button type="submit" class="button cart_button">Thêm vào giỏ</button>
         <div class="product_fav"><i class="fas fa-heart"></i></div>
        </div>
 

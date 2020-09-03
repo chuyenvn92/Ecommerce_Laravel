@@ -103,4 +103,4 @@ Route::get('add/wishlist/{id}', 'WishListController@addWishList');
 Route::get('add/to/cart/{id}', 'CartController@addCart');
 Route::get('check', 'CartController@check');
 Route::get('/product/details/{id}/{product_name}', 'ProductController@ProductView');
-Route::post('/product/cart/add/{id}', 'ProductController@AddCart');
+Route::post('/cart/product/add/{id}', 'ProductController@AddCart');
