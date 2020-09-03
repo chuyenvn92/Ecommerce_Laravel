@@ -148,7 +148,7 @@
                                              <div class="cart_count"><span>{{ Cart::count() }}</span></div>
                                          </div>
                                          <div class="cart_content">
-                                             <div class="cart_text"><a href="#">Giỏ hàng</a></div>
+                                             <div class="cart_text"><a href="{{ route('show.cart') }}">Giỏ hàng</a></div>
                                              <div class="cart_price">{{ Cart::subtotal() }}đ</div>
                                          </div>
                                      </div>
