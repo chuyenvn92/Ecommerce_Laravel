@@ -35,7 +35,8 @@
       </p>
      </div>
      <div class="order_info d-flex flex-row">
-      <form action="#">
+      <form action="{{ url('cart/product/add/'.$product->id) }}" method="POST">
+       @csrf
        <div class="row">
         <div class="col-lg-4">
          <div class="form-group">
@@ -74,7 +75,7 @@
        <div class="product_price">{{ $product->discount_price }}đ<span>{{ $product->selling_price }}đ</span></div>
        @endif
        <div class="button_container">
-        <button type="button" class="button cart_button">Mua ngay</button>
+        <button type="submit" class="button cart_button">Mua ngay</button>
         <div class="product_fav"><i class="fas fa-heart"></i></div>
        </div>
 
