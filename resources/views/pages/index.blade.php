@@ -178,13 +178,11 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
            <div class="product_name">
             <div><a href="{{ url('product/details/'.$feature->id.'/'.$feature->product_name) }}">{{ $feature->product_name }}</a></div>
            </div>
-           <div class="product_extras">
-            <div class="product_color">
-             <input type="radio" checked name="product_color" style="background:#b19c83">
-             <input type="radio" name="product_color" style="background:#000000">
-             <input type="radio" name="product_color" style="background:#999999">
-            </div>
+           <!-- <div class="product_extras">
             <button class="product_cart_button addcart" data-id="{{ $feature->id }}">Thêm vào giỏ</button>
+           </div> -->
+           <div class="product_extras">
+            <button class="product_cart_button addcart" id="{{ $feature->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Xem nhanh</button>
            </div>
           </div>
           <button class="addwishlist" data-id="{{ $feature->id }}">
@@ -1624,9 +1622,74 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
   </div>
  </div>
 </div>
+<!-- Modal Quick View Product -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Xem nhanh sản phẩm</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+    </button>
+   </div>
+   <div class="modal-body">
+    <div class="row">
+     <div class="col-md-4">
+      <div class="card">
+       <img src="" id="pimage">
+       <div class="card-body">
+        <h5 class="card-title" id="pname"></h5>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
+       </div>
+      </div>
+     </div>
+     <ul class="list-group">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Morbi leo risus</li>
+      <li class="list-group-item">Porta ac consectetur ac</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+     </ul>
+     <div class="col-md-4">
+      <div class="form-group">
+       <label for="exampleInputcolor">Màu sắc</label>
+       <select class="form-control">
+        <option>1</option>
+        <option>1</option>
+       </select>
+      </div>
+      <div class="form-group">
+       <label for="exampleInputcolor">Kích cỡ</label>
+       <select class="form-control">
+        <option>1</option>
+       </select>
+      </div>
+      <div class="form-group">
+       <label for="exampleInputcolor">Số lượng</label>
+       <input type="number" class="form-control" name="" value="1">
+      </div>
+      <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script type="text/javascript">
+  function productview(id) {
+   $.ajax({
+    url: "{{ url('/cart/product/view/') }}/" + id,
+    type: "GET",
+    datatype: "json",
+    success: function(data) {
+     $('#pname').text(data.product.product_name);
+     $('#pimage').attr('src', data.product.image_one);
+    }
+   })
+  }
+ </script>
+ <!-- <script type="text/javascript">
  $(document).ready(function() {
   $('.addcart').on('click', function() {
    var id = $(this).data('id');
@@ -1665,46 +1728,46 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
    }
   });
  });
-</script>
+</script> -->
 
-<script type="text/javascript">
- $(document).ready(function() {
-  $('.addwishlist').on('click', function() {
-   var id = $(this).data('id');
-   if (id) {
-    $.ajax({
-     url: " {{ url('add/wishlist/') }}/" + id,
-     type: "GET",
-     datType: "json",
-     success: function(data) {
-      const Toast = Swal.mixin({
-       toast: true,
-       position: 'top-end',
-       showConfirmButton: false,
-       timer: 3000,
-       timerProgressBar: true,
-       onOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
+ <script type="text/javascript">
+  $(document).ready(function() {
+   $('.addwishlist').on('click', function() {
+    var id = $(this).data('id');
+    if (id) {
+     $.ajax({
+      url: " {{ url('add/wishlist/') }}/" + id,
+      type: "GET",
+      datType: "json",
+      success: function(data) {
+       const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+         toast.addEventListener('mouseenter', Swal.stopTimer)
+         toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+       })
+       if ($.isEmptyObject(data.error)) {
+        Toast.fire({
+         icon: 'success',
+         title: data.success
+        })
+       } else {
+        Toast.fire({
+         icon: 'error',
+         title: data.error
+        })
        }
-      })
-      if ($.isEmptyObject(data.error)) {
-       Toast.fire({
-        icon: 'success',
-        title: data.success
-       })
-      } else {
-       Toast.fire({
-        icon: 'error',
-        title: data.error
-       })
-      }
-     },
-    });
-   } else {
-    alert('danger');
-   }
+      },
+     });
+    } else {
+     alert('danger');
+    }
+   });
   });
- });
-</script>
-@endsection
+ </script>
+ @endsection
