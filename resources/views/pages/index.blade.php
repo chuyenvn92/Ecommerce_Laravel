@@ -1653,21 +1653,25 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
       </ul>
      </div>
      <div class="col-md-4">
-      <div class="form-group">
-       <label for="exampleInputcolor">Màu sắc</label>
-       <select class="form-control" id="color" name="color">
-       </select>
-      </div>
-      <div class="form-group">
-       <label for="exampleInputcolor">Kích cỡ</label>
-       <select class="form-control" id="size" name="size">
-       </select>
-      </div>
-      <div class="form-group">
-       <label for="exampleInputcolor">Số lượng</label>
-       <input type="number" class="form-control" name="" value="1">
-      </div>
-      <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
+      <form method="POST" action="{{ route('insert.into.cart') }}">
+       @csrf
+       <input type="hidden" name="product_id" id="product_id">
+       <div class="form-group">
+        <label for="exampleInputcolor">Màu sắc</label>
+        <select class="form-control" id="color" name="color">
+        </select>
+       </div>
+       <div class="form-group">
+        <label for="exampleInputcolor">Kích cỡ</label>
+        <select class="form-control" id="size" name="size">
+        </select>
+       </div>
+       <div class="form-group">
+        <label for="exampleInputcolor">Số lượng</label>
+        <input type="number" class="form-control" name="qty" value="1">
+       </div>
+       <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
+      </form>
      </div>
     </div>
    </div>
@@ -1688,6 +1692,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
      $('#psub').text(data.product.subcategory_name);
      $('#pbrand').text(data.product.brand_name);
      $('#pimage').attr('src', data.product.image_one);
+     $('#product_id').val(data.product.id);
 
      var d = $('select[name="color"]').empty();
      $.each(data.color, function(key, value) {

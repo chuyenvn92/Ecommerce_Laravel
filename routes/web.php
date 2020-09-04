@@ -107,6 +107,7 @@ Route::get('remove/cart/{rowId}', 'CartController@removeCart');
 Route::post('update/cart/item/', 'CartController@updateCart')->name('update.cartqty');
 
 Route::get('/cart/product/view/{id}', 'CartController@viewProduct');
+Route::post('insert/into/cart/', 'CartController@insertCart')->name('insert.into.cart');
 
 Route::get('/product/details/{id}/{product_name}', 'ProductController@ProductView');
 Route::post('/cart/product/add/{id}', 'ProductController@AddCart');
