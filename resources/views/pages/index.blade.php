@@ -1636,32 +1636,31 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
     <div class="row">
      <div class="col-md-4">
       <div class="card">
-       <img src="" id="pimage">
+       <img src="" id="pimage" style="height: 220px;">
        <div class="card-body">
-        <h5 class="card-title" id="pname"></h5>
+        <h4 class="card-title text-center" id="pname"></h4>
 
        </div>
       </div>
      </div>
-     <ul class="list-group">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Morbi leo risus</li>
-      <li class="list-group-item">Porta ac consectetur ac</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-     </ul>
+     <div class="col-md-4">
+      <ul class="list-group">
+       <li class="list-group-item">Mã SP: <span id="pcode"></span></li>
+       <li class="list-group-item">Danh mục: <span id="pcat"></span></li>
+       <li class="list-group-item">Loại: <span id="psub"></span></li>
+       <li class="list-group-item">Thương hiệu: <span id="pbrand"></span></li>
+       <li class="list-group-item">Số lượng còn: <span class="badge" style="background: green; color: white;">Nhiều</span></li>
+      </ul>
+     </div>
      <div class="col-md-4">
       <div class="form-group">
        <label for="exampleInputcolor">Màu sắc</label>
-       <select class="form-control">
-        <option>1</option>
-        <option>1</option>
+       <select class="form-control" id="color" name="color">
        </select>
       </div>
       <div class="form-group">
        <label for="exampleInputcolor">Kích cỡ</label>
-       <select class="form-control">
-        <option>1</option>
+       <select class="form-control" id="size" name="size">
        </select>
       </div>
       <div class="form-group">
@@ -1684,7 +1683,20 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
     datatype: "json",
     success: function(data) {
      $('#pname').text(data.product.product_name);
+     $('#pcode').text(data.product.product_code);
+     $('#pcat').text(data.product.category_name);
+     $('#psub').text(data.product.subcategory_name);
+     $('#pbrand').text(data.product.brand_name);
      $('#pimage').attr('src', data.product.image_one);
+
+     var d = $('select[name="color"]').empty();
+     $.each(data.color, function(key, value) {
+      $('select[name="color"]').append('<option value="' + value + '">' + value + '</option>');
+     });
+     var d = $('select[name="size"]').empty();
+     $.each(data.size, function(key, value) {
+      $('select[name="size"]').append('<option value="' + value + '">' + value + '</option>');
+     });
     }
    })
   }
