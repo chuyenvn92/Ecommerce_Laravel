@@ -26,7 +26,7 @@ class CouponController extends Controller
         $data['discount'] = $request->discount;
         DB::table('coupons')->insert($data);
         $notification = array(
-            'messege' => 'Coupon Added Successfully',
+            'messege' => 'Thêm mã giảm giá thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -36,7 +36,7 @@ class CouponController extends Controller
     {
         DB::table('coupons')->where('id', $id)->delete();
         $notification = array(
-            'messege' => 'Coupon Deleted Successfully',
+            'messege' => 'Xóa mã giảm giá thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -55,7 +55,7 @@ class CouponController extends Controller
         $data['discount'] = $request->discount;
         DB::table('coupons')->where('id', $id)->update($data);
         $notification = array(
-            'messege' => 'Coupon Updated Successfully',
+            'messege' => 'Cập nhật mã giảm giá thành công',
             'alert-type' => 'success'
         );
         return Redirect()->route('admin.coupon')->with($notification);
@@ -71,7 +71,7 @@ class CouponController extends Controller
     {
         DB::table('newslaters')->where('id', $id)->delete();
         $notification = array(
-            'messege' => 'Deleted Successfully',
+            'messege' => 'Xóa thông tin thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);

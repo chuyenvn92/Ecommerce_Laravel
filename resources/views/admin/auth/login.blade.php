@@ -4,8 +4,8 @@
 <div class="d-flex align-items-center justify-content-center bg-sl-primary ht-100v">
 
     <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
-        <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">BackEnd Shop<span class="tx-info tx-normal">admin</span></div>
-        <div class="tx-center mg-b-60">Ecommerce</div>
+        <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">Đăng nhập</div>
+        <div class="tx-center mg-b-60">Giao diện phía Backend</div>
 
         <form action="{{ route('admin.login') }}" method="POST">
             @csrf
@@ -24,9 +24,9 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
-                <a href="{{ route('admin.password.request')}}" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>
+                <a href="{{ route('admin.password.request')}}" class="tx-info tx-12 d-block mg-t-10">Quên Mật Khẩu</a>
             </div><!-- form-group -->
-            <button type="submit" class="btn btn-info btn-block">Sign In</button>
+            <button type="submit" class="btn btn-info btn-block">Đăng nhập</button>
         </form>
     </div><!-- login-wrapper -->
 </div><!-- d-flex -->

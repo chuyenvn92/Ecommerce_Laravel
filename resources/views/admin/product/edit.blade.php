@@ -10,17 +10,12 @@ $subcategory = DB::table('subcategories')->get();
 
 <!-- ########## START: MAIN PANEL ########## -->
 <div class="sl-mainpanel">
-  <nav class="breadcrumb sl-breadcrumb">
-    <a class="breadcrumb-item" href="index.html">Starlight</a>
-    <span class="breadcrumb-item active">Product Section</span>
-  </nav>
-
   <div class="sl-pagebody">
     <div class="card pd-20 pd-sm-40">
-      <h6 class="card-body-title">Update Product
-        <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right">All Product</a>
+      <h6 class="card-body-title">Cập nhật sản phẩm
+        <a href="{{ route('all.product') }}" class="btn btn-success btn-sm pull-right">Tất cả sản phẩm</a>
       </h6>
-      <p class="mg-b-20 mg-sm-b-30">Update Product Form</p>
+      <p class="mg-b-20 mg-sm-b-30">Cập nhật sản phẩm</p>
 
       <form method="POST" action="{{ url('update/product/withoutphoto/'.$product->id) }}" enctype="multipart/form-data">
         @csrf
@@ -28,33 +23,33 @@ $subcategory = DB::table('subcategories')->get();
           <div class="row mg-b-25">
             <div class="col-lg-6">
               <div class="form-group">
-                <label class="form-control-label">Product Name<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Tên sản phẩm<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="product_name" value="{{ $product->product_name}}">
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-6">
               <div class="form-group">
-                <label class="form-control-label">Product Code<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Mã sản phẩm<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="product_code" value="{{ $product->product_code}}">
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-6">
               <div class="form-group">
-                <label class="form-control-label">Quantity<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Số lượng<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="product_quantity" value="{{ $product->product_quantity}}">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <label class="form-control-label">Discount Price<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Giá khuyến mãi<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="discount_price" value="{{ $product->discount_price}}">
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
-                <label class="form-control-label">Category<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Danh mục<span class="tx-danger"> *</span></label>
                 <select class="form-control select2" data-placeholder="Choose country" name="category_id">
-                  <option label="Choose Category"></option>
+                  <option label="Chọn danh mục"></option>
                   @foreach($category as $row)
                   <option value="{{ $row->id }}" <?php if ($row->id == $product->category_id) {
                                                     echo "selected";
@@ -65,7 +60,7 @@ $subcategory = DB::table('subcategories')->get();
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
-                <label class="form-control-label">Sub Category<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Loại sản phẩm<span class="tx-danger"> *</span></label>
                 <select class="form-control select2" data-placeholder="Choose country" name="subcategory_id">
                   @foreach($subcategory as $row)
                   <option value="{{ $row->id }}" <?php if ($row->id == $product->subcategory_id) {
@@ -77,9 +72,9 @@ $subcategory = DB::table('subcategories')->get();
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
-                <label class="form-control-label">Brand<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Thương hiệu<span class="tx-danger"> *</span></label>
                 <select class="form-control select2" data-placeholder="Choose country" name="brand_id">
-                  <option label="Choose Brand"></option>
+                  <option label="Chọn thương hiệu"></option>
                   @foreach($brand as $row)
                   <option value="{{ $row->id }}" <?php if ($row->id == $product->brand_id) {
                                                     echo "selected";
@@ -90,25 +85,25 @@ $subcategory = DB::table('subcategories')->get();
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Product Size<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Kích cỡ<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="product_size" id="size" data-role="tagsinput" value="{{ $product->product_size}}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Product Color<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Màu sắc<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="product_color" id="color" data-role="tagsinput" value="{{ $product->product_color}}">
               </div>
             </div>
             <div class=" col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Selling Price<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Giá gốc<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="selling_price" value="{{ $product->selling_price }}">
               </div>
             </div>
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Product Details<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Chi tiết sản phẩm<span class="tx-danger"> *</span></label>
                 <textarea class="form-control" id="summernote" name="product_details">
                 {{ $product->product_details}}
                 </textarea>
@@ -116,7 +111,7 @@ $subcategory = DB::table('subcategories')->get();
             </div>
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Video Link<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Đường dẫn Video<span class="tx-danger"> *</span></label>
                 <input class="form-control" name="video_link" value="{{ $product->video_link }}">
               </div>
             </div>
@@ -131,7 +126,7 @@ $subcategory = DB::table('subcategories')->get();
                 <input type="checkbox" name="main_slider" value="1" <?php if ($product->main_slider == 1) {
                                                                       echo "checked";
                                                                     } ?>>
-                <span>Main Slider</span>
+                <span>Slider Chính</span>
               </label>
             </div>
             <div class="col-lg-4">
@@ -187,7 +182,7 @@ $subcategory = DB::table('subcategories')->get();
           <br><br>
 
           <div class="form-layout-footer">
-            <button class="btn btn-info mg-r-5">Update Product</button>
+            <button class="btn btn-info mg-r-5">Cập nhật sản phẩm</button>
           </div><!-- form-layout-footer -->
         </div><!-- form-layout -->
       </form>
@@ -196,12 +191,12 @@ $subcategory = DB::table('subcategories')->get();
   </div><!-- sl-mainpanel -->
   <div class="sl-pagebody">
     <div class="card pd-20 pd-sm-40">
-      <h6 class="card-body-title">Update Images</h6>
+      <h6 class="card-body-title">Cập nhật hình ảnh</h6>
       <form method="POST" action="{{ url('update/product/photo/'.$product->id) }}" enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="col-lg-6 col-sm-6">
-            <label class="form-control-label">Image 1(Main)<span class="tx-danger">*</span></label>
+            <label class="form-control-label">Ảnh 1(Ảnh chính)<span class="tx-danger"> *</span></label>
             <br>
             <label class="custom-file">
               <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL1(this);">
@@ -216,7 +211,7 @@ $subcategory = DB::table('subcategories')->get();
         </div>
         <div class="row">
           <div class="col-lg-6 col-sm-6">
-            <label class="form-control-label">Image 2<span class="tx-danger">*</span></label>
+            <label class="form-control-label">Ảnh 2<span class="tx-danger"> *</span></label>
             <br>
             <label class="custom-file">
               <input type="file" id="file" class="custom-file-input" name="image_two" onchange="readURL2(this);">
@@ -231,7 +226,7 @@ $subcategory = DB::table('subcategories')->get();
         </div>
         <div class="row">
           <div class="col-lg-6 col-sm-6">
-            <label class="form-control-label">Image 3<span class="tx-danger">*</span></label>
+            <label class="form-control-label">Ảnh 3<span class="tx-danger"> *</span></label>
             <br>
             <label class="custom-file">
               <input type="file" id="file" class="custom-file-input" name="image_three" onchange="readURL3(this);">
@@ -244,7 +239,7 @@ $subcategory = DB::table('subcategories')->get();
             <img src="{{ URL::to($product->image_three) }}" style="width: 80px; height: 80px;">
           </div>
         </div>
-        <button type="submit" class="btn btn-sm btn-warning ">Update Photo</button>
+        <button type="submit" class="btn btn-sm btn-warning ">Cập nhật hình ảnh</button>
       </form>
     </div>
   </div>

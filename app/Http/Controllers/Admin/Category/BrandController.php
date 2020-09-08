@@ -45,14 +45,14 @@ class BrandController extends Controller
             $data['brand_logo'] = $image_url;
             $brand = DB::table('brands')->insert($data);
             $notification = array(
-                'messege' => 'Brand Inserted Successfully',
+                'messege' => 'Thêm thương hiệu thành công',
                 'alert-type' => 'success'
             );
             return Redirect()->back()->with($notification);
         } else {
             $brand = DB::table('brands')->insert($data);
             $notification = array(
-                'messege' => 'Its Done',
+                'messege' => 'Thành công',
                 'alert-type' => 'success'
             );
             return Redirect()->back()->with($notification);
@@ -66,7 +66,7 @@ class BrandController extends Controller
         unlink($image);
         $brand = DB::table('brands')->where('id', $id)->delete();
         $notification = array(
-            'messege' => 'Brand Deleted Successfully',
+            'messege' => 'Xóa thương hiệu thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -96,14 +96,14 @@ class BrandController extends Controller
             $data['brand_logo'] = $image_url;
             $brand = DB::table('brands')->where('id', $id)->update($data);
             $notification = array(
-                'messege' => 'Brand Updated Successfully',
+                'messege' => 'Cập nhật thương hiệu thành công',
                 'alert-type' => 'success'
             );
             return Redirect()->route('brands')->with($notification);
         } else {
             $brand = DB::table('brands')->where('id', $id)->update($data);
             $notification = array(
-                'messege' => 'Update Without Logo',
+                'messege' => 'Cập nhật không có hình ảnh',
                 'alert-type' => 'success'
             );
             return Redirect()->route('brands')->with($notification);

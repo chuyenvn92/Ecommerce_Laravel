@@ -17,7 +17,7 @@ class FrontendController extends Controller
         $data['email'] = $request->email;
         DB::table('newslaters')->insert($data);
         $notification = array(
-            'messege' => 'Thank for Subscribing',
+            'messege' => 'Cảm ơn bạn đã đăng kí nhớ!',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);

@@ -6,22 +6,21 @@
 <div class="sl-mainpanel">
   <div class="sl-pagebody">
     <div class="sl-page-title">
-      <h5>Brand List</h5>
+      <h5>Danh sách thương hiệu</h5>
     </div><!-- sl-page-title -->
 
     <div class="card pd-20 pd-sm-40">
-      <h6 class="card-body-title">Brand List
-        <a href="#" class="btn btn-sm btn-warning" style="float: right;" data-toggle="modal" data-target="#addCategory">Add New</a>
+      <h6 class="card-body-title">Thương hiệu
+        <a href="#" class="btn btn-sm btn-warning" style="float: right;" data-toggle="modal" data-target="#addCategory">Thêm mới</a>
       </h6>
-
       <div class="table-wrapper">
         <table id="datatable1" class="table display responsive nowrap">
           <thead>
             <tr>
-              <th class="wd-15p">ID</th>
-              <th class="wd-15p">Brand Name </th>
-              <th class="wd-15p">Brand Logo </th>
-              <th class="wd-20p">Action</th>
+              <th class="wd-15p">STT</th>
+              <th class="wd-15p">Tên thương hiệu</th>
+              <th class="wd-15p">Ảnh</th>
+              <th class="wd-20p">Hành dộng</th>
             </tr>
           </thead>
           <tbody>
@@ -31,8 +30,8 @@
               <td>{{ $row->brand_name }}</td>
               <td><img src="{{ URL::to($row->brand_logo) }}" height="70px;" width="80px;"></td>
               <td>
-                <a href="{{ URL::to('edit/brand/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
-                <a href="{{ URL::to('delete/brand/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                <a href="{{ URL::to('edit/brand/'.$row->id) }}" class="btn btn-sm btn-info">Sửa</a>
+                <a href="{{ URL::to('delete/brand/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Xóa</a>
               </td>
             </tr>
             @endforeach
@@ -50,7 +49,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content tx-size-sm">
         <div class="modal-header pd-x-20">
-          <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Brand Add</h6>
+          <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Thêm thương hiệu</h6>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -69,17 +68,17 @@
           @csrf
           <div class="modal-body pd-20">
             <div class="form-group">
-              <label for="exampleInputEmail1">Brand Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Brand name" name="brand_name">
+              <label for="exampleInputEmail1">Tên</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="thương hiệu" name="brand_name">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Brand Logo</label>
-              <input type="file" class="form-control" aria-describedby="emailHelp" placeholder="Brand logo" name="brand_logo">
+              <label for="exampleInputEmail1">ogo</label>
+              <input type="file" class="form-control" aria-describedby="emailHelp" placeholder="ảnh" name="brand_logo">
             </div>
             <!-- modal-body -->
             <div class="modal-footer">
-              <button type="submit" class="btn btn-info pd-x-20">Submit</button>
-              <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-info pd-x-20">Thêm</button>
+              <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">Đóng</button>
             </div>
         </form>
       </div>

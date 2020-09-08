@@ -6,22 +6,22 @@
 <div class="sl-mainpanel">
  <div class="sl-pagebody">
   <div class="sl-page-title">
-   <h5>Post List</h5>
+   <h5>Danh sách bài đăng</h5>
   </div><!-- sl-page-title -->
 
   <div class="card pd-20 pd-sm-40">
-   <h6 class="card-body-title">Post List
-    <a href="{{ route('add.blogpost') }}" class="btn btn-sm btn-warning" style="float: right;">Add New Post</a>
+   <h6 class="card-body-title">Danh sách
+    <a href="{{ route('add.blogpost') }}" class="btn btn-sm btn-warning" style="float: right;">Thêm bài dăng</a>
    </h6>
 
    <div class="table-wrapper">
     <table id="datatable1" class="table display responsive nowrap">
      <thead>
       <tr>
-       <th class="wd-15p">Post Title</th>
-       <th class="wd-15p">Post Category</th>
-       <th class="wd-15p">Image</th>
-       <th class="wd-20p">Action</th>
+       <th class="wd-15p">Tiêu đề</th>
+       <th class="wd-15p">Chủ đề/th>
+       <th class="wd-15p">Ảnh</th>
+       <th class="wd-20p">Thao tác</th>
       </tr>
      </thead>
      <tbody>
@@ -33,8 +33,8 @@
         <img src=" {{ URL::to($row->post_image) }}" style="height: 50px; width: 50px;">
        </td>
        <td>
-        <a href="{{ URL::to('edit/post/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
-        <a href="{{ URL::to('delete/post/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+        <a href="{{ URL::to('edit/post/'.$row->id) }}" class="btn btn-sm btn-info">Sửa</a>
+        <a href="{{ URL::to('delete/post/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Xóa</a>
        </td>
       </tr>
       @endforeach

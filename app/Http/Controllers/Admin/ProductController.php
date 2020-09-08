@@ -92,7 +92,7 @@ class ProductController extends Controller
     {
         DB::table('products')->where('id', $id)->update(['status' => 0]);
         $notification = array(
-            'messege' => 'Inactive Success',
+            'messege' => 'Ngừng bán',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -102,7 +102,7 @@ class ProductController extends Controller
     {
         DB::table('products')->where('id', $id)->update(['status' => 1]);
         $notification = array(
-            'messege' => 'Active Success',
+            'messege' => 'Kích hoạt thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -205,7 +205,7 @@ class ProductController extends Controller
             $data['image_one'] = $image_url;
             $product = DB::table('products')->where('id', $id)->update($data);
             $notification = array(
-                'messege' => 'Image 1 Upload Successfully',
+                'messege' => 'Ảnh chính cập nhật thành công',
                 'alert-type' => 'success'
             );
             return Redirect()->route('all.product')->with($notification);
@@ -222,7 +222,7 @@ class ProductController extends Controller
             $data['image_two'] = $image_url;
             $product = DB::table('products')->where('id', $id)->update($data);
             $notification = array(
-                'messege' => 'Image 2 Upload Successfully',
+                'messege' => 'Ảnh 2 cập nhật thành công',
                 'alert-type' => 'success'
             );
             return Redirect()->route('all.product')->with($notification);
@@ -239,7 +239,7 @@ class ProductController extends Controller
             $data['image_three'] = $image_url;
             $product = DB::table('products')->where('id', $id)->update($data);
             $notification = array(
-                'messege' => 'Image 3 Upload Successfully',
+                'messege' => 'Ảnh 3 cập nhật thành công',
                 'alert-type' => 'success'
             );
             return Redirect()->route('all.product')->with($notification);

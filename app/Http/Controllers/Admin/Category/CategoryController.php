@@ -33,7 +33,7 @@ class CategoryController extends Controller
         $category->category_name = $request->category_name;
         $category->save();
         $notification = array(
-            'messege' => 'Category Added Successfully',
+            'messege' => 'Thêm dnah mục thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -43,7 +43,7 @@ class CategoryController extends Controller
     {
         DB::table('categories')->where('id', $id)->delete();
         $notification = array(
-            'messege' => 'Category Deleted Successfully',
+            'messege' => 'Xóa danh mục thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -65,13 +65,13 @@ class CategoryController extends Controller
         $update = DB::table('categories')->where('id', $id)->update($data);
         if ($update) {
             $notification = array(
-                'messege' => 'Category Updated Successfully',
+                'messege' => 'Cập nhật danh mục thành công',
                 'alert-type' => 'success'
             );
             return Redirect()->route('categories')->with($notification);
         } else {
             $notification = array(
-                'messege' => 'Nothing To Update',
+                'messege' => 'Không có gì để cập nhật!',
                 'alert-type' => 'error'
             );
             return Redirect()->route('categories')->with($notification);

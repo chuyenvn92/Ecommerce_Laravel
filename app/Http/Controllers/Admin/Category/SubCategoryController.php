@@ -33,7 +33,7 @@ class SubCategoryController extends Controller
         $data['subcategory_name'] = $request->subcategory_name;
         DB::table('subcategories')->insert($data);
         $notification = array(
-            'messege' => 'Sub Category Inserted Successfully',
+            'messege' => 'Thêm Loại sản phẩm thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -43,7 +43,7 @@ class SubCategoryController extends Controller
     {
         DB::table('subcategories')->where('id', $id)->delete();
         $notification = array(
-            'messege' => 'Sub Category Deleted Successfully',
+            'messege' => 'Xóa loại sản phẩm thành công',
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
@@ -63,7 +63,7 @@ class SubCategoryController extends Controller
         $data['subcategory_name'] = $request->subcategory_name;
         DB::table('subcategories')->where('id', $id)->update($data);
         $notification = array(
-            'messege' => 'Sub Category Updated Successfully',
+            'messege' => 'Cập nhật loại sản phẩm thành công',
             'alert-type' => 'success'
         );
         return Redirect()->route('sub.categories')->with($notification);

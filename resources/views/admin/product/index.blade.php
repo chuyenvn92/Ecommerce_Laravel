@@ -6,11 +6,11 @@
 <div class="sl-mainpanel">
  <div class="sl-pagebody">
   <div class="sl-page-title">
-   <h5>Product List</h5>
+   <h5>Danh sách sản phẩm</h5>
   </div><!-- sl-page-title -->
 
   <div class="card pd-20 pd-sm-40">
-   <h6 class="card-body-title">Product List
+   <h6 class="card-body-title">Danh sách sản phẩm
     <a href="{{ route('add.product')}}" class="btn btn-sm btn-warning" style="float: right;">Add New</a>
    </h6>
 
@@ -18,14 +18,14 @@
     <table id="datatable1" class="table display responsive nowrap">
      <thead>
       <tr>
-       <th class="wd-15p">Product Code</th>
-       <th class="wd-15p">Product Name</th>
-       <th class="wd-15p">Image</th>
-       <th class="wd-15p">Category</th>
-       <th class="wd-15p">Brand</th>
-       <th class="wd-15p">Quantity</th>
-       <th class="wd-15p">Status</th>
-       <th class="wd-20p">Action</th>
+       <th class="wd-15p">Mã sản phẩm</th>
+       <th class="wd-15p">Tên sản phẩm</th>
+       <th class="wd-15p">Hình ảnh</th>
+       <th class="wd-15p">Danh mục</th>
+       <th class="wd-15p">Thương hiệu</th>
+       <th class="wd-15p">Số lượng</th>
+       <th class="wd-15p">Tình trạng</th>
+       <th class="wd-20p">Thao tác</th>
       </tr>
      </thead>
      <tbody>
@@ -39,9 +39,9 @@
        <td>{{ $row->product_quantity }}</td>
        <td>
         @if($row->status == 1)
-        <span class="badge badge-success">Active</span>
+        <span class="badge badge-success">Kích hoạt</span>
         @else
-        <span class="badge badge-danger">Inactive</span>
+        <span class="badge badge-danger">Ngừng bán</span>
         @endif
        </td>
        <td>

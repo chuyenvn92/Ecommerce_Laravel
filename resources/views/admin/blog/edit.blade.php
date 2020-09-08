@@ -10,17 +10,12 @@ $blogcategory = DB::table('post_category')->get();
 
 <!-- ########## START: MAIN PANEL ########## -->
 <div class="sl-mainpanel">
-  <nav class="breadcrumb sl-breadcrumb">
-    <a class="breadcrumb-item" href="index.html">Starlight</a>
-    <span class="breadcrumb-item active">Blog Section</span>
-  </nav>
-
   <div class="sl-pagebody">
     <div class="card pd-20 pd-sm-40">
-      <h6 class="card-body-title">Post Update
-        <a href="{{ route('all.blogpost') }}" class="btn btn-success btn-sm pull-right">All Post</a>
+      <h6 class="card-body-title">Cập nhật bài đăng
+        <a href="{{ route('all.blogpost') }}" class="btn btn-success btn-sm pull-right">Tất cả bài đăng</a>
       </h6>
-      <p class="mg-b-20 mg-sm-b-30">Post Update Form</p>
+      <p class="mg-b-20 mg-sm-b-30">Cập nhật bài đăng</p>
 
       <form method="POST" action="{{ url('update/post/'.$post->id) }}" enctype="multipart/form-data">
         @csrf
@@ -28,21 +23,21 @@ $blogcategory = DB::table('post_category')->get();
           <div class="row mg-b-25">
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Post Title(English)<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Tiêu đề (English)<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="post_title_en" value="{{ $post->post_title_en }}">
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Post Title (VietNam)<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Tiêu đề (VietNam)<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="post_title_vn" value="{{ $post->post_title_vn }}">
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
-                <label class="form-control-label">Blog Category<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Chủ đề <span class="tx-danger"> *</span></label>
                 <select class="form-control select2" data-placeholder="Choose country" name="category_id">
-                  <option label="Choose Category"></option>
+                  <option label="Chọn chủ đề"></option>
                   @foreach($blogcategory as $row)
                   <option value="{{ $row->id }}" <?php if ($row->id == $post->category_id) {
                                                     echo "selected";
@@ -53,7 +48,7 @@ $blogcategory = DB::table('post_category')->get();
             </div><!-- col-4 -->
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Product Details (English)<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Chi tiết (English)<span class="tx-danger"> *</span></label>
                 <textarea class="form-control" id="summernote" name="details_en">
          {!! $post->details_en !!}
         </textarea>
@@ -61,7 +56,7 @@ $blogcategory = DB::table('post_category')->get();
             </div>
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Product Details (VietNam)<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Chi tiết (VietNam)<span class="tx-danger"> *</span></label>
                 <textarea class="form-control" id="summernote1" name="details_vn">
          {!! $post->details_vn !!}
         </textarea>
@@ -69,7 +64,7 @@ $blogcategory = DB::table('post_category')->get();
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Post Image<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Ảnh<span class="tx-danger"> *</span></label>
                 <label class="custom-file">
                   <input type="file" id="file" class="custom-file-input" name="post_image" onchange="readURL(this);">
                   <span class="custom-file-control"></span>
@@ -79,7 +74,7 @@ $blogcategory = DB::table('post_category')->get();
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Old Post Image<span class="tx-danger">*</span></label>
+                <label class="form-control-label">Ảnh cũ<span class="tx-danger"> *</span></label>
                 <label class="custom-file">
                   <img src="{{ URL::to($post->post_image) }}" style="height:80px; width:120px;">
                   <input type="hidden" name="old_image" value="{{ $post->post_image}}">
@@ -90,7 +85,7 @@ $blogcategory = DB::table('post_category')->get();
           <hr>
         </div>
         <div class="form-layout-footer">
-          <button class="btn btn-info mg-r-5" type="submit">Submit Form</button>
+          <button class="btn btn-info mg-r-5" type="submit">Cập nhật</button>
         </div><!-- form-layout-footer -->
     </div><!-- form-layout -->
     </form>
