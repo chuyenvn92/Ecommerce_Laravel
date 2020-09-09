@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Cart;
 use Response;
+use Auth;
 
 class CartController extends Controller
 {
@@ -132,6 +133,19 @@ class CartController extends Controller
                 'alert-type' => 'success'
             );
             return Redirect()->back()->with($notification);
+        }
+    }
+    public function checkout()
+    {
+        if (Auth::check()) {
+            $cart = Cart::content();
+            return view('pages.checkout', compact('cart'));
+        } else {
+            $notification = array(
+                'messege' => 'Bạn hãy đăng nhập trước nhé!',
+                'alert-type' => 'error'
+            );
+            return Redirect()->route('login')->with($notification);
         }
     }
 }

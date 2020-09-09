@@ -68,7 +68,7 @@
                                              </a>
                                              <ul>
                                                  <li><a href="#">Sản phẩm yêu thích</a></li>
-                                                 <li><a href="#">Thanh toán đơn hàng</a></li>
+                                                 <li><a href="{{ route('user.checkout') }}">Thanh toán đơn hàng</a></li>
                                                  <li><a href="#">Khác</a></li>
                                              </ul>
                                          </li>

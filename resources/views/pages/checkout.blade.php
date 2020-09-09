@@ -9,7 +9,7 @@
   <div class="row">
    <div class="col-lg-12">
     <div class="cart_container">
-     <div class="cart_title">Giỏ hàng của bạn</div>
+     <div class="cart_title">Thanh toán giỏ hàng</div>
      <div class="cart_items">
       <ul class="cart_list">
        @foreach($cart as $row)
@@ -63,23 +63,31 @@
        @endforeach
       </ul>
      </div>
-
-     <!-- Order Total -->
-     <div class="order_total">
-      <div class="order_total_content text-md-right">
-       <div class="order_total_title">Tổng đơn hàng:</div>
-       <div class="order_total_amount">{{ Cart::total() }}đ</div>
-      </div>
+     <div class="order_total_content" style="padding: 15px;">
+      <h5 style="margin-left: 20px;">Sử dụng mã giảm giá</h5>
+      <form>
+       <div class="form-group col-lg-4">
+        <input type="text" name="" class="form-control" required="" placeholder="Nhập mã giảm giá">
+       </div>
+       <button type="submit" class="btn btn-danger ml-2">Dùng</button>
+      </form>
      </div>
-
-     <div class="cart_buttons">
-      <button type="button" class="button cart_button_clear">Hủy đơn</button>
-      <a href="{{ route('user.checkout') }}" class="button cart_button_checkout">Thanh toán</a>
-     </div>
+     <ul class="list-group col-lg-4" style="float: right;">
+      <li class="list-group-item">Tổng hàng: <span style="float: right;">525</span></li>
+      <li class="list-group-item">Khuyến mại: <span style="float: right;">525</span></li>
+      <li class="list-group-item">Phí ship: <span style="float: right;">525</span></li>
+      <li class="list-group-item">VAT: <span style="float: right;">525</span></li>
+      <li class="list-group-item">Tổng tiền: <span style="float: right;">525</span></li>
+     </ul>
     </div>
    </div>
   </div>
+  <div class="cart_buttons">
+   <button type="button" class="button cart_button_clear">Hủy đơn</button>
+   <a href="{{ route('user.checkout') }}" class="button cart_button_checkout">Thanh toán</a>
+  </div>
  </div>
+</div>
 </div>
 <script src="{{ asset('public/frontend/js/cart_custom.js') }}"></script>
 @endsection
