@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+$setting = DB::table('settings')->first();
+$charge = $setting->shiping_charge;
+$vat = $setting->vat;
+@endphp
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/cart_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/cart_responsive.css') }}">
 <!-- Cart  -->
@@ -64,20 +69,36 @@
       </ul>
      </div>
      <div class="order_total_content" style="padding: 15px;">
+      @if(Session::has('coupon'))
+
+      @else
       <h5 style="margin-left: 20px;">Sử dụng mã giảm giá</h5>
-      <form>
+      <form method="POST" action=" {{ route('apply.coupon') }}">
+       @csrf
        <div class="form-group col-lg-4">
-        <input type="text" name="" class="form-control" required="" placeholder="Nhập mã giảm giá">
+        <input type="text" name="coupon" class="form-control" required="" placeholder="Nhập mã giảm giá">
        </div>
        <button type="submit" class="btn btn-danger ml-2">Dùng</button>
       </form>
+      @endif
      </div>
      <ul class="list-group col-lg-4" style="float: right;">
-      <li class="list-group-item">Tổng hàng: <span style="float: right;">525</span></li>
-      <li class="list-group-item">Khuyến mại: <span style="float: right;">525</span></li>
-      <li class="list-group-item">Phí ship: <span style="float: right;">525</span></li>
-      <li class="list-group-item">VAT: <span style="float: right;">525</span></li>
-      <li class="list-group-item">Tổng tiền: <span style="float: right;">525</span></li>
+      @if (Session::has('coupon'))
+      <li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ Session::get('coupon')['balance'] }}đ</span></li>
+      <li class="list-group-item">Mã giảm giá: ({{ Session::get('coupon')['name'] }})
+       <a href="{{ route('coupon.remove') }}" class="bnt btn-danger btn-sm">x</a>
+       <span style="float: right;">{{ Session::get('coupon')['discount'] }}đ</span>
+      </li>
+      @else
+      <li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ Cart::Subtotal() }}</span></li>
+      @endif
+      <li class="list-group-item">Phí ship: <span style="float: right;">{{ $charge }}đ</span></li>
+      <li class="list-group-item">VAT: <span style="float: right;">{{ $vat }}đ</span></li>
+      @if (Session::has('coupon'))
+      <li class="list-group-item">Tổng tiền: <span style="float: right;">{{ Session::get('coupon')['balance']+ $charge + $vat }}đ</span></li>
+      @else
+      <li class="list-group-item">Tổng tiền: <span style="float: right;">{{ Cart::Subtotal()+ $charge + $vat }}đ</span></li>
+      @endif
      </ul>
     </div>
    </div>

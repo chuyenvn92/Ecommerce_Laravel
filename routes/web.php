@@ -108,6 +108,8 @@ Route::post('update/cart/item/', 'CartController@updateCart')->name('update.cart
 // Checkout Cart
 Route::get('user/checkout/', 'CartController@checkout')->name('user.checkout');
 Route::get('user/wishlist/', 'CartController@wishlist')->name('user.wishlist');
+Route::post('user/apply/coupon', 'CartController@coupon')->name('apply.coupon');
+Route::get('coupon/remove', 'CartController@removeCoupon')->name('coupon.remove');
 
 Route::get('/cart/product/view/{id}', 'CartController@viewProduct');
 Route::post('insert/into/cart/', 'CartController@insertCart')->name('insert.into.cart');

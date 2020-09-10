@@ -7,6 +7,7 @@ use DB;
 use Cart;
 use Response;
 use Auth;
+use Session;
 
 class CartController extends Controller
 {
@@ -155,5 +156,39 @@ class CartController extends Controller
         $product = DB::table('wishlists')->join('products', 'wishlists.product_id', 'products.id')
             ->select('products.*', 'wishlists.user_id')->where('wishlists.user_id', $userid)->get();
         return view('pages.wishlist', compact('product'));
+    }
+
+    public function coupon(Request $request)
+    {
+        $coupon = $request->coupon;
+        $check = DB::table('coupons')->where('coupon', $coupon)->first();
+        if ($check) {
+            Session::put('coupon', [
+                'name' => $check->coupon,
+                'discount' => $check->discount,
+                'balance' => Cart::Subtotal() - $check->discount
+            ]);
+            $notification = array(
+                'messege' => 'Sử dụng mã giảm giá thành công',
+                'alert-type' => 'success'
+            );
+            return Redirect()->back()->with($notification);
+        } else {
+            $notification = array(
+                'messege' => 'Mã giảm giá không đúng!!!',
+                'alert-type' => 'error'
+            );
+            return Redirect()->back()->with($notification);
+        }
+    }
+
+    public function removeCoupon()
+    {
+        Session::forget('coupon');
+        $notification = array(
+            'messege' => 'Xóa mã giảm giá thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 }
