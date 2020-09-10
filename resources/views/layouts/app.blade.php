@@ -67,7 +67,7 @@
                                                  <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Thông tin cá nhân<i class="fas fa-chevron-down"></i>
                                              </a>
                                              <ul>
-                                                 <li><a href="#">Sản phẩm yêu thích</a></li>
+                                                 <li><a href="{{ route('user.wishlist') }}">Sản phẩm yêu thích</a></li>
                                                  <li><a href="{{ route('user.checkout') }}">Thanh toán đơn hàng</a></li>
                                                  <li><a href="#">Khác</a></li>
                                              </ul>
@@ -135,7 +135,7 @@
                                      @endphp
                                      <div class="wishlist_icon"><img src="{{ asset('public/frontend/images/heart.png')}}" alt=""></div>
                                      <div class="wishlist_content">
-                                         <div class="wishlist_text"><a href="#">Yêu thích</a></div>
+                                         <div class="wishlist_text"><a href="{{ route('user.wishlist') }}">Yêu thích</a></div>
                                          <div class="wishlist_count">{{ count($wishlist) }}</div>
                                      </div>
                                  </div>
