@@ -45,13 +45,15 @@
                              <div class="top_bar_content ml-auto">
                                  <div class="top_bar_menu">
                                      <ul class="standard_dropdown top_bar_dropdown">
+                                         @php
+                                         $language = Session()->get('lang');
+                                         @endphp
                                          <li>
-                                             <a href="#">English<i class="fas fa-chevron-down"></i></a>
-                                             <ul>
-                                                 <li><a href="#">Italian</a></li>
-                                                 <li><a href="#">Spanish</a></li>
-                                                 <li><a href="#">Japanese</a></li>
-                                             </ul>
+                                             @if( Session()->get('lang') == 'vietnam' )
+                                             <a href="{{ route('language.english') }}">English<i class="fas fa-chevron-down"></i></a>
+                                             @else
+                                             <a href="{{ route('language.vietnam') }}">Tiếng Việt<i class="fas fa-chevron-down"></i></a>
+                                             @endif
                                          </li>
                                      </ul>
                                  </div>

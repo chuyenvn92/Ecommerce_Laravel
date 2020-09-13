@@ -20,7 +20,7 @@
             <tr>
               <th class="wd-15p">STT</th>
               <th class="wd-15p">Mã giảm giá</th>
-              <th class="wd-15p">Phần trăm (%)</th>
+              <th class="wd-15p">Số tiền</th>
               <th class="wd-20p">Hành động</th>
             </tr>
           </thead>
@@ -29,7 +29,7 @@
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>{{ $row->coupon }}</td>
-              <td>{{ $row->discount }}%</td>
+              <td>{{ $row->discount }}</td>
               <td>
                 <a href="{{ URL::to('edit/coupon/'.$row->id) }}" class="btn btn-sm btn-info">Sửa</a>
                 <a href="{{ URL::to('delete/coupon/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Xóa</a>
@@ -73,7 +73,7 @@
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mã giảm giá" name="coupon">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Phần trăm (%)</label>
+              <label for="exampleInputEmail1">Số tiền</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="%" name="discount">
             </div>
             <!-- modal-body -->

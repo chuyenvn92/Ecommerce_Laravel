@@ -116,3 +116,9 @@ Route::post('insert/into/cart/', 'CartController@insertCart')->name('insert.into
 
 Route::get('/product/details/{id}/{product_name}', 'ProductController@ProductView');
 Route::post('/cart/product/add/{id}', 'ProductController@AddCart');
+
+// Blog Post Route
+Route::get('blog/post/', 'BlogController@blog')->name('blog.post');
+
+Route::get('language/english', 'BlogController@english')->name('language.english');
+Route::get('language/vietnam', 'BlogController@vietnam')->name('language.vietnam');

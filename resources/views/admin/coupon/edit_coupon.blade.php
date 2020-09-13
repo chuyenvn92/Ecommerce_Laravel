@@ -30,7 +30,7 @@
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $coupon->coupon }}" name="coupon">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Phần trăm (%)</label>
+              <label for="exampleInputEmail1">Số tiền</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $coupon->discount }}" name="discount">
             </div>
             <!-- modal-body -->
