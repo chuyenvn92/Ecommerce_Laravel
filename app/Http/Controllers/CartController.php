@@ -191,4 +191,9 @@ class CartController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+    public function PaymentPage()
+    {
+        $cart = Cart::Content();
+        return view('pages.payment', compact('cart'));
+    }
 }

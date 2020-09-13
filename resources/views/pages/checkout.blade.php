@@ -105,7 +105,7 @@ $vat = $setting->vat;
   </div>
   <div class="cart_buttons">
    <button type="button" class="button cart_button_clear">Hủy đơn</button>
-   <a href="{{ route('user.checkout') }}" class="button cart_button_checkout">Thanh toán</a>
+   <a href="{{ route('payment.step') }}" class="button cart_button_checkout">Thanh toán</a>
   </div>
  </div>
 </div>

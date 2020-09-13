@@ -124,3 +124,7 @@ Route::get('language/english', 'BlogController@english')->name('language.english
 Route::get('language/vietnam', 'BlogController@vietnam')->name('language.vietnam');
 
 Route::get('blog/single/{id}', 'BlogController@blogSingle');
+
+// Payment Step
+Route::get('payment/page', 'CartController@PaymentPage')->name('payment.step');
+Route::post('user/payment/process/', 'PaymentController@Payment')->name('payment.process');
