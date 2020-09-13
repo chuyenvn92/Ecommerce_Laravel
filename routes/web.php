@@ -122,3 +122,5 @@ Route::get('blog/post/', 'BlogController@blog')->name('blog.post');
 
 Route::get('language/english', 'BlogController@english')->name('language.english');
 Route::get('language/vietnam', 'BlogController@vietnam')->name('language.vietnam');
+
+Route::get('blog/single/{id}', 'BlogController@blogSingle');

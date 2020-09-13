@@ -30,4 +30,10 @@ class BlogController extends Controller
         Session::put('lang', 'vietnam');
         return redirect()->back();
     }
+
+    public function blogSingle($id)
+    {
+        $posts = DB::table('posts')->where('id', $id)->get();
+        return view('pages.blog_single', compact('posts'));
+    }
 }

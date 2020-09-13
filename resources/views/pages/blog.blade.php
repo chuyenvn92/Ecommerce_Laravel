@@ -22,19 +22,19 @@
        {{ $row->post_title_en}}
        @endif
       </div>
-      @if(Session()->get('lang') == 'vietnam')
-      <div class="blog_button"><a href="blog_single.html">Xem bài viết</a></div>
-      @else
-      <div class="blog_button"><a href="blog_single.html">Continue Reading</a></div>
-      @endif
-
+      <div class="blog_button"><a href="{{ url('blog/single/'.$row->id) }}">
+        @if(Session()->get('lang') == 'vietnam')
+        Xem bài viết
+        @else
+        Continue Reading
+        @endif
+       </a></div>
+      @endforeach
      </div>
-     @endforeach
     </div>
-   </div>
 
+   </div>
   </div>
  </div>
-</div>
-<script src="{{ asset('public/frontend/js/blog_custom.js') }}"></script>
-@endsection
+ <script src="{{ asset('public/frontend/js/blog_custom.js') }}"></script>
+ @endsection
