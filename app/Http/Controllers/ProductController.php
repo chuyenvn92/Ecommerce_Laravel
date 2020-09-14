@@ -60,4 +60,10 @@ class ProductController extends Controller
             return Redirect()->back()->with($notification);
         }
     }
+
+    public function productsView($id)
+    {
+        $products = DB::table('products')->where('subcategory_id', $id)->paginate(5);
+        return view('pages.all_products', compact('products'));
+    }
 }

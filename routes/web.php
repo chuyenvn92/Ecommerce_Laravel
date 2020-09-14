@@ -128,3 +128,6 @@ Route::get('blog/single/{id}', 'BlogController@blogSingle');
 // Payment Step
 Route::get('payment/page', 'CartController@PaymentPage')->name('payment.step');
 Route::post('user/payment/process/', 'PaymentController@Payment')->name('payment.process');
+
+// Product Details Page
+Route::get('products/{id}', 'ProductController@productsView');

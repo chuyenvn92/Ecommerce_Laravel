@@ -27,7 +27,7 @@ $category = DB::table('categories')->get();
          @endphp
          @foreach($subcategory as $row)
          <li class="hassubs">
-          <a href="#">{{ $row->subcategory_name}}<i class="fas fa-chevron-right"></i></a>
+          <a href="{{ url('products/'.$row->id) }}">{{ $row->subcategory_name}}</a>
          </li>
          @endforeach
         </ul>
