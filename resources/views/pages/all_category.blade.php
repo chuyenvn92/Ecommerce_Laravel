@@ -25,8 +25,12 @@
      <div class="sidebar_section">
       <div class="sidebar_title">Danh mục sản phẩm</div>
       <ul class="sidebar_categories">
-       @foreach($categories as $row)
-       <li><a href="#">{{ $row->category_name }}</a></li>
+       @php
+       $category = DB::table('categories')->get();
+       @endphp
+
+       @foreach($category as $row)
+       <li><a href="{{ url('allcategory/'.$row->id) }}">{{ $row->category_name }}</a></li>
        @endforeach
       </ul>
      </div>
@@ -42,11 +46,11 @@
      <div class="sidebar_section">
       <div class="sidebar_subtitle brands_subtitle">Thương hiệu</div>
       <ul class="brands_list">
-       @foreach($brands as $row)
        @php
-       $brand = DB::table('brands')->where('id', $row->brand_id)->first();
+       $brand = DB::table('brands')->get();
        @endphp
-       <li class="brand"><a href="#">{{ $brand->brand_name }}</a></li>
+       @foreach($brand as $row)
+       <li class="brand"><a href="#">{{ $row->brand_name }}</a></li>
        @endforeach
       </ul>
      </div>
@@ -79,7 +83,7 @@
      <div class="product_grid row">
       <div class="product_grid_border"></div>
 
-      @foreach($products as $row)
+      @foreach($category_all as $row)
       <!-- Product Item -->
       <div class="product_item is_new">
        <div class="product_border"></div>
@@ -117,7 +121,7 @@
      <div class="shop_page_nav d-flex flex-row">
 
 
-      {{ $products->links() }}
+      {{ $category_all->links() }}
 
 
      </div>

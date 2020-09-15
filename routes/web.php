@@ -131,3 +131,4 @@ Route::post('user/payment/process/', 'PaymentController@Payment')->name('payment
 
 // Product Details Page
 Route::get('products/{id}', 'ProductController@productsView');
+Route::get('allcategory/{id}', 'ProductController@categoryView');

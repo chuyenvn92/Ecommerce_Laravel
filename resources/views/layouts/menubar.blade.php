@@ -20,7 +20,7 @@ $category = DB::table('categories')->get();
       <ul class="cat_menu">
        @foreach($category as $cat)
        <li class="hassubs">
-        <a href="#">{{ $cat->category_name }}<i class="fas fa-chevron-right"></i></a>
+        <a href="{{ url('allcategory/'.$cat->id) }}">{{ $cat->category_name }}<i class="fas fa-chevron-right"></i></a>
         <ul>
          @php
          $subcategory = DB::table('subcategories')->where('category_id',$cat->id)->get();
