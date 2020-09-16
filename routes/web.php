@@ -3,7 +3,7 @@
 
 
 Route::get('/', function () {
-        return view('pages.index');
+    return view('pages.index');
 });
 //auth & user
 Auth::routes(['verify' => true]);
@@ -128,6 +128,8 @@ Route::get('blog/single/{id}', 'BlogController@blogSingle');
 // Payment Step
 Route::get('payment/page', 'CartController@PaymentPage')->name('payment.step');
 Route::post('user/payment/process/', 'PaymentController@Payment')->name('payment.process');
+
+Route::post('user/stripe/charge/', 'PaymentController@stripeCharge')->name('stripe.charge');
 
 // Product Details Page
 Route::get('products/{id}', 'ProductController@productsView');

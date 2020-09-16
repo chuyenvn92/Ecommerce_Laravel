@@ -7,124 +7,124 @@
 <!-- Home -->
 
 <div class="home">
- <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
- <div class="home_overlay"></div>
- <div class="home_content d-flex flex-column align-items-center justify-content-center">
-  <h2 class="home_title">Xin chào</h2>
- </div>
+	<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
+	<div class="home_overlay"></div>
+	<div class="home_content d-flex flex-column align-items-center justify-content-center">
+		<h2 class="home_title">Xin chào</h2>
+	</div>
 </div>
 
 <!-- Shop -->
 
 <div class="shop">
- <div class="container">
-  <div class="row">
-   <div class="col-lg-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
 
-    <!-- Shop Sidebar -->
-    <div class="shop_sidebar">
-     <div class="sidebar_section">
-      <div class="sidebar_title">Danh mục sản phẩm</div>
-      <ul class="sidebar_categories">
-       @foreach($categories as $row)
-       <li><a href="#">{{ $row->category_name }}</a></li>
-       @endforeach
-      </ul>
-     </div>
-     <div class="sidebar_section filter_by_section">
-      <div class="sidebar_title">Filter By</div>
-      <div class="sidebar_subtitle">Price</div>
-      <div class="filter_price">
-       <div id="slider-range" class="slider_range"></div>
-       <p>Range: </p>
-       <p><input type="text" id="amount" class="amount" readonly style="border:0; font-weight:bold;"></p>
-      </div>
-     </div>
-     <div class="sidebar_section">
-      <div class="sidebar_subtitle brands_subtitle">Thương hiệu</div>
-      <ul class="brands_list">
-       @foreach($brands as $row)
-       @php
-       $brand = DB::table('brands')->where('id', $row->brand_id)->first();
-       @endphp
-       <li class="brand"><a href="#">{{ $brand->brand_name }}</a></li>
-       @endforeach
-      </ul>
-     </div>
-    </div>
+				<!-- Shop Sidebar -->
+				<div class="shop_sidebar">
+					<div class="sidebar_section">
+						<div class="sidebar_title">Danh mục sản phẩm</div>
+						<ul class="sidebar_categories">
+							@foreach($categories as $row)
+							<li><a href="#">{{ $row->category_name }}</a></li>
+							@endforeach
+						</ul>
+					</div>
+					<div class="sidebar_section filter_by_section">
+						<div class="sidebar_title">Filter By</div>
+						<div class="sidebar_subtitle">Price</div>
+						<div class="filter_price">
+							<div id="slider-range" class="slider_range"></div>
+							<p>Range: </p>
+							<p><input type="text" id="amount" class="amount" readonly style="border:0; font-weight:bold;"></p>
+						</div>
+					</div>
+					<div class="sidebar_section">
+						<div class="sidebar_subtitle brands_subtitle">Thương hiệu</div>
+						<ul class="brands_list">
+							@foreach($brands as $row)
+							@php
+							$brand = DB::table('brands')->where('id', $row->brand_id)->first();
+							@endphp
+							<li class="brand"><a href="#">{{ $brand->brand_name }}</a></li>
+							@endforeach
+						</ul>
+					</div>
+				</div>
 
-   </div>
+			</div>
 
-   <div class="col-lg-9">
+			<div class="col-lg-9">
 
-    <!-- Shop Content -->
+				<!-- Shop Content -->
 
-    <div class="shop_content">
-     <div class="shop_bar clearfix">
-      <div class="shop_product_count"><span>186</span> products found</div>
-      <div class="shop_sorting">
-       <span>Sort by:</span>
-       <ul>
-        <li>
-         <span class="sorting_text">highest rated<i class="fas fa-chevron-down"></span></i>
-         <ul>
-          <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>highest rated</li>
-          <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>name</li>
-          <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>price</li>
-         </ul>
-        </li>
-       </ul>
-      </div>
-     </div>
+				<div class="shop_content">
+					<div class="shop_bar clearfix">
+						<div class="shop_product_count"><span>186</span> products found</div>
+						<div class="shop_sorting">
+							<span>Sort by:</span>
+							<ul>
+								<li>
+									<span class="sorting_text">highest rated<i class="fas fa-chevron-down"></span></i>
+									<ul>
+										<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>highest rated</li>
+										<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>name</li>
+										<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>price</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-     <div class="product_grid row">
-      <div class="product_grid_border"></div>
+					<div class="product_grid row">
+						<div class="product_grid_border"></div>
 
-      @foreach($products as $row)
-      <!-- Product Item -->
-      <div class="product_item is_new">
-       <div class="product_border"></div>
-       <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset($row->image_one) }}" alt="" style="height: 100px; width:100px;"></div>
-       <div class="product_content">
-        @if($row->discount_price == null)
-        <div class="product_price discount">{{ $row->selling_price }}đ</div>
-        @else
-        <div class="product_price discount">{{ $row->discount_price }}đ<span>{{ $row->selling_price }}đ</span></div>
-        @endif
-        <div class="product_name">
-         <div><a href="{{ url('product/details/'.$row->id.'/'.$row->product_name) }}" tabindex="0">{{ $row->product_name }}</a></div>
-        </div>
-       </div>
-       <div class="product_fav"><i class="fas fa-heart"></i></div>
-       <ul class="product_marks">
-        @if($row->discount_price == null)
-        <li class="product_mark product_new" style="background: blue;">New</li>
-        @else
-        <li class="product_mark product_new" style="background: red;">
-         @php
-         $amount = $row->selling_price - $row->discount_price;
-         $discount = $amount/$row->selling_price*100;
-         @endphp
-         {{ intval($discount) }}%
-        </li>
-        @endif
-       </ul>
-      </div>
-      @endforeach
+						@foreach($products as $row)
+						<!-- Product Item -->
+						<div class="product_item is_new">
+							<div class="product_border"></div>
+							<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset($row->image_one) }}" alt="" style="height: 100px; width:100px;"></div>
+							<div class="product_content">
+								@if($row->discount_price == null)
+								<div class="product_price discount">{{ $row->selling_price }}đ</div>
+								@else
+								<div class="product_price discount">{{ $row->discount_price }}đ<span>{{ $row->selling_price }}đ</span></div>
+								@endif
+								<div class="product_name">
+									<div><a href="{{ url('product/details/'.$row->id.'/'.$row->product_name) }}" tabindex="0">{{ $row->product_name }}</a></div>
+								</div>
+							</div>
+							<div class="product_fav"><i class="fas fa-heart"></i></div>
+							<ul class="product_marks">
+								@if($row->discount_price == null)
+								<li class="product_mark product_new" style="background: blue;">New</li>
+								@else
+								<li class="product_mark product_new" style="background: red;">
+									@php
+									$amount = $row->selling_price - $row->discount_price;
+									$discount = $amount/$row->selling_price*100;
+									@endphp
+									{{ intval($discount) }}%
+								</li>
+								@endif
+							</ul>
+						</div>
+						@endforeach
 
-     </div>
-     <!-- Shop Page Navigation -->
+					</div>
+					<!-- Shop Page Navigation -->
 
-     <div class="shop_page_nav d-flex flex-row">
-
-
-      {{ $products->links() }}
+					<div class="shop_page_nav d-flex flex-row">
 
 
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
- <script src="{{ asset('public/frontend/js/shop_custom.js') }}"></script>
- @endsection
+						{{ $products->links() }}
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{{ asset('public/frontend/js/shop_custom.js') }}"></script>
+	@endsection

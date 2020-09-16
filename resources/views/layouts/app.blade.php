@@ -16,6 +16,8 @@
      <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/main_styles.css') }}">
      <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/responsive.css') }}">
      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+     <script src="https://js.stripe.com/v3/"></script>
+
      <!-- Sử dụng sweetalert2 -->
      <link rel="stylesheet" href="sweetalert2.min.css">
 
