@@ -24,26 +24,19 @@
               <th class="wd-15p">Danh mục</th>
               <th class="wd-15p">Thương hiệu</th>
               <th class="wd-15p">Số lượng</th>
-              <th class="wd-15p">Tình trạng</th>
               <th class="wd-20p">Thao tác</th>
+              <th class="wd-15p">Tình trạng</th>
             </tr>
           </thead>
           <tbody>
             @foreach($product as $row)
             <tr>
               <td>{{ $row->product_code }}</td>
-              <td>{{ $row->product_name }}</td>
+              <td>{{ str_limit($row->product_name, $limit = 20) }}</td>
               <td><img src="{{ URL::to($row->image_one) }}" height="50px;" width="50px;"></td>
               <td>{{ $row->category_name }}</td>
               <td>{{ $row->brand_name }}</td>
               <td>{{ $row->product_quantity }}</td>
-              <td>
-                @if($row->status == 1)
-                <span class="badge badge-success">Kích hoạt</span>
-                @else
-                <span class="badge badge-danger">Ngừng bán</span>
-                @endif
-              </td>
               <td>
                 <a href="{{ URL::to('edit/product/'.$row->id) }}" class="btn btn-sm btn-info" title="Edit"><i class="fa fa-edit"></i></a>
                 <a href="{{ URL::to('delete/product/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete" title="Delete"><i class="fa fa-trash"></i></a>
@@ -52,6 +45,13 @@
                 <a href="{{ URL::to('inactive/product/'.$row->id) }}" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
                 @else
                 <a href="{{ URL::to('active/product/'.$row->id) }}" class="btn btn-sm btn-primary" title="Active"><i class="fa fa-thumbs-up"></i></a>
+                @endif
+              </td>
+              <td>
+                @if($row->status == 1)
+                <span class="badge badge-success">Đang bán</span>
+                @else
+                <span class="badge badge-danger">Ngừng bán</span>
                 @endif
               </td>
             </tr>

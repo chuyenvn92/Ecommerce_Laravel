@@ -4,7 +4,7 @@
 @include('layouts.menubar')
 @php
 $setting = DB::table('settings')->first();
-$charge = $setting->shiping_charge;
+$charge = $setting->shipping_charge;
 $vat = $setting->vat;
 $cart = Cart::Content();
 @endphp

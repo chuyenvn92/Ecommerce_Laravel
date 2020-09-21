@@ -60,9 +60,15 @@
           </div>
           <div class="col-lg-4">
             <div class="form-group">
-              <label class="form-control-label">Giá khuyến mãi<span class="tx-danger"> *</span></label>
+              @if($product->discount_price == null)
+              <label class="form-control-label">Giá bán<span class="tx-danger"> *</span></label>
               <br>
               <strong>{{ $product->selling_price }}</strong>
+              @else
+              <label class="form-control-label">Giá khuyến mãi<span class="tx-danger"> *</span></label>
+              <br>
+              <strong>{{ $product->discount_price }}</strong>
+              @endif
             </div>
           </div>
           <div class="col-lg-12">

@@ -25,8 +25,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_1.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">Miễn phí giao hàng</div>
+                        <div class="char_subtitle">từ 200k</div>
                     </div>
                 </div>
             </div>
@@ -37,8 +37,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_2.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">Miễn phí giao hàng</div>
+                        <div class="char_subtitle">từ 200k</div>
                     </div>
                 </div>
             </div>
@@ -49,8 +49,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_3.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">Miễn phí giao hàng</div>
+                        <div class="char_subtitle">từ 200k</div>
                     </div>
                 </div>
             </div>
@@ -61,8 +61,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_4.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Free Delivery</div>
-                        <div class="char_subtitle">from $50</div>
+                        <div class="char_title">Miễn phí giao hàng</div>
+                        <div class="char_subtitle">từ 200k</div>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                     <div class="available">
                                         <div class="available_line d-flex flex-row justify-content-start">
                                             <div class="available_title">Số lượng còn: <span>{{ $hot->product_quantity}}</span></div>
-                                            <div class="sold_title ml-auto">Already sold: <span>28</span></div>
+                                            <!-- <div class="sold_title ml-auto">Already sold: <span>28</span></div> -->
                                         </div>
                                         <div class="available_bar"><span style="width:17%"></span></div>
                                     </div>
