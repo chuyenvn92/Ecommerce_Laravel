@@ -33,4 +33,5 @@ class OrderController extends Controller
 
         return view('admin.order.view_order', compact('order', 'shipping', 'details'));
     }
+    
 }
