@@ -36,7 +36,7 @@
        <td>{{ $row->date }}</td>
        <td><span class="badge badge-warning">Chờ xử lí</span></td>
        <td>
-        <a href="{{ URL::to('edit/coupon/'.$row->id) }}" class="btn btn-sm btn-info">Xem</a>
+        <a href="{{ URL::to('admin/view/order/'.$row->id) }}" class="btn btn-sm btn-info">Xem</a>
        </td>
       </tr>
       @endforeach
