@@ -34,7 +34,9 @@
        <td>{{ $row->shipping }}đ</td>
        <td>{{ $row->total }}đ</td>
        <td>{{ $row->date }}</td>
-       <td><span class="badge badge-warning">Chờ xử lí</span></td>
+       <td>
+        <span class="badge badge-warning">Chờ xử lí</span>
+       </td>
        <td>
         <a href="{{ URL::to('admin/view/order/'.$row->id) }}" class="btn btn-sm btn-info">Xem</a>
        </td>

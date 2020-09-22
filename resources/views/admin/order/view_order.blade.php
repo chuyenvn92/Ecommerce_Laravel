@@ -127,7 +127,7 @@
      </div><!-- table-wrapper -->
     </div>
    </div>
-   <a href="" class="btn btn-info">Chấp nhận đơn hàng</a>
-   <a href="" class="btn btn-danger mt-2">Hủy đơn hàng</a>
+   <a href="{{ url('admin/payment/accept/'.$order->id) }}" class="btn btn-info">Chấp nhận đơn hàng</a>
+   <a href="{{ url('admin/payment/cancel/'.$order->id) }}" class="btn btn-danger mt-2">Hủy đơn hàng</a>
  </div>
  @endsection

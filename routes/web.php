@@ -138,3 +138,6 @@ Route::get('allcategory/{id}', 'ProductController@categoryView');
 // Admin Order Route
 Route::get('admin/pending/order', 'Admin\OrderController@NewOrder')->name('admin.neworder');
 Route::get('admin/view/order/{id}', 'Admin\OrderController@ViewOrder');
+
+Route::get('admin/payment/accept/{id}', 'Admin\OrderController@PaymentAccept');
+Route::get('admin/payment/cancel/{id}', 'Admin\OrderController@PaymentCancel');

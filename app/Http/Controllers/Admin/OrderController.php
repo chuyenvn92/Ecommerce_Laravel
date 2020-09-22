@@ -33,5 +33,24 @@ class OrderController extends Controller
 
         return view('admin.order.view_order', compact('order', 'shipping', 'details'));
     }
-    
+
+    public function PaymentAccept($id)
+    {
+        DB::table('orders')->where('id', $id)->update(['status' => 1]);
+        $notification = array(
+            'messege' => 'Chấp nhận đơn hàng',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('admin.neworder')->with($notification);
+    }
+
+    public function PaymentCancel($id)
+    {
+        DB::table('orders')->where('id', $id)->update(['status' => 4]);
+        $notification = array(
+            'messege' => 'Hủy đơn hàng',
+            'alert-type' => 'warning'
+        );
+        return Redirect()->route('admin.neworder')->with($notification);
+    }
 }
