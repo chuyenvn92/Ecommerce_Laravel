@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+
+@php
+$order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')->limit(10)->get();
+@endphp
 <div class="contact_form">
   <div class="container">
     <div class="row">
@@ -7,31 +11,27 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Thanh toán</th>
+              <th scope="col">Mã giao dịch</th>
+              <th scope="col">Tổng</th>
+              <th scope="col">Ngày</th>
+              <th scope="col">Mã trạng thái</th>
+              <th scope="col">Thao tác</th>
             </tr>
           </thead>
           <tbody>
+            @foreach($order as $row)
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <th>{{ $row->payment_type }}</th>
+              <td>{{ $row->payment_id }}</td>
+              <td>{{ $row->total }} đ</td>
+              <td>{{ $row->date }}</td>
+              <td>{{ $row->status_code }}</td>
+              <td>
+                <a href="" class="btn btn-info">Xem</a>
+              </td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
