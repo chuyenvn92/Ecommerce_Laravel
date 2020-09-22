@@ -6,7 +6,7 @@
 <div class="sl-mainpanel">
  <div class="sl-pagebody">
   <div class="sl-page-title">
-   <h5>Đơn hàng chờ xử lý</h5>
+   <h5>Đơn hàng</h5>
   </div><!-- sl-page-title -->
 
   <div class="card pd-20 pd-sm-40">
@@ -35,7 +35,17 @@
        <td>{{ $row->total }}đ</td>
        <td>{{ $row->date }}</td>
        <td>
+        @if($row->status == 0)
         <span class="badge badge-warning">Chờ xử lí</span>
+        @elseif($row->status == 1)
+        <span class="badge badge-info">Đã xử lí</span>
+        @elseif($row->status == 2)
+        <span class="badge badge-warning">Đang vận chuyển</span>
+        @elseif($row->status == 3)
+        <span class="badge badge-success">Đã giao hàng</span>
+        @else
+        <span class="badge badge-danger">Đã hủy</span>
+        @endif
        </td>
        <td>
         <a href="{{ URL::to('admin/view/order/'.$row->id) }}" class="btn btn-sm btn-info">Xem</a>

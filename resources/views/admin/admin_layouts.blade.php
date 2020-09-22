@@ -111,7 +111,10 @@
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{ route('admin.neworder') }}" class="nav-link">Đơn hàng mới</a></li>
-        <li class="nav-item"><a href="" class="nav-link">Khác</a></li>
+        <li class="nav-item"><a href="{{ route('admin.accept.payment') }}" class="nav-link">Đơn hàng đã duyệt</a></li>
+        <li class="nav-item"><a href="{{ route('admin.cancel.order') }}" class="nav-link">Đơn hàng đã hủy</a></li>
+        <li class="nav-item"><a href="{{ route('admin.process.order') }}" class="nav-link">Đang vận chuyển</a></li>
+        <li class="nav-item"><a href="{{ route('admin.success.order') }}" class="nav-link">Giao thành công</a></li>
       </ul>
 
       <a href="#" class="sl-menu-link">

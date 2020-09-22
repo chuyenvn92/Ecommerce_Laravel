@@ -53,4 +53,44 @@ class OrderController extends Controller
         );
         return Redirect()->route('admin.neworder')->with($notification);
     }
+
+    public function AcceptPayment()
+    {
+        $order = DB::table('orders')->where('status', 1)->get();
+        return view('admin.order.pending', compact('order'));
+    }
+    public function CancelOrder()
+    {
+        $order = DB::table('orders')->where('status', 4)->get();
+        return view('admin.order.pending', compact('order'));
+    }
+    public function ProcessOrder()
+    {
+        $order = DB::table('orders')->where('status', 2)->get();
+        return view('admin.order.pending', compact('order'));
+    }
+    public function SuccessOrder()
+    {
+        $order = DB::table('orders')->where('status', 3)->get();
+        return view('admin.order.pending', compact('order'));
+    }
+
+    public function DeleveryProcess($id)
+    {
+        DB::table('orders')->where('id', $id)->update(['status' => 2]);
+        $notification = array(
+            'messege' => 'Chuyển cho bên giao hàng',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('admin.accept.payment')->with($notification);
+    }
+    public function DeleveryDone($id)
+    {
+        DB::table('orders')->where('id', $id)->update(['status' => 3]);
+        $notification = array(
+            'messege' => 'Giao hàng thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('admin.success.order')->with($notification);
+    }
 }
