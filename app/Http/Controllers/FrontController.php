@@ -22,4 +22,19 @@ class FrontendController extends Controller
     );
     return Redirect()->back()->with($notification);
   }
+
+  public function orderTracking(Request $request)
+  {
+    $code = $request->code;
+    $track = DB::table('orders')->where('status_code', $code)->first();
+    if ($track) {
+      return view('pages.tracking',compact('track'));
+     } else {
+      $notification = array(
+        'messege' => 'Mã không đúng',
+        'alert-type' => 'error'
+      );
+      return Redirect()->back()->with($notification);
+    }
+  }
 }
