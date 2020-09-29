@@ -43,6 +43,9 @@
                              </div>
 
                              <div class="top_bar_content ml-auto">
+                                 @guest
+
+                                 @else
                                  <div class="top_bar_menu">
                                      <ul class="standard_dropdown top_bar_dropdown">
                                          <li>
@@ -50,6 +53,7 @@
                                          </li>
                                      </ul>
                                  </div>
+                                 @endguest
                                  <div class="top_bar_menu">
                                      <ul class="standard_dropdown top_bar_dropdown">
                                          @php

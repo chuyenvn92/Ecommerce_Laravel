@@ -35,7 +35,7 @@
     <h6>Đơn hàng của bạn đang được giao cho bên vận chuyển</h6>
     @elseif($track->status == 2)
     <h6>Đơn hàng của bạn đang được vận chuyển</h6>
-    @elseif($track->status == 2)
+    @elseif($track->status == 3)
     <h6>Đơn hàng của bạn đã vận chuyển thành công</h6>
     @else
     <h6>Đơn hàng không được chấp nhận</h6>
@@ -45,10 +45,20 @@
     <div class="contact_form_title">
      <h4>Chi tiết đơn hàng</h4>
     </div>
+    <ul class="list-group col-lg-12">
+     <li class="list-group-item"><b>Thanh toán:</b> {{ $track->payment_type}}</li>
+     <li class="list-group-item"><b>Mã giao dịch:</b> {{ $track->payment_id}}</li>
+     <li class="list-group-item"><b>Mã thẻ:</b> {{ $track->blnc_transection}}</li>
+     <li class="list-group-item"><b>Tổng:</b> {{ $track->subtotal}}đ</li>
+     <li class="list-group-item"><b>Phí ship:</b> {{ $track->shipping}}đ</li>
+     <li class="list-group-item"><b>Tổng tiền:</b> {{ $track->total}}đ</li>
+     <li class="list-group-item"><b>Tháng:</b> {{ $track->month}}</li>
+     <li class="list-group-item"><b>Ngày:</b> {{ $track->date}}</li>
+     <li class="list-group-item"><b>Năm:</b> {{ $track->year}}</li>
+    </ul>
    </div>
   </div>
  </div>
 </div>
 </div>
-
 @endsection
