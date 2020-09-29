@@ -156,10 +156,57 @@
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
-          <span class="menu-item-label">Khác</span>
+          <span class="menu-item-label">Phân quyền</span>
           <i class="menu-item-arrow fa fa-angle-down"></i>
         </div><!-- menu-item -->
-      </a><!-- sl-menu-link -->
+      </a>
+      <ul class="sl-menu-sub nav flex-column">
+        <li class="nav-item"><a href="{{ route('create.admin') }}" class="nav-link">Tạo User</a></li>
+        <li class="nav-item"><a href="{{ route('admin.all.user') }}" class="nav-link">Tất cả User</a></li>
+      </ul>
+      <a href="#" class="sl-menu-link">
+        <div class="sl-menu-item">
+          <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+          <span class="menu-item-label">Đơn hàng trả lại</span>
+          <i class="menu-item-arrow fa fa-angle-down"></i>
+        </div><!-- menu-item -->
+      </a>
+      <ul class="sl-menu-sub nav flex-column">
+        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Yêu cầu trả lại</a></li>
+        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả yêu cầu</a></li>
+      </ul>
+      <a href="#" class="sl-menu-link">
+        <div class="sl-menu-item">
+          <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+          <span class="menu-item-label">Tin nhắn phản hồi</span>
+          <i class="menu-item-arrow fa fa-angle-down"></i>
+        </div><!-- menu-item -->
+      </a>
+      <ul class="sl-menu-sub nav flex-column">
+        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tin mới</a></li>
+        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả tin nhắn</a></li>
+      </ul>
+      <a href="#" class="sl-menu-link">
+        <div class="sl-menu-item">
+          <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+          <span class="menu-item-label">Bình luận sản phẩm</span>
+          <i class="menu-item-arrow fa fa-angle-down"></i>
+        </div><!-- menu-item -->
+      </a>
+      <ul class="sl-menu-sub nav flex-column">
+        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Bình luận mới</a></li>
+        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả bình luận</a></li>
+      </ul>
+      <a href="#" class="sl-menu-link">
+        <div class="sl-menu-item">
+          <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+          <span class="menu-item-label">Cài đặt chung</span>
+          <i class="menu-item-arrow fa fa-angle-down"></i>
+        </div><!-- menu-item -->
+      </a>
+      <ul class="sl-menu-sub nav flex-column">
+        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Cài đặt</a></li>
+      </ul>
     </div><!-- sl-sideleft-menu -->
 
     <br>

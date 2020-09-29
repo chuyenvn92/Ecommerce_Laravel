@@ -167,3 +167,8 @@ Route::get('admin/search/report', 'Admin\ReportController@SearchReport')->name('
 Route::post('admin/search/by/year', 'Admin\ReportController@SearchByYear')->name('search.by.year');
 Route::post('admin/search/by/month', 'Admin\ReportController@SearchByMonth')->name('search.by.month');
 Route::post('admin/search/by/date', 'Admin\ReportController@SearchByDate')->name('search.by.date');
+
+// Admin Role Route
+Route::get('admin/all/user', 'Admin\UserRoleController@UserRole')->name('admin.all.user');
+Route::get('admin/create/admin', 'Admin\UserRoleController@UserCreate')->name('create.admin');
+Route::post('admin/store/admin', 'Admin\UserRoleController@UserStore')->name('store.admin');
