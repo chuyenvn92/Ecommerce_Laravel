@@ -76,7 +76,7 @@
        </td>
        <td>
         <a href="{{ URL::to('edit/admin/'.$row->id) }}" class="btn btn-sm btn-info">Sửa</a>
-        <a href="{{ URL::to('delete/admin/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Xóa</a>
+        <a href="{{ URL::to('delete/admin/'.$row->id) }}" class="btn btn-sm btn-danger">Xóa</a>
        </td>
       </tr>
       @endforeach

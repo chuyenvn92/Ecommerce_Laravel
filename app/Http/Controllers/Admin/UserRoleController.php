@@ -49,4 +49,43 @@ class UserRoleController extends Controller
         );
         return Redirect()->back()->with($notification);
     }
+    public function UserDelete($id)
+    {
+        DB::table('admins')->where('id', $id)->delete();
+        $notification = array(
+            'messege' => 'Xóa nhân viên thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
+    }
+    public function UserEdit($id)
+    {
+        $user = DB::table('admins')->where('id', $id)->first();
+        return view('admin.role.edit_role', compact('user'));
+    }
+    public function UserUpdate(Request $request)
+    {
+        $id = $request->id;
+        $data = array();
+        $data['name'] = $request->name;
+        $data['phone'] = $request->phone;
+        $data['email'] = $request->email;
+        $data['category'] = $request->category;
+        $data['coupon'] = $request->coupon;
+        $data['product'] = $request->product;
+        $data['blog'] = $request->blog;
+        $data['order'] = $request->order;
+        $data['report'] = $request->report;
+        $data['role'] = $request->role;
+        $data['return'] = $request->return;
+        $data['contact'] = $request->contact;
+        $data['comment'] = $request->comment;
+        $data['setting'] = $request->setting;
+        DB::table('admins')->where('id', $id)->update($data);
+        $notification = array(
+            'messege' => 'Sửa thông tin nhân viên thành công',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('admin.all.user')->with($notification);
+    }
 }

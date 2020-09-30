@@ -208,7 +208,6 @@
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Cài đặt</a></li>
       </ul>
     </div><!-- sl-sideleft-menu -->
-
     <br>
   </div><!-- sl-sideleft -->
   <!-- ########## END: LEFT PANEL ########## -->
