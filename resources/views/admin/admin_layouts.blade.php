@@ -65,6 +65,7 @@
           <span class="menu-item-label">Bảng điều khiển</span>
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
+      @if(Auth::user()->category == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
@@ -77,6 +78,9 @@
         <li class="nav-item"><a href="{{ route('sub.categories') }}" class="nav-link">Loại hàng</a></li>
         <li class="nav-item"><a href="{{ route('brands') }}" class="nav-link">Thương hiệu</a></li>
       </ul>
+      @else
+      @endif
+      @if(Auth::user()->coupon == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
@@ -90,6 +94,9 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{ route('admin.newslater') }}" class="nav-link">Đăng kí nhận tin</a></li>
       </ul>
+      @else
+      @endif
+      @if(Auth::user()->product == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
@@ -101,7 +108,9 @@
         <li class="nav-item"><a href="{{ route('add.product') }}" class="nav-link">Thêm sản phẩm</a></li>
         <li class="nav-item"><a href="{{ route('all.product') }}" class="nav-link">Tất cả sản phẩm</a></li>
       </ul>
-
+      @else
+      @endif
+      @if(Auth::user()->order == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
@@ -116,7 +125,9 @@
         <li class="nav-item"><a href="{{ route('admin.process.order') }}" class="nav-link">Đang vận chuyển</a></li>
         <li class="nav-item"><a href="{{ route('admin.success.order') }}" class="nav-link">Giao thành công</a></li>
       </ul>
-
+      @else
+      @endif
+      @if(Auth::user()->blog == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
@@ -129,6 +140,8 @@
         <li class="nav-item"><a href="{{ route('add.blogpost') }}" class="nav-link">Thêm bài đăng</a></li>
         <li class="nav-item"><a href="{{ route('all.blogpost') }}" class="nav-link">Danh sách bài đăng</a></li>
       </ul>
+      @else
+      @endif
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
@@ -140,6 +153,7 @@
         <li class="nav-item"><a href="{{ route('admin.newslater') }}" class="nav-link">Đăng kí nhận tin</a></li>
         <li class="nav-item"><a href="{{ route('admin.seo') }}" class="nav-link">SEO</a></li>
       </ul>
+      @if(Auth::user()->report == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
@@ -153,6 +167,9 @@
         <li class="nav-item"><a href="{{ route('this.month') }}" class="nav-link">Trong tháng</a></li>
         <li class="nav-item"><a href="{{ route('search.report') }}" class="nav-link">Tìm kiếm</a></li>
       </ul>
+      @else
+      @endif
+      @if(Auth::user()->role == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -164,6 +181,9 @@
         <li class="nav-item"><a href="{{ route('create.admin') }}" class="nav-link">Tạo User</a></li>
         <li class="nav-item"><a href="{{ route('admin.all.user') }}" class="nav-link">Tất cả User</a></li>
       </ul>
+      @else
+      @endif
+      @if(Auth::user()->return == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -175,6 +195,9 @@
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Yêu cầu trả lại</a></li>
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả yêu cầu</a></li>
       </ul>
+      @else
+      @endif
+      @if(Auth::user()->contact == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -186,6 +209,9 @@
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tin mới</a></li>
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả tin nhắn</a></li>
       </ul>
+      @else
+      @endif
+      @if(Auth::user()->comment == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -197,6 +223,9 @@
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Bình luận mới</a></li>
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả bình luận</a></li>
       </ul>
+      @else
+      @endif
+      @if(Auth::user()->setting == 1)
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
           <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -207,6 +236,8 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Cài đặt</a></li>
       </ul>
+      @else
+      @endif
     </div><!-- sl-sideleft-menu -->
     <br>
   </div><!-- sl-sideleft -->
@@ -222,7 +253,7 @@
       <nav class="nav">
         <div class="dropdown">
           <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-            <span class="logged-name">Quản trị viên<span class="hidden-md-down"></span></span>
+            <span class="logged-name">{{ Auth::user()->name }}</span>
             <img src="{{ asset('public/backend/img/img2.jpg') }}" class="wd-32 rounded-circle" alt="">
           </a>
           <div class="dropdown-menu dropdown-menu-header wd-200">
