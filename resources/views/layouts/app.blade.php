@@ -1,3 +1,6 @@
+ @php
+ $setting = DB::table('sitesetting')->first();
+ @endphp
  <!DOCTYPE html>
  <html lang="en">
 
@@ -39,7 +42,7 @@
                      <div class="row">
                          <div class="col d-flex flex-row">
                              <div class="top_bar_contact_item">
-                                 <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/phone.png')}}" alt=""></div>0931733469
+                                 <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/phone.png')}}" alt=""></div>{{ $setting->phone_one }}
                              </div>
 
                              <div class="top_bar_content ml-auto">

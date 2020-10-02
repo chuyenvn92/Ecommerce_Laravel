@@ -234,7 +234,7 @@
         </div><!-- menu-item -->
       </a>
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Cài đặt</a></li>
+        <li class="nav-item"><a href="{{ route('admin.site.setting') }}" class="nav-link">Cài đặt</a></li>
       </ul>
       @else
       @endif
