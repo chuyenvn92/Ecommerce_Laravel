@@ -6,17 +6,13 @@ $category = DB::table('categories')->get();
     <div class="container">
         <div class="row">
             <div class="col">
-
                 <div class="main_nav_content d-flex flex-row">
-
                     <!-- Categories Menu -->
-
                     <div class="cat_menu_container">
                         <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                             <div class="cat_burger"><span></span><span></span><span></span></div>
                             <div class="cat_menu_text">Danh mục</div>
                         </div>
-
                         <ul class="cat_menu">
                             @foreach($category as $cat)
                             <li class="hassubs">
@@ -35,56 +31,10 @@ $category = DB::table('categories')->get();
                             @endforeach
                         </ul>
                     </div>
-
                     <!-- Main Nav Menu -->
-
                     <div class="main_nav_menu ml-auto">
                         <ul class="standard_dropdown main_nav_dropdown">
                             <li><a href="#">Trang chủ<i class="fas fa-chevron-down"></i></a></li>
-                            <!-- <li class="hassubs">
-                                <a href="#">Giảm giá<i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    <li>
-                                        <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                </ul>
-                            </li> -->
-                            <!-- <li class="hassubs">
-                                <a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    <li>
-                                        <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                </ul>
-                            </li> -->
-                            <!-- <li class="hassubs">
-                                <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="regular.html">Regular Post<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                    <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
-                                </ul>
-                            </li> -->
                             <li><a href="{{ route('blog.post') }}">Bài đăng<i class="fas fa-chevron-down"></i></a></li>
                             <li><a href="contact.html">Liên hệ<i class="fas fa-chevron-down"></i></a></li>
                         </ul>
@@ -121,18 +71,17 @@ $category = DB::table('categories')->get();
                             <input type="search" required="required" class="page_menu_search_input" placeholder="Tìm kiếm">
                         </form>
                     </div>
-                    <div class="menu_contact">
+                    <!-- <div class="menu_contact">
                         <div class="menu_contact_item">
                             <div class="menu_contact_icon"><img src="{{ asset('public/frontend/images/phone_white.png')}}" alt=""></div>0931733469
                         </div>
                         <div class="menu_contact_item">
                             <div class="menu_contact_icon"><img src="{{ asset('public/frontend/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 </header>

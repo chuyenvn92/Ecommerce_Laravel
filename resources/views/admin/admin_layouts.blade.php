@@ -192,8 +192,8 @@
         </div><!-- menu-item -->
       </a>
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Yêu cầu trả lại</a></li>
-        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả yêu cầu</a></li>
+        <li class="nav-item"><a href="{{ route('admin.return.request') }}" class="nav-link">Yêu cầu trả lại</a></li>
+        <li class="nav-item"><a href="{{ route('admin.all.return') }}" class="nav-link">Tất cả yêu cầu</a></li>
       </ul>
       @else
       @endif

@@ -15,7 +15,8 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
               <th scope="col">Mã giao dịch</th>
               <th scope="col">Tổng</th>
               <th scope="col">Ngày</th>
-              <th scope="col">Mã trạng thái</th>
+              <th scope="col">Mã</th>
+              <th scope="col">Trạng thái</th>
               <th scope="col">Thao tác</th>
             </tr>
           </thead>
@@ -27,6 +28,19 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
               <td>{{ $row->total }} đ</td>
               <td>{{ $row->date }}</td>
               <td>{{ $row->status_code }}</td>
+              <td>
+                @if($row->status == 0)
+                <span class="badge badge-warning">Chờ xử lí</span>
+                @elseif($row->status == 1)
+                <span class="badge badge-info">Đã xử lí</span>
+                @elseif($row->status == 2)
+                <span class="badge badge-warning">Đang vận chuyển</span>
+                @elseif($row->status == 3)
+                <span class="badge badge-success">Đã giao hàng</span>
+                @else
+                <span class="badge badge-danger">Đã hủy</span>
+                @endif
+              </td>
               <td>
                 <a href="" class="btn btn-info">Xem</a>
               </td>
@@ -44,8 +58,8 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><a href="{{ route('password.change') }}">Thay đổi mật khẩu</a></li>
-          <li class="list-group-item">2</li>
-          <li class="list-group-item">3</li>
+          <li class="list-group-item">Chỉnh sửa thông tin</li>
+          <li class="list-group-item"><a href="{{ route('success.orderlist') }}">Trả hàng</a></li>
         </ul>
         <div class="card-body">
           <a href="{{ route('user.logout') }}" class="btn btn-danger btn-sm btn-block">Đăng xuất</a>

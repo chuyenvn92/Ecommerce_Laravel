@@ -5,7 +5,7 @@
  <html lang="en">
 
  <head>
-     <title>OneTech</title>
+     <title>Web Bán Hàng</title>
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="description" content="OneTech shop project">
@@ -113,14 +113,13 @@
                          @php
                          $category = DB::table('categories')->get();
                          @endphp
-
                          <!-- Search -->
                          <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
                              <div class="header_search">
                                  <div class="header_search_content">
                                      <div class="header_search_form_container">
                                          <form action="#" class="header_search_form clearfix">
-                                             <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                             <input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm nà">
                                              <div class="custom_dropdown">
                                                  <div class="custom_dropdown_list">
                                                      <span class="custom_dropdown_placeholder clc">Sản Phẩm</span>
@@ -176,15 +175,9 @@
              </div>
 
              <!-- Main Navigation -->
-
-
-
              <!-- Characteristics -->
-
              @yield('content')
-
              <!-- Footer -->
-
              <footer class="footer">
                  <div class="container">
                      <div class="row">
@@ -211,11 +204,9 @@
                                  </div>
                              </div>
                          </div>
-
                      </div>
                  </div>
              </footer>
-
      </div>
      <!-- Order Modal Tracking -->
      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -240,7 +231,6 @@
              </div>
          </div>
      </div>
-
      <script src="{{ asset('public/frontend/js/jquery-3.3.1.min.js')}}"></script>
      <script src="{{ asset('public/frontend/styles/bootstrap4/popper.js')}}"></script>
      <script src="{{ asset('public/frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
@@ -271,6 +261,26 @@
                  break;
          }
          @endif
+     </script>
+     <script>
+         $(document).on("click", "#return", function(e) {
+             e.preventDefault();
+             var link = $(this).attr("href");
+             swal({
+                     title: "Bạn chắc chắn muốn trả hàng chứ???",
+                     text: "Bạn sẽ được hoàn lại tiền khi trả hàng",
+                     icon: "warning",
+                     buttons: true,
+                     dangerMode: true,
+                 })
+                 .then((willDelete) => {
+                     if (willDelete) {
+                         window.location.href = link;
+                     } else {
+                         swal("Hủy");
+                     }
+                 });
+         });
      </script>
      <script src="{{ asset('public/frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
      <script src="{{ asset('public/frontend/plugins/slick-1.8.0/slick.js')}}"></script>
