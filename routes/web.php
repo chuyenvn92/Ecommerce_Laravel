@@ -195,3 +195,6 @@ Route::get('admin/product/stock', 'Admin\UserRoleController@ProductStock')->name
 Route::get('contact/page', 'ContactController@Contact')->name('contact.page');
 Route::post('contact/form', 'ContactController@ContactForm')->name('contact.form');
 Route::get('admin/all/message', 'ContactController@AllMessage')->name('all.message');
+
+// Search Route
+Route::post('product/search', 'CartController@Search')->name('product.search');
