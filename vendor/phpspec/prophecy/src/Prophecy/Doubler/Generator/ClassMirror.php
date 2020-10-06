@@ -104,7 +104,7 @@ class ClassMirror
                 continue;
             }
 
-            $this->reflectMethodToNode($method, $node);
+            $this->reflectMethodToNode($method, $node, $class);
         }
 
         foreach ($class->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
@@ -118,7 +118,7 @@ class ClassMirror
                 continue;
             }
 
-            $this->reflectMethodToNode($method, $node);
+            $this->reflectMethodToNode($method, $node, $class);
         }
     }
 
@@ -127,11 +127,11 @@ class ClassMirror
         $node->addInterface($interface->getName());
 
         foreach ($interface->getMethods() as $method) {
-            $this->reflectMethodToNode($method, $node);
+            $this->reflectMethodToNode($method, $node, $interface);
         }
     }
 
-    private function reflectMethodToNode(ReflectionMethod $method, Node\ClassNode $classNode)
+    private function reflectMethodToNode(ReflectionMethod $method, Node\ClassNode $classNode, ReflectionClass $class)
     {
         $node = new Node\MethodNode($method->getName());
 
@@ -148,7 +148,7 @@ class ClassMirror
         }
 
         if ($method->hasReturnType()) {
-            $returnTypes = $this->getTypeHints($method->getReturnType(), $method->getDeclaringClass(), $method->getReturnType()->allowsNull());
+            $returnTypes = $this->getTypeHints($method->getReturnType(), $class, $method->getReturnType()->allowsNull());
             $node->setReturnTypeNode(new ReturnTypeNode(...$returnTypes));
         }
 

@@ -2,6 +2,8 @@
 
 namespace Laravel\Socialite\One;
 
+use InvalidArgumentException;
+
 class TwitterProvider extends AbstractProvider
 {
     /**
@@ -10,7 +12,7 @@ class TwitterProvider extends AbstractProvider
     public function user()
     {
         if (! $this->hasNecessaryVerifier()) {
-            throw new MissingVerifierException('Invalid request. Missing OAuth verifier.');
+            throw new InvalidArgumentException('Invalid request. Missing OAuth verifier.');
         }
 
         $user = $this->server->getUserDetails($token = $this->getToken(), $this->shouldBypassCache($token->getIdentifier(), $token->getSecret()));
