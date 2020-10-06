@@ -120,7 +120,7 @@ $vat = $setting->vat;
                             </ul>
                         </div>
                         <div class="contact_form_button text-center">
-                            <button type="submit" class="btn btn-info">Thanh toán ngay</button>
+                            <button type="submit" class="btn btn-info">Thanh toán</button>
                         </div>
                     </form>
                 </div>
