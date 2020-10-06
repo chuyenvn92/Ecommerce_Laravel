@@ -1,5 +1,7 @@
 <?php
-
+// Social Route
+Route::get('/auth/redirect/{provider}', 'SocialiteController@redirect');
+Route::get('/callback/{provider}', 'SocialiteController@callback');
 
 
 Route::get('/', function () {

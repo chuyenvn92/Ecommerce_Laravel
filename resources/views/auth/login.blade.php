@@ -37,7 +37,7 @@
                     <br>
                     <a href="{{ route('password.request') }}">Quên mật khẩu</a><br><br>
                     <button type=submit class="btn btn-primary btn-block"><i class="fab fa-facebook mr-2"></i>Đăng nhập với Facebook</button>
-                    <button type=submit class="btn btn-danger btn-block"><i class="fab fa-google mr-2"></i>Đăng nhập với Google</button>
+                    <a href="{{ url('/auth/redirect/google') }}" class="btn btn-danger btn-block"><i class="fab fa-google mr-2"></i>Đăng nhập với Google</a>
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1" style="border: 1px solid grey; padding:20px; border-radius: 20px;">
