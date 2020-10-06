@@ -187,3 +187,6 @@ Route::get('request/return/{id}', 'PaymentController@RequestReturn');
 Route::get('admin/return/request', 'Admin\ReturnController@ReturnRequest')->name('admin.return.request');
 Route::get('admin/approve/return/{id}', 'Admin\ReturnController@ApproveReturn');
 Route::get('admin/all/return', 'Admin\ReturnController@AllReturn')->name('admin.all.return');
+
+// Order Stock
+Route::get('admin/product/stock', 'Admin\UserRoleController@ProductStock')->name('admin.product.stock');

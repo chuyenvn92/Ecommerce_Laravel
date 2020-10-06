@@ -123,6 +123,14 @@
         <span>Cài đặt</span>
        </label>
       </div>
+      <div class="col-lg-4">
+       <label class="ckbox">
+        <input type="checkbox" name="stock" value="1" <?php if ($user->stock == 1) {
+                                                       echo "checked";
+                                                      } ?>>
+        <span>Kho</span>
+       </label>
+      </div>
      </div>
      <!-- End Checkbox Product -->
      <br><br>

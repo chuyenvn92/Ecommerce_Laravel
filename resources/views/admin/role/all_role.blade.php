@@ -73,6 +73,10 @@
         <span class="badge btn-primary">Cài đặt</span>
         @else
         @endif
+        @if($row->stock == 1)
+        <span class="badge btn-primary">Kho</span>
+        @else
+        @endif
        </td>
        <td>
         <a href="{{ URL::to('edit/admin/'.$row->id) }}" class="btn btn-sm btn-info">Sửa</a>
