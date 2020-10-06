@@ -130,7 +130,7 @@ class PaymentController extends Controller
     $data['shipping'] = $request->shipping;
     $data['vat'] = $request->vat;
     $data['total'] = $request->total;
-    $data['payment_type'] = $request->payment_type;
+    $data['payment_type'] = 'Thanh toán khi nhận hàng';
     $data['status_code'] = mt_rand(100000, 999999);
 
     if (Session::has('coupon')) {

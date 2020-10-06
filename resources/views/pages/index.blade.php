@@ -94,24 +94,23 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                         <div class="deals_item_category"><a href="#">{{ $hot->brand_name }}</a></div>
                                         @if($hot->discount_price == null)
                                         @else
-                                        <div class="deals_item_price_a ml-auto">{{ $hot->selling_price }}đ</div>
+                                        <div class="deals_item_price_a ml-auto">{{ number_format($hot->selling_price) }} {{ 'VNĐ' }}</div>
                                         @endif
                                     </div>
                                     <div class="deals_info_line d-flex flex-row justify-content-start">
                                         <div class="deals_item_name">{{ $hot->product_name }}</div>
                                         @if($hot->discount_price == null)
-                                        <div class="deals_item_price ml-auto">{{ $hot->selling_price }}đ</div>
+                                        <div class="deals_item_price ml-auto">{{ number_format($hot->selling_price) }} {{ 'VNĐ' }}</div>
                                         @else
                                         @endif
                                         @if($hot->discount_price != null)
-                                        <div class="deals_item_price ml-auto">{{ $hot->discount_price }}đ</div>
+                                        <div class="deals_item_price ml-auto">{{ number_format($hot->discount_price) }} {{ 'VNĐ' }}</div>
                                         @else
                                         @endif
                                     </div>
                                     <div class="available">
                                         <div class="available_line d-flex flex-row justify-content-start">
                                             <div class="available_title">Số lượng còn: <span>{{ $hot->product_quantity}}</span></div>
-                                            <!-- <div class="sold_title ml-auto">Already sold: <span>28</span></div> -->
                                         </div>
                                         <div class="available_bar"><span style="width:17%"></span></div>
                                     </div>
@@ -124,15 +123,15 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                             <div class="deals_timer_box clearfix" data-target-time="">
                                                 <div class="deals_timer_unit">
                                                     <div id="deals_timer1_hr" class="deals_timer_hr"></div>
-                                                    <span>hours</span>
+                                                    <span>Giờ</span>
                                                 </div>
                                                 <div class="deals_timer_unit">
                                                     <div id="deals_timer1_min" class="deals_timer_min"></div>
-                                                    <span>mins</span>
+                                                    <span>Phút</span>
                                                 </div>
                                                 <div class="deals_timer_unit">
                                                     <div id="deals_timer1_sec" class="deals_timer_sec"></div>
-                                                    <span>secs</span>
+                                                    <span>Giây</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -172,9 +171,9 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                         <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $feature->image_one )}}" alt="" style="height: 120px; width:140px;"></div>
                                         <div class="product_content">
                                             @if($feature->discount_price == null)
-                                            <div class="product_price discount">{{ $feature->selling_price }}đ</div>
+                                            <div class="product_price discount">{{ number_format($feature->selling_price) }} {{ 'VNĐ' }}</div>
                                             @else
-                                            <div class="product_price discount">{{ $feature->discount_price }}đ<span>{{ $feature->selling_price }}đ</span></div>
+                                            <div class="product_price discount"><span>{{ number_format($feature->selling_price) }} {{ 'VNĐ' }}</span><br>{{ number_format($feature->discount_price) }} {{ 'VNĐ' }}</div>
                                             @endif
                                             <div class="product_name">
                                                 <div><a href="{{ url('product/details/'.$feature->id.'/'.$feature->product_name) }}">{{ $feature->product_name }}</a></div>
@@ -191,7 +190,7 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                         </button>
                                         <ul class="product_marks">
                                             @if($feature->discount_price == null)
-                                            <li class="product_mark product_discount" style="background: blue;">New</li>
+                                            <li class="product_mark product_discount" style="background: blue;">Mới</li>
                                             @else
                                             <li class="product_mark product_discount">
                                                 @php
@@ -205,7 +204,6 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                     </div>
                                 </div>
                                 @endforeach
-
                             </div>
                             <div class="featured_slider_dots_cover"></div>
                         </div>
@@ -288,12 +286,11 @@ $mid = DB::table('products')
                                     <div class="banner_2_title">{{ $row->product_name }}</div>
                                     <div class="banner_2_text">
                                         <h4>{{ $row->brand_name }}</h4><br>
-                                        <h2>{{ $row->selling_price }}đ</h2>
+                                        <h2>{{ number_format($row->selling_price) }} {{'VNĐ'}}</h2>
                                     </div>
                                     <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
                                     <div class="button banner_2_button"><a href="#">Mua ngay</a></div>
                                 </div>
-
                             </div>
                             <div class="col-lg-8 col-md-6 fill_height">
                                 <div class="banner_2_image_container">
@@ -331,11 +328,9 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                     </div>
                     <div class="row">
                         <div class="col-lg-12" style="z-index:1;">
-
                             <!-- Product Panel -->
                             <div class="product_panel panel active">
                                 <div class="arrivals_slider slider">
-
                                     @foreach($product as $product)
                                     <!-- Slider Item -->
                                     <div class="featured_slider_item">
@@ -344,7 +339,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                             <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $product->image_one )}}" alt="" style="height: 120px; width:140px;"></div>
                                             <div class="product_content">
                                                 @if($product->discount_price == null)
-                                                <div class="product_price discount">{{ $product->selling_price }}đ</div>
+                                                <div class="product_price discount">{{ number_format($product->selling_price) }} {{ 'VNĐ' }}</div>
                                                 @else
                                                 <div class="product_price discount">{{ $product->discount_price }}đ<span>{{ $product->selling_price }}đ</span></div>
                                                 @endif
@@ -352,11 +347,6 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                                     <div><a href="product.html">{{ $product->product_name }}</a></div>
                                                 </div>
                                                 <div class="product_extras">
-                                                    <div class="product_color">
-                                                        <input type="radio" checked name="product_color" style="background:#b19c83">
-                                                        <input type="radio" name="product_color" style="background:#000000">
-                                                        <input type="radio" name="product_color" style="background:#999999">
-                                                    </div>
                                                     <button class="product_cart_button">Thêm vào giỏ</button>
                                                 </div>
                                             </div>
@@ -365,7 +355,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                             </button>
                                             <ul class="product_marks">
                                                 @if($product->discount_price == null)
-                                                <li class="product_mark product_discount" style="background: blue;">New</li>
+                                                <li class="product_mark product_discount" style="background: blue;">Mới</li>
                                                 @else
                                                 <li class="product_mark product_discount">
                                                     @php
@@ -412,11 +402,9 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                     </div>
                     <div class="row">
                         <div class="col-lg-12" style="z-index:1;">
-
                             <!-- Product Panel -->
                             <div class="product_panel panel active">
                                 <div class="arrivals_slider slider">
-
                                     @foreach($product as $product)
                                     <!-- Slider Item -->
                                     <div class="featured_slider_item">
