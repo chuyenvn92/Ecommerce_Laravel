@@ -206,8 +206,7 @@
         </div><!-- menu-item -->
       </a>
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tin mới</a></li>
-        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Tất cả tin nhắn</a></li>
+        <li class="nav-item"><a href="{{ route('all.message') }}" class="nav-link">Tất cả tin nhắn</a></li>
       </ul>
       @else
       @endif

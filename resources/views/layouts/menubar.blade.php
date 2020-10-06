@@ -34,9 +34,9 @@ $category = DB::table('categories')->get();
                     <!-- Main Nav Menu -->
                     <div class="main_nav_menu ml-auto">
                         <ul class="standard_dropdown main_nav_dropdown">
-                            <li><a href="#">Trang chủ<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="{{ url('/') }}">Trang chủ<i class="fas fa-chevron-down"></i></a></li>
                             <li><a href="{{ route('blog.post') }}">Bài đăng<i class="fas fa-chevron-down"></i></a></li>
-                            <li><a href="contact.html">Liên hệ<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="{{ route('contact.page') }}">Liên hệ<i class="fas fa-chevron-down"></i></a></li>
                         </ul>
                     </div>
 

@@ -190,3 +190,8 @@ Route::get('admin/all/return', 'Admin\ReturnController@AllReturn')->name('admin.
 
 // Order Stock
 Route::get('admin/product/stock', 'Admin\UserRoleController@ProductStock')->name('admin.product.stock');
+
+// Contact Page Route
+Route::get('contact/page', 'ContactController@Contact')->name('contact.page');
+Route::post('contact/form', 'ContactController@ContactForm')->name('contact.form');
+Route::get('admin/all/message', 'ContactController@AllMessage')->name('all.message');
