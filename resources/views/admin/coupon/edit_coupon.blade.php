@@ -26,7 +26,7 @@
           @csrf
           <div class="modal-body pd-20">
             <div class="form-group">
-              <label for="exampleInputEmail1">Mã</label>
+              <label for="exampleInputEmail1">Mã giảm giá</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $coupon->coupon }}" name="coupon">
             </div>
             <div class="form-group">

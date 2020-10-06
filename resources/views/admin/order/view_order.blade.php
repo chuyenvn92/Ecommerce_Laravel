@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                   <th>Tổng đơn hàng:</th>
-                  <th>{{ $order->total}}đ</th>
+                  <th>{{ number_format($order->total) }} {{'VNĐ'}}</th>
                 </tr>
                 <tr>
                   <th>Tháng</th>
@@ -118,8 +118,8 @@
                   <td>{{ $row->color }}</td>
                   <td>{{ $row->size }}</td>
                   <td>{{ $row->quantity }}</td>
-                  <td>{{ $row->singleprice }}đ</td>
-                  <td>{{ $row->totalprice }}đ</td>
+                  <td>{{ number_format($row->singleprice) }} {{ 'VNĐ' }}</td>
+                  <td>{{ number_format($row->totalprice) }} {{ 'VNĐ' }}</td>
                 </tr>
                 @endforeach
               </tbody>

@@ -30,9 +30,9 @@
       <tr>
        <td>{{ $row->payment_type }}</td>
        <td>{{ $row->blnc_transection }}</td>
-       <td>{{ $row->subtotal }}đ</td>
-       <td>{{ $row->shipping }}đ</td>
-       <td>{{ $row->total }}đ</td>
+       <td>{{ number_format($row->subtotal) }} {{ 'VNĐ' }}</td>
+       <td>{{ number_format($row->shipping) }} {{ 'VNĐ' }}</td>
+       <td>{{ number_format($row->total) }} {{ 'VNĐ'}}</td>
        <td>{{ $row->date }}</td>
        <td>
         @if($row->status == 0)

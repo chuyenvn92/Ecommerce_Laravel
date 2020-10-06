@@ -29,7 +29,7 @@
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>{{ $row->coupon }}</td>
-              <td>{{ $row->discount }}</td>
+              <td>{{ number_format($row->discount) }} {{ 'VNĐ' }}</td>
               <td>
                 <a href="{{ URL::to('edit/coupon/'.$row->id) }}" class="btn btn-sm btn-info">Sửa</a>
                 <a href="{{ URL::to('delete/coupon/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Xóa</a>
@@ -70,11 +70,11 @@
           <div class="modal-body pd-20">
             <div class="form-group">
               <label for="exampleInputEmail1">Mã giảm giá</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mã giảm giá" name="coupon">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mã giảm giá" name="coupon">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Số tiền</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="%" name="discount">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="VNĐ" name="discount">
             </div>
             <!-- modal-body -->
             <div class="modal-footer">

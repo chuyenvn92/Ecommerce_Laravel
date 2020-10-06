@@ -63,11 +63,11 @@
               @if($product->discount_price == null)
               <label class="form-control-label">Giá bán<span class="tx-danger"> *</span></label>
               <br>
-              <strong>{{ $product->selling_price }}</strong>
+              <strong>{{ number_format($product->selling_price) }} {{ 'VNĐ' }}</strong>
               @else
               <label class="form-control-label">Giá khuyến mãi<span class="tx-danger"> *</span></label>
               <br>
-              <strong>{{ $product->discount_price }}</strong>
+              <strong>{{ number_format($product->discount_price) }} {{ 'VNĐ' }}</strong>
               @endif
             </div>
           </div>
