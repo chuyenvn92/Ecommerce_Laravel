@@ -54,11 +54,11 @@ $vat = $setting->vat;
 									</div>
 									<div class="cart_item_price cart_info_col">
 										<div class="cart_item_title">Giá</div>
-										<div class="cart_item_text">{{ $row->price }}</div>
+										<div class="cart_item_text">{{ number_format($row->price) }} {{ 'VNĐ'}}</div>
 									</div>
 									<div class="cart_item_total cart_info_col">
 										<div class="cart_item_title">Thành tiền</div>
-										<div class="cart_item_text">{{ $row->price*$row->qty }}đ</div>
+										<div class="cart_item_text">{{ number_format($row->price*$row->qty) }} {{ 'VNĐ'}}</div>
 									</div>
 									<div class="cart_item_total cart_info_col">
 										<div class="cart_item_title">Thao tác</div><br>
@@ -85,20 +85,20 @@ $vat = $setting->vat;
 					</div>
 					<ul class="list-group col-lg-4" style="float: right;">
 						@if (Session::has('coupon'))
-						<li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ Session::get('coupon')['balance'] }}đ</span></li>
+						<li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ number_format(Session::get('coupon')['balance']) }} {{'VNĐ'}}</span></li>
 						<li class="list-group-item">Mã giảm giá: ({{ Session::get('coupon')['name'] }})
 							<a href="{{ route('coupon.remove') }}" class="bnt btn-danger btn-sm">x</a>
-							<span style="float: right;">{{ Session::get('coupon')['discount'] }}đ</span>
+							<span style="float: right;">{{ number_format(Session::get('coupon')['discount']) }} {{ 'VNĐ'}}</span>
 						</li>
 						@else
-						<li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ Cart::Subtotal() }}</span></li>
+						<li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ number_format(Cart::Subtotal()) }} {{ 'VNĐ'}}</span></li>
 						@endif
-						<li class="list-group-item">Phí ship: <span style="float: right;">{{ $charge }}đ</span></li>
-						<li class="list-group-item">VAT: <span style="float: right;">{{ $vat }}đ</span></li>
+						<li class="list-group-item">Phí ship: <span style="float: right;">{{ number_format($charge) }} {{ 'VNĐ'}}</span></li>
+						<li class="list-group-item">VAT: <span style="float: right;">{{ number_format($vat) }} {{ 'VNĐ'}}</span></li>
 						@if (Session::has('coupon'))
-						<li class="list-group-item">Tổng tiền: <span style="float: right;">{{ Session::get('coupon')['balance']+ $charge + $vat }}đ</span></li>
+						<li class="list-group-item">Tổng tiền: <span style="float: right;">{{ number_format(Session::get('coupon')['balance']+ $charge + $vat) }} {{ 'VNĐ' }}</span></li>
 						@else
-						<li class="list-group-item">Tổng tiền: <span style="float: right;">{{ Cart::Subtotal()+ $charge + $vat }}đ</span></li>
+						<li class="list-group-item">Tổng tiền: <span style="float: right;">{{ number_format(Cart::Subtotal()+ $charge + $vat) }} {{'VNĐ'}}</span></li>
 						@endif
 					</ul>
 				</div>

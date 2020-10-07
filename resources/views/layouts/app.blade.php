@@ -27,16 +27,10 @@
  </head>
 
  <body>
-
-
      <div class="super_container">
-
          <!-- Header -->
-
          <header class="header">
-
              <!-- Top Bar -->
-
              <div class="top_bar">
                  <div class="container">
                      <div class="row">
@@ -44,7 +38,6 @@
                              <div class="top_bar_contact_item">
                                  <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/phone.png')}}" alt=""></div>{{ $setting->phone_one }}
                              </div>
-
                              <div class="top_bar_content ml-auto">
                                  @guest
 
@@ -80,12 +73,11 @@
                                      <ul class="standard_dropdown top_bar_dropdown">
                                          <li>
                                              <a href="{{route('home')}}">
-                                                 <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Thông tin cá nhân<i class="fas fa-chevron-down"></i>
+                                                 <div class="user_icon"><img src="{{ asset('public/frontend/images/user.png')}}" alt=""></div>Thông tin cá nhân<i class="fas fa-chevron-down"></i>
                                              </a>
                                              <ul>
                                                  <li><a href="{{ route('user.wishlist') }}">Sản phẩm yêu thích</a></li>
                                                  <li><a href="{{ route('user.checkout') }}">Thanh toán đơn hàng</a></li>
-                                                 <li><a href="#">Khác</a></li>
                                              </ul>
                                          </li>
                                      </ul>
@@ -96,20 +88,16 @@
                      </div>
                  </div>
              </div>
-
              <!-- Header Main -->
-
              <div class="header_main">
                  <div class="container">
                      <div class="row">
-
                          <!-- Logo -->
                          <div class="col-lg-2 col-sm-3 col-3 order-1">
                              <div class="logo_container">
                                  <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('public/frontend/images/logo.png')}}" alt=""></a></div>
                              </div>
                          </div>
-
                          @php
                          $category = DB::table('categories')->get();
                          @endphp
@@ -165,7 +153,7 @@
                                          </div>
                                          <div class="cart_content">
                                              <div class="cart_text"><a href="{{ route('show.cart') }}">Giỏ hàng</a></div>
-                                             <div class="cart_price">{{ Cart::subtotal() }}đ</div>
+                                             <div class="cart_price">{{ number_format(Cart::subtotal()) }} {{ 'VNĐ'}}</div>
                                          </div>
                                      </div>
                                  </div>
@@ -182,7 +170,6 @@
              <footer class="footer">
                  <div class="container">
                      <div class="row">
-
                          <div class="col-lg-3 footer_col">
                              <div class="footer_column footer_contact">
                                  <div class="logo_container">

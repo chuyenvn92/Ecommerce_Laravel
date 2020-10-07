@@ -54,11 +54,11 @@ $vat = $setting->vat;
                                     </div>
                                     <div class="cart_item_price cart_info_col">
                                         <div class="cart_item_title"><b>Giá</b></div>
-                                        <div class="cart_item_text">{{ $row->price }}</div>
+                                        <div class="cart_item_text">{{ number_format($row->price) }} {{ 'VNĐ'}}</div>
                                     </div>
                                     <div class="cart_item_total cart_info_col">
                                         <div class="cart_item_title"><b>Thành tiền</b></div>
-                                        <div class="cart_item_text">{{ $row->price*$row->qty }}đ</div>
+                                        <div class="cart_item_text">{{ number_format($row->price*$row->qty) }} {{'VNĐ'}}</div>
                                     </div>
                                 </div>
                             </li>
@@ -67,20 +67,20 @@ $vat = $setting->vat;
                     </div>
                     <ul class="list-group col-lg-8" style="float: right;">
                         @if (Session::has('coupon'))
-                        <li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ Session::get('coupon')['balance'] }}đ</span></li>
+                        <li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ number_format(Session::get('coupon')['balance']) }} {{'VNĐ'}}</span></li>
                         <li class="list-group-item">Mã giảm giá: ({{ Session::get('coupon')['name'] }})
                             <a href="{{ route('coupon.remove') }}" class="bnt btn-danger btn-sm">x</a>
-                            <span style="float: right;">{{ Session::get('coupon')['discount'] }}đ</span>
+                            <span style="float: right;">{{ number_format(Session::get('coupon')['discount']) }} {{ 'VNĐ'}}</span>
                         </li>
                         @else
-                        <li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ Cart::Subtotal() }}</span></li>
+                        <li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ number_format(Cart::Subtotal()) }} {{ 'VNĐ'}}</span></li>
                         @endif
-                        <li class="list-group-item">Phí ship: <span style="float: right;">{{ $charge }}đ</span></li>
-                        <li class="list-group-item">VAT: <span style="float: right;">{{ $vat }}đ</span></li>
+                        <li class="list-group-item">Phí ship: <span style="float: right;">{{ number_format($charge) }} {{ 'VNĐ'}}</span></li>
+                        <li class="list-group-item">VAT: <span style="float: right;">{{ number_format($vat) }} {{ 'VNĐ'}}</span></li>
                         @if (Session::has('coupon'))
-                        <li class="list-group-item">Tổng tiền: <span style="float: right;">{{ Session::get('coupon')['balance']+ $charge + $vat }}đ</span></li>
+                        <li class="list-group-item">Tổng tiền: <span style="float: right;">{{ number_format(Session::get('coupon')['balance']+ $charge + $vat) }} {{ 'VNĐ'}}</span></li>
                         @else
-                        <li class="list-group-item">Tổng tiền: <span style="float: right;">{{ Cart::Subtotal()+ $charge + $vat }}đ</span></li>
+                        <li class="list-group-item">Tổng tiền: <span style="float: right;">{{ number_format(Cart::Subtotal()+ $charge + $vat) }} {{ 'VNĐ'}}</span></li>
                         @endif
                     </ul>
                 </div>
@@ -111,12 +111,13 @@ $vat = $setting->vat;
                             <label for="exampleInputEmail1">Thành Phố</label>
                             <input type="text" class="form-control" name="city" aria-describedby="emailHelp" placeholder="Nhập thành phố">
                         </div>
-                        <div class="contact_form_title text-center">Chọn cổng thanh toán</div>
+                        <div class="contact_form_title text-center">Chọn phương thức thanh toán</div>
                         <div class="form-group">
                             <ul class="logos_list">
                                 <li><input type="radio" name="payment" value="stripe"><img src="{{ asset('public/frontend/images/mastercard.png') }}" style="width:100px; height:60px;"></li>
                                 <li><input type="radio" name="payment" value="paypal"><img src="{{ asset('public/frontend/images/paypal.png') }}" style="width:100px; height:60px;"></li>
                                 <li><input type="radio" name="payment" value="ideal"><img src="{{ asset('public/frontend/images/mollie.png') }}" style="width:100px; height:60px;"></li>
+                                <li><input type="radio" name="payment" value="oncash">Thanh toán khi nhận hàng</li>
                             </ul>
                         </div>
                         <div class="contact_form_button text-center">

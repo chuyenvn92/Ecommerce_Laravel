@@ -15,12 +15,12 @@ $slider = DB::table('products')->join('brands','products.brand_id','brands.id')
                     <h1 class="banner_text">{{ $slider->product_name }}</h1>
                     <div class="banner_price">
                         @if($slider->discount_price == null)
-                        <h2>{{ $slider->selling_price}}đ</h2>
+                        <h2>{{ number_format($slider->selling_price) }} {{ 'VNĐ'}}</h2>
                         @else
-                        <span>{{ $slider->selling_price}}đ</span>{{ $slider->discount_price}}đ</div>
+                        <span>{{ number_format($slider->selling_price)}} {{ 'VNĐ'}}</span>{{ number_format($slider->discount_price)}} {{ 'VNĐ'}}</div>
                     @endif
                     <div class="banner_product_name">{{ $slider->brand_name }}</div>
-                    <div class="button banner_button"><a href="#">Mua Ngay</a></div>
+                    <div class="button banner_button"><a href="{{ url('product/details/'.$slider->id.'/'.$slider->product_name) }}">XEM NGAY</a></div>
                 </div>
             </div>
         </div>

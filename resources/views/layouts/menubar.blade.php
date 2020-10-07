@@ -32,7 +32,7 @@ $category = DB::table('categories')->get();
                         </ul>
                     </div>
                     <!-- Main Nav Menu -->
-                    <div class="main_nav_menu ml-auto">
+                    <div class="main_nav_menu ml-5">
                         <ul class="standard_dropdown main_nav_dropdown">
                             <li><a href="{{ url('/') }}">Trang chủ<i class="fas fa-chevron-down"></i></a></li>
                             <li><a href="{{ route('blog.post') }}">Bài đăng<i class="fas fa-chevron-down"></i></a></li>
@@ -42,14 +42,14 @@ $category = DB::table('categories')->get();
 
                     <!-- Menu Trigger -->
 
-                    <div class="menu_trigger_container ml-auto">
+                    <!-- <div class="menu_trigger_container ml-auto">
                         <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
                             <div class="menu_burger">
                                 <div class="menu_trigger_text">Danh mục</div>
                                 <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

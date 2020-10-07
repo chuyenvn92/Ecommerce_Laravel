@@ -29,7 +29,6 @@
 				<div class="product_description">
 					<div class="product_category">{{ $product->category_name }} -> {{ $product->subcategory_name }}</div>
 					<div class="product_name">{{ $product->product_name }}</div>
-					<div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
 					<div class="product_text">
 						<p>
 							{!! str_limit($product->product_details, $limit = 1200) !!}
@@ -71,9 +70,9 @@
 								</div>
 							</div>
 							@if($product->discount_price == null)
-							<div class="product_price">{{ $product->selling_price }}đ</div>
+							<div class="product_price">{{ number_format($product->selling_price) }} {{ 'VNĐ' }}</div>
 							@else
-							<div class="product_price">{{ $product->discount_price }}đ<span>{{ $product->selling_price }}đ</span></div>
+							<div class="product_price">{{ number_format($product->discount_price) }} {{ 'VNĐ' }}<span>{{ number_format($product->selling_price) }} {{ 'VNĐ' }}</span></div>
 							@endif
 							<div class="button_container">
 								<button type="submit" class="button cart_button">Thêm vào giỏ</button>

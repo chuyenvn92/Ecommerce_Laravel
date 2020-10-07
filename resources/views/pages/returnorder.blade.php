@@ -32,7 +32,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
         <span class="badge badge-success">Được chấp nhận</span>
         @endif
        </td>
-       <td>{{ $row->total }} đ</td>
+       <td>{{ number_format($row->total) }} {{ 'VNĐ'}}</td>
        <td>{{ $row->date }}</td>
        <td>
         @if($row->status == 0)

@@ -35,15 +35,6 @@
        @endforeach
       </ul>
      </div>
-     <div class="sidebar_section filter_by_section">
-      <div class="sidebar_title">Filter By</div>
-      <div class="sidebar_subtitle">Price</div>
-      <div class="filter_price">
-       <div id="slider-range" class="slider_range"></div>
-       <p>Range: </p>
-       <p><input type="text" id="amount" class="amount" readonly style="border:0; font-weight:bold;"></p>
-      </div>
-     </div>
      <div class="sidebar_section">
       <div class="sidebar_subtitle brands_subtitle">Thương hiệu</div>
       <ul class="brands_list">
@@ -75,18 +66,18 @@
        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset($row->image_one) }}" alt="" style="height: 100px; width:100px;"></div>
        <div class="product_content">
         @if($row->discount_price == null)
-        <div class="product_price discount">{{ $row->selling_price }}đ</div>
+        <div class="product_price discount">{{ number_format($row->selling_price) }} {{ 'VNĐ'}}</div>
         @else
-        <div class="product_price discount">{{ $row->discount_price }}đ<span>{{ $row->selling_price }}đ</span></div>
+        <div class="product_price discount">{{ number_format($row->discount_price) }} {{ 'VNĐ'}}<span>{{ number_format($row->selling_price) }} {{ 'VNĐ'}}</span></div>
         @endif
         <div class="product_name">
-         <div><a href="{{ url('product/details/'.$row->id.'/'.$row->product_name) }}" tabindex="0">{{ $row->product_name }}</a></div>
+         <div><a href="{{ url('product/details/'.$row->id.'/'.$row->product_name) }}" tabindex="0">{{ str_limit($row->product_name, $limit = 25) }}</a></div>
         </div>
        </div>
        <div class="product_fav"><i class="fas fa-heart"></i></div>
        <ul class="product_marks">
         @if($row->discount_price == null)
-        <li class="product_mark product_new" style="background: blue;">New</li>
+        <li class="product_mark product_new" style="background: blue;">Mới</li>
         @else
         <li class="product_mark product_new" style="background: red;">
          @php

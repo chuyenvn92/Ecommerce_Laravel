@@ -26,7 +26,7 @@ class PaymentController extends Controller
       echo "Chức năng đang hoàn thiện";
     } elseif ($request->payment == 'ideal') {
       echo "Chức năng đang hoàn thiện";
-    } else {
+    } elseif ($request->payment == 'oncash') {
       return view('pages.payment.oncash', compact('data'));
     }
   }

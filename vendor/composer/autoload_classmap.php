@@ -38,7 +38,7 @@ return array(
     'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/PaymentController.php',
     'App\\Http\\Controllers\\ProductController' => $baseDir . '/app/Http/Controllers/ProductController.php',
     'App\\Http\\Controllers\\SocialiteController' => $baseDir . '/app/Http/Controllers/SocialiteController.php',
-    'App\\Http\\Controllers\\WishlistController' => $baseDir . '/app/Http/Controllers/WishListController.php',
+    'App\\Http\\Controllers\\WishlistController' => $baseDir . '/app/Http/Controllers/WishlistController.php',
     'App\\Http\\Controllers\\admin\\Category\\SubCategoryController' => $baseDir . '/app/Http/Controllers/Admin/Category/SubCategoryController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

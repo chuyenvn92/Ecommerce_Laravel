@@ -49,11 +49,11 @@
 									</div>
 									<div class="cart_item_price cart_info_col">
 										<div class="cart_item_title">Giá</div>
-										<div class="cart_item_text">{{ $row->price }}</div>
+										<div class="cart_item_text">{{ number_format($row->price) }} {{ 'VNĐ'}}</div>
 									</div>
 									<div class="cart_item_total cart_info_col">
 										<div class="cart_item_title">Thành tiền</div>
-										<div class="cart_item_text">{{ $row->price*$row->qty }}đ</div>
+										<div class="cart_item_text">{{ number_format($row->price*$row->qty) }} {{ 'VNĐ'}}</div>
 									</div>
 									<div class="cart_item_total cart_info_col">
 										<div class="cart_item_title">Thao tác</div><br>
@@ -69,7 +69,7 @@
 					<div class="order_total">
 						<div class="order_total_content text-md-right">
 							<div class="order_total_title">Tổng đơn hàng:</div>
-							<div class="order_total_amount">{{ Cart::total() }}đ</div>
+							<div class="order_total_amount">{{ number_format(Cart::total()) }} {{ 'VNĐ'}}</div>
 						</div>
 					</div>
 

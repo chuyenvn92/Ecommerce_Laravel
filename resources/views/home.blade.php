@@ -25,7 +25,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
             <tr>
               <th>{{ $row->payment_type }}</th>
               <td>{{ $row->payment_id }}</td>
-              <td>{{ $row->total }} đ</td>
+              <td>{{ number_format($row->total) }} {{ 'VNĐ'}}</td>
               <td>{{ $row->date }}</td>
               <td>{{ $row->status_code }}</td>
               <td>

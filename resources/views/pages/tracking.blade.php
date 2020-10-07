@@ -49,9 +49,9 @@
      <li class="list-group-item"><b>Thanh toán:</b> {{ $track->payment_type}}</li>
      <li class="list-group-item"><b>Mã giao dịch:</b> {{ $track->payment_id}}</li>
      <li class="list-group-item"><b>Mã thẻ:</b> {{ $track->blnc_transection}}</li>
-     <li class="list-group-item"><b>Tổng:</b> {{ $track->subtotal}}đ</li>
-     <li class="list-group-item"><b>Phí ship:</b> {{ $track->shipping}}đ</li>
-     <li class="list-group-item"><b>Tổng tiền:</b> {{ $track->total}}đ</li>
+     <li class="list-group-item"><b>Tổng:</b> {{ number_format($track->subtotal)}} {{'VNĐ'}}</li>
+     <li class="list-group-item"><b>Phí ship:</b> {{ number_format($track->shipping)}} {{'VNĐ'}}</li>
+     <li class="list-group-item"><b>Tổng tiền:</b> {{ number_format($track->total)}} {{ 'VNĐ'}}</li>
      <li class="list-group-item"><b>Tháng:</b> {{ $track->month}}</li>
      <li class="list-group-item"><b>Ngày:</b> {{ $track->date}}</li>
      <li class="list-group-item"><b>Năm:</b> {{ $track->year}}</li>

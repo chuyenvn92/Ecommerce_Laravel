@@ -91,7 +91,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                 <div class="deals_image"><img src="{{ asset($hot->image_one)}}" alt=""></div>
                                 <div class="deals_content">
                                     <div class="deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="deals_item_category"><a href="#">{{ $hot->brand_name }}</a></div>
+                                        <div class="deals_item_category">{{ $hot->brand_name }}</>
+                                        </div>
                                         @if($hot->discount_price == null)
                                         @else
                                         <div class="deals_item_price_a ml-auto">{{ number_format($hot->selling_price) }} {{ 'VNĐ' }}</div>
@@ -100,7 +101,7 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                     <div class="deals_info_line d-flex flex-row justify-content-start">
                                         <div class="deals_item_name">{{ $hot->product_name }}</div>
                                         @if($hot->discount_price == null)
-                                        <div class="deals_item_price ml-auto">{{ number_format($hot->selling_price) }} {{ 'VNĐ' }}</div>
+                                        <div class="deals_item_price ml-auto">{{ number_format($hot->selling_price) }}{{ 'VNĐ' }}</div>
                                         @else
                                         @endif
                                         @if($hot->discount_price != null)
@@ -139,11 +140,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                 </div>
                             </div>
                             @endforeach
-
                         </div>
-
                     </div>
-
                     <div class="deals_slider_nav_container">
                         <div class="deals_slider_prev deals_slider_nav"><i class="fas fa-chevron-left ml-auto"></i></div>
                         <div class="deals_slider_next deals_slider_nav"><i class="fas fa-chevron-right ml-auto"></i></div>
@@ -159,7 +157,6 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                             </ul>
                             <div class="tabs_line"><span></span></div>
                         </div>
-
                         <!-- Product Panel -->
                         <div class="product_panel panel active">
                             <div class="featured_slider slider">
@@ -176,7 +173,7 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                                             <div class="product_price discount"><span>{{ number_format($feature->selling_price) }} {{ 'VNĐ' }}</span><br>{{ number_format($feature->discount_price) }} {{ 'VNĐ' }}</div>
                                             @endif
                                             <div class="product_name">
-                                                <div><a href="{{ url('product/details/'.$feature->id.'/'.$feature->product_name) }}">{{ $feature->product_name }}</a></div>
+                                                <div><a href="{{ url('product/details/'.$feature->id.'/'.$feature->product_name) }}">{{ str_limit($feature->product_name, $limit = 20) }}</a></div>
                                             </div>
                                             <!-- <div class="product_extras">
             <button class="product_cart_button addcart" data-id="{{ $feature->id }}">Thêm vào giỏ</button>
@@ -222,7 +219,7 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
         <div class="row">
             <div class="col-lg-3">
                 <div class="popular_categories_content">
-                    <div class="popular_categories_title">PHỔ BIẾN</div>
+                    <div class="popular_categories_title">Thương hiệu</div>
                     <div class="popular_categories_slider_nav">
                         <div class="popular_categories_prev popular_categories_nav"><i class="fas fa-angle-left ml-auto"></i></div>
                         <div class="popular_categories_next popular_categories_nav"><i class="fas fa-angle-right ml-auto"></i></div>
@@ -230,9 +227,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                     <div class="popular_categories_link"><a href="#">Tất cả</a></div>
                 </div>
             </div>
-
             @php
-            $category = DB::table('categories')->get();
+            $category = DB::table('brands')->get();
             @endphp
             <!-- Popular Categories Slider -->
 
@@ -244,8 +240,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                         <!-- Popular Categories Item -->
                         <div class="owl-item">
                             <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                <div class="popular_category_image"><img src="{{ asset('public/frontend/images/popular_1.png')}}" alt=""></div>
-                                <div class="popular_category_text">{{ $cat->category_name}}</div>
+                                <div class="popular_category_image"><img src="{{ $cat->brand_logo }}" alt=""></div>
+                                <div class="popular_category_text">{{ $cat->brand_name}}</div>
                             </div>
                         </div>
                         @endforeach
@@ -255,7 +251,6 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
         </div>
     </div>
 </div>
-
 <!-- Banner -->
 @php
 $mid = DB::table('products')
@@ -270,7 +265,6 @@ $mid = DB::table('products')
     <div class="banner_2_container">
         <div class="banner_2_dots"></div>
         <!-- Banner 2 Slider -->
-
         <div class="owl-carousel owl-theme banner_2_slider">
             @foreach($mid as $row)
             <!-- Banner 2 Slider Item -->
@@ -288,8 +282,7 @@ $mid = DB::table('products')
                                         <h4>{{ $row->brand_name }}</h4><br>
                                         <h2>{{ number_format($row->selling_price) }} {{'VNĐ'}}</h2>
                                     </div>
-                                    <div class="rating_r rating_r_4 banner_2_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                    <div class="button banner_2_button"><a href="#">Mua ngay</a></div>
+                                    <div class="button banner_2_button"><a href="{{ url('product/details/'.$row->id.'/'.$row->product_name) }}">Xem ngay</a></div>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-6 fill_height">
@@ -302,7 +295,6 @@ $mid = DB::table('products')
                 </div>
             </div>
             @endforeach
-
         </div>
     </div>
 </div>
@@ -311,7 +303,6 @@ $mid = DB::table('products')
 @php
 $cats = DB::table('categories')->skip(1)->first();
 $catid = $cats->id;
-
 $product = DB::table('products')->where('category_id',$catid)->where('status',1)->limit(10)->orderBy('id','DESC')->get();
 @endphp
 <div class="new_arrivals">
@@ -341,13 +332,13 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                                 @if($product->discount_price == null)
                                                 <div class="product_price discount">{{ number_format($product->selling_price) }} {{ 'VNĐ' }}</div>
                                                 @else
-                                                <div class="product_price discount">{{ $product->discount_price }}đ<span>{{ $product->selling_price }}đ</span></div>
+                                                <div class="product_price discount">{{ number_format($product->discount_price) }} {{ 'VNĐ'}}<span>{{ number_format($product->selling_price) }} {{ 'VNĐ'}}</span></div>
                                                 @endif
                                                 <div class="product_name">
-                                                    <div><a href="product.html">{{ $product->product_name }}</a></div>
+                                                    <div><a href="{{ url('product/details/'.$product->id.'/'.$product->product_name) }}">{{ str_limit($product->product_name, $limit = 25) }}</a></div>
                                                 </div>
                                                 <div class="product_extras">
-                                                    <button class="product_cart_button">Thêm vào giỏ</button>
+                                                    <button class="product_cart_button addcart" id="{{ $product->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Xem nhanh</button>
                                                 </div>
                                             </div>
                                             <button class="addwishlist" data-id="{{ $feature->id }}">
@@ -385,7 +376,6 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
 @php
 $cats = DB::table('categories')->first();
 $catid = $cats->id;
-
 $product = DB::table('products')->where('category_id',$catid)->where('status',1)->limit(10)->orderBy('id','DESC')->get();
 @endphp
 <div class="new_arrivals">
@@ -413,20 +403,15 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                             <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset( $product->image_one )}}" alt="" style="height: 120px; width:140px;"></div>
                                             <div class="product_content">
                                                 @if($product->discount_price == null)
-                                                <div class="product_price discount">{{ $product->selling_price }}đ</div>
+                                                <div class="product_price discount">{{ number_format($product->selling_price) }} {{ 'VNĐ' }}</div>
                                                 @else
-                                                <div class="product_price discount">{{ $product->discount_price }}đ<span>{{ $product->selling_price }}đ</span></div>
+                                                <div class="product_price discount">{{ number_format($product->discount_price) }} {{ 'VNĐ'}}<span>{{ number_format($product->selling_price) }} {{ 'VNĐ'}}</span></div>
                                                 @endif
                                                 <div class="product_name">
-                                                    <div><a href="product.html">{{ $product->product_name }}</a></div>
+                                                    <div><a href="{{ url('product/details/'.$product->id.'/'.$product->product_name) }}">{{ str_limit($product->product_name, $limit = 25) }}</a></div>
                                                 </div>
                                                 <div class="product_extras">
-                                                    <div class="product_color">
-                                                        <input type="radio" checked name="product_color" style="background:#b19c83">
-                                                        <input type="radio" name="product_color" style="background:#000000">
-                                                        <input type="radio" name="product_color" style="background:#999999">
-                                                    </div>
-                                                    <button class="product_cart_button">Thêm vào giỏ</button>
+                                                    <button class="product_cart_button addcart" id="{{ $product->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Xem nhanh</button>
                                                 </div>
                                             </div>
                                             <button class="addwishlist" data-id="{{ $feature->id }}">
@@ -434,7 +419,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                             </button>
                                             <ul class="product_marks">
                                                 @if($product->discount_price == null)
-                                                <li class="product_mark product_discount" style="background: blue;">New</li>
+                                                <li class="product_mark product_discount" style="background: blue;">Mới</li>
                                                 @else
                                                 <li class="product_mark product_discount">
                                                     @php
@@ -471,13 +456,12 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
     <div class="trends_overlay"></div>
     <div class="container">
         <div class="row">
-
             <!-- Buy 1 Get 1 Content -->
             <div class="col-lg-3">
                 <div class="trends_container">
                     <h2 class="trends_title">Mua 1 Tặng 1</h2>
                     <div class="trends_text">
-                        <p>Chương trình thử nghiệm thôi mấy ba</p>
+                        <p>Chương trình tri ân khách hàng</p>
                     </div>
                     <div class="trends_slider_nav">
                         <div class="trends_prev trends_nav"><i class="fas fa-angle-left ml-auto"></i></div>
@@ -491,9 +475,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
             <!-- mua 1 tang 1 Slider -->
             <div class="col-lg-9">
                 <div class="trends_slider_container">
-
                     <!-- 1 tang 1 Slider -->
-
                     <div class="owl-carousel owl-theme trends_slider">
                         @foreach($buyget as $buyget)
                         <!-- 1 tang 1 Slider Item -->
@@ -503,17 +485,18 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                 <div class="trends_content">
                                     <div class="trends_category"><a href="#">{{ $buyget->brand_name }}</a></div>
                                     <div class="trends_info clearfix">
-                                        <div class="trends_name"><a href="product.html">{{ $buyget->product_name }}</a></div>
+                                        <div class="trends_name"><a href="{{ url('product/details/'.$buyget->id.'/'.$buyget->product_name) }}">{{ $buyget->product_name }}</a></div>
                                         @if($product->discount_price == null)
-                                        <div class="product_price discount">{{ $buyget->selling_price }}đ</div>
+                                        <div class="product_price discount">{{ number_format($buyget->selling_price) }} {{ 'VNĐ'}}</div>
                                         @else
-                                        <div class="product_price discount">{{ $buyget->discount_price }}đ<span>{{ $buyget->selling_price }}đ</span></div>
+                                        <div class="product_price discount">{{ number_format($buyget->discount_price) }} {{ 'VNĐ'}}<span>{{ number_format($buyget->selling_price) }} {{ 'VNĐ'}}</span></div>
                                         @endif
-                                        <a href="" class="btn btn-danger btn-sm">Thêm vào giỏ</a>
+                                        <!-- <button class="product_cart_button addcart" id="{{ $product->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Xem nhanh</button> -->
+                                        <a href="" class="btn btn-danger btn-sm addcart" id="{{ $buyget->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Xem nhanh</a>
                                     </div>
                                 </div>
                                 <ul class="trends_marks">
-                                    <li class="trends_mark trends_new">Mua ngay</li>
+                                    <li class="trends_mark trends_new">Sale</li>
                                 </ul>
                                 <button class="addwishlist" data-id="{{ $feature->id }}">
                                     <div class="trends_fav"><i class="fas fa-heart"></i></div>
@@ -528,138 +511,36 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
         </div>
     </div>
 </div>
-
+@php
+$post = DB::table('posts')->get();
+@endphp
 <!-- Reviews -->
-
 <div class="reviews">
     <div class="container">
         <div class="row">
             <div class="col">
-
                 <div class="reviews_title_container">
-                    <h3 class="reviews_title">Latest Reviews</h3>
-                    <div class="reviews_all ml-auto"><a href="#">view all <span>reviews</span></a></div>
+                    <h3 class="reviews_title">Tin tức</h3>
                 </div>
-
                 <div class="reviews_slider_container">
-
                     <!-- Reviews Slider -->
                     <div class="owl-carousel owl-theme reviews_slider">
-
                         <!-- Reviews Slider Item -->
+                        @foreach($post as $post)
                         <div class="owl-item">
                             <div class="review d-flex flex-row align-items-start justify-content-start">
                                 <div>
-                                    <div class="review_image"><img src="{{ asset('public/frontend/images/review_1.jpg')}}" alt=""></div>
+                                    <div class="review_image"><img src="{{ $post->post_image }}" alt=""></div>
                                 </div>
                                 <div class="review_content">
-                                    <div class="review_name">Roberto Sanchez</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
+                                    <div class="review_name">{{ $post->post_title_vn}}</div>
                                     <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
+                                        {!! str_limit($post->details_vn, $limit = 120) !!}
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="{{ asset('public/frontend/images/review_2.jpg')}}" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Brandon Flowers</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="{{ asset('public/frontend/images/review_3.jpg')}}" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Emilia Clarke</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="{{ asset('public/frontend/images/review_1.jpg')}}" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Roberto Sanchez</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="{{ asset('public/frontend/images/review_2.jpg')}}" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Brandon Flowers</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reviews Slider Item -->
-                        <div class="owl-item">
-                            <div class="review d-flex flex-row align-items-start justify-content-start">
-                                <div>
-                                    <div class="review_image"><img src="{{ asset('public/frontend/images/review_3.jpg')}}" alt=""></div>
-                                </div>
-                                <div class="review_content">
-                                    <div class="review_name">Emilia Clarke</div>
-                                    <div class="review_rating_container">
-                                        <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="review_time">2 day ago</div>
-                                    </div>
-                                    <div class="review_text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum laoreet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                     <div class="reviews_dots"></div>
                 </div>
@@ -709,7 +590,6 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                             <img src="" id="pimage" style="height: 220px;">
                             <div class="card-body">
                                 <h4 class="card-title text-center" id="pname"></h4>
-
                             </div>
                         </div>
                     </div>
