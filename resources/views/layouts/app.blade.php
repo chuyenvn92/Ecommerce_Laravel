@@ -167,34 +167,98 @@
              <!-- Characteristics -->
              @yield('content')
              <!-- Footer -->
-             <footer class="footer">
-                 <div class="container">
+             <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+                 <!-- Footer Links -->
+                 <div class="container text-center text-md-left">
+
+                     <!-- Grid row -->
                      <div class="row">
-                         <div class="col-lg-3 footer_col">
-                             <div class="footer_column footer_contact">
-                                 <div class="logo_container">
-                                     <div class="logo"><a href="#">UTT</a></div>
-                                 </div>
-                                 <div class="footer_title">Đồ án HTTT</div>
-                                 <div class="footer_phone">Nhóm 7</div>
-                                 <div class="footer_contact_text">
-                                     <p>Đại học CN GTVT</p>
-                                     <p>54 Triều Khúc - Thanh Xuân - Hà Nội</p>
-                                 </div>
-                                 <div class="footer_social">
-                                     <ul>
-                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                         <li><a href="#"><i class="fab fa-google"></i></a></li>
-                                         <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
-                                     </ul>
-                                 </div>
-                             </div>
+
+                         <!-- Grid column -->
+                         <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                             <!-- Content -->
+                             <h5 class="font-weight-bold text-uppercase mb-4">Đồ án HTTT Nhóm 7</h5>
+                             <p>Mã số thuế: 0108597977</p>
+                             <p>Địa chỉ: Phòng 803-812, Tầng 8, Tòa nhà 315 Trường Chinh, Phường Khương Mai, Quận Thanh Xuân, Thành phố Hà Nội.</p>
+
                          </div>
+                         <!-- Grid column -->
+
+                         <hr class="clearfix w-100 d-md-none">
+
+                         <!-- Grid column -->
+                         <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                             <!-- Links -->
+                             <h5 class="font-weight-bold text-uppercase mb-4">Về chúng tôi</h5>
+
+                             <ul class="list-unstyled">
+                                 <li>
+                                     <p>
+                                         <a href="{{ url('/') }}">Giới thiệu</a>
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <p>
+                                         <a href="{{ route('contact.page') }}">Liên hệ</a>
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <p>
+                                         <a href="{{ route('contact.page') }}">Tuyển dụng</a>
+                                     </p>
+                                 </li>
+                                 <li>
+                                     <p>
+                                         <a href="{{ route('contact.page') }}">Tìm đại lý</a>
+                                     </p>
+                                 </li>
+                             </ul>
+
+                         </div>
+                         <!-- Grid column -->
+
+                         <hr class="clearfix w-100 d-md-none">
+
+                         <!-- Grid column -->
+                         <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                             <!-- Contact details -->
+                             <h5 class="font-weight-bold text-uppercase mb-4">Hỗ trợ khách hàng</h5>
+
+                             <ul class="list-unstyled">
+                                 <li>
+                                     <p>Chính sách đổi trả</p>
+                                 </li>
+                                 <li>
+                                     <p>Câu hỏi thường gặp</p>
+                                 </li>
+                                 <li>
+                                     <p>Hướng dẫn chọn size</p>
+                                 </li>
+                                 <li>
+                                     <p>Thanh toán giao nhận</p>
+                                 </li>
+                             </ul>
+                         </div>
+                         <!-- Grid column -->
+                         <hr class="clearfix w-100 d-md-none">
+                         <!-- Grid column -->
+                         <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+                             <!-- Social buttons -->
+                             <h5 class="font-weight-bold text-uppercase mb-4">Fanpage</h5>
+                             <div class="addthis_inline_share_toolbox"></div>
+                         </div>
+                         <!-- Grid column -->
                      </div>
+                     <!-- Grid row -->
                  </div>
+                 <!-- Footer Links -->
              </footer>
+             <!-- Footer -->
      </div>
      <!-- Order Modal Tracking -->
      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

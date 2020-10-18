@@ -25,8 +25,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_1.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Miễn phí giao hàng</div>
-                        <div class="char_subtitle">từ 200k</div>
+                        <div class="char_title">Giao hàng siêu tốc</div>
+                        <div class="char_subtitle"></div>
                     </div>
                 </div>
             </div>
@@ -37,8 +37,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_2.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Miễn phí giao hàng</div>
-                        <div class="char_subtitle">từ 200k</div>
+                        <div class="char_title">Đổi trả nhanh chóng</div>
+                        <div class="char_subtitle"></div>
                     </div>
                 </div>
             </div>
@@ -49,8 +49,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_3.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Miễn phí giao hàng</div>
-                        <div class="char_subtitle">từ 200k</div>
+                        <div class="char_title">Đa dạng thanh toán</div>
+                        <div class="char_subtitle"></div>
                     </div>
                 </div>
             </div>
@@ -61,8 +61,8 @@ $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
                 <div class="char_item d-flex flex-row align-items-center justify-content-start">
                     <div class="char_icon"><img src="{{ asset('public/frontend/images/char_4.png')}}" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title">Miễn phí giao hàng</div>
-                        <div class="char_subtitle">từ 200k</div>
+                        <div class="char_title">Siêu nhiều ưu đãi</div>
+                        <div class="char_subtitle"></div>
                     </div>
                 </div>
             </div>
@@ -573,6 +573,99 @@ $post = DB::table('posts')->get();
         </div>
     </div>
 </div>
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Content -->
+                <h5 class="font-weight-bold text-uppercase mb-4">Đồ án HTTT Nhóm 7</h5>
+                <p>Mã số thuế: 0108597977</p>
+                <p>Địa chỉ: Phòng 803-812, Tầng 8, Tòa nhà 315 Trường Chinh, Phường Khương Mai, Quận Thanh Xuân, Thành phố Hà Nội.</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mb-4">Về chúng tôi</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <p>
+                            <a href="{{ url('/') }}">Giới thiệu</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="{{ route('contact.page') }}">Liên hệ</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="{{ route('contact.page') }}">Tuyển dụng</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="{{ route('contact.page') }}">Tìm đại lý</a>
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Contact details -->
+                <h5 class="font-weight-bold text-uppercase mb-4">Hỗ trợ khách hàng</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Chính sách đổi trả</p>
+                    </li>
+                    <li>
+                        <p>Câu hỏi thường gặp</p>
+                    </li>
+                    <li>
+                        <p>Hướng dẫn chọn size</p>
+                    </li>
+                    <li>
+                        <p>Thanh toán giao nhận</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none">
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+                <!-- Social buttons -->
+                <h5 class="font-weight-bold text-uppercase mb-4">Fanpage</h5>
+                <div class="addthis_inline_share_toolbox"></div>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </div>
+    <!-- Footer Links -->
+</footer>
+<!-- Footer -->
 <!-- Modal Quick View Product -->
 <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -618,7 +711,7 @@ $post = DB::table('posts')->get();
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputcolor">Số lượng</label>
-                                <input type="number" class="form-control" name="qty" value="1">
+                                <input type="number" min="1" class="form-control" name="qty" value="1">
                             </div>
                             <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
                         </form>
@@ -737,4 +830,5 @@ $post = DB::table('posts')->get();
             });
         });
     </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f7b08972fe81d30"></script>
     @endsection

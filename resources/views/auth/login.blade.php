@@ -14,10 +14,10 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email hoặc Số điện thoại</label>
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" aria-describedby="emailHelp" required="">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" aria-describedby="emailHelp" required="" autofocus>
                             @error('email')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong>Tài khoản hoặc mật khẩu không chính xác</strong>
                             </span>
                             @enderror
                         </div>
@@ -48,7 +48,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên của bạn</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="tên của bạn" name="name" required="">
+                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Tên của bạn" name="name" required="">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số điện thoại</label>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" aria-describedby="emailHelp" placeholder="Email">
+                            <input type="email" class="form-control" name="email" value="{{ old('email') }}" aria-describedby="emailHelp" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mật khẩu</label>

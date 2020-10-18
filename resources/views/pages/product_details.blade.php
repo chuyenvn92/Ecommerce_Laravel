@@ -65,7 +65,7 @@
 								<div class="col-lg-4">
 									<div class="form-group">
 										<label for="exampleFormControlSelect1">Số lượng</label>
-										<input class="form-control" type="number" value="1" pattern="[0-9]" name="qty">
+										<input class="form-control" type="number" min="0" value="1" pattern="[0-9]" name="qty">
 									</div>
 								</div>
 							</div>
