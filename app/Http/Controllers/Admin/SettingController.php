@@ -16,7 +16,7 @@ class SettingController extends Controller
     public function SiteSetting()
     {
         $setting = DB::table('sitesetting')->first();
-        return view('admin.seTting.site_setting', compact('setting'));
+        return view('admin.setting.site_setting', compact('setting'));
     }
     public function UpdateSiteSetting(Request $request)
     {
