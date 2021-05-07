@@ -29,12 +29,6 @@ $subcategory = DB::table('subcategories')->get();
             </div><!-- col-4 -->
             <div class="col-lg-6">
               <div class="form-group">
-                <label class="form-control-label">Mã sản phẩm<span class="tx-danger"> *</span></label>
-                <input class="form-control" type="text" name="product_code" value="{{ $product->product_code}}">
-              </div>
-            </div><!-- col-4 -->
-            <div class="col-lg-6">
-              <div class="form-group">
                 <label class="form-control-label">Số lượng<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="product_quantity" value="{{ $product->product_quantity}}">
               </div>

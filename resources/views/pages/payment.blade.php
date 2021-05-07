@@ -87,29 +87,29 @@ $vat = $setting->vat;
             </div>
             <div class="col-lg-5" style="border: 1px solid grey; padding:20px; border-radius: 20px;">
                 <div class="contact_form_container">
-                    <div class="contact_form_title text-center">Địa chỉ</div>
+                    <div class="contact_form_title text-center">Địa chỉ ship hàng</div>
 
                     <form action="{{ route('payment.process') }}" method="post" id="contact_form">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên của bạn</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Tên của bạn" name="name" required="">
+                            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{ Auth::user()->name }}" name="name" required="">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số điện thoại</label>
-                            <input type="text" class="form-control" name="phone" aria-describedby="emailHelp" placeholder="Nhập số điện thoại">
+                            <input type="text" class="form-control" name="phone" aria-describedby="emailHelp" value="{{ Auth::user()->phone }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Nhập Email của bạn">
+                            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="{{ Auth::user()->email }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Địa chỉ</label>
-                            <input type="text" class="form-control" name="address" aria-describedby="emailHelp" placeholder="Nhập Địa chỉ của bạn">
+                            <input type="text" class="form-control" name="address" aria-describedby="emailHelp" value="Tứ Hiệp">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Thành Phố</label>
-                            <input type="text" class="form-control" name="city" aria-describedby="emailHelp" placeholder="Nhập thành phố">
+                            <input type="text" class="form-control" name="city" aria-describedby="emailHelp" value="Hà Nội">
                         </div>
                         <div class="contact_form_title text-center">Chọn phương thức thanh toán</div>
                         <div class="form-group">

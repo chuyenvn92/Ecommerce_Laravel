@@ -42,7 +42,7 @@ class ProductController extends Controller
   {
     $data = array();
     $data['product_name'] = $request->product_name;
-    $data['product_code'] = $request->product_code;
+    $data['product_code'] = mt_rand(1000000000, 9999999999);
     $data['product_quantity'] = $request->product_quantity;
     $data['discount_price'] = $request->discount_price;
     $data['category_id'] = $request->category_id;
@@ -148,7 +148,6 @@ class ProductController extends Controller
   {
     $data = array();
     $data['product_name'] = $request->product_name;
-    $data['product_code'] = $request->product_code;
     $data['product_quantity'] = $request->product_quantity;
     $data['discount_price'] = $request->discount_price;
     $data['category_id'] = $request->category_id;

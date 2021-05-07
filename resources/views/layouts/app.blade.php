@@ -67,7 +67,10 @@
                                  <div class="top_bar_user">
                                      @guest
                                      <div><a href="{{ route('login') }}">
-                                             <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Đăng kí/Đăng Nhập
+                                             <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Đăng Nhập
+                                         </a></div>
+                                     <div><a href="{{ route('register') }}">
+                                             <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Đăng kí
                                          </a></div>
                                      @else
                                      <ul class="standard_dropdown top_bar_dropdown">

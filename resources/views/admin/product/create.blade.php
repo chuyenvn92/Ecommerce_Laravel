@@ -20,12 +20,13 @@
                 <input class="form-control" type="text" name="product_name" placeholder="Tên sản phẩm">
               </div>
             </div><!-- col-6 -->
-            <div class="col-lg-6">
+            {{-- <div class="col-lg-6">
               <div class="form-group">
                 <label class="form-control-label">Mã sản phẩm<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="product_code" placeholder="Mã sản phẩm">
               </div>
-            </div><!-- col-6 -->
+            </div> --}}
+            <!-- col-6 -->
             <div class="col-lg-6">
               <div class="form-group">
                 <label class="form-control-label">Số lượng<span class="tx-danger"> *</span></label>
