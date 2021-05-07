@@ -6,8 +6,8 @@
 @include('layouts.slider')
 
 @php
-$featured = DB::table('products')->where('status',1)->orderBy('id','desc')->limit(8)->get();
-$trend = DB::table('products')->where('status',1)->where('trend',1)->orderBy('id','desc')->limit(8)->get();
+$featured = DB::table('products')->where('status',1)->where('product_quantity','>',0)->orderBy('id','desc')->limit(8)->get();
+$trend = DB::table('products')->where('status',1)->where('trend',1)->where('product_quantity','>',0)->orderBy('id','desc')->limit(8)->get();
 $best = DB::table('products')->where('status',1)->where('best_rated',1)->orderBy('id','desc')->limit(8)->get();
 
 $hot = DB::table('products')->join('brands','products.brand_id','brands.id')
@@ -586,9 +586,9 @@ $post = DB::table('posts')->get();
             <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
                 <!-- Content -->
-                <h5 class="font-weight-bold text-uppercase mb-4">Đồ án HTTT Nhóm 7</h5>
+                <h5 class="font-weight-bold text-uppercase mb-4">Torano Shop</h5>
                 <p>Mã số thuế: 0108597977</p>
-                <p>Địa chỉ: Phòng 803-812, Tầng 8, Tòa nhà 315 Trường Chinh, Phường Khương Mai, Quận Thanh Xuân, Thành phố Hà Nội.</p>
+                <p>Địa chỉ: Cơ sở 1165 đường Giải Phóng, Quận Thanh Xuân, Thành phố Hà Nội.</p>
 
             </div>
             <!-- Grid column -->

@@ -23,13 +23,13 @@ $blogcategory = DB::table('post_category')->get();
           <div class="row mg-b-25">
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Tiêu đề (English)<span class="tx-danger"> *</span></label>
+                <label class="form-control-label">Title (English)<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="post_title_en" value="{{ $post->post_title_en }}">
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Tiêu đề (VietNam)<span class="tx-danger"> *</span></label>
+                <label class="form-control-label">Tiêu đề (Tiếng Việt)<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="post_title_vn" value="{{ $post->post_title_vn }}">
               </div>
             </div><!-- col-4 -->
@@ -48,7 +48,7 @@ $blogcategory = DB::table('post_category')->get();
             </div><!-- col-4 -->
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Chi tiết (English)<span class="tx-danger"> *</span></label>
+                <label class="form-control-label">Desciption (English)<span class="tx-danger"> *</span></label>
                 <textarea class="form-control" id="summernote" name="details_en">
          {!! $post->details_en !!}
         </textarea>
@@ -56,7 +56,7 @@ $blogcategory = DB::table('post_category')->get();
             </div>
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Chi tiết (VietNam)<span class="tx-danger"> *</span></label>
+                <label class="form-control-label">Chi tiết (Tiếng Việt)<span class="tx-danger"> *</span></label>
                 <textarea class="form-control" id="summernote1" name="details_vn">
          {!! $post->details_vn !!}
         </textarea>

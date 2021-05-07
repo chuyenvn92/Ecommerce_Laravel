@@ -6,7 +6,7 @@
 <div class="sl-mainpanel">
   <div class="sl-pagebody">
     <div class="sl-page-title">
-      <h5>Bảng Phân loại sản phẩm</h5>
+      <h5>Bảng PHÂN LOẠI SẢN PHẨM</h5>
     </div><!-- sl-page-title -->
 
     <div class="card pd-20 pd-sm-40">
@@ -70,7 +70,7 @@
           <div class="modal-body pd-20">
             <div class="form-group">
               <label for="exampleInputEmail1">Tên loại</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sub Category Name" name="subcategory_name">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên loại sản phẩm" name="subcategory_name">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Danh mục</label>

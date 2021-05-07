@@ -11,7 +11,7 @@
 
     <div class="card pd-20 pd-sm-40">
       <h6 class="card-body-title">Danh sách sản phẩm
-        <a href="{{ route('add.product')}}" class="btn btn-sm btn-warning" style="float: right;">Add New</a>
+        <a href="{{ route('add.product')}}" class="btn btn-sm btn-warning" style="float: right;">Thêm mới</a>
       </h6>
 
       <div class="table-wrapper">

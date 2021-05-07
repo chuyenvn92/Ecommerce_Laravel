@@ -179,9 +179,9 @@
                          <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
                              <!-- Content -->
-                             <h5 class="font-weight-bold text-uppercase mb-4">Đồ án HTTT Nhóm 7</h5>
+                             <h5 class="font-weight-bold text-uppercase mb-4">TORANO SHOP</h5>
                              <p>Mã số thuế: 0108597977</p>
-                             <p>Địa chỉ: Phòng 803-812, Tầng 8, Tòa nhà 315 Trường Chinh, Phường Khương Mai, Quận Thanh Xuân, Thành phố Hà Nội.</p>
+                             <p>Địa chỉ: Cơ sở 1165 đường Giải Phóng, Quận Thanh Xuân, Thành phố Hà Nội.</p>
 
                          </div>
                          <!-- Grid column -->

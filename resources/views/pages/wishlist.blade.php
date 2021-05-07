@@ -14,6 +14,8 @@
 					<div class="cart_items">
 						<ul class="cart_list">
 							@foreach($product as $row)
+							<form action="{{ url('cart/product/add/'.$row->id) }}" method="POST">
+							@csrf
 							<li class="cart_item clearfix">
 								<div class="cart_item_image text-center"><br><img src="{{ asset($row->image_one) }}" alt="" style="width:70px; height:70px;"></div>
 								<div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
@@ -37,12 +39,20 @@
 										<div class="cart_item_text">{{ $row->product_size}}</div>
 									</div>
 									@endif
+									<div class="col-lg-4">
+									<div class="form-group">
+										<label for="exampleFormControlSelect1">Số lượng</label>
+										<input type="number" min="0" value="1" pattern="[0-9]" name="qty">
+									</div>
+								
+									<button type="submit" class="button cart_button">Thêm vào giỏ</button>
 									<div class="cart_item_price cart_info_col">
 										<div class="cart_item_title">Hành dộng</div><br>
-										<a href="" class="btn btn-sm btn-danger">Thêm</a>
+										<button type="submit" class="button cart_button">Thêm vào giỏ</button>
 									</div>
 								</div>
 							</li>
+							</form>
 							@endforeach
 						</ul>
 					</div>

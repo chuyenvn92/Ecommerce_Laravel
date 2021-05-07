@@ -158,7 +158,7 @@ Route::get('admin/seo', 'Admin\OrderController@seo')->name('admin.seo');
 Route::post('admin/seo/update', 'Admin\OrderController@updateSeo')->name('update.seo');
 
 // Order Tracking Route
-Route::post('order/tracking', 'FrontendController@orderTracking')->name('order.tracking');
+Route::post('order/tracking', 'FrontEndController@orderTracking')->name('order.tracking');
 
 // Order Report Route
 Route::get('admin/today/order', 'Admin\ReportController@TodayReport')->name('today.order');

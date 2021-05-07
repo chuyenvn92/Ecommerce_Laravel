@@ -53,7 +53,7 @@
 
 				<div class="shop_content">
 					<div class="shop_bar clearfix">
-						<div class="shop_product_count"><span>{{ count($category )}}</span> sản phẩm được tìm thấy</div>
+						<div class="shop_product_count"><span>{{ count($category_all )}}</span> sản phẩm được tìm thấy</div>
 					</div>
 					<div class="product_grid row">
 						<div class="product_grid_border"></div>
@@ -61,7 +61,10 @@
 						<!-- Product Item -->
 						<div class="product_item is_new">
 							<div class="product_border"></div>
+							<a href="{{ url('product/details/'.$row->id.'/'.$row->product_name) }}">
 							<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{ asset($row->image_one) }}" alt="" style="height: 100px; width:100px;"></div>
+							</a>
+							
 							<div class="product_content">
 								@if($row->discount_price == null)
 								<div class="product_price discount">{{ number_format($row->selling_price) }} {{ 'VNĐ'}}</div>

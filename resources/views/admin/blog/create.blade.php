@@ -16,13 +16,13 @@
           <div class="row mg-b-25">
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Tiêu đề(Tiếng Anh)<span class="tx-danger"> *</span></label>
-                <input class="form-control" type="text" name="post_title_en" placeholder="Tiêu đề">
+                <label class="form-control-label">Title (English)<span class="tx-danger"> *</span></label>
+                <input class="form-control" type="text" name="post_title_en" placeholder="Title">
               </div>
             </div><!-- col-4 -->
             <div class="col-lg-4">
               <div class="form-group">
-                <label class="form-control-label">Tiêu đề(Tiếng Việt)<span class="tx-danger"> *</span></label>
+                <label class="form-control-label">Tiêu đề (Tiếng Việt)<span class="tx-danger"> *</span></label>
                 <input class="form-control" type="text" name="post_title_vn" placeholder="Tiêu đề">
               </div>
             </div><!-- col-4 -->
@@ -39,13 +39,13 @@
             </div><!-- col-4 -->
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Chi tiết (English)<span class="tx-danger"> *</span></label>
+                <label class="form-control-label">Description (English)<span class="tx-danger"> *</span></label>
                 <textarea class="form-control" id="summernote" name="details_en"></textarea>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="form-group">
-                <label class="form-control-label">Chi tiết (VietNam)<span class="tx-danger"> *</span></label>
+                <label class="form-control-label">Chi tiết (Tiếng Việt)<span class="tx-danger"> *</span></label>
                 <textarea class="form-control" id="summernote1" name="details_vn"></textarea>
               </div>
             </div>
@@ -53,7 +53,7 @@
               <div class="form-group">
                 <label class="form-control-label">Ảnh<span class="tx-danger"> *</span></label>
                 <label class="custom-file">
-                  <input type="file" id="file" class="custom-file-input" name="post_image" onchange="readURL(this);" required="">
+                  <input type="file" id="file" class="custom-file-input" name="post_image" onchange="readURL(this);">
                   <span class="custom-file-control"></span>
                   <img src="#" id="one">
                 </label>

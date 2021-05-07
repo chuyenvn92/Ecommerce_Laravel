@@ -69,10 +69,10 @@
           <div class="modal-body pd-20">
             <div class="form-group">
               <label for="exampleInputEmail1">Tên</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="thương hiệu" name="brand_name">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên" name="brand_name">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">ogo</label>
+              <label for="exampleInputEmail1">Logo</label>
               <input type="file" class="form-control" aria-describedby="emailHelp" placeholder="ảnh" name="brand_logo">
             </div>
             <!-- modal-body -->

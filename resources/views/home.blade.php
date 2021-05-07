@@ -17,7 +17,6 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
               <th scope="col">Ngày</th>
               <th scope="col">Mã</th>
               <th scope="col">Trạng thái</th>
-              <th scope="col">Thao tác</th>
             </tr>
           </thead>
           <tbody>
@@ -41,9 +40,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
                 <span class="badge badge-danger">Đã hủy</span>
                 @endif
               </td>
-              <td>
-                <a href="" class="btn btn-info">Xem</a>
-              </td>
+              
             </tr>
             @endforeach
           </tbody>

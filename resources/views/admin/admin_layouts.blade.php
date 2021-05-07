@@ -56,7 +56,7 @@
 
   @else
   <!-- ########## START: LEFT PANEL ########## -->
-  <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i>Nhóm 7-UTT</a></div>
+  <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i>Torano Shop</a></div>
   <div class="sl-sideleft">
     <div class="sl-sideleft-menu">
       <a href="{{ url('admin/home') }}" class="sl-menu-link active">
@@ -162,8 +162,8 @@
         </div><!-- menu-item -->
       </a><!-- sl-menu-link -->
       <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Đơn hàng trong ngày</a></li>
-        <li class="nav-item"><a href="{{ route('today.delivery') }}" class="nav-link">Đơn hàng vận chuyển</a></li>
+        <li class="nav-item"><a href="{{ route('today.delivery') }}" class="nav-link">Trong ngày</a></li>
+        <!--<li class="nav-item"><a href="{{ route('today.order') }}" class="nav-link">Đơn hàng đang chờ duyệt</a></li>-->
         <li class="nav-item"><a href="{{ route('this.month') }}" class="nav-link">Trong tháng</a></li>
         <li class="nav-item"><a href="{{ route('search.report') }}" class="nav-link">Tìm kiếm</a></li>
       </ul>
@@ -380,8 +380,8 @@
       e.preventDefault();
       var link = $(this).attr("href");
       swal({
-          title: "Bạn chắc chắn muốn xóa chứ???",
-          text: "Khi xóa thì dữ liệu sẽ mât vĩnh viễn :))",
+          title: "Bạn chắc chắn muốn xóa?",
+          text: "Khi xóa thì dữ liệu sẽ bị mất vĩnh viễn!",
           icon: "warning",
           buttons: true,
           dangerMode: true,
@@ -390,7 +390,7 @@
           if (willDelete) {
             window.location.href = link;
           } else {
-            swal("Safe Data!");
+            swal("Dữ liệu không thay đổi!");
           }
         });
     });

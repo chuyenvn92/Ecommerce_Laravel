@@ -44,7 +44,7 @@ class PaymentController extends Controller
     $charge = \Stripe\Charge::create([
       'amount' => $total,
       'currency' => 'vnd',
-      'description' => 'Chuyên Thanh Toán',
+      'description' => 'Test Thanh Toán',
       'source' => $token,
       'metadata' => ['order_id' => uniqid()],
     ]);

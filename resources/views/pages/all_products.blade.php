@@ -50,7 +50,7 @@
 				<!-- Shop Content -->
 				<div class="shop_content">
 					<div class="shop_bar clearfix">
-						<div class="shop_product_count"><span> {{ count($categories)}}</span> được tìm thấy</div>
+						<div class="shop_product_count"><span> {{ count($products)}}</span> được tìm thấy</div>
 					</div>
 
 					<div class="product_grid row">

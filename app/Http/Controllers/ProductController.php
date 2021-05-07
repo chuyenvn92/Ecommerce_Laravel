@@ -71,7 +71,7 @@ class ProductController extends Controller
 
 	public function categoryView($id)
 	{
-		$category_all = DB::table('products')->where('category_id', $id)->paginate(5);
+		$category_all = DB::table('products')->where('category_id', $id)->paginate(10);
 		return view('pages.all_category', compact('category_all'));
 	}
 }
