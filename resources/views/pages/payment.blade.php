@@ -105,11 +105,11 @@ $vat = $setting->vat;
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Địa chỉ</label>
-                            <input type="text" class="form-control" name="address" aria-describedby="emailHelp" value="Tứ Hiệp">
+                            <input type="text" class="form-control" name="address" aria-describedby="emailHelp" value="{{ Auth::user()->address }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Thành Phố</label>
-                            <input type="text" class="form-control" name="city" aria-describedby="emailHelp" value="Hà Nội">
+                            <input type="text" class="form-control" name="city" aria-describedby="emailHelp" value="{{ Auth::user()->city }}">
                         </div>
                         <div class="contact_form_title text-center">Chọn phương thức thanh toán</div>
                         <div class="form-group">

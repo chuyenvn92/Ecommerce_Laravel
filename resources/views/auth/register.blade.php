@@ -52,6 +52,26 @@
                                 <input type="password" class="form-control" aria-describedby="emailHelp"
                                     placeholder="Nhập lại mật khẩu" name="password_confirmation" required="">
                             </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Địa chỉ</label>
+                                <input type="text" class="form-control @error('address') is-invalid @enderror"
+                                    aria-describedby="emailHelp" placeholder="Nhập địa chỉ" name="address" required="">
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Thành phố</label>
+                                <input type="text" class="form-control @error('city') is-invalid @enderror"
+                                    aria-describedby="emailHelp" placeholder="Nhập địa chỉ" name="city" required="">
+                                @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             <div class="contact_form_button">
                                 <button type="submit" class="btn btn-info">Đăng kí</button>
                             </div>
