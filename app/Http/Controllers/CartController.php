@@ -25,7 +25,7 @@ class CartController extends Controller
       $data['options']['color'] = '';
       $data['options']['size'] = '';
       Cart::add($data);
-      return \Response::json(['success' => 'Thêm vào giỏ hàng thành công']);
+      return \Response::json(['success' => 'Thêm vào giỏ hàng thành công nè']);
     } else {
       $data['id'] = $product->id;
       $data['name'] = $product->product_name;
@@ -36,7 +36,7 @@ class CartController extends Controller
       $data['options']['color'] = '';
       $data['options']['size'] = '';
       Cart::add($data);
-      return \Response::json(['success' => 'Thêm vào giỏ hàng thành công']);
+      return \Response::json(['success' => 'Thêm vào giỏ hàng thành công nè']);
     }
   }
 
@@ -64,6 +64,14 @@ class CartController extends Controller
 
   public function updateCart(Request $request)
   {
+    $product = DB::table('products')->where('id', $request->product_id)->first();
+    if ($request->qty > $product->product_quantity){
+      $notification = array(
+        'messege' => 'Sản phẩm ' .$product->product_name . ' chỉ còn ' .$product->product_quantity. ' cái. Vui lòng nhập nhỏ hơn nhé',
+        'alert-type' => 'warning'
+      );
+      return Redirect()->back()->with($notification);
+    }
     $rowId = $request->productid;
     $qty = $request->qty;
     Cart::update($rowId, $qty);
@@ -103,6 +111,13 @@ class CartController extends Controller
     $color = $request->color;
     $size = $request->size;
     $qty = $request->qty;
+    if ($request->qty > $product->product_quantity){
+      $notification = array(
+        'messege' => 'Vui lòng nhập nhỏ hơn ' .$product->product_quantity,
+        'alert-type' => 'warning'
+      );
+      return Redirect()->back()->with($notification);
+    }
     $data = array();
     if ($product->discount_price == null) {
       $data['id'] = $product->id;

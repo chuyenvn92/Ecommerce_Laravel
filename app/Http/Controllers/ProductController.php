@@ -27,6 +27,13 @@ class ProductController extends Controller
 	public function AddCart(Request $request, $id)
 	{
 		$product = DB::table('products')->where('id', $id)->first();
+		if ($request->qty > $product->product_quantity){
+			$notification = array(
+			  'messege' => 'Vui lòng nhập nhỏ hơn ' .$product->product_quantity,
+			  'alert-type' => 'warning'
+			);
+			return Redirect()->back()->with($notification);
+		  }
 		$data = array();
 		if ($product->discount_price == null) {
 			$data['id'] = $product->id;
