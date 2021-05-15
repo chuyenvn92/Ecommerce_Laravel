@@ -43,6 +43,7 @@
 										<form method="POST" action="{{ route('update.cartqty') }}">
 											@csrf
 											<input type="hidden" name="productid" value="{{ $row->rowId }}">
+											<input type="hidden" name="product_id" value="{{ $row->id }}">
 											<input type="number" style="width: 60px;" min="0" name="qty" value="{{ $row->qty }}">
 											<button type="submit" class="btn btn-success btn-sm"><i class="fas fa-check-square"></i></button>
 										</form>
