@@ -322,8 +322,8 @@
              e.preventDefault();
              var link = $(this).attr("href");
              swal({
-                     title: "Bạn chắc chắn muốn trả hàng chứ???",
-                     text: "Bạn sẽ được hoàn lại tiền khi trả hàng",
+                     title: "Bạn chắc chắn muốn trả hàng?",
+                     text: "Bạn chỉ được hoàn lại 50% giá trị đơn hàng!",
                      icon: "warning",
                      buttons: true,
                      dangerMode: true,

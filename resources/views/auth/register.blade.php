@@ -20,7 +20,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Số điện thoại</label>
                                 <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                    value="{{ old('phone') }}" aria-describedby="emailHelp" placeholder="Nhập phone">
+                                    value="{{ old('phone') }}" aria-describedby="emailHelp" placeholder="Nhập số điện thoại">
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Địa chỉ</label>
                                 <input type="text" class="form-control @error('address') is-invalid @enderror"
-                                    aria-describedby="emailHelp" placeholder="Nhập địa chỉ" name="address" required="">
+                                    aria-describedby="emailHelp" placeholder="Nhập địa chỉ cụ thể" name="address" required="">
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -65,7 +65,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Thành phố</label>
                                 <input type="text" class="form-control @error('city') is-invalid @enderror"
-                                    aria-describedby="emailHelp" placeholder="Nhập địa chỉ" name="city" required="">
+                                    aria-describedby="emailHelp" placeholder="Nhập tên thành phố" name="city" required="">
                                 @error('city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -73,7 +73,7 @@
                                 @enderror
                             </div>
                             <div class="contact_form_button">
-                                <button type="submit" class="btn btn-info">Đăng kí</button>
+                                <button type="submit" style="margin-left:auto;margin-right:auto;display:block" class="btn btn-info">Đăng kí</button>
                             </div>
                         </form>
                     </div>

@@ -5,7 +5,7 @@
 
   <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
     <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">Đăng nhập</div>
-    <div class="tx-center mg-b-60">Giao diện phía Backend</div>
+    <div class="tx-center mg-b-60">Dành cho quản trị viên</div>
 
     <form action="{{ route('admin.login') }}" method="POST">
       @csrf

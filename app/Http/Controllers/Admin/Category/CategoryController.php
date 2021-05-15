@@ -33,7 +33,7 @@ class CategoryController extends Controller
     $category->category_name = $request->category_name;
     $category->save();
     $notification = array(
-      'messege' => 'Thêm dnah mục thành công',
+      'messege' => 'Thêm danh mục thành công',
       'alert-type' => 'success'
     );
     return Redirect()->back()->with($notification);

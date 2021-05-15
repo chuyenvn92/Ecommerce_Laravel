@@ -53,7 +53,7 @@
 
 				<div class="shop_content">
 					<div class="shop_bar clearfix">
-						<div class="shop_product_count"><span>{{ count($category_all )}}</span> sản phẩm được tìm thấy</div>
+						<div class="shop_product_count"><span>{{ count($category_all )}}</span> Sản phẩm được tìm thấy</div>
 					</div>
 					<div class="product_grid row">
 						<div class="product_grid_border"></div>

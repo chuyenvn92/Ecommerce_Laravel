@@ -70,7 +70,7 @@ $order = DB::table('orders')->where('user_id',Auth::id())->orderBy('id','DESC')-
     </div>
     <ul class="list-group list-group-flush">
      <li class="list-group-item"><a href="{{ route('password.change') }}">Thay đổi mật khẩu</a></li>
-     <li class="list-group-item">Chỉnh sửa thông tin</li>
+     <li class="list-group-item"><a href="{{ route('password.change') }}">Chỉnh sửa thông tin</a></li>
      <li class="list-group-item"><a href="{{ route('success.orderlist') }}">Trả hàng</a></li>
     </ul>
     <div class="card-body">
