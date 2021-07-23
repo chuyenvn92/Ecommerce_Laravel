@@ -58,7 +58,7 @@
                 </select>
               </div>
             </div><!-- col-4 -->
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
                 <label class="form-control-label"></label>Thương hiệu<span class="tx-danger"> *</span></label>
                 <select class="form-control select2" data-placeholder="Choose country" name="brand_id">
@@ -68,7 +68,20 @@
                   @endforeach
                 </select>
               </div>
+            </div>col-4 -->
+
+            <div class="col-lg-4">
+              <div class="form-group mg-b-10-force">
+                <label class="form-control-label">Thương hiệu<span class="tx-danger"> *</span></label>
+                <select class="form-control select2" data-placeholder="Choose country" name="brand_id">
+                  <option label="Chọn thương hiệu"></option>
+                  @foreach($brand as $br)
+                  <option value="{{ $br->id}}">{{ $br->brand_name}}</option>
+                  @endforeach
+                </select>
+              </div>
             </div><!-- col-4 -->
+
             <div class="col-lg-4">
               <div class="form-group">
                 <label class="form-control-label">Kích cỡ sản phẩm<span class="tx-danger"> *</span></label>

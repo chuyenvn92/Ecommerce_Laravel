@@ -19,7 +19,7 @@
           <thead>
             <tr>
               <th class="wd-15p">Tiêu đề</th>
-              <th class="wd-15p">Chủ đề/th>
+              <th class="wd-15p">Chủ đề</th>
               <th class="wd-15p">Ảnh</th>
               <th class="wd-20p">Thao tác</th>
             </tr>
@@ -27,7 +27,7 @@
           <tbody>
             @foreach($post as $row)
             <tr>
-              <td>{{ $row->post_title_en }}</td>
+              <td>{{ $row->post_title_vn }}</td>
               <td>{{ $row->category_name_en }}</td>
               <td>
                 <img src=" {{ URL::to($row->post_image) }}" style="height: 50px; width: 50px;">

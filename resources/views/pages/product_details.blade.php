@@ -33,7 +33,7 @@
 						<p>
 							{!! str_limit($product->product_details, $limit = 1200) !!}
 						</p>
-						<b>Số lượng còn {{ $product->product_quantity }}</b>
+						<b>Số lượng còn: {{ $product->product_quantity }}</b>
 					</div>
 					<div class="order_info d-flex flex-row">
 						<form action="{{ url('cart/product/add/'.$product->id) }}" method="POST">

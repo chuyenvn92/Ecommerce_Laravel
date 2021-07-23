@@ -75,7 +75,7 @@
 					</div>
 
 					<div class="cart_buttons">
-						<button type="button" class="button cart_button_clear">Hủy đơn</button>
+						<a href="{{ url('/') }}"><button type="button" class="button cart_button_clear">Quay lại mua sắm</button></a>
 						<a href="{{ route('user.checkout') }}" class="button cart_button_checkout">Thanh toán</a>
 					</div>
 				</div>

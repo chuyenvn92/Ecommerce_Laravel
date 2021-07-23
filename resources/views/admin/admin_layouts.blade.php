@@ -78,7 +78,7 @@
         <li class="nav-item"><a href="{{ route('sub.categories') }}" class="nav-link">Loại hàng</a></li>
         <li class="nav-item"><a href="{{ route('brands') }}" class="nav-link">Thương hiệu</a></li>
       </ul>
-      @else
+      <!-- @else
       @endif
       @if(Auth::user()->coupon == 1)
       <a href="#" class="sl-menu-link">
@@ -140,7 +140,7 @@
         <li class="nav-item"><a href="{{ route('add.blogpost') }}" class="nav-link">Thêm bài đăng</a></li>
         <li class="nav-item"><a href="{{ route('all.blogpost') }}" class="nav-link">Danh sách bài đăng</a></li>
       </ul>
-      @else
+      <!-- @else
       @endif
       <a href="#" class="sl-menu-link">
         <div class="sl-menu-item">
@@ -221,7 +221,7 @@
       <ul class="sl-menu-sub nav flex-column">
         <li class="nav-item"><a href="{{ route('admin.product.stock') }}" class="nav-link">Kho</a></li>
       </ul>
-      @else
+      <!-- @else
       @endif
       @if(Auth::user()->setting == 1)
       <a href="#" class="sl-menu-link">

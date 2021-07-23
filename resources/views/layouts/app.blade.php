@@ -112,7 +112,7 @@
                                          <form action="{{ route('product.search') }}" class="header_search_form clearfix" method="POST">
                                              @csrf
                                              <input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm" name="search">
-                                             <div class="custom_dropdown">
+                                             <div class="custom_dropdown" style="hidden">
                                                  <div class="custom_dropdown_list">
                                                      <span class="custom_dropdown_placeholder clc">Sản Phẩm</span>
                                                      <i class="fas fa-chevron-down"></i>
@@ -184,7 +184,7 @@
                              <!-- Content -->
                              <h5 class="font-weight-bold text-uppercase mb-4">TORANO SHOP</h5>
                              <p>Mã số thuế: 0108597977</p>
-                             <p>Địa chỉ: Cơ sở 1165 đường Giải Phóng, Quận Thanh Xuân, Thành phố Hà Nội.</p>
+                             <p>Địa chỉ: Cơ sở 1165 đường Giải Phóng, Quận Hoàng Mai, Thành phố Hà Nội.</p>
 
                          </div>
                          <!-- Grid column -->

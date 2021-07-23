@@ -10,20 +10,20 @@
         ->where('status', 1)
         ->where('product_quantity', '>', 0)
         ->orderBy('id', 'desc')
-        ->limit(8)
+        ->limit(20)
         ->get();
     $trend = DB::table('products')
         ->where('status', 1)
         ->where('trend', 1)
         ->where('product_quantity', '>', 0)
         ->orderBy('id', 'desc')
-        ->limit(8)
+        ->limit(30)
         ->get();
     $best = DB::table('products')
         ->where('status', 1)
         ->where('best_rated', 1)
         ->orderBy('id', 'desc')
-        ->limit(8)
+        ->limit(20)
         ->get();
 
     $hot = DB::table('products')
@@ -32,7 +32,7 @@
         ->where('products.status', 1)
         ->where('hot_deal', 1)
         ->orderBy('id', 'desc')
-        ->limit(3)
+        ->limit(20)
         ->get();
     @endphp
 
@@ -303,8 +303,8 @@
         ->join('brands', 'products.brand_id', 'brands.id')
         ->select('products.*', 'brands.brand_name', 'categories.category_name')
         ->where('products.mid_slider', 1)
-        ->orderBy('id', 'desc')
-        ->limit(3)
+        ->orderBy('id', 'DESC')
+        ->limit(20)
         ->get();
     @endphp
     <div class="banner_2">
@@ -328,7 +328,7 @@
                                             <div class="banner_2_title">{{ $row->product_name }}</div>
                                             <div class="banner_2_text">
                                                 <h4>{{ $row->brand_name }}</h4><br>
-                                                <h2>{{ number_format($row->selling_price) }} {{ 'VNĐ' }}</h2>
+                                                <h2>{{ number_format($row->discount_price) }} {{ 'VNĐ' }}</h2>
                                             </div>
                                             <div class="button banner_2_button"><a
                                                     href="{{ url('product/details/' . $row->id . '/' . $row->product_name) }}">Xem
@@ -359,7 +359,7 @@
     $product = DB::table('products')
         ->where('category_id', $catid)
         ->where('status', 1)
-        ->limit(10)
+        ->limit(20)
         ->orderBy('id', 'DESC')
         ->get();
     @endphp
@@ -452,7 +452,7 @@
     $product = DB::table('products')
         ->where('category_id', $catid)
         ->where('status', 1)
-        ->limit(10)
+        ->limit(20)
         ->orderBy('id', 'DESC')
         ->get();
     @endphp
@@ -570,7 +570,7 @@
                         ->where('status', 1)
                         ->where('buyone_getone', 1)
                         ->orderBy('id', 'desc')
-                        ->limit(6)
+                        ->limit(20)
                         ->get();
                 @endphp
                 <!-- mua 1 tang 1 Slider -->
@@ -660,7 +660,7 @@
             </div>
         </div>
     </div>
-    <div class="newsletter">
+    <!-- <div class="newsletter">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -687,7 +687,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Footer -->
     <footer class="page-footer font-small mdb-color lighten-3 pt-4">
 
@@ -703,7 +703,7 @@
                     <!-- Content -->
                     <h5 class="font-weight-bold text-uppercase mb-4">Torano Shop</h5>
                     <p>Mã số thuế: 0108597977</p>
-                    <p>Địa chỉ: Cơ sở 1165 đường Giải Phóng, Quận Thanh Xuân, Thành phố Hà Nội.</p>
+                    <p>Địa chỉ: Cơ sở 1165 đường Giải Phóng, Quận Hoàng Mai, Thành phố Hà Nội.</p>
 
                 </div>
                 <!-- Grid column -->

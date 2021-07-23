@@ -39,13 +39,14 @@
 										<div class="cart_item_text">{{ $row->product_size}}</div>
 									</div>
 									@endif
-									<div class="col-lg-4">
-									<div class="form-group">
-										<label for="exampleFormControlSelect1">Số lượng</label>
+									<div class="cart_item_color cart_info_col">
+										<div for="cart_item_title">Số lượng</div>
+										<div class="cart_item_text ml-2">
 										<input type="number" min="0" value="1" pattern="[0-9]" name="qty">
+										</div>
 									</div>
 								
-									<button type="submit" class="button cart_button">Thêm vào giỏ</button>
+									<!-- <button type="submit" class="button cart_button">Thêm vào giỏ</button> -->
 									<div class="cart_item_price cart_info_col">
 										<div class="cart_item_title">Hành dộng</div><br>
 										<button type="submit" class="button cart_button">Thêm vào giỏ</button>

@@ -69,7 +69,8 @@ $vat = $setting->vat;
 							@endforeach
 						</ul>
 					</div>
-					<div class="order_total_content" style="padding: 15px;">
+					<br>
+					<!-- <div class="order_total_content" style="padding: 15px;">
 						@if(Session::has('coupon'))
 
 						@else
@@ -82,7 +83,7 @@ $vat = $setting->vat;
 							<button type="submit" class="btn btn-danger ml-2">Dùng</button>
 						</form>
 						@endif
-					</div>
+					</div> -->
 					<ul class="list-group col-lg-4" style="float: right;">
 						@if (Session::has('coupon'))
 						<li class="list-group-item">Tổng hàng(chưa thuế): <span style="float: right;">{{ number_format(Session::get('coupon')['balance']) }} {{'VNĐ'}}</span></li>
@@ -105,7 +106,7 @@ $vat = $setting->vat;
 			</div>
 		</div>
 		<div class="cart_buttons">
-			<button type="button" class="button cart_button_clear">Quay lại mua sắm</button>
+			<a href="{{ url('/') }}"><button type="button" class="button cart_button_clear">Quay lại mua sắm</button></a>
 			<a href="{{ route('payment.step') }}" class="button cart_button_checkout">Thanh toán</a>
 		</div>
 	</div>
