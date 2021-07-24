@@ -2,8 +2,8 @@
 
 @section('content')
 @include('layouts.menubar')
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/product_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/product_responsive.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/product_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/product_responsive.css') }}">
 <!-- Single Product -->
 
 <div class="single_product">

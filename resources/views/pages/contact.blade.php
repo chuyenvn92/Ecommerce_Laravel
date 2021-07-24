@@ -5,8 +5,8 @@
 @php
 $site = DB::table('sitesetting')->first();
 @endphp
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/contact_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/contact_responsive.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/contact_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/contact_responsive.css') }}">
 
 
 <div class="contact_info">
@@ -79,5 +79,5 @@ $site = DB::table('sitesetting')->first();
  <div class="panel"></div>
 </div>
 
-<script src="{{ asset('public/frontend/js/contact_custom.js') }}"></script>
+<script src="{{ asset('frontend/js/contact_custom.js') }}"></script>
 @endsection

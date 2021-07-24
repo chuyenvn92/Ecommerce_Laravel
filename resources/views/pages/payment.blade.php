@@ -7,8 +7,8 @@ $setting = DB::table('settings')->first();
 $charge = $setting->shipping_charge;
 $vat = $setting->vat;
 @endphp
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/contact_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/contact_responsive.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/contact_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/contact_responsive.css') }}">
 <div class="contact_form">
     <div class="container">
         <div class="row">
@@ -114,9 +114,9 @@ $vat = $setting->vat;
                         <div class="contact_form_title text-center">Chọn phương thức thanh toán</div>
                         <div class="form-group">
                             <ul class="logos_list">
-                                <li><input type="radio" name="payment" value="stripe"><img src="{{ asset('public/frontend/images/mastercard.png') }}" style="width:100px; height:60px;"></li>
-                                <li><input type="radio" name="payment" value="paypal"><img src="{{ asset('public/frontend/images/paypal.png') }}" style="width:100px; height:60px;"></li>
-                                <li><input type="radio" name="payment" value="ideal"><img src="{{ asset('public/frontend/images/mollie.png') }}" style="width:100px; height:60px;"></li>
+                                <li><input type="radio" name="payment" value="stripe"><img src="{{ asset('frontend/images/mastercard.png') }}" style="width:100px; height:60px;"></li>
+                                <li><input type="radio" name="payment" value="paypal"><img src="{{ asset('frontend/images/paypal.png') }}" style="width:100px; height:60px;"></li>
+                                <li><input type="radio" name="payment" value="ideal"><img src="{{ asset('frontend/images/mollie.png') }}" style="width:100px; height:60px;"></li>
                                 <li><input type="radio" name="payment" value="oncash">Thanh toán khi nhận hàng</li>
                             </ul>
                         </div>

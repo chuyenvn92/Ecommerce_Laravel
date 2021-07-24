@@ -85,8 +85,8 @@ class PostController extends Controller
     $post_image = $request->file('post_image');
     if ($post_image) {
       $post_image_name = hexdec(uniqid()) . '.' . $post_image->getClientOriginalExtension();
-      Image::make($post_image)->resize(400, 200)->save('public/media/post/' . $post_image_name);
-      $data['post_image'] = 'public/media/post/' . $post_image_name;
+      Image::make($post_image)->resize(400, 200)->save('media/post/' . $post_image_name);
+      $data['post_image'] = 'media/post/' . $post_image_name;
 
       DB::table('posts')->insert($data);
       $notification = array(
@@ -151,8 +151,8 @@ class PostController extends Controller
     if ($post_image) {
       unlink($old_image);
       $post_image_name = hexdec(uniqid()) . '.' . $post_image->getClientOriginalExtension();
-      Image::make($post_image)->resize(400, 200)->save('public/media/post/' . $post_image_name);
-      $data['post_image'] = 'public/media/post/' . $post_image_name;
+      Image::make($post_image)->resize(400, 200)->save('media/post/' . $post_image_name);
+      $data['post_image'] = 'media/post/' . $post_image_name;
 
       DB::table('posts')->where('id', $id)->update($data);
       $notification = array(

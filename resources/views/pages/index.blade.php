@@ -44,7 +44,7 @@
                 <div class="col-lg-3 col-md-6 char_col">
 
                     <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend/images/char_1.png') }}" alt=""></div>
+                        <div class="char_icon"><img src="{{ asset('frontend/images/char_1.png') }}" alt=""></div>
                         <div class="char_content">
                             <div class="char_title">Giao hàng siêu tốc</div>
                             <div class="char_subtitle"></div>
@@ -56,7 +56,7 @@
                 <div class="col-lg-3 col-md-6 char_col">
 
                     <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend/images/char_2.png') }}" alt=""></div>
+                        <div class="char_icon"><img src="{{ asset('frontend/images/char_2.png') }}" alt=""></div>
                         <div class="char_content">
                             <div class="char_title">Đổi trả nhanh chóng</div>
                             <div class="char_subtitle"></div>
@@ -68,7 +68,7 @@
                 <div class="col-lg-3 col-md-6 char_col">
 
                     <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend/images/char_3.png') }}" alt=""></div>
+                        <div class="char_icon"><img src="{{ asset('frontend/images/char_3.png') }}" alt=""></div>
                         <div class="char_content">
                             <div class="char_title">Đa dạng thanh toán</div>
                             <div class="char_subtitle"></div>
@@ -80,7 +80,7 @@
                 <div class="col-lg-3 col-md-6 char_col">
 
                     <div class="char_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="char_icon"><img src="{{ asset('public/frontend/images/char_4.png') }}" alt=""></div>
+                        <div class="char_icon"><img src="{{ asset('frontend/images/char_4.png') }}" alt=""></div>
                         <div class="char_content">
                             <div class="char_title">Siêu nhiều ưu đãi</div>
                             <div class="char_subtitle"></div>
@@ -309,7 +309,7 @@
     @endphp
     <div class="banner_2">
         <div class="banner_2_background"
-            style="background-image:url({{ asset('public/frontend/images/banner_2_background.jpg') }})"></div>
+            style="background-image:url({{ asset('frontend/images/banner_2_background.jpg') }})"></div>
         <div class="banner_2_container">
             <div class="banner_2_dots"></div>
             <!-- Banner 2 Slider -->
@@ -546,7 +546,7 @@
 
     <div class="trends">
         <div class="trends_background"
-            style="background-image:url({{ asset('public/frontend/images/trends_background.jpg') }})"></div>
+            style="background-image:url({{ asset('frontend/images/trends_background.jpg') }})"></div>
         <div class="trends_overlay"></div>
         <div class="container">
             <div class="row">
@@ -667,7 +667,7 @@
                     <div
                         class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
                         <div class="newsletter_title_container">
-                            <div class="newsletter_icon"><img src="{{ asset('public/frontend/images/send.png') }}" alt="">
+                            <div class="newsletter_icon"><img src="{{ asset('frontend/images/send.png') }}" alt="">
                             </div>
                             <div class="newsletter_title">Đăng kí nhận thông tin mới</div>
                             <div class="newsletter_text">

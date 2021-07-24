@@ -2,8 +2,8 @@
 
 @section('content')
 @include('layouts.menubar')
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/blog_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/blog_responsive.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/blog_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/blog_responsive.css') }}">
 
 
 <div class="blog">

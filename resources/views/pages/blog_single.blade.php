@@ -2,8 +2,8 @@
 
 @section('content')
 @include('layouts.menubar')
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/blog_single_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/blog_single_responsive.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/blog_single_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/blog_single_responsive.css') }}">
 @foreach($posts as $row)
 <div class="single_post">
 	<div class="container">
@@ -30,5 +30,5 @@
 	</div>
 </div>
 @endforeach
-<script src="{{ asset('public/frontend/js/blog_single_custom.js') }}"></script>
+<script src="{{ asset('frontend/js/blog_single_custom.js') }}"></script>
 @endsection

@@ -6,7 +6,7 @@ $slider = DB::table('products')->join('brands','products.brand_id','brands.id')
 @endphp
 
 <div class="banner">
-    <div class="banner_background" style="background-image:url({{ asset('public/frontend/images/banner_background.jpg')}})"></div>
+    <div class="banner_background" style="background-image:url({{ asset('frontend/images/banner_background.jpg')}})"></div>
     <div class="container fill_height">
         <div class="row fill_height">
             <div class="banner_product_image"><img src="{{ asset( $slider->image_one )}}" alt=""></div>

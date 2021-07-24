@@ -10,14 +10,14 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="description" content="OneTech shop project">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/bootstrap4/bootstrap.min.css') }}">
-     <link href="{{ asset('public/frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') }}" rel="stylesheet" type="text/css">
-     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.css') }} ">
-     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/plugins/OwlCarousel2-2.2.1/animate.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/plugins/slick-1.8.0/slick.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/main_styles.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/responsive.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/bootstrap4/bootstrap.min.css') }}">
+     <link href="{{ asset('frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') }}" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.css') }} ">
+     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/plugins/OwlCarousel2-2.2.1/animate.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/plugins/slick-1.8.0/slick.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/main_styles.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/responsive.css') }}">
      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
      <script src="https://js.stripe.com/v3/"></script>
 
@@ -36,7 +36,7 @@
                      <div class="row">
                          <div class="col d-flex flex-row">
                              <div class="top_bar_contact_item">
-                                 <div class="top_bar_icon"><img src="{{ asset('public/frontend/images/phone.png')}}" alt=""></div>{{ $setting->phone_one }}
+                                 <div class="top_bar_icon"><img src="{{ asset('frontend/images/phone.png')}}" alt=""></div>{{ $setting->phone_one }}
                              </div>
                              <div class="top_bar_content ml-auto">
                                  @guest
@@ -67,16 +67,16 @@
                                  <div class="top_bar_user">
                                      @guest
                                      <div><a href="{{ route('login') }}">
-                                             <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Đăng Nhập
+                                             <div class="user_icon"><img src="{{ asset('frontend/images/user.svg')}}" alt=""></div>Đăng Nhập
                                          </a></div>
                                      <div><a href="{{ route('register') }}">
-                                             <div class="user_icon"><img src="{{ asset('public/frontend/images/user.svg')}}" alt=""></div>Đăng kí
+                                             <div class="user_icon"><img src="{{ asset('frontend/images/user.svg')}}" alt=""></div>Đăng kí
                                          </a></div>
                                      @else
                                      <ul class="standard_dropdown top_bar_dropdown">
                                          <li>
                                              <a href="{{route('home')}}">
-                                                 <div class="user_icon"><img src="{{ asset('public/frontend/images/user.png')}}" alt=""></div>Thông tin cá nhân<i class="fas fa-chevron-down"></i>
+                                                 <div class="user_icon"><img src="{{ asset('frontend/images/user.png')}}" alt=""></div>Thông tin cá nhân<i class="fas fa-chevron-down"></i>
                                              </a>
                                              <ul>
                                                  <li><a href="{{ route('user.wishlist') }}">Sản phẩm yêu thích</a></li>
@@ -98,7 +98,7 @@
                          <!-- Logo -->
                          <div class="col-lg-2 col-sm-3 col-3 order-1">
                              <div class="logo_container">
-                                 <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('public/frontend/images/logo.png')}}" alt=""></a></div>
+                                 <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('frontend/images/logo.png')}}" alt=""></a></div>
                              </div>
                          </div>
                          @php
@@ -123,7 +123,7 @@
                                                      </ul>
                                                  </div>
                                              </div>
-                                             <button type="submit" class="header_search_button trans_300" value="Submit"><img src="{{ asset('public/frontend/images/search.png')}}" alt=""></button>
+                                             <button type="submit" class="header_search_button trans_300" value="Submit"><img src="{{ asset('frontend/images/search.png')}}" alt=""></button>
                                          </form>
                                      </div>
                                  </div>
@@ -140,7 +140,7 @@
                                      @php
                                      $wishlist = DB::table('wishlists')->where('user_id',Auth::id())->get();
                                      @endphp
-                                     <div class="wishlist_icon"><img src="{{ asset('public/frontend/images/heart.png')}}" alt=""></div>
+                                     <div class="wishlist_icon"><img src="{{ asset('frontend/images/heart.png')}}" alt=""></div>
                                      <div class="wishlist_content">
                                          <div class="wishlist_text"><a href="{{ route('user.wishlist') }}">Yêu thích</a></div>
                                          <div class="wishlist_count">{{ count($wishlist) }}</div>
@@ -151,7 +151,7 @@
                                  <div class="cart">
                                      <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                          <div class="cart_icon">
-                                             <a href="{{ route('show.cart') }}"><img src="{{ asset('public/frontend/images/cart.png')}}" alt=""></a>
+                                             <a href="{{ route('show.cart') }}"><img src="{{ asset('frontend/images/cart.png')}}" alt=""></a>
                                              <div class="cart_count"><span>{{ Cart::count() }}</span></div>
                                          </div>
                                          <div class="cart_content">
@@ -286,16 +286,16 @@
              </div>
          </div>
      </div>
-     <script src="{{ asset('public/frontend/js/jquery-3.3.1.min.js')}}"></script>
-     <script src="{{ asset('public/frontend/styles/bootstrap4/popper.js')}}"></script>
-     <script src="{{ asset('public/frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
-     <script src="{{ asset('public/frontend/plugins/greensock/TweenMax.min.js')}}"></script>
-     <script src="{{ asset('public/frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
-     <script src="{{ asset('public/frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
-     <script src="{{ asset('public/frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
-     <!-- <script src="{{ asset('public/frontend/plugins/greensock/ScrollToPlugin.min.jsplugins/greensock/ScrollToPlugin.min.js')}}"></script> -->
+     <script src="{{ asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+     <script src="{{ asset('frontend/styles/bootstrap4/popper.js')}}"></script>
+     <script src="{{ asset('frontend/styles/bootstrap4/bootstrap.min.js')}}"></script>
+     <script src="{{ asset('frontend/plugins/greensock/TweenMax.min.js')}}"></script>
+     <script src="{{ asset('frontend/plugins/greensock/TimelineMax.min.js')}}"></script>
+     <script src="{{ asset('frontend/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
+     <script src="{{ asset('frontend/plugins/greensock/animation.gsap.min.js')}}"></script>
+     <!-- <script src="{{ asset('frontend/plugins/greensock/ScrollToPlugin.min.jsplugins/greensock/ScrollToPlugin.min.js')}}"></script> -->
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-     <script src="{{ asset('public/frontend/js/product_custom.js')}}"></script>
+     <script src="{{ asset('frontend/js/product_custom.js')}}"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
      <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
      <script>
@@ -337,10 +337,10 @@
                  });
          });
      </script>
-     <script src="{{ asset('public/frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
-     <script src="{{ asset('public/frontend/plugins/slick-1.8.0/slick.js')}}"></script>
-     <script src="{{ asset('public/frontend/plugins/easing/easing.js')}}"></script>
-     <script src="{{ asset('public/frontend/js/custom.js')}}"></script>
+     <script src="{{ asset('frontend/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+     <script src="{{ asset('frontend/plugins/slick-1.8.0/slick.js')}}"></script>
+     <script src="{{ asset('frontend/plugins/easing/easing.js')}}"></script>
+     <script src="{{ asset('frontend/js/custom.js')}}"></script>
  </body>
 
  </html>

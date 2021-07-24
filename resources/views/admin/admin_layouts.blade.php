@@ -32,22 +32,22 @@
     <title>Admin Shop</title>
 
     <!-- vendor css -->
-    <link href=" {{ asset('public/backend/lib/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/backend/lib/Ionicons/css/ionicons.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/backend/lib/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/backend/lib/rickshaw/rickshaw.min.css') }}" rel="stylesheet">
+    <link href=" {{ asset('backend/lib/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/lib/Ionicons/css/ionicons.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/lib/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/lib/rickshaw/rickshaw.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <!-- MultiTag Input CDN CSS -->
     <link href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" />
 
     <!-- CSS Table Category Datatable -->
-    <link href="{{ asset('public/backend/lib/highlightjs/github.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/backend/lib/datatables/jquery.dataTables.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/backend/lib/select2/css/select2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/lib/highlightjs/github.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/lib/datatables/jquery.dataTables.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/lib/select2/css/select2.min.css') }}" rel="stylesheet">
 
     <!-- Starlight CSS -->
-    <link rel="stylesheet" href="{{ asset('public/backend/css/starlight.css') }}">
-    <link href="{{ asset('public/backend/lib/summernote/summernote-bs4.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('backend/css/starlight.css') }}">
+    <link href="{{ asset('backend/lib/summernote/summernote-bs4.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -252,7 +252,7 @@
         <div class="dropdown">
           <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
             <span class="logged-name">{{ Auth::user()->name }}</span>
-            <img src="{{ asset('public/backend/img/img2.jpg') }}" class="wd-32 rounded-circle" alt="">
+            <img src="{{ asset('backend/img/img2.jpg') }}" class="wd-32 rounded-circle" alt="">
           </a>
           <div class="dropdown-menu dropdown-menu-header wd-200">
             <ul class="list-unstyled user-profile-nav">
@@ -270,17 +270,17 @@
 
   @yield('admin_content')
 
-  <script src="{{ asset('public/backend/lib/jquery/jquery.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/popper.js/popper.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/bootstrap/bootstrap.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/jquery-ui/jquery-ui.js')}}.."></script>
-  <script src="{{ asset('public/backend/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js')}}"></script>
+  <script src="{{ asset('backend/lib/jquery/jquery.js')}}"></script>
+  <script src="{{ asset('backend/lib/popper.js/popper.js')}}"></script>
+  <script src="{{ asset('backend/lib/bootstrap/bootstrap.js')}}"></script>
+  <script src="{{ asset('backend/lib/jquery-ui/jquery-ui.js')}}.."></script>
+  <script src="{{ asset('backend/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js')}}"></script>
 
   <!-- JS Category Datatable  -->
-  <script src="{{ asset('public/backend/lib/highlightjs/highlight.pack.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/datatables/jquery.dataTables.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/select2/js/select2.min.js')}}"></script>
+  <script src="{{ asset('backend/lib/highlightjs/highlight.pack.js')}}"></script>
+  <script src="{{ asset('backend/lib/datatables/jquery.dataTables.js')}}"></script>
+  <script src="{{ asset('backend/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
+  <script src="{{ asset('backend/lib/select2/js/select2.min.js')}}"></script>
 
   <script>
     $(function() {
@@ -309,17 +309,17 @@
     });
   </script>
 
-  <script src="{{ asset('public/backend/lib/jquery.sparkline.bower/jquery.sparkline.min.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/d3/d3.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/rickshaw/rickshaw.min.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/chart.js/Chart.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/Flot/jquery.flot.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/Flot/jquery.flot.pie.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/Flot/jquery.flot.resize.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/flot-spline/jquery.flot.spline.js')}}"></script>
+  <script src="{{ asset('backend/lib/jquery.sparkline.bower/jquery.sparkline.min.js')}}"></script>
+  <script src="{{ asset('backend/lib/d3/d3.js')}}"></script>
+  <script src="{{ asset('backend/lib/rickshaw/rickshaw.min.js')}}"></script>
+  <script src="{{ asset('backend/lib/chart.js/Chart.js')}}"></script>
+  <script src="{{ asset('backend/lib/Flot/jquery.flot.js')}}"></script>
+  <script src="{{ asset('backend/lib/Flot/jquery.flot.pie.js')}}"></script>
+  <script src="{{ asset('backend/lib/Flot/jquery.flot.resize.js')}}"></script>
+  <script src="{{ asset('backend/lib/flot-spline/jquery.flot.spline.js')}}"></script>
 
-  <script src="{{ asset('public/backend/lib/medium-editor/medium-editor.js')}}"></script>
-  <script src="{{ asset('public/backend/lib/summernote/summernote-bs4.min.js')}}"></script>
+  <script src="{{ asset('backend/lib/medium-editor/medium-editor.js')}}"></script>
+  <script src="{{ asset('backend/lib/summernote/summernote-bs4.min.js')}}"></script>
   <script>
     $(function() {
       'use strict';
@@ -349,9 +349,9 @@
     });
   </script>
 
-  <script src="{{ asset('public/backend/js/starlight.js')}}"></script>
-  <script src="{{ asset('public/backend/js/ResizeSensor.js')}}"></script>
-  <script src="{{ asset('public/backend/js/dashboard.js')}}"></script>
+  <script src="{{ asset('backend/js/starlight.js')}}"></script>
+  <script src="{{ asset('backend/js/ResizeSensor.js')}}"></script>
+  <script src="{{ asset('backend/js/dashboard.js')}}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
   <!-- phần toasrt alert như switch alert -->

@@ -2,8 +2,8 @@
 
 @section('content')
 @include('layouts.menubar')
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/shop_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('public/frontend/styles/shop_responsive.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/shop_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/shop_responsive.css') }}">
 <!-- Home -->
 
 <div class="home">
@@ -105,5 +105,5 @@
    </div>
   </div>
  </div>
- <script src="{{ asset('public/frontend/js/shop_custom.js') }}"></script>
+ <script src="{{ asset('frontend/js/shop_custom.js') }}"></script>
  @endsection
