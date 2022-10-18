@@ -35,6 +35,9 @@ $hot = DB::table('products')
 ->get();
 @endphp
 
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/product_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/product_responsive.css') }}">
+
 <div class="characteristics"></div>
 
 <!-- Deals of the week -->
@@ -199,46 +202,6 @@ $hot = DB::table('products')
     </div>
 </div>
 
-<!-- Popular Categories -->
-
-<div class="popular_categories">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="popular_categories_content">
-                    <div class="popular_categories_title">Thương hiệu</div>
-                    <div class="popular_categories_slider_nav">
-                        <div class="popular_categories_prev popular_categories_nav"><i class="fas fa-angle-left ml-auto"></i></div>
-                        <div class="popular_categories_next popular_categories_nav"><i class="fas fa-angle-right ml-auto"></i></div>
-                    </div>
-                    <div class="popular_categories_link"><a href="#">Tất cả</a></div>
-                </div>
-            </div>
-            @php
-            $category = DB::table('brands')->get();
-            @endphp
-            <!-- Popular Categories Slider -->
-
-            <div class="col-lg-9">
-                <div class="popular_categories_slider_container">
-                    <div class="owl-carousel owl-theme popular_categories_slider">
-
-                        @foreach ($category as $cat)
-                        <!-- Popular Categories Item -->
-                        <div class="owl-item">
-                            <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                <div class="popular_category_image"><img src="{{ $cat->brand_logo }}" alt="">
-                                </div>
-                                <div class="popular_category_text">{{ $cat->brand_name }}</div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Banner -->
 @php
 $mid = DB::table('products')
@@ -247,45 +210,94 @@ $mid = DB::table('products')
 ->select('products.*', 'brands.brand_name', 'categories.category_name')
 ->where('products.mid_slider', 1)
 ->orderBy('id', 'DESC')
-->limit(20)
-->get();
+->first();
+$color = $mid->product_color;
+$product_color = explode(',', $color);
+
+$size = $mid->product_size;
+$product_size = explode(',', $size);
 @endphp
-<div class="banner_2">
-    <div class="banner_2_background" style="background-image:url({{ asset('frontend/images/banner_2_background.jpg') }})"></div>
-    <div class="banner_2_container">
-        <div class="banner_2_dots"></div>
-        <!-- Banner 2 Slider -->
-        <div class="owl-carousel owl-theme banner_2_slider">
-            @foreach ($mid as $row)
-            <!-- Banner 2 Slider Item -->
-            <div class="owl-item">
-                <div class="banner_2_item">
-                    <div class="container fill_height">
-                        <div class="row fill_height">
-                            <div class="col-lg-4 col-md-6 fill_height">
-                                <div class="banner_2_content">
-                                    <div class="banner_2_category">
-                                        <h4>{{ $row->category_name }}</h4>
+
+<div class="single_product">
+    <div class="container">
+        <div class="row">
+            <!-- Images -->
+            <div class="col-lg-2 order-lg-1 order-2">
+                <ul class="image_list">
+                    <li data-image="{{ asset($mid->image_one) }}"><img src="{{ asset($mid->image_one) }}" alt=""></li>
+                    <li data-image="{{ asset($mid->image_two) }}"><img src="{{ asset($mid->image_two) }}" alt=""></li>
+                    <li data-image="{{ asset($mid->image_three) }}"><img src="{{ asset($mid->image_three) }}" alt=""></li>
+                </ul>
+            </div>
+            <!-- Selected Image -->
+            <div class="col-lg-5 order-lg-2 order-1">
+                <div class="image_selected"><img src="{{ asset($mid->image_one) }}" alt=""></div>
+            </div>
+
+            <!-- Description -->
+            <div class="col-lg-5 order-3">
+                <div class="product_description">
+
+                    <div class="product_name">{{ $mid->product_name }}</div>
+                    <div class="product_text">
+                        <p>
+                            {!! str_limit($mid->product_details, $limit = 1200) !!}
+                        </p>
+                        <b>Số lượng còn: {{ $mid->product_quantity }}</b>
+                    </div>
+                    <div class="order_info d-flex flex-row">
+                        <form action="{{ url('cart/product/add/'.$mid->id) }}" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Màu sắc</label>
+                                        <select class="form-control input-lg" id="exampleFormControlSelect1" name="color">
+                                            @foreach($product_color as $color)
+                                            <option value="{{ $color }}">{{ $color }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
-                                    <div class="banner_2_title">{{ $row->product_name }}</div>
-                                    <div class="banner_2_text">
-                                        <h4>{{ $row->brand_name }}</h4><br>
-                                        <h2>{{ number_format($row->discount_price) }} {{ 'VNĐ' }}</h2>
+                                </div>
+                                @if($mid->product_size == NULL)
+
+                                @else
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Kích cỡ</label>
+                                        <select class="form-control input-lg" id="exampleFormControlSelect1" name="size">
+                                            @foreach($product_size as $size)
+                                            <option value="{{ $size }}">{{ $size }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
-                                    <div class="button banner_2_button"><a href="{{ url('product/details/' . $row->id . '/' . $row->product_name) }}">Xem
-                                            ngay</a></div>
+                                </div>
+                                @endif
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Số lượng</label>
+                                        <input class="form-control" type="number" min="0" value="1" pattern="[0-9]" name="qty">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-md-6 fill_height">
-                                <div class="banner_2_image_container">
-                                    <div class="banner_2_image"><img src="{{ asset($row->image_one) }}" alt="" style="height: 300px; width:250px;"></div>
-                                </div>
+                            @if($mid->discount_price == null)
+                            <div class="product_price">{{ number_format($mid->selling_price) }} {{ 'VNĐ' }}</div>
+                            @else
+                            <div class="product_price">{{ number_format($mid->discount_price) }} {{ 'VNĐ' }}<span>{{ number_format($mid->selling_price) }} {{ 'VNĐ' }}</span></div>
+                            @endif
+                            <div class="button_container">
+                                <button type="submit" class="button cart_button">Thêm vào giỏ</button>
+                                <div class="product_fav"><i class="fas fa-heart"></i></div>
                             </div>
-                        </div>
+                            <br>
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_inline_share_toolbox"></div>
+
+                        </form>
                     </div>
                 </div>
             </div>
-            @endforeach
+
         </div>
     </div>
 </div>
@@ -756,5 +768,9 @@ $post = DB::table('posts')->get();
             })
         }
     </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f7b08972fe81d30"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vn_VN/sdk.js#xfbml=1&version=v8.0" nonce="J8EoJWkX"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f7b08972fe81d30"></script>
     @endsection
