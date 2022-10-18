@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 23, 2021 lúc 04:08 PM
--- Phiên bản máy phục vụ: 10.4.11-MariaDB
--- Phiên bản PHP: 7.4.1
+-- Host: localhost:8889
+-- Generation Time: Oct 18, 2022 at 01:14 AM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `ecommerce`
+-- Database: `ecommerce`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -55,18 +54,18 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `phone`, `email`, `email_verified_at`, `password`, `remember_token`, `category`, `coupon`, `product`, `blog`, `order`, `other`, `report`, `role`, `return`, `contact`, `comment`, `setting`, `stock`, `type`, `created_at`, `updated_at`) VALUES
-(3, 'Mai Công Chuyên', '0349982248', 'chuyendaik99@gmail.com', NULL, '$2y$10$ponFE9YSBCU/4oTxfJMQZOEjwg4QwBTAYNbzAUb84NeqVtnzOXDU6', NULL, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 1, NULL, '2020-01-04 12:28:45'),
+(3, 'Mai Công Chuyên', '0349982248', 'chuyendaik99@gmail.com', NULL, '$2y$10$Gvi96HKuItNAf.44qiDaBucpOJp6paUuEOjUrZ1AsuTM3r0I1pu3u', NULL, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 1, NULL, '2020-01-04 12:28:45'),
 (12, 'Đỗ Xuân Hòa', '0353830798', 'hoadx.utt@gmail.com', NULL, '$2y$10$xn77pkS/tbYyZllEuI3eI.k2u8PBXFORPGO84Jdmj6IYIKas1QtUO', NULL, '1', '1', '1', '1', '1', NULL, '1', '1', '1', '1', '1', '1', '1', 2, NULL, NULL),
 (14, 'Hòa 2', '0353830798', 'hoa@gmail.com', NULL, '$2y$10$kk/izfk4pAGrO35NOZX7fOZ8hFwuDxdAiLcz04GWljMRquqNBPLTm', NULL, '1', NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `brands`
+-- Table structure for table `brands`
 --
 
 CREATE TABLE `brands` (
@@ -78,16 +77,16 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `brands`
+-- Dumping data for table `brands`
 --
 
 INSERT INTO `brands` (`id`, `brand_name`, `brand_logo`, `created_at`, `updated_at`) VALUES
-(14, 'Torano', 'media/brand/180721_05_25_58.png', NULL, NULL);
+(14, 'SConnect Media LLC', 'media/brand/171022_00_06_19.avif', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -98,21 +97,20 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
-(22, 'POLO', '2020-09-15 18:52:34', '2020-09-15 18:52:34'),
-(23, 'ÁO THUN', '2020-09-15 18:52:55', '2020-09-15 18:52:55'),
-(24, 'SƠ MI CỘC', '2020-09-15 18:53:19', '2020-09-15 18:53:19'),
-(25, 'SƠ MI DÀI', '2020-09-15 18:54:22', '2020-09-15 18:54:22'),
-(26, 'QUẦN SHORT', '2020-09-15 18:54:42', '2020-09-15 18:54:42'),
-(27, 'QUẦN DÀI', '2020-09-15 18:54:55', '2020-09-15 18:54:55');
+(22, 'KIDS/BABY APPARELS', '2020-09-15 18:52:34', '2020-09-15 18:52:34'),
+(23, 'OCCASIONS', '2020-09-15 18:52:55', '2020-09-15 18:52:55'),
+(24, 'PARENTS APPARELS', '2020-09-15 18:53:19', '2020-09-15 18:53:19'),
+(25, 'TOYS', '2020-09-15 18:54:22', '2020-09-15 18:54:22'),
+(26, 'HOME DECORATION', '2020-09-15 18:54:42', '2020-09-15 18:54:42');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `contact`
+-- Table structure for table `contact`
 --
 
 CREATE TABLE `contact` (
@@ -126,7 +124,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `contact`
+-- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`id`, `name`, `phone`, `email`, `message`, `created_at`, `updated_at`) VALUES
@@ -137,7 +135,7 @@ INSERT INTO `contact` (`id`, `name`, `phone`, `email`, `message`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `coupons`
+-- Table structure for table `coupons`
 --
 
 CREATE TABLE `coupons` (
@@ -149,7 +147,7 @@ CREATE TABLE `coupons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `coupons`
+-- Dumping data for table `coupons`
 --
 
 INSERT INTO `coupons` (`id`, `coupon`, `discount`, `created_at`, `updated_at`) VALUES
@@ -159,7 +157,7 @@ INSERT INTO `coupons` (`id`, `coupon`, `discount`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -168,13 +166,13 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -184,7 +182,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -217,18 +215,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `newslaters`
+-- Table structure for table `newslaters`
 --
 
 CREATE TABLE `newslaters` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `newslaters`
+-- Dumping data for table `newslaters`
 --
 
 INSERT INTO `newslaters` (`id`, `email`, `created_at`, `updated_at`) VALUES
@@ -240,7 +238,7 @@ INSERT INTO `newslaters` (`id`, `email`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `oauth_access_tokens`
+-- Table structure for table `oauth_access_tokens`
 --
 
 CREATE TABLE `oauth_access_tokens` (
@@ -248,7 +246,7 @@ CREATE TABLE `oauth_access_tokens` (
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `client_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `scopes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scopes` text COLLATE utf8mb4_unicode_ci,
   `revoked` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -258,14 +256,14 @@ CREATE TABLE `oauth_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `oauth_auth_codes`
+-- Table structure for table `oauth_auth_codes`
 --
 
 CREATE TABLE `oauth_auth_codes` (
   `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `client_id` bigint(20) UNSIGNED NOT NULL,
-  `scopes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scopes` text COLLATE utf8mb4_unicode_ci,
   `revoked` tinyint(1) NOT NULL,
   `expires_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -273,7 +271,7 @@ CREATE TABLE `oauth_auth_codes` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `oauth_clients`
+-- Table structure for table `oauth_clients`
 --
 
 CREATE TABLE `oauth_clients` (
@@ -290,7 +288,7 @@ CREATE TABLE `oauth_clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `oauth_clients`
+-- Dumping data for table `oauth_clients`
 --
 
 INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `redirect`, `personal_access_client`, `password_client`, `revoked`, `created_at`, `updated_at`) VALUES
@@ -300,7 +298,7 @@ INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `redirect`, `per
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `oauth_personal_access_clients`
+-- Table structure for table `oauth_personal_access_clients`
 --
 
 CREATE TABLE `oauth_personal_access_clients` (
@@ -311,7 +309,7 @@ CREATE TABLE `oauth_personal_access_clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `oauth_personal_access_clients`
+-- Dumping data for table `oauth_personal_access_clients`
 --
 
 INSERT INTO `oauth_personal_access_clients` (`id`, `client_id`, `created_at`, `updated_at`) VALUES
@@ -320,7 +318,7 @@ INSERT INTO `oauth_personal_access_clients` (`id`, `client_id`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `oauth_refresh_tokens`
+-- Table structure for table `oauth_refresh_tokens`
 --
 
 CREATE TABLE `oauth_refresh_tokens` (
@@ -333,7 +331,7 @@ CREATE TABLE `oauth_refresh_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -359,7 +357,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `orders`
+-- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `payment_type`, `payment_id`, `paying_amount`, `blnc_transection`, `stripe_order_id`, `subtotal`, `shipping`, `vat`, `total`, `status`, `return_order`, `month`, `date`, `year`, `status_code`, `created_at`, `updated_at`) VALUES
@@ -392,7 +390,7 @@ INSERT INTO `orders` (`id`, `user_id`, `payment_type`, `payment_id`, `paying_amo
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders_details`
+-- Table structure for table `orders_details`
 --
 
 CREATE TABLE `orders_details` (
@@ -410,7 +408,7 @@ CREATE TABLE `orders_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `orders_details`
+-- Dumping data for table `orders_details`
 --
 
 INSERT INTO `orders_details` (`id`, `order_id`, `product_id`, `product_name`, `color`, `size`, `quantity`, `singleprice`, `totalprice`, `created_at`, `updated_at`) VALUES
@@ -471,7 +469,7 @@ INSERT INTO `orders_details` (`id`, `order_id`, `product_id`, `product_name`, `c
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -483,7 +481,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -499,13 +497,13 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `posts`
+-- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `category_id`, `post_title_en`, `post_title_vn`, `post_image`, `details_en`, `details_vn`, `created_at`, `updated_at`) VALUES
 (11, 4, 'Style fashion 2021', 'Tại sao áo POLO trở thành vũ khí lợi hại của phái mạnh?', 'media/post/1705599683307172.jpg', '<p>Fashion</p>', '<p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">1. Áo polo là gì?</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">Áo thun polo</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">&nbsp;được may bằng chất vải thun co giãn, với khả năng thấm hút mồ hôi cực tốt, đem đến cho người dùng sự thoải mái, dễ chịu và thông thoáng trong quá trình sử dụng.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Khác biệt hoàn toàn với áo thun cổ tròn, khi mặc áo thun polo sẽ giúp bạn có được vẻ đẹp sang trọng, lịch sự từ đó toát lên được nét trẻ trung, năng động cho người mặc.&nbsp;</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Đây cũng chính là điều khác biệt mà&nbsp;</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">áo polo</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">&nbsp;có được, cũng chính ưu điểm nổi bật này mà ngày nay rất nhiều người lựa chọn kiểu áo nào làm phong cách riêng cho chính mình.&nbsp;</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">2. Các kiểu dáng áo Polo</span></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">2.1. Áo Polo kiểu dáng classic-fit</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">Classic-Fit</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">&nbsp;là kiểu dáng áo thun mang phong cách cổ điển, kiểu dáng áo suông không ôm body và dĩ nhiên không có bất kỳ một chi tiết bó sát cơ thể nào</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Đây được xem là kiểu dáng với thiết kế rộng rãi, thoáng mát giúp cho người mặc cảm thấy thoải mái, dễ chịu và đặc biệt là không gây cảm giác gò bó, khó chịu trong suốt quá trình sử dụng, rất thích hợp để mặc khi chơi thể thao và những công việc vận động nhiều</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-size: 12px; text-align: center;\">Về thiết kế áo polo được cắt rộng từ phần nách chạy dọc xuống cho đến phần eo, thiết kế này giúp cho người mặc cảm thấy thoải mái hơn trong quá trình vận động. Vì là kiểu dáng áo polo cổ đoeẻm nên Classic-Fit phù hợp với hầu hết dáng người của nam giới.</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Với những người cao to, có cân nặng quá khổ thì đây được xem là trang phục lý tưởng mà bạn không thể bỏ qua khi lựa chọn. Chính những chiếc áo polo Classic-Fit sẽ giúp bạn che đi những khuyết điểm trên thân hình của mình, giúp bạn trở nên gọn gàng, cân đối và năng động hơn.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><em style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; color: rgb(232, 239, 245); font-size: 16px; background-color: rgb(70, 85, 104);\"><span style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px;\">Vậy nên nếu bạn là người có thân hình cao to hãy chọn kiểu dáng&nbsp;<span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">áo polo Classic-Fit</span>&nbsp;này nhé.&nbsp;</span></em></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">2.2. Áo polo kiểu dáng Regular-fit</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><em style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; color: rgb(232, 239, 245); font-size: 16px; background-color: rgb(70, 85, 104);\"><span style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px;\"></span></em></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Được cách tân từ chính kiểu áo polo Classic-Fit chính vì thế mà&nbsp;</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">Áo polo kiểu dáng Regular-Fit</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">&nbsp;hiện đại hơn rất nhiều. Nếu Classic- Fit không có đường eo mà chỉ là kiểu áo suông thì Regular-Fit lại trái ngược hoàn toàn.&nbsp;</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Với vòng eo được bóp gọn cùng với đó là nách và ngực được cắt rộng bằng kiểu Classic- Fit. Mặc dù là kiểu ôm dáng tuy nhiên người mặc vẫn cảm thấy thoải mái, thông thoáng khi mặc.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/62336/cl8a3029%20copy.jpg\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border: 0px; max-width: 100%; height: 1000px; width: 800px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Nếu bạn là người có thân hình cân đối với chiều cao và cân nặng lý tưởng thì đây là kiểu áo thời thượng mà bạn không nên bỏ qua cho mình trong quá trình sử dụng.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Kiểu dáng&nbsp;</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">Regular-Fit</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">&nbsp;sẽ giúp bạn tôn lên vóc dáng của mình, với cơ thể cân đối, mạnh mẽ. Với những người có dáng người hơi đầy đặn một chút có thể chọn ngay kiểu áo này cho mình. Bởi những đường may hoàn hảo của kiểu dáng Regular-Fit sẽ phần nào giúp bạn che đi những khuyết điểm của cơ thể, giúp bạn trở nên gọn gàng, tinh tế hơn khi mặc</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Chính những ưu điểm nổi trội mà&nbsp;</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">áo polo Regular-Fit</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">&nbsp;đem lại mà hiện nay kiểu dáng này được xem là sự lựa chọn phổ biến của nhiều người. Giúp người mặc trở nên năng động, trẻ trung và nổi bật hơn trong mắt người nhìn.&nbsp;</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">2.3. Áo Polo kiểu dáng Slim-fit</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">Slim-Fit</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">&nbsp;chính là cái tên được sử dụng để mô tả kiểu dáng áo polo ôm sát body của người mặc cụ thể là phần eo, ngực và vai</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Đây chính là kiểu áo hoàn hảo làm nổi bật lên những vóc dáng cơ thể có body “chuẩn đét” với cơ bắp cuồn cuộn, ngực 6 múi, tất cả các vòng đều hoàn hảo và không có bất kỳ vòng nào phô trương quá mức.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/62336/tp077%20(2).jpg\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border: 0px; max-width: 100%; height: 1000px; width: 800px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Đối với những anh chàng có thân hình gầy được khuyên nên lựa chọn&nbsp;<span style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; font-weight: 700;\">áo polo Slim-Fit</span>. Bởi những đường may ôm gọn phần eo, ngực và vai sẽ giúp cho bạn có được vóc dáng thon gọn và đầy đặn hơn.&nbsp;</span><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">Từ đó giúp cho những người gầy không còn cảm giác tự tin về thân hình của mình&nbsp; nữa. Kiểu dáng Slim-Fit chủ yếu phù hợp với những người trẻ, có cơ thể cân đối với những số đo cơ thể hoàn hảo</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">3. Tại sao Áo Polo trở thành vũ khí lợi hại của các đấng mày râu?</span></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\">3.1.&nbsp;</span></span></span>LỊCH LÃM NƠI CÔNG SỞ</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: arial, helvetica, sans-serif; margin: 0px; padding: 0px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\">Thời trang nơi công sở luôn là chủ đề mà nhiều bạn quan tâm với những mẫu áo sơ mi hay áo thun polo có cổ cao cấp được nhiều quý ông lựa chọn. Set đồ là sự kết hợp trẻ trung, thanh lịch lại không kém phần lịch sự. Khi&nbsp;</span></span><a href=\"https://owen.vn/ao/polo.html\" style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px; color: rgb(40, 40, 40); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-size: 15px;\"><span style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">diện áo polo công sở&nbsp;</span></a><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\">bạn nên kết hợp với quần âu cho đúng chuẩn soái ca, hoặc 1 chiếc áo thun polo cùng áo brazer.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/62336/175665542_2218377938296536_5015723642279347676_n.jpg\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border: 0px; max-width: 100%; width: 800px; height: auto !important;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">3.2.&nbsp;SÀNH ĐIỆU VÀ TRẺ TRUNG KHI ĐI HẸN HÒ, DU LỊCH</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\">Khoác trên mình chiếc áo thun nam Polo bạn sẽ là chàng trai đầy nam tính và lịch thiệp. Đảm bảo, các nàng sẽ đổ gục với vẻ bề ngoài trong bộ&nbsp; áo Polo ấy.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\">Áo thun hàng hiệu nam phối với quần Jeans, đi giày lười, mix thêm đồng hồ làm phụ kiện sẽ là set đồ thích hợp mỗi khi đi hẹn hò cùng nàng vào những ngày cuối tuần. Bạn có thể mặc đi xem phim, cà phê hay dạo công viên cũng rất hợp.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/62336/179230755_2223907111076952_7950669694129210383_n.jpg\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; max-width: 100%; width: 800px; height: auto !important;\"></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">3.3.&nbsp;NĂNG ĐỘNG KHI CHƠI THỂ THAO</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\">Không như áo sơ mi, chỉ để diện đi công sở hay đi sự kiện. Chiếc áo thun nam hàng hiệu Polo còn được tận dụng tối đa trong những buổi chơi thể thao bất tận. Trải qua nhiều giai đoạn phát triển của ngành thời trang, chiếc áo Polo đã được ứng dụng, trở thành&nbsp;</span></span><a href=\"https://owen.vn/ao/polo.html\" style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px; color: rgb(40, 40, 40); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-size: 15px;\"><span style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">item thời trang cực hot trong tất cả các mùa&nbsp;</span></a><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\">mà bạn nam hoàn toàn có thể diện mỗi khi đi đâu vui chơi.</span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/62336/175647292_2219891181478545_2975244098284085815_n.jpg\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border: 0px; max-width: 100%; width: 800px; height: auto !important;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\"></span></span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; font-family: Owen, Arial, sans-serif; margin: 0px; padding: 0px;\">Tinh tế trong cách chọn đồ và phối đồ cùng áo thun nam Polo sẽ giúp phái mạnh ghi điểm trong mắt người đối diện. Vì thế, hãy là người đàn ông có gu thời trang thật thông minh để tăng thêm giá trị đích thực cho bản thân.</span></span></span></p>', NULL, NULL);
 INSERT INTO `posts` (`id`, `category_id`, `post_title_en`, `post_title_vn`, `post_image`, `details_en`, `details_vn`, `created_at`, `updated_at`) VALUES
-(13, 4, 'Style fashion 2021', 'RETURN POLICY quần áo cho nam giới', 'media/post/1705600744496700.jpg', '<p>Fashion</p>', '<p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Với nam giới thường không quan tâm tới số đo hay size áo chuẩn, thông thường họ theo quan điểm thử đồ nào vừa thì sẽ chọn size đấy. Tuy nhiên, để sở hữu những bộ trang phục chuẩn form thì những thông số sau đây sẽ giúp cánh mày râu có thể chọn được những chiếc áo vừa in và hơn nữa sẽ không bị lung túng khi mua hàng online.</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Khi nhìn vào bảng này, các bạn hãy logic 1 chút nhé. Đừng máy móc và áp đặt quá. Ví dụ: bạn là nam, cao 1m78, nhưng chỉ nặng 50 kg. Tức là chiều cao fải là size L trở lên và cân nặng lại thuộc size S. Khi đó bạn nên lựa chọn theo chiều cao, tức là mặc áo size L. Vì mặc áo vừa chiều dài như thế tốt hơn là mặc áo vừa người nhưng lại quá ngắn? Khi đó, nếu các bạn muốn sửa hay muốn bóp vào 1 chút thì cũng có thể mang ra ngoài hiệu may, bóp vào tuỳ theo ý muốn của mình. Rõ ràng là áo rộng thì có thể sửa nhỏ lại được, còn áo nhỏ thì không thể sửa to ra được.</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách xác định size quần áo cho bạn</span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 1:</span>&nbsp;Dựa vào chiều cao và cân nặng</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Giả sử các bạn lưỡng lự giữa 2 size áo thì tốt nhất các bạn nên chọn size lớn.</span></p><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border-spacing: 0px; width: 1175px; color: rgb(37, 42, 43);\"><tbody style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 42px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">SIZE SOMI</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 42px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">THÔNG SỐ CƠ THỂ</span></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">S</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m60 – 1m70 or 48kg – 53kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">M</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m68 – 1m74 or 54kg – 60kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">L</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m75 – 1m80 or 61kg – 66kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">XL</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m75 - 1m80 or 67kg – 72kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">XXL</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); text-align: center; width: 361px; height: 6px;\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0); text-indent: 10px;\">1m71 - 1m85 or 73kg – 80kg</em></td></tr></tbody></table><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 2:</span>&nbsp;Dựa theo số đo cơ thể</span></p><table align=\"left\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border-spacing: 0px; width: 1175px; color: rgb(37, 42, 43);\"><tbody style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">THÔNG SỐ</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">S</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">M</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">L</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">XL</span></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Ngang Vai</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">43</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">45</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">47</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">49</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Ngang ngực</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">49</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">51</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">53</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">55</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Ngang lai</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">47,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">49,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">51,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">53,5</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Dài áo</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">65,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">67,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">69,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">71,5</em></span></p></td></tr></tbody></table><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 3:&nbsp;</span>Dựa trên vòng bụng, chiều cao</span></p><table align=\"left\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border-spacing: 0px; width: 1175px; color: rgb(37, 42, 43);\"><tbody style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">CỠ SỐ VÒNG BỤNG</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">VÒNG BỤNG</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">CỠ SỐ CHIỀU CAO</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">CHIỀU CAO</span></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">65 – 67,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">155 – 157</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;27</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">67,5 – 70</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;27</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">158 – 160</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;28</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">70 – 72,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;28</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">161 – 163</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;29</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">72,5 – 75</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;29</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">164 – 166</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">77 – 77,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">167 – 169</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;31</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">77,5 – 80</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;31</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">170 – 172</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;32</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">80 – 82,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;32</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">173 – 175</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;33</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">82,5 – 85 &nbsp;&nbsp;</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;33</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">176 – 178</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;34</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">85 – 87,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;34</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">179 – 181</em></span></p></td></tr></tbody></table><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">&nbsp;</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 4:</span>&nbsp;Nhờ tư vấn từ bộ phận&nbsp;<span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Chăm Sóc Khách Hàng</span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 400; text-align: justify;\">Quý khách hàng có thể gọi điện đến bộ phận chăm sóc khách hàng của&nbsp;</span><a href=\"http://torano.vn/\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-weight: 400; text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Torano</span></a><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 400; text-align: justify;\">: 093.173.3469 hoặc có thể qua trực tiếp các cửa hàng của&nbsp;</span><a href=\"http://torano.vn/\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-weight: 400; text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Torano</span></a><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 400; text-align: justify;\">&nbsp;để được tư vấn chuẩn xác về size của sản phầm, cũng như có những lựa chọn phù hợp với vóc dáng của mình hơn</span><br></span></span></p>', NULL, NULL);
+(13, 4, 'Style fashion 2021', 'Hướng dẫn chọn size quần áo cho nam giới', 'media/post/1705600744496700.jpg', '<p>Fashion</p>', '<p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Với nam giới thường không quan tâm tới số đo hay size áo chuẩn, thông thường họ theo quan điểm thử đồ nào vừa thì sẽ chọn size đấy. Tuy nhiên, để sở hữu những bộ trang phục chuẩn form thì những thông số sau đây sẽ giúp cánh mày râu có thể chọn được những chiếc áo vừa in và hơn nữa sẽ không bị lung túng khi mua hàng online.</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Khi nhìn vào bảng này, các bạn hãy logic 1 chút nhé. Đừng máy móc và áp đặt quá. Ví dụ: bạn là nam, cao 1m78, nhưng chỉ nặng 50 kg. Tức là chiều cao fải là size L trở lên và cân nặng lại thuộc size S. Khi đó bạn nên lựa chọn theo chiều cao, tức là mặc áo size L. Vì mặc áo vừa chiều dài như thế tốt hơn là mặc áo vừa người nhưng lại quá ngắn? Khi đó, nếu các bạn muốn sửa hay muốn bóp vào 1 chút thì cũng có thể mang ra ngoài hiệu may, bóp vào tuỳ theo ý muốn của mình. Rõ ràng là áo rộng thì có thể sửa nhỏ lại được, còn áo nhỏ thì không thể sửa to ra được.</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách xác định size quần áo cho bạn</span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 1:</span>&nbsp;Dựa vào chiều cao và cân nặng</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Giả sử các bạn lưỡng lự giữa 2 size áo thì tốt nhất các bạn nên chọn size lớn.</span></p><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border-spacing: 0px; width: 1175px; color: rgb(37, 42, 43);\"><tbody style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 42px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">SIZE SOMI</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 42px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">THÔNG SỐ CƠ THỂ</span></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">S</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m60 – 1m70 or 48kg – 53kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">M</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m68 – 1m74 or 54kg – 60kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">L</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m75 – 1m80 or 61kg – 66kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">XL</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 361px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">1m75 - 1m80 or 67kg – 72kg</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 140px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">XXL</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); text-align: center; width: 361px; height: 6px;\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0); text-indent: 10px;\">1m71 - 1m85 or 73kg – 80kg</em></td></tr></tbody></table><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 2:</span>&nbsp;Dựa theo số đo cơ thể</span></p><table align=\"left\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border-spacing: 0px; width: 1175px; color: rgb(37, 42, 43);\"><tbody style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">THÔNG SỐ</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">S</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">M</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">L</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">XL</span></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Ngang Vai</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">43</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">45</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">47</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">49</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Ngang ngực</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">49</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">51</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">53</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">55</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Ngang lai</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">47,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">49,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">51,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">53,5</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 170px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Dài áo</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 76px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">65,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">67,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 83px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">69,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">71,5</em></span></p></td></tr></tbody></table><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 3:&nbsp;</span>Dựa trên vòng bụng, chiều cao</span></p><table align=\"left\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; border-spacing: 0px; width: 1175px; color: rgb(37, 42, 43);\"><tbody style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">CỠ SỐ VÒNG BỤNG</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">VÒNG BỤNG</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">CỠ SỐ CHIỀU CAO</span></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 47px;\"><p align=\"center\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">CHIỀU CAO</span></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">65 – 67,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">155 – 157</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;27</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">67,5 – 70</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;27</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 27px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">158 – 160</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;28</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">70 – 72,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;28</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 28px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">161 – 163</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;29</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">72,5 – 75</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;29</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">164 – 166</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">77 – 77,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">167 – 169</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;31</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">77,5 – 80</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;31</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">170 – 172</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;32</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">80 – 82,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;32</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">173 – 175</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;33</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">82,5 – 85 &nbsp;&nbsp;</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;33</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">176 – 178</em></span></p></td></tr><tr style=\"box-sizing: border-box; margin: 0px; padding: 0px;\"><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 10px 10px 0px; border-top: 1px solid rgb(221, 221, 221); width: 92px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;34</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 171px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">85 – 87,5</em></span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px; border-top: 1px solid rgb(221, 221, 221); width: 84px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;34</span></p></td><td style=\"box-sizing: border-box; margin: 0px; padding: 10px 0px 10px 10px; border-top: 1px solid rgb(221, 221, 221); width: 152px; height: 6px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><em style=\"box-sizing: border-box; margin: 0px; padding: 0px;\">179 – 181</em></span></p></td></tr></tbody></table><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">&nbsp;</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Cách 4:</span>&nbsp;Nhờ tư vấn từ bộ phận&nbsp;<span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\">Chăm Sóc Khách Hàng</span></span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 700;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 400; text-align: justify;\">Quý khách hàng có thể gọi điện đến bộ phận chăm sóc khách hàng của&nbsp;</span><a href=\"http://torano.vn/\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-weight: 400; text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Torano</span></a><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 400; text-align: justify;\">: 093.173.3469 hoặc có thể qua trực tiếp các cửa hàng của&nbsp;</span><a href=\"http://torano.vn/\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-weight: 400; text-align: justify;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0);\">Torano</span></a><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 400; text-align: justify;\">&nbsp;để được tư vấn chuẩn xác về size của sản phầm, cũng như có những lựa chọn phù hợp với vóc dáng của mình hơn</span><br></span></span></p>', NULL, NULL);
 INSERT INTO `posts` (`id`, `category_id`, `post_title_en`, `post_title_vn`, `post_image`, `details_en`, `details_vn`, `created_at`, `updated_at`) VALUES
 (14, 4, 'Style fashion 2021', 'Đôi điều về Quần Kaki (Chinos)', 'media/post/1705600876430088.jpg', '<p>Fashion</p>', '<p><a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">Quần kaki</a><span style=\"color: rgb(37, 42, 43); font-family: Quicksand, sans-serif;\">&nbsp;hay&nbsp;</span><a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần chinos</a><span style=\"color: rgb(37, 42, 43); font-family: Quicksand, sans-serif;\">&nbsp;khi bạn chọn mua quần cần chú trọng đến việc chọn lựa màu sắc. Với những ngày đi làm công sở, bạn nên mặc&nbsp;</span><a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần kaki</a><span style=\"color: rgb(37, 42, 43); font-family: Quicksand, sans-serif;\">&nbsp;tối màu để tạo độ lịch thiếp chốn văn phòng cũng như ra ngoài gặp gỡ đối tác.</span></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/19899/172702455_2214183585382638_5096770054778722213_n.jpg\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; max-width: 100%; width: 800px; height: auto !important;\"></a></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">Còn khi đi chơi, dã ngoại có thể thoải mái mặc&nbsp;<a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần kaki</a>&nbsp;sáng màu để tránh gây nhàm chán.</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/19899/172578477_2214183748715955_5120644134864711504_n.jpg\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; max-width: 100%; height: 533px; width: 800px;\"></a></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">Với kiểu dáng rộng rãi và đặc biệt ít nhăn, một chiếc quần dáng suông đem đến ấn tượng phóng khoáng, khỏe mạnh và thậm chí hơi bụi bặm với vài sợi vải tước ở phần gấu. Tuy nhiên, nếu muốn chọn&nbsp;<a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần kaki</a>&nbsp;cho phong cách công sở, bạn nên chọn quần với phom hơi ôm tạo dáng đứng, ống quần không quá rộng để tránh trông lòa xòa.</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">Một chiếc&nbsp;<a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần kaki</a>&nbsp;hoàn hảo cần phải có 4 túi. Bạn sẽ gặp rắc rối nếu quần có nhiều hay ít túi hơn, thiết kế vừa trẻ trung vừa tạo thuận tiện cho người sử dụng mà hầu như phần túi ít có sự cách điệu nhưng vẫn đảm bảo sựu khỏe khoắn mà lịch thiệp.</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/19899/img_1186_50135960471_o.jpg\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; max-width: 100%; height: 1200px; width: 800px;\"></a></p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">Đừng bao giờ xắn gấu quần cao nếp gấp gấu quần giúp chiếc&nbsp;<a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần kaki</a>&nbsp;trông lịch sự và chỉn chu hơn. Chiều dài xắn gấu có thể trải từ 3 tới 5cm, và đặc biệt lí tưởng với các chàng trai chân dài. Và có một lời khuyên các bạn không mặc quần kaki dài quá, chỉ tới mắt cá chân là đẹp, hãy thử và nhờ thợ may cắt đi một chút là bạn đã có chiếc quần hoàn hảo.</p><p style=\"box-sizing: border-box; font-family: Quicksand, sans-serif; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; line-height: 1.6em;\">Một lưu ý khá quan trọng giúp bạn chọn được&nbsp;<a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần kaki</a>&nbsp;ưng ý: Nếu chiếc quần may bằng chất liệu nylon hay rayon (tơ nhận tạo) hay vải chống nhăn thì đó không phải là&nbsp;<a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">quần kaki</a>&nbsp;đúng nghĩa.&nbsp;<a href=\"http://torano.vn/c65297/kaki\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(37, 42, 43); outline: none; transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s;\">Quần kaki</a>&nbsp;đúng nghĩa phải là loại 100% cotton</span></p><p><br></p>', NULL, NULL),
 (15, 4, 'Style fashion 2021', 'Bí quyết lựa chọn short kaki nam cho mùa hè', 'media/post/1705603025370792.jpg', '<p>Fashion</p>', '<p><a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; outline: none;\">Quần short kaki nam</a><span style=\"color: rgb(37, 42, 43); font-family: Quicksand, sans-serif;\">&nbsp;là món đồ thời trang mang đến cảm giác thân thiện và thoải mái nhất với đấng mày râu, đặc biệt là và những ngày nóng bức hay những kì nghỉ. Bạn đã có bao nhiêu chiếc&nbsp;</span><a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); background-color: rgb(255, 255, 255); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; font-family: Quicksand, sans-serif; margin: 0px; padding: 0px; outline: none;\">quần short kaki</a><span style=\"color: rgb(37, 42, 43); font-family: Quicksand, sans-serif;\">&nbsp;trong tủ quần áo của mình?</span></p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/19900/175323494_2215814281886235_1340008555583685486_n.jpg\" style=\"box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; max-width: 100%; height: 532px; width: 800px;\"></a></p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">Nhưng trước khi rước về tủ của mình trước hết các bạn cũng nên lưu ý những điểm sau khi lựa chọn và phối đồ với&nbsp;<a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">quần short kaki nam</a>:</p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">1. Điểm đầu tiên và quan trọng nhất cần lưu ý chính là chiều dài của quần. Độ dài hoàn hảo của chiếc&nbsp;<a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">quần short nam</a>&nbsp;nên dừng ở khoảng 3-5 cm trên đầu gối. Không nên dài hơn hoặc ngắn hơn. Khi mặc vào bạn cũng phải cảm thấy thật thoải mái, có thể di chuyển dễ dàng. Chiếc quần quá bó và quá chật sẽ dễ gây phản cảm với người đối diện.</p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; line-height: 1.6em;\">2.&nbsp;<a href=\"http://torano.vn/c65296/short\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">Quần short</a>&nbsp;được may bằng bất cứ chất liệu nào cũng không phải là món đồ dành cho môi trường công sở, trừ khi bạn làm việc tại công ty về sáng tạo và công việc của bạn hoàn toàn không phải gặp gỡ hay giao tiếp với ai. Nếu bạn thích phong cách an toàn,&nbsp;<a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">quần short kaki</a>&nbsp;nam màu trơn và trung tính như màu nâu nhạt, xanh navy, đen sẽ là những lựa chọn hàng đầu.</span></p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; line-height: 1.6em;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/19900/170876991_2211030819031248_1201418250245246635_n.jpg\" style=\"box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; max-width: 100%; height: 532px; width: 800px;\"></span></a></p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">3. Ngoài ra, hãy chọn kiểu&nbsp;<a href=\"http://torano.vn/c65296/short\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">quần short</a>&nbsp;cho những ngày cuối tuần hoặc cho những chuyến đi chơi dã ngoại. Quần với họa tiết hoa sẽ phù hợp hơn cho những chuyến đi biển.</p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">4. Còn nếu muốn bộ trang phục của mình bớt tẻ nhạt, bạn có thể thử nghiệm với những họa tiết nhỏ hoặc quần kẻ sọc.</p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><span style=\"box-sizing: border-box; margin: 0px; padding: 0px; line-height: 1.6em;\"></span></p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\">5.&nbsp;<a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">Quần short kaki nam</a>&nbsp;sẽ phù hợp nhất khi được phối cùng&nbsp;<a href=\"http://torano.vn/c105814/ao-phong-khong-co\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">áo thun</a>,&nbsp;<a href=\"http://torano.vn/c105813/ao-phong-co-co\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">áo polo</a>, cũng cả&nbsp;<a href=\"http://torano.vn/c65282/somi-ngan-tay\" style=\"box-sizing: border-box; color: rgb(37, 42, 43); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\">áo sơ mi cộc tay</a>&nbsp;và chỉ nên có một trong hai món trang phục có họa tiết (quần hoặc áo họa tiết).</p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43); text-align: center;\"><a href=\"http://torano.vn/c105849/short-kaki\" style=\"box-sizing: border-box; color: rgb(0, 0, 0); transition: opacity 0.15s linear 0s, color 0.15s linear 0s, background 0.15s linear 0s; margin: 0px; padding: 0px; outline: none;\"><img alt=\"\" src=\"https://storage.googleapis.com/cdn.nhanh.vn/store/2071/artCT/19900/168014755_2204165256384471_1624496623646402923_n.jpg\" style=\"box-sizing: border-box; border: 0px; margin: 0px; padding: 0px; max-width: 100%; height: 800px; width: 800px;\"></a></p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; font-family: Quicksand, sans-serif; padding: 0px; line-height: 21px; color: rgb(37, 42, 43);\"><br></p><p><br></p>', NULL, NULL);
@@ -513,7 +511,7 @@ INSERT INTO `posts` (`id`, `category_id`, `post_title_en`, `post_title_vn`, `pos
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post_category`
+-- Table structure for table `post_category`
 --
 
 CREATE TABLE `post_category` (
@@ -525,7 +523,7 @@ CREATE TABLE `post_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `post_category`
+-- Dumping data for table `post_category`
 --
 
 INSERT INTO `post_category` (`id`, `category_name_en`, `category_name_vn`, `created_at`, `updated_at`) VALUES
@@ -534,7 +532,7 @@ INSERT INTO `post_category` (`id`, `category_name_en`, `category_name_vn`, `crea
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -567,7 +565,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `category_id`, `subcategory_id`, `brand_id`, `product_name`, `product_code`, `product_quantity`, `product_details`, `product_color`, `product_size`, `selling_price`, `discount_price`, `video_link`, `main_slider`, `hot_deal`, `best_rated`, `mid_slider`, `hot_new`, `buyone_getone`, `trend`, `image_one`, `image_two`, `image_three`, `status`, `created_at`, `updated_at`) VALUES
@@ -577,15 +575,15 @@ INSERT INTO `products` (`id`, `category_id`, `subcategory_id`, `brand_id`, `prod
 (36, 22, 40, 14, 'Áo polo kẻ ngang Torano TP037', 'BSTP03772CV08SB', '11', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng Vàng', 'XL,L,M,S', '330000', '264000', NULL, NULL, 1, 1, 1, 1, 1, 1, 'media/product/1679798226640578.jpg', 'media/product/1679798226863154.jpg', 'media/product/1679798227089837.jpg', 1, NULL, NULL),
 (37, 27, 60, 14, 'Quần Jogger gió đục lỗ sườn Torano', 'BWBW20103PE00SB', '12', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Đen,Xám', 'XL,L,M,S', '460000', '380000', NULL, 1, 1, 1, 1, 1, 1, 1, 'media/product/1679800314336612.jpg', 'media/product/1679800314652318.jpg', 'media/product/1679800315025006.jpg', 1, NULL, NULL),
 (38, 22, 38, 14, 'Áo polo trơn thêu logo trước ngực Torano TP503', 'BSTP50372CV00SB', '15', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Vàng,Xám,Xanh', 'XL,L,M,S', '350000', '256000', NULL, 1, 1, NULL, 1, 1, NULL, NULL, 'media/product/1679800555077606.jpg', 'media/product/1679800555208429.jpg', 'media/product/1679800555350435.jpg', 1, NULL, NULL),
-(39, 22, 38, 14, 'Áo Polo Basic phối bo kẻ Pazzini', 'SAPMTPS.S39.S', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Trắng,Đen', 'XL,L,M,S', '300000', '150000', NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/1679800757178178.jpg', 'media/product/1679800757560545.jpg', 'media/product/1679800757861910.jpg', 1, NULL, NULL),
-(40, 23, 42, 14, 'Áo phông ngắn tay họa tiết in logo Torano TS061', 'BSTS06112CT06SB', '11', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng,Đen', 'XL,L,M,S', '220000', '110000', NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/1679800933601715.jpg', 'media/product/1679800933868870.jpg', 'media/product/1679800934063995.jpg', 1, NULL, NULL),
-(41, 24, 46, 14, 'Áo Sơ mi ngắn tay Pazzini họa tiết S01', 'SAPMTSH.S01.F', '37', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng,Đen,Xanh', 'XL,L,M,S', '350000', '175000', NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/1679801097830996.jpg', 'media/product/1679801098322424.jpg', 'media/product/1679801098546567.jpg', 1, NULL, NULL),
+(39, 22, 38, 14, 'Love You Mom Mother\'s Day Cozy Fleece Blanket', 'SAPMTPS.S39.S', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Trắng,Đen', 'XL,L,M,S', '300000', '150000', NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/171022_14_04_20.webp', 'media/product/1679800757560545.jpg', 'media/product/1679800757861910.jpg', 1, NULL, NULL),
+(40, 23, 42, 14, 'Playing Hide and Seek Fleece Blanket', 'BSTS06112CT06SB', '11', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng,Đen', 'XL,L,M,S', '220000', '110000', NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/171022_14_11_19.webp', 'media/product/1679800933868870.jpg', 'media/product/1679800934063995.jpg', 1, NULL, NULL),
+(41, 24, 46, 14, 'Wolfoo And Lucy Chocolate Day Fleece Blanket', 'SAPMTSH.S01.F', '37', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng,Đen,Xanh', 'XL,L,M,S', '350000', '175000', NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/171022_14_39_16.webp', 'media/product/1679801098322424.jpg', 'media/product/1679801098546567.jpg', 1, NULL, NULL),
 (42, 23, 42, 14, 'Áo phông ngắn tay họa tiết The Hope Torano', 'BSTS06012CT06SB', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng,Đen', 'XL,L,M', '220000', '110000', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679801306004849.jpg', 'media/product/1679801306178268.jpg', 'media/product/1679801306360104.jpg', 1, NULL, NULL),
 (43, 23, 42, 14, 'Áo phông ngắn tay họa tiết Cupid Torano', 'BSTS85212CT06AB', '13', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen', 'XL,L,M', '290000', '145000', NULL, NULL, 1, 1, 1, 1, NULL, 1, 'media/product/1679801448343082.jpg', 'media/product/1679801449625614.jpg', 'media/product/1679801450592637.jpg', 1, NULL, NULL),
 (44, 23, 43, 14, 'Áo phông ngắn tay kẻ ngang Torano TS022', 'BSTS02212CT07SB', '12', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Kẻ đen,Kẻ đỏ', 'XL,L,M', '220000', '110000', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679801629355162.jpg', 'media/product/1679801629644875.jpg', 'media/product/1679801629930671.jpg', 1, NULL, NULL),
 (45, 23, 43, 14, 'Áo phông ngắn tay kẻ ngang Torano TS020', 'BSTS02012CT07SB', '29', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Kẻ vàng,Kẻ xanh,Kẻ đỏ', 'L,M', '220000', '110000', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679801785121953.jpg', 'media/product/1679801785350123.jpg', 'media/product/1679801785556997.jpg', 1, NULL, NULL),
 (46, 23, 44, 14, 'Áo phông ngắn tay bo phối họa tiết Torano', 'BSTS61212CT00SB', '15', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen,Xanh,Trắng', 'XL,L,M', '200000', '100000', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679802036045625.jpg', 'media/product/1679802036318507.jpg', 'media/product/1679802036583711.jpg', 1, NULL, NULL),
-(47, 23, 44, 14, 'Áo phông ngắn tay trơn cổ tim Torano TS102', 'BSTS10222CV00SB', '37', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Đen,Trắng', 'L,M,S', '150000', '90000', NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/1679802168063842.jpg', 'media/product/1679802168379944.jpg', 'media/product/1679802168665920.jpg', 1, NULL, NULL),
+(47, 23, 44, 14, 'Wolfoo Family Cozy Fleece Blanket', 'BSTS10222CV00SB', '37', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Đen,Trắng', 'L,M,S', '150000', NULL, NULL, NULL, 1, 1, 1, NULL, 1, NULL, 'media/product/171022_14_35_13.webp', 'media/product/1679802168379944.jpg', 'media/product/1679802168665920.jpg', 1, NULL, NULL),
 (48, 23, 42, 14, 'Áo phông ngắn tay họa tiết in logo Torano TS103', 'BSTS10312CT06SB', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen, Trắng', 'XL,L,M', '220000', '110000', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679802316663720.jpg', 'media/product/1679802317212243.jpg', 'media/product/1679802317993745.jpg', 1, NULL, NULL),
 (49, 23, 42, 14, 'Áo phông ngắn tay họa tiết TS069', 'BSTS06912CT05SB', '14', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xám,Trắng', 'XL,L,M', '200000', '100000', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679802450682262.jpg', 'media/product/1679802450991544.jpg', 'media/product/1679802451235010.jpg', 1, NULL, NULL),
 (50, 23, 42, 14, 'Áo phông ngắn tay họa tiết Sunset Beach Torano', 'BSTS27712CT06SB', '18', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Xám', 'XL,L,M', '300000', '150000', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679804251882211.jpg', 'media/product/1679804252196914.jpg', 'media/product/1679804252384299.jpg', 1, NULL, NULL),
@@ -598,31 +596,21 @@ INSERT INTO `products` (`id`, `category_id`, `subcategory_id`, `brand_id`, `prod
 (58, 22, 39, 14, 'Áo polo thêu họa tiết Sailing Pazzini', 'SAPMTPS.S27.F', '45', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen,Trắng,Xanh', 'XL,S', '380000', '114000', NULL, 1, 1, 1, 1, NULL, NULL, NULL, 'media/product/1679805507673440.jpg', 'media/product/1679805508104918.jpg', 'media/product/1679805508506834.jpg', 1, NULL, NULL),
 (66, 22, 38, 14, 'Áo polo trơn thêu logo trước ngực TP381 (TP301)', '8243788562', '18', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xám,Trắng', 'M,L,XL,XXL', '330000', '269000', NULL, NULL, NULL, 1, 1, 1, NULL, 1, 'media/product/1704979135566185.jpg', 'media/product/1704979136578301.jpg', 'media/product/1704979136967910.jpg', 1, NULL, NULL),
 (67, 22, 39, 14, 'Áo polo họa tiết The Garden Torano TP038', '9015658470', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Xám,Trắng', 'S,M,L,XL', '350000', '175000', NULL, NULL, 1, 1, 1, 1, NULL, 1, 'media/product/1704979502201129.jpg', 'media/product/1704979502600212.jpg', 'media/product/1704979503045585.jpg', 1, NULL, NULL),
-(69, 22, 40, 14, 'Áo polo phối cổ Tri-color thêu tay TP278', '3154350877', '22', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen,Trắng,Vàng', 'M,L,XL', '360000', '252000', NULL, 1, 1, NULL, 1, 1, NULL, NULL, 'media/product/1704980235701541.jpg', 'media/product/1704980236091143.jpg', 'media/product/1704980236407591.jpg', 1, NULL, NULL),
+(69, 22, 40, 14, 'Cheerful Wolfoo 3 Years Old Cute Soft Plush Toy', '3154350877', '22', '<h4 class=\"section-header-subtitle\" style=\"box-sizing: border-box; color: rgb(132, 132, 132); margin-top: 15px; margin-bottom: 0px; font-size: 23px; font-family: Cabin; opacity: 1; text-align: center;\">A cute Wolfoo 3 years old is availabe now! Get it yours!</h4>', 'Đen,Trắng,Vàng', 'M,L,XL', '360000', '252000', NULL, 1, 1, NULL, 1, 1, NULL, NULL, 'media/product/161022_17_41_32.webp', 'media/product/161022_17_01_33.webp', 'media/product/161022_17_11_33.webp', 1, NULL, NULL),
 (71, 23, 44, 14, 'Áo thun trơn basic cotton TS306', '3830192161', '30', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Đen,Trắng', 'M,L,XL', '169000', '99000', NULL, NULL, 1, NULL, NULL, 1, NULL, 1, 'media/product/1705597384936926.jpg', 'media/product/1705597385428366.jpg', 'media/product/1705597385628883.jpg', 1, NULL, NULL),
-(72, 23, 41, 14, 'Áo thun in ngực Division TS708', '4014008342', '30', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh', 'M,L,XL', '250000', '199000', NULL, 1, NULL, 1, NULL, 1, NULL, 1, 'media/product/1705597524748164.jpg', 'media/product/1705597524972645.jpg', 'media/product/1705597525188461.jpg', 1, NULL, NULL),
+(72, 23, 41, 14, 'Cheerful Wolfoo 3 Years Old Cute Soft Plush Toy', '4014008342', '30', '<h4 class=\"section-header-subtitle\" style=\"box-sizing: border-box; color: rgb(132, 132, 132); margin-top: 15px; margin-bottom: 0px; font-size: 23px; font-family: Cabin; opacity: 1; text-align: center;\">A cute Wolfoo 3 years old is availabe now! Get it yours!</h4>', 'Xanh', 'M,L,XL', '250000', '199000', NULL, 1, NULL, 1, NULL, 1, NULL, 1, 'media/product/161022_17_32_27.webp', 'media/product/161022_17_20_28.webp', 'media/product/161022_17_31_28.webp', 1, NULL, NULL),
 (73, 24, 48, 14, 'Sơ mi ngắn tay đũi TB282', '7467929767', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng,Đen,Xanh', 'M,L,XL', '390000', '351000', NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, 'media/product/1705597902410273.jpg', 'media/product/1705597902622227.jpg', 'media/product/1705597902839364.jpg', 1, NULL, NULL),
 (74, 24, 47, 14, 'Sơ mi ngắn tay kẻ TB283', '1555512334', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano</p>', 'Trắng Xanh,Trắng Nâu', 'M,L,XL', '390000', '351000', NULL, NULL, NULL, 1, NULL, 1, NULL, 1, 'media/product/1705598121088648.jpg', 'media/product/1705598121305782.jpg', 'media/product/1705598121515762.jpg', 1, NULL, NULL),
 (75, 24, 46, 14, 'Sơ mi ngắn tay họa tiết The Birds TB280', '8326790559', '30', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng', 'M,L,XL', '350000', '315000', NULL, NULL, NULL, 1, NULL, 1, NULL, 1, 'media/product/1705603500154629.jpg', 'media/product/1705603500629811.jpg', 'media/product/1705603501043170.jpg', 1, NULL, NULL),
-(76, 24, 46, 14, 'Sơ mi ngắn tay họa tiết The Flowers TB279', '6130811462', '30', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng,Xám', 'M,L,XL', '350000', '315000', NULL, NULL, NULL, 1, 1, 1, NULL, 1, 'media/product/1705603622890483.jpg', 'media/product/1705603623332245.jpg', 'media/product/1705603623744842.jpg', 1, NULL, NULL),
+(76, 24, 46, 14, 'Cheerful Lucy Soft Plush', '6130811462', '30', '<p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; color: rgb(102, 101, 101); font-family: Cabin, sans-serif; font-size: 20px;\">Soft plush Lucy is a perfect gift for all Lucy fans. Lucy plushies<span data-mce-fragment=\"1\" style=\"box-sizing: border-box;\">&nbsp;feature embroidered details and a fluffy filling to make them perfect for snuggling or just hanging out with.</span></p><p style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; color: rgb(102, 101, 101); font-family: Cabin, sans-serif; font-size: 20px;\"><span style=\"box-sizing: border-box; color: rgb(255, 42, 0);\"><span style=\"box-sizing: border-box; font-weight: 700;\">Product Description</span></span></p><ul style=\"box-sizing: border-box; margin-bottom: 15px; color: rgb(102, 101, 101); font-family: Cabin, sans-serif; font-size: 20px;\"><li style=\"box-sizing: border-box; padding-left: 5px;\"><span style=\"box-sizing: border-box; color: rgb(128, 128, 128);\">Product dimension (L x W x H):&nbsp;</span><span style=\"box-sizing: border-box; font-weight: 700;\"><font color=\"#5db900\" style=\"box-sizing: border-box;\">16</font></span><span style=\"box-sizing: border-box; color: rgb(40, 188, 62);\"><span style=\"box-sizing: border-box; font-weight: 700;\">cm x 20cm x 41cm</span></span></li><li style=\"box-sizing: border-box; padding-left: 5px;\"><span style=\"box-sizing: border-box; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; color: rgb(40, 188, 62);\"><span style=\"box-sizing: border-box; font-weight: 700;\">Embroidered</span></span>&nbsp;<span style=\"box-sizing: border-box; color: rgb(128, 128, 128);\">details</span></span></li><li style=\"box-sizing: border-box; padding-left: 5px;\"><span style=\"box-sizing: border-box; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; color: rgb(128, 128, 128);\">Super-soft synthetic fabric made from</span>&nbsp;<span style=\"box-sizing: border-box; color: rgb(40, 188, 62);\"><span style=\"box-sizing: border-box; font-weight: 700;\">100% polyester</span></span>&nbsp;<span style=\"box-sizing: border-box; color: rgb(128, 128, 128);\">fibers</span></span></li><li style=\"box-sizing: border-box; padding-left: 5px;\"><span style=\"box-sizing: border-box; color: rgb(128, 128, 128);\">Surface</span>&nbsp;<span style=\"box-sizing: border-box; color: rgb(40, 188, 62);\"><span style=\"box-sizing: border-box; font-weight: 700;\">washable</span></span><span style=\"box-sizing: border-box; color: rgb(128, 128, 128);\">, spot clean with a damp cloth</span></li><li style=\"box-sizing: border-box; padding-left: 5px;\"><span style=\"box-sizing: border-box; color: rgb(0, 0, 0);\"><span style=\"box-sizing: border-box; color: rgb(128, 128, 128);\">Suitable for kids</span>&nbsp;<span style=\"box-sizing: border-box; color: rgb(40, 188, 62);\"><span style=\"box-sizing: border-box; font-weight: 700;\">from 3 years old</span></span></span></li></ul><div class=\"pb2\" style=\"box-sizing: border-box; color: rgb(102, 101, 101); font-family: Cabin, sans-serif; font-size: 20px;\"><p class=\"mv0 lh-copy f6 mid-gray\" style=\"box-sizing: border-box; margin-right: 0px; margin-bottom: 15px; margin-left: 0px;\"><span style=\"box-sizing: border-box; font-weight: 700;\">Choking Hazard:&nbsp;</span><span style=\"box-sizing: border-box;\">This toy&nbsp;contains small parts which is not suitable for ages under 3 years.</span></p></div>', 'Trắng,Xám', 'M,L,XL', '350000', '315000', NULL, NULL, NULL, 1, 1, 1, NULL, 1, 'media/product/181022_01_32_11.webp', 'media/product/181022_01_48_11.webp', 'media/product/181022_01_02_12.webp', 1, NULL, NULL),
 (77, 24, 46, 14, 'Sơ mi ngắn tay họa tiết The Leaves TB278', '8131327323', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng', '39,40,41,42', '350000', '315000', NULL, NULL, NULL, 1, NULL, 1, NULL, 1, 'media/product/1705603754754909.jpg', 'media/product/1705603755271000.jpg', 'media/product/1705603755689366.jpg', 1, NULL, NULL),
 (78, 24, 45, 14, 'Sơ mi ngắn tay trơn Bamboo hiệu ứng TB288', '9451842833', '30', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Trắng', '38,39,40,41,42', '390000', '351000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705603957357347.jpg', 'media/product/1705603957785961.jpg', 'media/product/1705603958242955.jpg', 1, NULL, NULL),
-(79, 25, 51, 14, 'Sơ mi dài tay dạ 2 túi thêu logo Torano TB182', '2681000248', '30', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xám', '38,39,40,41', '450000', '240000', NULL, NULL, 1, 1, NULL, 1, NULL, NULL, 'media/product/1705604114268745.jpg', 'media/product/1705604114752519.jpg', 'media/product/1705604115167385.jpg', 1, NULL, NULL),
-(80, 27, 57, 14, 'Quần âu slim-fit điều chỉnh cạp trơn BT041', '2292583280', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen,Xám', '29,30,31,32', '480000', '384000', NULL, NULL, NULL, 1, NULL, 1, NULL, 1, 'media/product/1705604341637221.jpg', 'media/product/1705604342287527.jpg', 'media/product/1705604342622401.jpg', 1, NULL, NULL),
-(81, 27, 57, 14, 'Quần âu gấu L\'v Torano BT021', '4813364641', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen, Xám', '29,30,31,32,33', '450000', '225000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705604480699215.jpg', 'media/product/1705604481574428.jpg', 'media/product/1705604482077704.jpg', 1, NULL, NULL),
-(82, 27, 58, 14, 'Quần kaki Wrinkless BK058/2', '2976482768', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen,Trắng,Xám', '29,30,31,32,33', '450000', '360000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705604642854457.jpg', 'media/product/1705604643557776.jpg', 'media/product/1705604644279178.jpg', 1, NULL, NULL),
-(83, 27, 58, 14, 'Quần Kaki dài basic BK060-W8898', '7440564314', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Đen,Xám', '29,30,31,32,33', '380000', '299000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705604798957760.jpg', 'media/product/1705604799643622.jpg', 'media/product/1705604800263144.jpg', 1, NULL, NULL),
-(84, 27, 58, 14, 'Quần Kaki dài basic cạp phối chun sườn Torano BK049', '9150918098', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Den,Trắng', '29,30,31,32', '450000', '315000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705605204536278.jpg', 'media/product/1705605205177313.jpg', 'media/product/1705605205745792.jpg', 1, NULL, NULL),
-(85, 27, 58, 14, 'Quần Kaki dài basic cạp phối chun sườn Torano BK049', '3804390918', '10', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Den,Trắng', '29,30,31,32', '450000', '315000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705605204555608.jpg', 'media/product/1705605205192429.jpg', 'media/product/1705605205771366.jpg', 1, NULL, NULL),
-(86, 27, 59, 14, 'Quần Jeans basic Regular BJ047/2', '4331195596', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xanh,Đen,Xám', '29,30,31,32,33', '480000', '384000', NULL, NULL, NULL, 1, NULL, 1, NULL, 1, 'media/product/1705605346292355.jpg', 'media/product/1705605346807386.jpg', 'media/product/1705605347091278.jpg', 1, NULL, NULL),
-(87, 27, 59, 14, 'Quần Jeans basic Slim BJ037', '5201895928', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Đen', '29,30,31,32,33', '520000', '424000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705605557227400.jpg', 'media/product/1705605557830432.jpg', 'media/product/1705605558209005.jpg', 1, NULL, NULL),
-(88, 26, 53, 14, 'Quần short kaki basic BK009', '8781914202', '20', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xám,Be', '29,30,31,32,33', '350000', '175000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705605746908182.jpg', 'media/product/1705605747339689.jpg', 'media/product/1705605747784670.jpg', 1, NULL, NULL),
-(89, 26, 54, NULL, 'Quần short đũi chun cạp BI004', '2384394147', '05', '<p>Thoải mái</p>', 'Xanh,Đen,Trắng', '29,30,31,32', '350000', '315000', NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, 'media/product/1705605874091403.jpg', 'media/product/1705605874564788.jpg', 'media/product/1705605874924079.jpg', 1, NULL, NULL);
+(79, 25, 51, 14, 'Sơ mi dài tay dạ 2 túi thêu logo Torano TB182', '2681000248', '30', '<p>Sản phẩm chất lượng, chính hãng, độc quyền tại Torano<br></p>', 'Xám', '38,39,40,41', '450000', '240000', NULL, NULL, 1, 1, NULL, 1, NULL, NULL, 'media/product/1705604114268745.jpg', 'media/product/1705604114752519.jpg', 'media/product/1705604115167385.jpg', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `seo`
+-- Table structure for table `seo`
 --
 
 CREATE TABLE `seo` (
@@ -630,15 +618,15 @@ CREATE TABLE `seo` (
   `meta_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_author` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_tag` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `google_analytics` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `bing_analytics` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` text COLLATE utf8mb4_unicode_ci,
+  `google_analytics` text COLLATE utf8mb4_unicode_ci,
+  `bing_analytics` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `seo`
+-- Dumping data for table `seo`
 --
 
 INSERT INTO `seo` (`id`, `meta_title`, `meta_author`, `meta_tag`, `meta_description`, `google_analytics`, `bing_analytics`, `created_at`, `updated_at`) VALUES
@@ -647,7 +635,7 @@ INSERT INTO `seo` (`id`, `meta_title`, `meta_author`, `meta_tag`, `meta_descript
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
@@ -664,7 +652,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `vat`, `shipping_charge`, `shopname`, `email`, `phone`, `adderss`, `logo`, `created_at`, `updated_at`) VALUES
@@ -673,7 +661,7 @@ INSERT INTO `settings` (`id`, `vat`, `shipping_charge`, `shopname`, `email`, `ph
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `shipping`
+-- Table structure for table `shipping`
 --
 
 CREATE TABLE `shipping` (
@@ -689,7 +677,7 @@ CREATE TABLE `shipping` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `shipping`
+-- Dumping data for table `shipping`
 --
 
 INSERT INTO `shipping` (`id`, `order_id`, `ship_name`, `ship_phone`, `ship_email`, `ship_address`, `ship_city`, `created_at`, `updated_at`) VALUES
@@ -744,7 +732,7 @@ INSERT INTO `shipping` (`id`, `order_id`, `ship_name`, `ship_phone`, `ship_email
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sitesetting`
+-- Table structure for table `sitesetting`
 --
 
 CREATE TABLE `sitesetting` (
@@ -763,7 +751,7 @@ CREATE TABLE `sitesetting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sitesetting`
+-- Dumping data for table `sitesetting`
 --
 
 INSERT INTO `sitesetting` (`id`, `phone_one`, `phone_two`, `email`, `company_name`, `company_address`, `facebook`, `youtube`, `instagram`, `twitter`, `created_at`, `updated_at`) VALUES
@@ -772,51 +760,45 @@ INSERT INTO `sitesetting` (`id`, `phone_one`, `phone_two`, `email`, `company_nam
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `subcategories`
+-- Table structure for table `subcategories`
 --
 
 CREATE TABLE `subcategories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `category_id` int(11) NOT NULL,
+  `subcategories_logo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `subcategory_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `subcategories`
+-- Dumping data for table `subcategories`
 --
 
-INSERT INTO `subcategories` (`id`, `category_id`, `subcategory_name`, `created_at`, `updated_at`) VALUES
-(38, 22, 'Polo Trơn', NULL, NULL),
-(39, 22, 'Polo Họa Tiết', NULL, NULL),
-(40, 22, 'Polo Kẻ', NULL, NULL),
-(41, 23, 'Áo thun Melange', NULL, NULL),
-(42, 23, 'Áo thun họa tiết', NULL, NULL),
-(43, 23, 'Áo thun kẻ', NULL, NULL),
-(44, 23, 'Áo thun trơn', NULL, NULL),
-(45, 24, 'Sơ mi ngắn tay trơn', NULL, NULL),
-(46, 24, 'Sơ mi ngắn tay họa tiết', NULL, NULL),
-(47, 24, 'Sơ mi ngắn tay kẻ', NULL, NULL),
-(48, 24, 'Sơ mi ngắn tay đũi', NULL, NULL),
-(49, 25, 'Sơ mi dài tay đũi', NULL, NULL),
-(50, 25, 'Sơ mi dài tay họa tiết', NULL, NULL),
-(51, 25, 'Sơ mi dài tay kẻ', NULL, NULL),
-(52, 25, 'Sơ mi dài tay trơn', NULL, NULL),
-(53, 26, 'Quần short kaki', NULL, NULL),
-(54, 26, 'Quần short đũi', NULL, NULL),
-(55, 26, 'Quần short gió', NULL, NULL),
-(56, 26, 'Quần short Jean', NULL, NULL),
-(57, 27, 'Quần Âu cao cấp', NULL, NULL),
-(58, 27, 'Quần Kaki', NULL, NULL),
-(59, 27, 'Quần Jean', NULL, NULL),
-(60, 27, 'Quần Jogger', NULL, NULL),
-(63, 28, 'Áo da', NULL, NULL);
+INSERT INTO `subcategories` (`id`, `category_id`, `subcategories_logo`, `subcategory_name`, `created_at`, `updated_at`) VALUES
+(38, 22, '', 'TODDLER T-SHIRTS (2-6 YEARS OLD)', NULL, NULL),
+(39, 22, '', 'YOUTH T-SHIRTS (7-16 YEARS OLD)', NULL, NULL),
+(40, 22, '', 'TODDLER HOODIES (2-6 YEARS OLD)', NULL, NULL),
+(41, 23, '', 'BIRTHDAY', NULL, NULL),
+(42, 23, '', 'CHRISTMAS', NULL, NULL),
+(43, 23, '', 'EASTER DAY', NULL, NULL),
+(44, 23, '', 'FATHER\'S DAY', NULL, NULL),
+(45, 24, '', 'DADS T-SHIRTS', NULL, NULL),
+(46, 24, '', 'MOMS T-SHIRTS', NULL, NULL),
+(47, 24, '', 'PARENTS HOODIES', NULL, NULL),
+(49, 25, '', 'PAPER CARDBOARD PUZZLES', NULL, NULL),
+(50, 25, '', 'WOODEN JIGSAW PUZZLES', NULL, NULL),
+(51, 25, '', 'PLUSHIES', NULL, NULL),
+(53, 26, '', 'BEDDING SETS', NULL, NULL),
+(54, 26, '', 'BLANKETS', NULL, NULL),
+(55, 26, '', 'DECORATIVE RUGS', NULL, NULL),
+(56, 26, '', 'PILLOWS', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -824,7 +806,7 @@ CREATE TABLE `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci,
   `avatar` varchar(240) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `provider` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `provider_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -837,7 +819,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `phone`, `email`, `address`, `avatar`, `provider`, `provider_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `city`) VALUES
@@ -850,12 +832,13 @@ INSERT INTO `users` (`id`, `name`, `phone`, `email`, `address`, `avatar`, `provi
 (27, 'Chuyên', '0356868688', 'tuananhcc@gmail.com', 'Văn Điển', NULL, NULL, NULL, NULL, '$2y$10$01MQZ5sZOQwM25o13mvvFOAWBkB.mGM3rM587u.WKw8uu4XCSi0l6', NULL, '2021-05-11 08:41:24', '2021-05-11 08:41:24', 'Hà Nội'),
 (30, 'Bùi Thanh Thư', '0345678900', 'thubt@gmail.com', 'phố Lụa', NULL, NULL, NULL, NULL, '$2y$10$kkKnVBdV4gjZroIEupZ97uHzU0MmWnps2CoaAYLR9jLYegCm7dhg6', NULL, '2021-05-15 06:02:32', '2021-05-15 06:02:32', 'Hà Nội'),
 (31, 'Lương Thế Vinh', '0909789654', 'vinhlt@gmail.com', 'Quỳnh Phụ', NULL, NULL, NULL, NULL, '$2y$10$bq3KIJUFIS2yI1UL/ZGQ0ueMn6J5nmEdXLtqFS.KHBHI.rvDuMEOW', NULL, '2021-07-11 01:46:43', '2021-07-11 01:46:43', 'Thái Bình'),
-(32, 'Đinh Tiến Giang', '0323455655', 'giangdt@lqa.com', 'Thanh Sơn', NULL, NULL, NULL, NULL, '$2y$10$i0VVEdpYjVxQIWgdoqplFeGwl84pKkEbp8z.utLcmyN3HT5lAX9Yq', NULL, '2021-07-11 02:41:29', '2021-07-11 02:41:29', 'Phú Thọ');
+(32, 'Đinh Tiến Giang', '0323455655', 'giangdt@lqa.com', 'Thanh Sơn', NULL, NULL, NULL, NULL, '$2y$10$i0VVEdpYjVxQIWgdoqplFeGwl84pKkEbp8z.utLcmyN3HT5lAX9Yq', NULL, '2021-07-11 02:41:29', '2021-07-11 02:41:29', 'Phú Thọ'),
+(33, 's', '03499822482', 'chuyen1@gmail.com', 'thai binh', NULL, NULL, NULL, NULL, '$2y$10$Gvi96HKuItNAf.44qiDaBucpOJp6paUuEOjUrZ1AsuTM3r0I1pu3u', NULL, '2022-10-16 10:11:11', '2022-10-16 10:11:11', 'thai binh');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `wishlists`
+-- Table structure for table `wishlists`
 --
 
 CREATE TABLE `wishlists` (
@@ -867,7 +850,7 @@ CREATE TABLE `wishlists` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `wishlists`
+-- Dumping data for table `wishlists`
 --
 
 INSERT INTO `wishlists` (`id`, `user_id`, `product_id`, `created_at`, `updated_at`) VALUES
@@ -909,302 +892,302 @@ INSERT INTO `wishlists` (`id`, `user_id`, `product_id`, `created_at`, `updated_a
 (45, 14, 53, NULL, NULL);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `brands`
+-- Indexes for table `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `contact`
+-- Indexes for table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `coupons`
+-- Indexes for table `coupons`
 --
 ALTER TABLE `coupons`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `newslaters`
+-- Indexes for table `newslaters`
 --
 ALTER TABLE `newslaters`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `oauth_access_tokens`
+-- Indexes for table `oauth_access_tokens`
 --
 ALTER TABLE `oauth_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_access_tokens_user_id_index` (`user_id`);
 
 --
--- Chỉ mục cho bảng `oauth_auth_codes`
+-- Indexes for table `oauth_auth_codes`
 --
 ALTER TABLE `oauth_auth_codes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_auth_codes_user_id_index` (`user_id`);
 
 --
--- Chỉ mục cho bảng `oauth_clients`
+-- Indexes for table `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_clients_user_id_index` (`user_id`);
 
 --
--- Chỉ mục cho bảng `oauth_personal_access_clients`
+-- Indexes for table `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `oauth_refresh_tokens`
+-- Indexes for table `oauth_refresh_tokens`
 --
 ALTER TABLE `oauth_refresh_tokens`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `orders_details`
+-- Indexes for table `orders_details`
 --
 ALTER TABLE `orders_details`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `posts`
+-- Indexes for table `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `post_category`
+-- Indexes for table `post_category`
 --
 ALTER TABLE `post_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `seo`
+-- Indexes for table `seo`
 --
 ALTER TABLE `seo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `settings`
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `shipping`
+-- Indexes for table `shipping`
 --
 ALTER TABLE `shipping`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `sitesetting`
+-- Indexes for table `sitesetting`
 --
 ALTER TABLE `sitesetting`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `subcategories`
+-- Indexes for table `subcategories`
 --
 ALTER TABLE `subcategories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `wishlists`
+-- Indexes for table `wishlists`
 --
 ALTER TABLE `wishlists`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `admins`
+-- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `brands`
+-- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT cho bảng `contact`
+-- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `coupons`
+-- AUTO_INCREMENT for table `coupons`
 --
 ALTER TABLE `coupons`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT cho bảng `newslaters`
+-- AUTO_INCREMENT for table `newslaters`
 --
 ALTER TABLE `newslaters`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `oauth_clients`
+-- AUTO_INCREMENT for table `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `oauth_personal_access_clients`
+-- AUTO_INCREMENT for table `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT cho bảng `orders_details`
+-- AUTO_INCREMENT for table `orders_details`
 --
 ALTER TABLE `orders_details`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
--- AUTO_INCREMENT cho bảng `posts`
+-- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT cho bảng `post_category`
+-- AUTO_INCREMENT for table `post_category`
 --
 ALTER TABLE `post_category`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
--- AUTO_INCREMENT cho bảng `seo`
+-- AUTO_INCREMENT for table `seo`
 --
 ALTER TABLE `seo`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `settings`
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `shipping`
+-- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT cho bảng `sitesetting`
+-- AUTO_INCREMENT for table `sitesetting`
 --
 ALTER TABLE `sitesetting`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `subcategories`
+-- AUTO_INCREMENT for table `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT cho bảng `wishlists`
+-- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
