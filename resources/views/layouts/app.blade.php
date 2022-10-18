@@ -5,7 +5,7 @@
  <html lang="en">
 
  <head>
-     <title>Web Bán Hàng</title>
+     <title>Wolfoo World Store</title>
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="description" content="OneTech shop project">
@@ -22,7 +22,7 @@
      <script src="https://js.stripe.com/v3/"></script>
 
      <!-- Sử dụng sweetalert2 -->
-     <link rel="stylesheet" href="sweetalert2.min.css">
+     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
  </head>
 
@@ -36,7 +36,9 @@
                      <div class="row">
                          <div class="col d-flex flex-row">
                              <div class="top_bar_contact_item">
-                                 <div class="top_bar_icon"><img src="{{ asset('frontend/images/phone.png')}}" alt=""></div>{{ $setting->phone_one }}
+                                 <!-- <div class="top_bar_icon"><img src="{{ asset('frontend/images/phone.png')}}" alt="">
+                                </div>
+                                {{ $setting->phone_one }} -->
                              </div>
                              <div class="top_bar_content ml-auto">
                                  @guest
@@ -67,10 +69,10 @@
                                  <div class="top_bar_user">
                                      @guest
                                      <div><a href="{{ route('login') }}">
-                                             <div class="user_icon"><img src="{{ asset('frontend/images/user.svg')}}" alt=""></div>Đăng Nhập
+                                             <div class="user_icon"></div>Đăng Nhập
                                          </a></div>
                                      <div><a href="{{ route('register') }}">
-                                             <div class="user_icon"><img src="{{ asset('frontend/images/user.svg')}}" alt=""></div>Đăng kí
+                                             <div class="user_icon"></div>Đăng kí
                                          </a></div>
                                      @else
                                      <ul class="standard_dropdown top_bar_dropdown">
@@ -98,7 +100,7 @@
                          <!-- Logo -->
                          <div class="col-lg-2 col-sm-3 col-3 order-1">
                              <div class="logo_container">
-                                 <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('frontend/images/logo.png')}}" alt=""></a></div>
+                                 <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('frontend/images/logo.avif')}}" style="width: 100%" alt=""></a></div>
                              </div>
                          </div>
                          @php
@@ -112,7 +114,7 @@
                                          <form action="{{ route('product.search') }}" class="header_search_form clearfix" method="POST">
                                              @csrf
                                              <input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm" name="search">
-                                             <div class="custom_dropdown" style="hidden">
+                                             <div class="custom_dropdown" style="display: none">
                                                  <div class="custom_dropdown_list">
                                                      <span class="custom_dropdown_placeholder clc">Sản Phẩm</span>
                                                      <i class="fas fa-chevron-down"></i>
@@ -166,8 +168,7 @@
                  </div>
              </div>
 
-             <!-- Main Navigation -->
-             <!-- Characteristics -->
+             <!-- Main Navigation -->             
              @yield('content')
              <!-- Footer -->
              <footer class="page-footer font-small mdb-color lighten-3 pt-4">
@@ -182,9 +183,9 @@
                          <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
                              <!-- Content -->
-                             <h5 class="font-weight-bold text-uppercase mb-4">TORANO SHOP</h5>
-                             <p>Mã số thuế: 0108597977</p>
-                             <p>Địa chỉ: Cơ sở 1165 đường Giải Phóng, Quận Hoàng Mai, Thành phố Hà Nội.</p>
+                             <h5 class="font-weight-bold text-uppercase mb-4">Wolfoo Shop</h5>
+                             <p>Phone: (714) 660-4424</p>
+                             <p>331 Sonoma Aisle, Irvine CA 92618</p>
 
                          </div>
                          <!-- Grid column -->
@@ -195,27 +196,27 @@
                          <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
 
                              <!-- Links -->
-                             <h5 class="font-weight-bold text-uppercase mb-4">Về chúng tôi</h5>
+                             <h5 class="font-weight-bold text-uppercase mb-4">INFORMATION</h5>
 
                              <ul class="list-unstyled">
                                  <li>
                                      <p>
-                                         <a href="{{ url('/') }}">Giới thiệu</a>
+                                         <a href="{{ url('/') }}">WOLFOO DIARIES</a>
                                      </p>
                                  </li>
                                  <li>
                                      <p>
-                                         <a href="{{ route('contact.page') }}">Liên hệ</a>
+                                         <a href="{{ route('contact.page') }}">SHIPPING AND DELIVERY</a>
                                      </p>
                                  </li>
                                  <li>
                                      <p>
-                                         <a href="{{ route('contact.page') }}">Tuyển dụng</a>
+                                         <a href="{{ route('contact.page') }}">TRACK ORDER</a>
                                      </p>
                                  </li>
                                  <li>
                                      <p>
-                                         <a href="{{ route('contact.page') }}">Tìm đại lý</a>
+                                         <a href="{{ route('contact.page') }}">FAQs</a>
                                      </p>
                                  </li>
                              </ul>
@@ -229,20 +230,20 @@
                          <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
 
                              <!-- Contact details -->
-                             <h5 class="font-weight-bold text-uppercase mb-4">Hỗ trợ khách hàng</h5>
+                             <h5 class="font-weight-bold text-uppercase mb-4">OUR POLICIES</h5>
 
                              <ul class="list-unstyled">
                                  <li>
-                                     <p>Chính sách đổi trả</p>
+                                     <p>PAYMENT METHODS</p>
                                  </li>
                                  <li>
-                                     <p>Câu hỏi thường gặp</p>
+                                     <p>PRIVACY POLICY</p>
                                  </li>
                                  <li>
-                                     <p>Hướng dẫn chọn size</p>
+                                     <p>RETURN POLICY</p>
                                  </li>
                                  <li>
-                                     <p>Thanh toán giao nhận</p>
+                                     <p>TERMS OF SERVICE</p>
                                  </li>
                              </ul>
                          </div>

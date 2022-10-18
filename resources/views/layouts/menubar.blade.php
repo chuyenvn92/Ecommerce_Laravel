@@ -11,19 +11,21 @@ $category = DB::table('categories')->get();
                     <div class="cat_menu_container">
                         <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                             <div class="cat_burger"><span></span><span></span><span></span></div>
-                            <div class="cat_menu_text">Danh mục</div>
+                            <div class="cat_menu_text">Our products</div>
                         </div>
                         <ul class="cat_menu">
-                            @foreach($category as $cat)
+                            @foreach ($category as $cat)
                             <li class="hassubs">
-                                <a href="{{ url('allcategory/'.$cat->id) }}">{{ $cat->category_name }}<i class="fas fa-chevron-right"></i></a>
+                                <a href="{{ url('allcategory/' . $cat->id) }}">{{ $cat->category_name }}<i class="fas fa-chevron-right"></i></a>
                                 <ul>
                                     @php
-                                    $subcategory = DB::table('subcategories')->where('category_id',$cat->id)->get();
+                                    $subcategory = DB::table('subcategories')
+                                    ->where('category_id', $cat->id)
+                                    ->get();
                                     @endphp
-                                    @foreach($subcategory as $row)
+                                    @foreach ($subcategory as $row)
                                     <li class="hassubs">
-                                        <a href="{{ url('products/'.$row->id) }}">{{ $row->subcategory_name}}</a>
+                                        <a href="{{ url('products/' . $row->id) }}">{{ $row->subcategory_name }}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -34,9 +36,10 @@ $category = DB::table('categories')->get();
                     <!-- Main Nav Menu -->
                     <div class="main_nav_menu ml-5">
                         <ul class="standard_dropdown main_nav_dropdown">
-                            <li><a href="{{ url('/') }}">Trang chủ<i class="fas fa-chevron-down"></i></a></li>
-                            <li><a href="{{ route('blog.post') }}">Bài đăng<i class="fas fa-chevron-down"></i></a></li>
-                            <li><a href="{{ route('contact.page') }}">Liên hệ<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="{{ url('/') }}">Home<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="{{ route('blog.post') }}">Blogs<i class="fas fa-chevron-down"></i></a></li>
+                            <li><a href="{{ route('contact.page') }}">About us<i class="fas fa-chevron-down"></i></a>
+                            </li>
                         </ul>
                     </div>
 
@@ -71,14 +74,6 @@ $category = DB::table('categories')->get();
                             <input type="search" required="required" class="page_menu_search_input" placeholder="Tìm kiếm">
                         </form>
                     </div>
-                    <!-- <div class="menu_contact">
-                        <div class="menu_contact_item">
-                            <div class="menu_contact_icon"><img src="{{ asset('frontend/images/phone_white.png')}}" alt=""></div>0931733469
-                        </div>
-                        <div class="menu_contact_item">
-                            <div class="menu_contact_icon"><img src="{{ asset('frontend/images/mail_white.png')}}" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

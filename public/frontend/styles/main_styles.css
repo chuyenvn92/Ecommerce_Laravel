@@ -36,7 +36,7 @@
 1. Fonts
 ***********/
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Quicksand:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Cabin:300,400,500,700,900');
 
 /*********************************
 2. Body and some general stuff
@@ -52,7 +52,7 @@
 }
 body
 {
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	background: #FFFFFF;
@@ -73,7 +73,7 @@ ul
 }
 p
 {
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	font-weight: 400;
@@ -130,7 +130,7 @@ h4{font-size: 18px;}
 h5{font-size: 14px;}
 h1, h2, h3, h4, h5, h6
 {
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-weight: 500;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
@@ -236,7 +236,7 @@ section
 .button
 {
 	display: inline-block;
-	background: #0e8ce4;
+	background: #50dd7b;
 	border-radius: 5px;
 	height: 48px;
 	-webkit-transition: all 200ms ease;
@@ -386,7 +386,7 @@ section
 }
 .standard_dropdown li a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .standard_dropdown li a i
 {
@@ -526,7 +526,7 @@ section
 {
 	font-size: 36px;
 	font-weight: 500;
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .header_search
 {
@@ -698,7 +698,7 @@ section
 }
 .custom_list li a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 select
 {
@@ -733,7 +733,7 @@ select option
 	right: 0;
 	width: 50px;
 	height: 100%;
-	background: #0e8ce4;
+	background: #50dd7b;
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -769,7 +769,7 @@ select option
 }
 .wishlist_text a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .wishlist_count
 {
@@ -784,7 +784,7 @@ select option
 	right: -14px;
 	width: 23px;
 	height: 23px;
-	background: #0e8ce4;
+	background: #50dd7b;
 	border-radius: 50%;
 	text-align: center;
 }
@@ -821,7 +821,7 @@ select option
 }
 .cart_text a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .cart_price
 {
@@ -861,7 +861,7 @@ select option
 {
 	width: 293px;
 	height: 100%;
-	background: #0e8ce4;
+	background: #50dd7b;
 	padding-left: 35px;
 	cursor: pointer;
 	z-index: 1;
@@ -957,7 +957,7 @@ select option
 }
 .cat_menu li a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .cat_menu li a i
 {
@@ -1054,7 +1054,7 @@ select option
 .page_menu_content
 {
 	height: 0px;
-	background: #0e8ce4;
+	background: #50dd7b;
 	padding-left: 15px;
 	padding-right: 15px;
 	overflow: hidden;
@@ -1277,39 +1277,9 @@ select option
 
 .characteristics
 {
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
-.char_item
-{
-	width: 100%;
-	height: 100px;
-	box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-	border: solid 1px #e8e8e8;
-	padding-left: 36px;
-}
-.char_icon
-{
-	margin-right: 24px;
-}
-.char_content
-{
-	transform: translate(-1px, 3px);
-}
-.char_title
-{
-	font-size: 14px;
-	font-weight: 500;
-	color: #000000;
-}
-.char_subtitle
-{
-	font-size: 12px;
-	font-weight: 400;
-	color: rgba(0,0,0,0.5);
-	margin-top: 3px;
-}
-
 /*********************************
 6. Deals of the week
 *********************************/
@@ -1427,7 +1397,7 @@ select option
 	left: 0;
 	height: 100%;
 	border-radius: 5px;
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .deals_timer
 {
@@ -1601,7 +1571,7 @@ select option
 	left: 0;
 	width: 80px;
 	height: 2px;
-	background: #0e8ce4;
+	background: #50dd7b;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -1716,7 +1686,7 @@ select option
 }
 .product_name div a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .product_color
 {
@@ -1791,7 +1761,7 @@ select option
 	opacity: 0;
 	width: 100%;
 	height: 48px;
-	background: #0e8ce4;
+	background: #50dd7b;
 	border: none;
 	outline: none;
 	font-size: 18px;
@@ -1848,11 +1818,11 @@ select option
 }
 .featured_slider .slick-dots li:hover
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .featured_slider .slick-dots li.slick-active
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .featured_slider .slick-dots li:last-child
 {
@@ -1968,7 +1938,7 @@ select option
 .product_new
 {
 	display: none;
-	background: #0e8ce4;
+	background: #50dd7b;
 	visibility: hidden;
 	opacity: 0;
 }
@@ -2046,7 +2016,7 @@ select option
 	font-size: 10px;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .popular_category
 {
@@ -2195,7 +2165,7 @@ select option
 }
 .banner_2_dots .owl-dot.active
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 	box-shadow: none;
 }
 
@@ -2294,11 +2264,11 @@ select option
 }
 .arrivals_slider .slick-dots li:hover
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .arrivals_slider .slick-dots li.slick-active
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .arrivals_slider .slick-dots li:last-child
 {
@@ -2352,7 +2322,7 @@ select option
 	left: 0px;
 	width: 100%;
 	height: 48px;
-	background: #0e8ce4;
+	background: #50dd7b;
 	border: none;
 	outline: none;
 	font-size: 18px;
@@ -2387,7 +2357,7 @@ select option
 }
 .arrivals_single_category a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .arrivals_single_name_container
 {
@@ -2410,7 +2380,7 @@ select option
 }
 .arrivals_single_name a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .arrivals_single_price
 {
@@ -2448,7 +2418,7 @@ select option
 .arrivals_single_marks .product_new
 {
 	display: block;
-	background: #0e8ce4;
+	background: #50dd7b;
 	visibility: visible;
 	opacity: 1;
 }
@@ -2578,7 +2548,7 @@ select option
 }
 .bestsellers_category a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .bestsellers_name
 {
@@ -2597,7 +2567,7 @@ select option
 }
 .bestsellers_name a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .bestsellers_rating
 {
@@ -2683,7 +2653,7 @@ select option
 }
 .bestsellers_new
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .bestsellers_slider .slick-dots
 {
@@ -2718,11 +2688,11 @@ select option
 }
 .bestsellers_slider .slick-dots li:hover
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .bestsellers_slider .slick-dots li.slick-active
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .bestsellers_slider .slick-dots li:last-child
 {
@@ -2768,13 +2738,13 @@ select option
 }
 .advert_title a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .advert_title_2 a
 {
 	font-size: 18px;
 	font-weight: 500;
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .advert_title_2 a:hover
 {
@@ -2887,15 +2857,11 @@ select option
 	border-radius: 8px;
 	padding: 25px;
 }
-.trends_image
-{
-	width: 100%;
-	height: 212px;
-}
 .trends_image img
 {
 	width: auto !important;
 	max-width: 100% !important;
+	border-radius: 10px;
 }
 .trends_category a
 {
@@ -2904,7 +2870,7 @@ select option
 }
 .trends_category a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .trends_content
 {
@@ -2921,7 +2887,7 @@ select option
 }
 .trends_name a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .trends_price
 {
@@ -3021,7 +2987,7 @@ select option
 }
 .trends_new
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 
 /*********************************
@@ -3051,7 +3017,7 @@ select option
 .reviews_all a
 {
 	font-size: 10px;
-	color: #0e8ce4;
+	color: #50dd7b;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 }
@@ -3069,8 +3035,8 @@ select option
 }
 .review_image
 {
-	width: 115px;
-	height: 115px;
+	width: 200px;
+	height: 200px;
 }
 .review_image img
 {
@@ -3143,7 +3109,7 @@ select option
 }
 .reviews_dots .owl-dot.active
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 	box-shadow: none;
 }
 
@@ -3269,7 +3235,7 @@ select option
 }
 .viewed_name a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .item_marks
 {
@@ -3296,7 +3262,7 @@ select option
 }
 .item_new
 {
-	background: #0e8ce4;
+	background: #50dd7b;
 }
 .viewed_item.discount .item_discount
 {
@@ -3436,7 +3402,7 @@ select option
 	padding-left: 25px;
 	font-size: 16px;
 	outline: none;
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .newsletter_input:focus
 {
@@ -3475,7 +3441,7 @@ select option
 	right: 0;
 	width: 153px;
 	height: 50px;
-	background: #0e8ce4;
+	background: #50dd7b;
 	color: #FFFFFF;
 	line-height: 50px;
 	font-size: 18px;
@@ -3498,7 +3464,7 @@ select option
 .newsletter_unsubscribe_link a
 {
 	font-size: 10px;
-	color: #0e8ce4;
+	color: #50dd7b;
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
@@ -3547,7 +3513,7 @@ select option
 {
 	font-size: 18px;
 	font-weight: 500;
-	color: #0e8ce4;
+	color: #50dd7b;
 	margin-top: 13px;
 }
 .footer_contact_text
@@ -3586,7 +3552,7 @@ select option
 }
 .footer_social ul li:hover i
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .footer_subtitle
 {
@@ -3618,7 +3584,7 @@ select option
 }
 .footer_list li a:hover
 {
-	color: #0e8ce4;
+	color: #50dd7b;
 }
 .footer_list_2
 {
@@ -3656,4 +3622,71 @@ select option
 .logos_list li:last-child
 {
 	margin-right: 0px;
+}
+.product-thumb {
+	margin-bottom: 50px;
+}
+.product-thumb-caption-title {	
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-family: Cabin;
+	font-weight: 700;
+	font-style: normal;
+	color: #4d4f4e;
+}
+
+.product-thumb:hover .product-thumb-caption-title {
+	color: #189c40;
+}
+
+.product-thumb:hover .quickview-btn {
+	opacity: 1;
+}
+
+.btn.quickview-btn {
+	border-radius: 45px;
+	line-height: 1em;
+	letter-spacing: 1px;
+}
+
+.quickview-btn {
+	padding: 12px 25px!important;
+	box-shadow: 0 7px 25px #0a441c99;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 99;
+	opacity: 0;
+}
+
+.product-thumb-label {
+	position: absolute;
+	top: 15px;
+	left: 35px;
+	color: #fff;
+	z-index: 10;
+	background: #f78a1b;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	box-shadow: 0 3px 15px #8e4a0540;
+	margin-bottom: 0;
+	letter-spacing: 1px;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.compare-price-money {
+	color: #bdbdbd;
+  text-decoration: line-through;
+	font-size: 17px;
+}
+
+.product-thumb-caption-price-current {
+	color: #f78a1b;
+	font-size: 17px;
 }

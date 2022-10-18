@@ -20,7 +20,7 @@ $slider = DB::table('products')->join('brands','products.brand_id','brands.id')
                         <span>{{ number_format($slider->selling_price)}} {{ 'VNĐ'}}</span>{{ number_format($slider->discount_price)}} {{ 'VNĐ'}}</div>
                     @endif
                     <div class="banner_product_name">{{ $slider->brand_name }}</div>
-                    <div class="button banner_button"><a href="{{ url('product/details/'.$slider->id.'/'.$slider->product_name) }}">XEM NGAY</a></div>
+                    <div class="button banner_button"><a href="{{ url('product/details/'.$slider->id.'/'.$slider->product_name) }}">Shop Now</a></div>
                 </div>
             </div>
         </div>

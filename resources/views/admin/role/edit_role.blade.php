@@ -104,7 +104,7 @@
         <input type="checkbox" name="contact" value="1" <?php if ($user->contact == 1) {
                                                          echo "checked";
                                                         } ?>>
-        <span>Liên hệ</span>
+        <span>SHIPPING AND DELIVERY</span>
        </label>
       </div>
       <div class="col-lg-4">

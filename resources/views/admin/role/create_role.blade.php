@@ -91,7 +91,7 @@
       <div class="col-lg-4">
        <label class="ckbox">
         <input type="checkbox" name="contact" value="1">
-        <span>Liên hệ</span>
+        <span>SHIPPING AND DELIVERY</span>
        </label>
       </div>
       <div class="col-lg-4">

@@ -62,7 +62,7 @@
         @else
         @endif
         @if($row->contact == 1)
-        <span class="badge btn-primary">Liên hệ</span>
+        <span class="badge btn-primary">SHIPPING AND DELIVERY</span>
         @else
         @endif
         @if($row->comment == 1)

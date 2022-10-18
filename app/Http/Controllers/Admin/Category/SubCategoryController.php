@@ -31,12 +31,31 @@ class SubCategoryController extends Controller
     $data = array();
     $data['category_id'] = $request->category_id;
     $data['subcategory_name'] = $request->subcategory_name;
-    DB::table('subcategories')->insert($data);
-    $notification = array(
-      'messege' => 'Thêm Loại sản phẩm thành công',
-      'alert-type' => 'success'
-    );
-    return Redirect()->back()->with($notification);
+    $image = $request->file('brand_logo');
+
+    if ($image) {
+      $image_name = date('dmy_H_s_i');
+      $ext = strtolower($image->getClientOriginalExtension());
+      $image_full_name = $image_name . '.' . $ext;
+      $upload_path = 'media/subcategories/';
+      $image_url = $upload_path . $image_full_name;
+      $image->move($upload_path, $image_full_name);
+
+      $data['subcategories_logo'] = $image_url;
+      DB::table('subcategories')->insert($data);
+      $notification = array(
+        'messege' => 'Thêm Loại sản phẩm thành công',
+        'alert-type' => 'success'
+      );
+      return Redirect()->back()->with($notification);
+    } else {
+      DB::table('subcategories')->insert($data);
+      $notification = array(
+        'messege' => 'Thêm Loại sản phẩm thành công',
+        'alert-type' => 'success'
+      );
+      return Redirect()->back()->with($notification);
+    }
   }
 
   public function Deletesubcat($id)
@@ -58,14 +77,35 @@ class SubCategoryController extends Controller
 
   public function Updatesubcat(Request $request, $id)
   {
+    $oldlogo = $request->old_logo;
     $data = array();
     $data['category_id'] = $request->category_id;
     $data['subcategory_name'] = $request->subcategory_name;
-    DB::table('subcategories')->where('id', $id)->update($data);
-    $notification = array(
-      'messege' => 'Cập nhật loại sản phẩm thành công',
-      'alert-type' => 'success'
-    );
-    return Redirect()->route('sub.categories')->with($notification);
+    $image = $request->file('subcategories_logo');
+
+    if ($image) {
+      unlink($oldlogo);
+      $image_name = date('dmy_H_s_i');
+      $ext = strtolower($image->getClientOriginalExtension());
+      $image_full_name = $image_name . '.' . $ext;
+      $upload_path = 'media/subcategories/';
+      $image_url = $upload_path . $image_full_name;
+      $image->move($upload_path, $image_full_name);
+
+      $data['subcategories_logo'] = $image_url;      
+      DB::table('subcategories')->where('id', $id)->update($data);
+      $notification = array(
+        'messege' => 'Cập nhật loại sản phẩm thành công',
+        'alert-type' => 'success'
+      );
+      return Redirect()->route('sub.categories')->with($notification);
+    } else {      
+      DB::table('subcategories')->where('id', $id)->update($data);
+      $notification = array(
+        'messege' => 'Cập nhật loại sản phẩm thành công',
+        'alert-type' => 'success'
+      );
+      return Redirect()->route('sub.categories')->with($notification);
+    }
   }
 }

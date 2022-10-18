@@ -21,8 +21,7 @@
               <th class="wd-15p">Mã sản phẩm</th>
               <th class="wd-15p">Tên sản phẩm</th>
               <th class="wd-15p">Hình ảnh</th>
-              <th class="wd-15p">Danh mục</th>
-              <th class="wd-15p">Thương hiệu</th>
+              <th class="wd-15p">Danh mục</th>              
               <th class="wd-15p">Số lượng</th>
               <th class="wd-20p">Thao tác</th>
               <th class="wd-15p">Tình trạng</th>
@@ -34,8 +33,7 @@
               <td>{{ $row->product_code }}</td>
               <td>{{ str_limit($row->product_name, $limit = 20) }}</td>
               <td><img src="{{ URL::to($row->image_one) }}" height="50px;" width="50px;"></td>
-              <td>{{ $row->category_name }}</td>
-              <td>{{ $row->brand_name }}</td>
+              <td>{{ $row->category_name }}</td>              
               <td>{{ $row->product_quantity }}</td>
               <td>
                 <a href="{{ URL::to('edit/product/'.$row->id) }}" class="btn btn-sm btn-info" title="Edit"><i class="fa fa-edit"></i></a>

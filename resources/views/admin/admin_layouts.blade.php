@@ -56,7 +56,7 @@
 
   @else
   <!-- ########## START: LEFT PANEL ########## -->
-  <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i>Torano Shop</a></div>
+  <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i>Wolfoo Shop</a></div>
   <div class="sl-sideleft">
     <div class="sl-sideleft-menu">
       <a href="{{ url('admin/home') }}" class="sl-menu-link active">

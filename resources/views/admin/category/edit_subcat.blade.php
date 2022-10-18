@@ -39,6 +39,15 @@
                 @endforeach
               </select>
             </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ảnh</label>
+              <input type="file" class="form-control" value="{{ $subcat->subcategory_name }}" name="subcategories_logo">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ảnh Cũ</label>
+              <img src="{{ URL::to($subcat->subcategories_logo) }}" height="70px;" width="80px;">
+              <input type="hidden" name="old_logo" value="{{ $subcat->subcategories_logo }}">
+            </div>
             <!-- modal-body -->
             <div class="modal-footer">
               <button type="submit" class="btn btn-info pd-x-20">Cập nhật</button>
