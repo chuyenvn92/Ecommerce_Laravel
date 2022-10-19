@@ -84,23 +84,23 @@ class SubCategoryController extends Controller
     $image = $request->file('subcategories_logo');
 
     if ($image) {
-      unlink($oldlogo);
+      if ($oldlogo) unlink($oldlogo);
       $image_name = date('dmy_H_s_i');
       $ext = strtolower($image->getClientOriginalExtension());
       $image_full_name = $image_name . '.' . $ext;
       $upload_path = 'media/subcategories/';
       $image_url = $upload_path . $image_full_name;
-      $image->move($upload_path, $image_full_name);
+      $success = $image->move($upload_path, $image_full_name);
 
-      $data['subcategories_logo'] = $image_url;      
-      DB::table('subcategories')->where('id', $id)->update($data);
+      $data['subcategories_logo'] = $image_url;
+      $product = DB::table('subcategories')->where('id', $id)->update($data);
       $notification = array(
-        'messege' => 'Cập nhật loại sản phẩm thành công',
+        'messege' => 'Cập nhật loại sản phẩm thành công ne',
         'alert-type' => 'success'
       );
       return Redirect()->route('sub.categories')->with($notification);
-    } else {      
-      DB::table('subcategories')->where('id', $id)->update($data);
+    } else {
+      $product = DB::table('subcategories')->where('id', $id)->update($data);
       $notification = array(
         'messege' => 'Cập nhật loại sản phẩm thành công',
         'alert-type' => 'success'

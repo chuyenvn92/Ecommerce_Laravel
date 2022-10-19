@@ -22,7 +22,7 @@
           </ul>
         </div>
         @endif
-        <form action="{{ url('update/subcategory/'.$subcat->id) }}" method="POST">
+        <form action="{{ url('update/subcategory/'.$subcat->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="modal-body pd-20">
             <div class="form-group">

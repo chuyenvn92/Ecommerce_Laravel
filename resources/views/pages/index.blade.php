@@ -9,8 +9,13 @@ $featured = DB::table('products')
 ->where('status', 1)
 ->where('product_quantity', '>', 0)
 ->orderBy('id', 'desc')
-->limit(20)
-->get();
+->limit(1)
+->first();
+$color = $featured->product_color;
+$product_color = explode(',', $color);
+$size = $featured->product_size;
+$product_size = explode(',', $size);
+
 $trend = DB::table('products')
 ->where('status', 1)
 ->where('trend', 1)
@@ -22,7 +27,7 @@ $best = DB::table('products')
 ->where('status', 1)
 ->where('best_rated', 1)
 ->orderBy('id', 'desc')
-->limit(20)
+->limit(4)
 ->get();
 
 $hot = DB::table('products')
@@ -38,171 +43,147 @@ $hot = DB::table('products')
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/product_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend/styles/product_responsive.css') }}">
 
-<div class="characteristics"></div>
-
-<!-- Deals of the week -->
-
-<div class="deals_featured">
+<div class="single_product">
     <div class="container">
         <div class="row">
-            <div class="col d-flex flex-lg-row flex-column align-items-center justify-content-start">
-
-                <!-- Deals -->
-
-                <div class="deals">
-                    <div class="deals_title">Giá Sốc trong tuần</div>
-                    <div class="deals_slider_container">
-
-                        <!-- Deals Slider -->
-                        <div class="owl-carousel owl-theme deals_slider">
-                            @foreach ($hot as $hot)
-                            <!-- Deals Item -->
-                            <div class="owl-item deals_item">
-                                <div class="deals_image"><img src="{{ asset($hot->image_one) }}" alt="">
-                                </div>
-                                <div class="deals_content">
-                                    <div class="deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="deals_item_category">{{ $hot->brand_name }}</>
-                                        </div>
-                                        @if ($hot->discount_price == null)
-                                        @else
-                                        <div class="deals_item_price_a ml-auto">
-                                            {{ number_format($hot->selling_price) }} {{ 'VNĐ' }}
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <div class="deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="deals_item_name">{{ $hot->product_name }}</div>
-                                        @if ($hot->discount_price == null)
-                                        <div class="deals_item_price ml-auto">
-                                            {{ number_format($hot->selling_price) }}{{ 'VNĐ' }}
-                                        </div>
-                                        @else
-                                        @endif
-                                        @if ($hot->discount_price != null)
-                                        <div class="deals_item_price ml-auto">
-                                            {{ number_format($hot->discount_price) }} {{ 'VNĐ' }}
-                                        </div>
-                                        @else
-                                        @endif
-                                    </div>
-                                    <div class="available">
-                                        <div class="available_line d-flex flex-row justify-content-start">
-                                            <div class="available_title">Số lượng còn:
-                                                <span>{{ $hot->product_quantity }}</span>
-                                            </div>
-                                        </div>
-                                        <div class="available_bar"><span style="width:17%"></span></div>
-                                    </div>
-                                    <div class="deals_timer d-flex flex-row align-items-center justify-content-start">
-                                        <div class="deals_timer_title_container">
-                                            <div class="deals_timer_title">Nhanh tay nào</div>
-                                            <div class="deals_timer_subtitle">Kết thúc sau</div>
-                                        </div>
-                                        <div class="deals_timer_content ml-auto">
-                                            <div class="deals_timer_box clearfix" data-target-time="">
-                                                <div class="deals_timer_unit">
-                                                    <div id="deals_timer1_hr" class="deals_timer_hr"></div>
-                                                    <span>Giờ</span>
-                                                </div>
-                                                <div class="deals_timer_unit">
-                                                    <div id="deals_timer1_min" class="deals_timer_min"></div>
-                                                    <span>Phút</span>
-                                                </div>
-                                                <div class="deals_timer_unit">
-                                                    <div id="deals_timer1_sec" class="deals_timer_sec"></div>
-                                                    <span>Giây</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="deals_slider_nav_container">
-                        <div class="deals_slider_prev deals_slider_nav"><i class="fas fa-chevron-left ml-auto"></i>
-                        </div>
-                        <div class="deals_slider_next deals_slider_nav"><i class="fas fa-chevron-right ml-auto"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured -->
-                <div class="featured">
-                    <div class="tabbed_container">
-                        <div class="tabs">
-                            <ul class="clearfix">
-                                <li class="active">Nổi bật</li>
-                            </ul>
-                            <div class="tabs_line"><span></span></div>
-                        </div>
-                        <!-- Product Panel -->
-                        <div class="product_panel panel active">
-                            <div class="featured_slider slider">
-                                @foreach ($featured as $feature)
-                                <!-- Slider Item -->
-                                <div class="featured_slider_item">
-                                    <div class="border_active"></div>
-                                    <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                        <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                            <img src="{{ asset($feature->image_one) }}" alt="" style="height: 120px; width:140px;">
-                                        </div>
-                                        <div class="product_content">
-                                            @if ($feature->discount_price == null)
-                                            <div class="product_price discount">
-                                                {{ number_format($feature->selling_price) }}
-                                                {{ 'VNĐ' }}
-                                            </div>
-                                            @else
-                                            <div class="product_price discount">
-                                                <span>{{ number_format($feature->selling_price) }}
-                                                    {{ 'VNĐ' }}</span><br>{{ number_format($feature->discount_price) }}
-                                                {{ 'VNĐ' }}
-                                            </div>
-                                            @endif
-                                            <div class="product_name">
-                                                <div><a href="{{ url('product/details/' . $feature->id . '/' . $feature->product_name) }}">{{ str_limit($feature->product_name, $limit = 20) }}</a>
-                                                </div>
-                                            </div>
-                                            <div class="product_extras">
-                                                <button class="product_cart_button addcart" id="{{ $feature->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Xem
-                                                    nhanh</button>
-                                            </div>
-                                        </div>
-                                        <button class="addwishlist" data-id="{{ $feature->id }}">
-                                            <div class="product_fav"><i class="fas fa-heart"></i></div>
-                                        </button>
-                                        <ul class="product_marks">
-                                            @if ($feature->discount_price == null)
-                                            <li class="product_mark product_discount" style="background: blue;">
-                                                Mới</li>
-                                            @else
-                                            <li class="product_mark product_discount">
-                                                @php
-                                                $amount = $feature->selling_price - $feature->discount_price;
-                                                $discount = ($amount / $feature->selling_price) * 100;
-                                                @endphp
-                                                {{ intval($discount) }}%
-                                            </li>
-                                            @endif
-                                        </ul>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                            <div class="featured_slider_dots_cover"></div>
-                        </div>
-                    </div>
-                </div>
-
+            <!-- Images -->
+            <div class="order-2 col-lg-2 order-lg-1">
+                <ul class="image_list">
+                    <li data-image="{{ asset($featured->image_one) }}"><img src="{{ asset($featured->image_one) }}" alt=""></li>
+                    <li data-image="{{ asset($featured->image_two) }}"><img src="{{ asset($featured->image_two) }}" alt=""></li>
+                    <li data-image="{{ asset($featured->image_three) }}"><img src="{{ asset($featured->image_three) }}" alt=""></li>
+                </ul>
             </div>
+            <!-- Selected Image -->
+            <div class="order-1 col-lg-5 order-lg-2">
+                <div class="image_selected"><img src="{{ asset($featured->image_one) }}" alt=""></div>
+            </div>
+
+            <!-- Description -->
+            <div class="order-3 col-lg-5">
+                <div class="product_description">
+
+                    <div class="product_name">{{ $featured->product_name }}</div>
+                    <div class="product_text">
+                        <p>
+                            {!! str_limit($featured->product_details, $limit = 1200) !!}
+                        </p>
+                        <b>Số lượng còn: {{ $featured->product_quantity }}</b>
+                    </div>
+                    <div class="flex-row order_info d-flex">
+                        <form action="{{ url('cart/product/add/'.$featured->id) }}" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Màu sắc</label>
+                                        <select class="form-control input-lg" id="exampleFormControlSelect1" name="color">
+                                            @foreach($product_color as $color)
+                                            <option value="{{ $color }}">{{ $color }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                @if($featured->product_size == NULL)
+
+                                @else
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Kích cỡ</label>
+                                        <select class="form-control input-lg" id="exampleFormControlSelect1" name="size">
+                                            @foreach($product_size as $size)
+                                            <option value="{{ $size }}">{{ $size }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                @endif
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Số lượng</label>
+                                        <input class="form-control" type="number" min="0" value="1" pattern="[0-9]" name="qty">
+                                    </div>
+                                </div>
+                            </div>
+                            @if($featured->discount_price == null)
+                            <div class="product_price">{{ number_format($featured->selling_price) }} {{ 'VNĐ' }}</div>
+                            @else
+                            <div class="product_price">{{ number_format($featured->discount_price) }} {{ 'VNĐ' }}<span>{{ number_format($featured->selling_price) }} {{ 'VNĐ' }}</span></div>
+                            @endif
+                            <div class="button_container">
+                                <button type="submit" class="button cart_button">Thêm vào giỏ</button>
+                                <div class="product_fav"><i class="fas fa-heart"></i></div>
+                            </div>
+                            <br>
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_inline_share_toolbox"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
 
-<!-- Banner -->
+<!-- Best seller of Wolfoo World -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-5 text-center">
+                <h2 class="trends_title">Best seller of Wolfoo World</h2>
+                <div class="trends_text">
+                    <p>Limited Edition- Wolfoo Career Now On Sale</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @foreach ($best as $best)
+        <div class="col-md-3 col-sm-6 product-thumb">
+            <a href="{{ url('product/details/' . $best->id . '/' . $best->product_name) }}">
+                <div class="mb-4">
+                    <div class="trends_image d-flex flex-column align-items-center justify-content-center">
+                        <img src="{{ asset($best->image_one) }}" alt="">
+                    </div>
+                </div>
+                <h4 class="text-center product-thumb-caption-title">
+                    {{ $best->product_name }}
+                </h4>
+                @if ($best->discount_price == null)
+                <p class="text-center product-thumb-caption-price-current">
+                    {{ number_format($best->selling_price) }}{{ 'VNĐ' }}
+                </p>
+                @else
+                <div class="mt-2 row">
+                    <div class="col-xs-5 col-sm-5 col-md-5 compare-price-money">{{ number_format($best->discount_price) }}{{ 'VNĐ' }}
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5 product-thumb-caption-price-current">{{ number_format($best->selling_price) }}{{ 'VNĐ' }}
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                </div>
+                @endif
+            </a>
+            <a href="" class="btn btn-success btn-sm addcart quickview-btn" id="{{ $best->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Quick View</a>
+            @if ($best->discount_price == null)
+            <p class="product-thumb-label">
+                New</p>
+            @else
+            <p class="product-thumb-label">
+                @php
+                $amount = $best->selling_price - $best->discount_price;
+                $discount = ($amount / $best->selling_price) * 100;
+                @endphp
+                {{ intval($discount) }}%
+            </p>
+            @endif
+        </div>
+        @endforeach
+    </div>
+</div>
+
+<!-- Lucy Plush -->
 @php
 $mid = DB::table('products')
 ->join('categories', 'products.category_id', 'categories.id')
@@ -222,7 +203,7 @@ $product_size = explode(',', $size);
     <div class="container">
         <div class="row">
             <!-- Images -->
-            <div class="col-lg-2 order-lg-1 order-2">
+            <div class="order-2 col-lg-2 order-lg-1">
                 <ul class="image_list">
                     <li data-image="{{ asset($mid->image_one) }}"><img src="{{ asset($mid->image_one) }}" alt=""></li>
                     <li data-image="{{ asset($mid->image_two) }}"><img src="{{ asset($mid->image_two) }}" alt=""></li>
@@ -230,12 +211,12 @@ $product_size = explode(',', $size);
                 </ul>
             </div>
             <!-- Selected Image -->
-            <div class="col-lg-5 order-lg-2 order-1">
+            <div class="order-1 col-lg-5 order-lg-2">
                 <div class="image_selected"><img src="{{ asset($mid->image_one) }}" alt=""></div>
             </div>
 
             <!-- Description -->
-            <div class="col-lg-5 order-3">
+            <div class="order-3 col-lg-5">
                 <div class="product_description">
 
                     <div class="product_name">{{ $mid->product_name }}</div>
@@ -245,7 +226,7 @@ $product_size = explode(',', $size);
                         </p>
                         <b>Số lượng còn: {{ $mid->product_quantity }}</b>
                     </div>
-                    <div class="order_info d-flex flex-row">
+                    <div class="flex-row order_info d-flex">
                         <form action="{{ url('cart/product/add/'.$mid->id) }}" method="POST">
                             @csrf
                             <div class="row">
@@ -302,95 +283,39 @@ $product_size = explode(',', $size);
     </div>
 </div>
 
-<!-- Thời Trang Nữ -->
+<!-- Home Decoration -->
 @php
 $cats = DB::table('categories')
-->skip(1)
+->skip(4)
 ->first();
 $catid = $cats->id;
-$product = DB::table('products')
+$subcats = DB::table('subcategories')
 ->where('category_id', $catid)
-->where('status', 1)
-->limit(20)
+->limit(3)
 ->orderBy('id', 'DESC')
 ->get();
 @endphp
-<div class="new_arrivals">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="tabbed_container">
-                    <div class="tabs clearfix tabs-right">
-                        <div class="new_arrivals_title">{{ $cats->category_name }}</div>
-                        <ul class="clearfix">
-                            <li class="active"></li>
-                        </ul>
-                        <div class="tabs_line"><span></span></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12" style="z-index:1;">
-                            <!-- Product Panel -->
-                            <div class="product_panel panel active">
-                                <div class="arrivals_slider slider">
-                                    @foreach ($product as $product)
-                                    <!-- Slider Item -->
-                                    <div class="featured_slider_item">
-                                        <div class="border_active"></div>
-                                        <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                            <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                                <img src="{{ asset($product->image_one) }}" alt="" style="height: 120px; width:140px;">
-                                            </div>
-                                            <div class="product_content">
-                                                @if ($product->discount_price == null)
-                                                <div class="product_price discount">
-                                                    {{ number_format($product->selling_price) }}
-                                                    {{ 'VNĐ' }}
-                                                </div>
-                                                @else
-                                                <div class="product_price discount">
-                                                    {{ number_format($product->discount_price) }}
-                                                    {{ 'VNĐ' }}<span>{{ number_format($product->selling_price) }}
-                                                        {{ 'VNĐ' }}</span>
-                                                </div>
-                                                @endif
-                                                <div class="product_name">
-                                                    <div><a href="{{ url('product/details/' . $product->id . '/' . $product->product_name) }}">{{ str_limit($product->product_name, $limit = 25) }}</a>
-                                                    </div>
-                                                </div>
-                                                <div class="product_extras">
-                                                    <button class="product_cart_button addcart" id="{{ $product->id }}" data-toggle="modal" data-target="#cartModal" onclick="productview(this.id)">Xem
-                                                        nhanh</button>
-                                                </div>
-                                            </div>
-                                            <button class="addwishlist" data-id="{{ $feature->id }}">
-                                                <div class="product_fav"><i class="fas fa-heart"></i></div>
-                                            </button>
-                                            <ul class="product_marks">
-                                                @if ($product->discount_price == null)
-                                                <li class="product_mark product_discount" style="background: blue;">Mới</li>
-                                                @else
-                                                <li class="product_mark product_discount">
-                                                    @php
-                                                    $amount = $product->selling_price - $product->discount_price;
-                                                    $discount = ($amount / $product->selling_price) * 100;
-                                                    @endphp
-                                                    {{ intval($discount) }}%
-                                                </li>
-                                                @endif
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    @endforeach
-
-                                </div>
-                                <div class="featured_slider_dots_cover"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-5 text-center">
+                <h2 class="trends_title">{{ $cats->category_name }}</h2>
             </div>
         </div>
+    </div>
+    <div class="row">
+        @foreach ($subcats as $subcats)
+        <div class="col-md-4 col-sm-12 col-xs-12 gallery-thumb">
+            <a href="{{ url('allcategory/' . $cats->id) }}">
+                <div class="gallery-item d-flex flex-column align-items-center justify-content-center">
+                    <img src="{{ asset($subcats->subcategories_logo) }}" alt="">
+                </div>
+                <div class="gallery-item-caption">
+                    <h3>{{ $subcats->subcategory_name }}</h3>
+                </div>
+            </a>
+        </div>
+        @endforeach
     </div>
 </div>
 
@@ -431,7 +356,7 @@ $product = DB::table('products')
                     {{ number_format($product->selling_price) }}{{ 'VNĐ' }}
                 </p>
                 @else
-                <div class="row mt-2">
+                <div class="mt-2 row">
                     <div class="col-xs-5 col-sm-5 col-md-5 compare-price-money">{{ number_format($product->discount_price) }}{{ 'VNĐ' }}
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5 product-thumb-caption-price-current">{{ number_format($product->selling_price) }}{{ 'VNĐ' }}
@@ -448,7 +373,7 @@ $product = DB::table('products')
             <p class="product-thumb-label">
                 @php
                 $amount = $product->selling_price - $product->discount_price;
-                $discount = ($amount / $feature->selling_price) * 100;
+                $discount = ($amount / $product->selling_price) * 100;
                 @endphp
                 {{ intval($discount) }}%
             </p>
@@ -499,7 +424,7 @@ $product = DB::table('products')
                         {{ number_format($buyget->selling_price) }}{{ 'VNĐ' }}
                     </p>
                     @else
-                    <div class="row mt-2">
+                    <div class="mt-2 row">
                         <div class="col-xs-5 col-sm-5 col-md-5 compare-price-money">{{ number_format($buyget->discount_price) }}{{ 'VNĐ' }}
                         </div>
                         <div class="col-xs-5 col-sm-5 col-md-5 product-thumb-caption-price-current">{{ number_format($buyget->selling_price) }}{{ 'VNĐ' }}
@@ -516,7 +441,7 @@ $product = DB::table('products')
                 <p class="product-thumb-label">
                     @php
                     $amount = $buyget->selling_price - $buyget->discount_price;
-                    $discount = ($amount / $feature->selling_price) * 100;
+                    $discount = ($amount / $buyget->selling_price) * 100;
                     @endphp
                     {{ intval($discount) }}%
                 </p>
@@ -576,7 +501,7 @@ $post = DB::table('posts')->get();
                                     <p>...nhận ngay mã giảm giá 50k cho đơn hàng đầu tiên</p>
                                 </div>
                             </div>
-                            <div class="newsletter_content clearfix">
+                            <div class="clearfix newsletter_content">
                                 <form action="{{ route('store.newslater') }}" method="POST" class="newsletter_form">
                                     @csrf
                                     <input type="email" class="newsletter_input" required="required"
@@ -591,7 +516,7 @@ $post = DB::table('posts')->get();
             </div>
         </div> -->
 <!-- Footer -->
-<footer class="page-footer font-small mdb-color lighten-3 pt-4">
+<footer class="pt-4 page-footer font-small mdb-color lighten-3">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -600,10 +525,10 @@ $post = DB::table('posts')->get();
         <div class="row">
 
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+            <div class="my-0 mt-4 mb-1 mr-auto col-md-4 col-lg-3 my-md-4">
 
                 <!-- Content -->
-                <h5 class="font-weight-bold text-uppercase mb-4">Wolfoo Shop</h5>
+                <h5 class="mb-4 font-weight-bold text-uppercase">Wolfoo Shop</h5>
                 <p>Phone: (714) 660-4424</p>
                 <p>331 Sonoma Aisle, Irvine CA 92618</p>
 
@@ -613,10 +538,10 @@ $post = DB::table('posts')->get();
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+            <div class="mx-auto my-0 mt-4 mb-1 col-md-2 col-lg-2 my-md-4">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mb-4">INFORMATION</h5>
+                <h5 class="mb-4 font-weight-bold text-uppercase">INFORMATION</h5>
 
                 <ul class="list-unstyled">
                     <li>
@@ -647,10 +572,10 @@ $post = DB::table('posts')->get();
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+            <div class="mx-auto my-0 mt-4 mb-1 col-md-4 col-lg-3 my-md-4">
 
                 <!-- Contact details -->
-                <h5 class="font-weight-bold text-uppercase mb-4">OUR POLICIES</h5>
+                <h5 class="mb-4 font-weight-bold text-uppercase">OUR POLICIES</h5>
 
                 <ul class="list-unstyled">
                     <li>
@@ -670,10 +595,10 @@ $post = DB::table('posts')->get();
             <!-- Grid column -->
             <hr class="clearfix w-100 d-md-none">
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+            <div class="mx-auto my-4 text-center col-md-2 col-lg-2">
 
                 <!-- Social buttons -->
-                <h5 class="font-weight-bold text-uppercase mb-4">Fanpage</h5>
+                <h5 class="mb-4 font-weight-bold text-uppercase">Fanpage</h5>
                 <div class="addthis_inline_share_toolbox"></div>
             </div>
             <!-- Grid column -->
@@ -699,7 +624,7 @@ $post = DB::table('posts')->get();
                         <div class="card">
                             <img src="" id="pimage" style="height: 220px;">
                             <div class="card-body">
-                                <h4 class="card-title text-center" id="pname"></h4>
+                                <h4 class="text-center card-title" id="pname"></h4>
                             </div>
                         </div>
                     </div>
