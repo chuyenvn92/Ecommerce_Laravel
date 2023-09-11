@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @see       https://github.com/laminas/laminas-diactoros for the canonical source repository
+ * @copyright https://github.com/laminas/laminas-diactoros/blob/master/COPYRIGHT.md
+ * @license   https://github.com/laminas/laminas-diactoros/blob/master/LICENSE.md New BSD License
+ */
+
 declare(strict_types=1);
 
 namespace Laminas\Diactoros;
@@ -18,7 +24,7 @@ use function is_callable;
  *     `apache_request_headers` under the Apache mod_php.
  * @return array Either $server verbatim, or with an added HTTP_AUTHORIZATION header.
  */
-function normalizeServer(array $server, ?callable $apacheRequestHeaderCallback = null): array
+function normalizeServer(array $server, callable $apacheRequestHeaderCallback = null) : array
 {
     if (null === $apacheRequestHeaderCallback && is_callable('apache_request_headers')) {
         $apacheRequestHeaderCallback = 'apache_request_headers';
@@ -26,8 +32,7 @@ function normalizeServer(array $server, ?callable $apacheRequestHeaderCallback =
 
     // If the HTTP_AUTHORIZATION value is already set, or the callback is not
     // callable, we return verbatim
-    if (
-        isset($server['HTTP_AUTHORIZATION'])
+    if (isset($server['HTTP_AUTHORIZATION'])
         || ! is_callable($apacheRequestHeaderCallback)
     ) {
         return $server;

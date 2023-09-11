@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @see       https://github.com/laminas/laminas-diactoros for the canonical source repository
+ * @copyright https://github.com/laminas/laminas-diactoros/blob/master/COPYRIGHT.md
+ * @license   https://github.com/laminas/laminas-diactoros/blob/master/LICENSE.md New BSD License
+ */
+
 declare(strict_types=1);
 
 namespace Laminas\Diactoros;
@@ -9,27 +15,40 @@ use Psr\Http\Message\StreamInterface;
 use const SEEK_SET;
 
 /**
+ * Class RelativeStream
+ *
  * Wrapper for default Stream class, representing subpart (starting from given offset) of initial stream.
  * It can be used to avoid copying full stream, conserving memory.
- *
- * @see AbstractSerializer::splitStream()
+ * @example see Laminas\Diactoros\AbstractSerializer::splitStream()
  */
 final class RelativeStream implements StreamInterface
 {
-    private StreamInterface $decoratedStream;
+    /**
+     * @var StreamInterface
+     */
+    private $decoratedStream;
 
-    private int $offset;
+    /**
+     * @var int
+     */
+    private $offset;
 
+    /**
+     * Class constructor
+     *
+     * @param StreamInterface $decoratedStream
+     * @param int $offset
+     */
     public function __construct(StreamInterface $decoratedStream, ?int $offset)
     {
         $this->decoratedStream = $decoratedStream;
-        $this->offset          = (int) $offset;
+        $this->offset = (int) $offset;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function __toString(): string
+    public function __toString() : string
     {
         if ($this->isSeekable()) {
             $this->seek(0);
@@ -40,7 +59,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function close(): void
+    public function close() : void
     {
         $this->decoratedStream->close();
     }
@@ -56,7 +75,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function getSize(): int
+    public function getSize() : int
     {
         return $this->decoratedStream->getSize() - $this->offset;
     }
@@ -64,7 +83,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function tell(): int
+    public function tell() : int
     {
         return $this->decoratedStream->tell() - $this->offset;
     }
@@ -72,7 +91,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function eof(): bool
+    public function eof() : bool
     {
         return $this->decoratedStream->eof();
     }
@@ -80,7 +99,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function isSeekable(): bool
+    public function isSeekable() : bool
     {
         return $this->decoratedStream->isSeekable();
     }
@@ -88,9 +107,9 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function seek($offset, $whence = SEEK_SET): void
+    public function seek($offset, $whence = SEEK_SET) : void
     {
-        if ($whence === SEEK_SET) {
+        if ($whence == SEEK_SET) {
             $this->decoratedStream->seek($offset + $this->offset, $whence);
             return;
         }
@@ -100,7 +119,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function rewind(): void
+    public function rewind() : void
     {
         $this->seek(0);
     }
@@ -108,7 +127,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function isWritable(): bool
+    public function isWritable() : bool
     {
         return $this->decoratedStream->isWritable();
     }
@@ -116,7 +135,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function write($string): int
+    public function write($string) : int
     {
         if ($this->tell() < 0) {
             throw new Exception\InvalidStreamPointerPositionException();
@@ -127,7 +146,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function isReadable(): bool
+    public function isReadable() : bool
     {
         return $this->decoratedStream->isReadable();
     }
@@ -135,7 +154,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function read($length): string
+    public function read($length) : string
     {
         if ($this->tell() < 0) {
             throw new Exception\InvalidStreamPointerPositionException();
@@ -146,7 +165,7 @@ final class RelativeStream implements StreamInterface
     /**
      * {@inheritdoc}
      */
-    public function getContents(): string
+    public function getContents() : string
     {
         if ($this->tell() < 0) {
             throw new Exception\InvalidStreamPointerPositionException();
